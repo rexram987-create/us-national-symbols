@@ -2,8 +2,9 @@
 <html lang="he" dir="rtl" class="dark">
 <head>
     <meta charset="UTF-8">
+    <!-- אופטימיזציה ייעודית למסכים מתקדמים ולרזולוציות גבוהות כמו ב-Samsung S25 Ultra -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>אודות החוקר | סמלי האומה האמריקאית</title>
+    <title>סמלי האומה | ארצות הברית של אמריקה</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,8 +15,8 @@
                         darkBase: '#0a0a0a',
                         darkSurface: '#171717',
                         darkBorder: '#262626',
-                        brandAccent: '#dc2626',
-                        brandBlue: '#1e3a8a',
+                        brandAccent: '#dc2626', // אדום אמריקאי
+                        brandBlue: '#1e3a8a',   // כחול אמריקאי
                     },
                     fontFamily: {
                         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
@@ -31,17 +32,11 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-        /* עיצוב המודל הבלתי נראה כברירת מחדל */
-        #profileModal {
-            display: none;
-        }
-        #profileModal.active {
-            display: flex;
-        }
     </style>
 </head>
 <body class="bg-darkBase text-gray-200 min-h-screen flex flex-col font-sans selection:bg-brandAccent selection:text-white transition-colors duration-300">
 
+    <!-- כותרת ראשית (Header) -->
     <header class="border-b border-darkBorder glass-effect">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
@@ -51,80 +46,164 @@
                 <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
             </div>
             <nav class="hidden sm:flex gap-6 font-medium">
-                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
-                <a href="about.html" class="text-brandAccent hover:text-red-400 transition-colors">אודות החוקר</a>
+                <a href="index.html" class="text-brandAccent hover:text-red-400 transition-colors">ראשי</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors">אודות החוקר</a>
             </nav>
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12">
+    <!-- אזור תוכן ראשי -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-16">
         
-        <section class="border-b-2 border-brandAccent pb-6 mb-4">
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">אודות הפרויקט והחוקר</h2>
-            <p class="text-xl text-gray-400 mt-4 max-w-3xl">כיצד אהבה להיסטוריה, ביוגרפיות וכלי מחקר מתקדמים התגבשו ליצירת המאגר של סמלי האומה האמריקאית.</p>
+        <!-- מבוא היסטורי מקיף -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-10 shadow-2xl">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6 border-b-2 border-brandAccent pb-4 inline-block">מבוא היסטורי: לידתה של זהות ויזואלית</h2>
+            
+            <div class="space-y-6 text-lg leading-relaxed text-gray-300">
+                <p>
+                    בחינת הסמלים הלאומיים של ארצות הברית אינה רק סקירה של עיצובים גרפיים או צמחים וחיות, אלא מסע מעמיק אל תוך הדנ"א התרבותי, הפוליטי והחברתי של האומה. מרגע לידתה בסערת מלחמת העצמאות (1775–1783), ארצות הברית מצאה עצמה בפני אתגר עצום: כיצד לאחד שלוש עשרה מושבות שונות, בעלות אינטרסים כלכליים שונים ורקע דמוגרפי מגוון, לכדי רפובליקה אחת, תחת זהות לאומית משותפת? 
+                </p>
+                <p>
+                    התשובה טמונה במידה רבה בסמלים. אבות האומה (The Founding Fathers) הבינו שכדי ליצור נאמנות למדינה חדשה שאין לה מלך או היסטוריה ארוכת שנים כמו למדינות אירופה, יש ליצור מערכת של סמלים ויזואליים שיהוו דבק תרבותי. סמלים אלו נועדו לשקף אידיאלים של חירות, צדק, כוח, עצמאות ואחדות.
+                </p>
+                <p>
+                    מהחותם הגדול, אשר עיצובו נמשך שש שנים ארוכות וכלל שלוש ועדות שונות כדי להגיע לדיוק הסמלי הנדרש, ועד להחלטה לאמץ את העיט הקירח כסמל העוצמה והחירות למרות התנגדויות מסוימות (כמו זו המפורסמת של בנג'מין פרנקלין). כל סמל טומן בחובו סיפורים על אישים, מאבקים אידיאולוגיים, והחלטות הרות גורל. פרויקט זה מזמין אתכם לחקור את ההיסטוריה, האטימולוגיה המדויקת והזהות שמאחורי כל סמל וסמל, ולהבין כיצד "מתוך הרבים, אחד" (E Pluribus Unum) הפך ממטבע לשון למציאות לאומית.
+                </p>
+            </div>
         </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-            
-            <section class="lg:col-span-2 bg-darkSurface border border-darkBorder rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 text-lg leading-relaxed text-gray-300">
-                <h3 class="text-2xl font-bold text-white mb-4">השליחות: להנגיש את ההיסטוריה מחדש</h3>
-                <p>
-                    פרויקט זה נולד מתוך ההבנה שסמלים הם השפה הוויזואלית של ההיסטוריה. הם לוכדים בתוכם מאבקים, ניצחונות וערכים שמעצבים אומה. אולם, לעיתים קרובות, המידע עליהם מפוזר, חלקי, או חסר את העומק האטימולוגי שמאפשר להבין את מקורם האמיתי.
-                </p>
-                <p>
-                    המטרה שלנו אינה רק להציג רשימה של סמלים. השליחות היא לחפור עמוק אל תוך הארכיונים הלאומיים (NARA), ספריית הקונגרס ומכון סמית'סוניאן, ולהנגיש לקהל הישראלי והבינלאומי מחקר מעמיק, מדויק וללא "קיצורי דרך". כל קובץ באתר זה עוצב ותוכנן כדי לתת מענה מקיף – החל מהזהות ההיסטורית של המעצבים והאימוץ הרשמי, ועד למשמעות המדויקת של כל מילה ומילה באטימולוגיה המורחבת.
-                </p>
-                <p>
-                    אנחנו מאמינים שהבנת הסמלים הלאומיים חיונית להבנת התרבות הפוליטית והחברתית של ארצות הברית, במיוחד בתקופה של שינויים גלובליים, שבה הזהות הלאומית נבחנת מחדש.
-                </p>
-            </section>
+        <!-- רשת כרטיסיות לסמלים (ניווט) -->
+        <section>
+            <h3 class="text-2xl font-bold text-white mb-8">אינדקס הסמלים הלאומיים</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- כרטיס: החותם הגדול - עכשיו עם התמונה המקורית! -->
+                <a href="symbols/great-seal.html" class="group bg-darkSurface rounded-xl overflow-hidden border border-darkBorder hover:border-brandBlue transition-all duration-300 hover:-translate-y-1 shadow-lg">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                        <!-- התמונה של החותם הגדול נטענת כאן -->
+                        <img src="assets/images/symbols/great-seal-us.svg" alt="החותם הגדול של ארהב" class="w-full h-full object-contain p-4 relative z-0 group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent z-10"></div>
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h4 class="text-xl font-bold text-white group-hover:text-brandBlue transition-colors">החותם הגדול (The Great Seal)</h4>
+                        <p class="text-sm text-gray-400 mt-2">הסמל הרשמי של הממשל הפדרלי, שאושר ב-1782 לאחר מחקר מעמיק ומורכב.</p>
+                    </div>
+                </a>
 
-            <aside class="bg-darkSurface border border-darkBorder rounded-2xl p-8 shadow-xl text-center space-y-6 flex flex-col items-center">
-                <h3 class="text-xl font-bold text-white mb-2">אודות החוקר (רם)</h3>
-                
-                <button id="openModalBtn" class="block w-40 h-40 rounded-full overflow-hidden border-4 border-brandBlue shadow-2xl hover:border-brandAccent transition-colors duration-300 group focus:outline-none focus:ring-4 focus:ring-brandAccent" aria-label="פתח תמונה מלאה בחלון צף">
-                    <img src="assets/images/ram-profile.jpg" alt="רם, חוקר סמלים אמריקאיים" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                </button>
-                
-                <div class="text-gray-400 text-base leading-relaxed space-y-4">
-                    <p>
-                        חוקר וביבליופיל המקדיש את זמנו הפנוי לקריאה מעמיקה של ספרי היסטוריה, מדע, ביוגרפיות ורומנים היסטוריים. תשוקה זו לחקר העבר, בשילוב עם הבנה טכנולוגית, הובילה לפיתוח פרויקט זה.
-                    </p>
-                    <p>
-                        המחקר והפיתוח של האתר בוצעו תוך שימוש מושכל בכלי בינה מלאכותית متقدمים, ששימשו כ"עוזר מחקר" היסטורי כדי לאמת מקורות, לנתח אטימולוגיות מורכבות, ולעצב סביבת משתמש נקייה, מודרנית ונגישה.
-                    </p>
-                </div>
-            </aside>
-        </div>
+                <!-- כרטיס: דגל ארצות הברית -->
+                <a href="#" class="group bg-darkSurface rounded-xl overflow-hidden border border-darkBorder hover:border-brandAccent transition-all duration-300 hover:-translate-y-1 shadow-lg opacity-80 hover:opacity-100">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent z-10"></div>
+                        <span class="text-5xl opacity-50 relative z-0">🇺🇸</span>
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h4 class="text-xl font-bold text-white group-hover:text-brandAccent transition-colors">דגל הלאום (The Star-Spangled Banner)</h4>
+                        <p class="text-sm text-gray-400 mt-2">13 פסים ו-50 כוכבים המייצגים את האבולוציה וההתרחבות של הרפובליקה משנת 1777. (בקרוב)</p>
+                    </div>
+                </a>
+
+                <!-- כרטיס: העיט הקירח -->
+                <a href="#" class="group bg-darkSurface rounded-xl overflow-hidden border border-darkBorder hover:border-yellow-500 transition-all duration-300 hover:-translate-y-1 shadow-lg opacity-80 hover:opacity-100">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent z-10"></div>
+                        <span class="text-5xl opacity-50 relative z-0">🦅</span>
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h4 class="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors">העיט הקירח (The Bald Eagle)</h4>
+                        <p class="text-sm text-gray-400 mt-2">הציפור הלאומית והסמל החי של חירות, כוח ועצמאות, המלווה את האומה מיומה הראשון. (בקרוב)</p>
+                    </div>
+                </a>
+
+                <!-- כרטיס: הביזון האמריקאי -->
+                <a href="#" class="group bg-darkSurface rounded-xl overflow-hidden border border-darkBorder hover:border-yellow-700 transition-all duration-300 hover:-translate-y-1 shadow-lg opacity-80 hover:opacity-100">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent z-10"></div>
+                        <span class="text-5xl opacity-50 relative z-0">🦬</span>
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h4 class="text-xl font-bold text-white group-hover:text-yellow-700 transition-colors">הביזון האמריקאי (American Bison)</h4>
+                        <p class="text-sm text-gray-400 mt-2">סמל המורשת של הספר, ההישרדות והחיבור העמוק לאדמות צפון אמריקה, שאושר ב-2016. (בקרוב)</p>
+                    </div>
+                </a>
+
+                <!-- כרטיס: הוורד הלאומי -->
+                <a href="#" class="group bg-darkSurface rounded-xl overflow-hidden border border-darkBorder hover:border-red-500 transition-all duration-300 hover:-translate-y-1 shadow-lg opacity-80 hover:opacity-100">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent z-10"></div>
+                        <span class="text-5xl opacity-50 relative z-0">🌹</span>
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h4 class="text-xl font-bold text-white group-hover:text-red-500 transition-colors">הוורד הלאומי (The National Rose)</h4>
+                        <p class="text-sm text-gray-400 mt-2">סמל הפרח הרשמי המייצג חיים, אהבה, ומסירות, שאושר רשמית על ידי הנשיא רייגן ב-1986. (בקרוב)</p>
+                    </div>
+                </a>
+
+                <!-- כרטיס: עץ האלון -->
+                <a href="#" class="group bg-darkSurface rounded-xl overflow-hidden border border-darkBorder hover:border-green-600 transition-all duration-300 hover:-translate-y-1 shadow-lg opacity-80 hover:opacity-100">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent z-10"></div>
+                        <span class="text-5xl opacity-50 relative z-0">🌳</span>
+                    </div>
+                    <div class="p-6 relative z-20">
+                        <h4 class="text-xl font-bold text-white group-hover:text-green-600 transition-colors">עץ האלון (The American Oak)</h4>
+                        <p class="text-sm text-gray-400 mt-2">סמל החוזק, העמידות והיציבות. נבחר כעץ הלאומי של ארצות הברית בשנת 2004. (בקרוב)</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- אזור הכרות עם החוקר בדף הבית -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-10 shadow-2xl flex flex-col sm:flex-row items-center gap-8 text-center sm:text-right">
+            <!-- כפתור תמונת החוקר הפותח את החלון הצף -->
+            <button type="button" id="openProfileModalBtn" class="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 rounded-full overflow-hidden border-4 border-brandBlue shadow-2xl hover:border-brandAccent transition-colors duration-300 group focus:outline-none focus:ring-4 focus:ring-brandAccent cursor-pointer" aria-label="פתח תמונת פרופיל מוגדלת">
+                <img src="assets/images/ram-profile.jpg" alt="רם, חוקר סמלים אמריקאיים" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+            </button>
+            
+            <div class="flex-grow">
+                <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">הכר את החוקר</h3>
+                <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                    הפרויקט נחקר ופותח על ידי רם. חוקר וביבליופיל המקדיש את זמנו לקריאה מעמיקה של היסטוריה וביוגרפיות, בשילוב כלי מחקר מתקדמים של בינה מלאכותית, במטרה להנגיש את המורשת האמריקאית ללא פשרות או קיצורי דרך.
+                </p>
+                <a href="about.html" class="inline-block text-brandAccent hover:text-red-400 font-medium transition-colors text-lg border-b border-brandAccent pb-1">
+                    למעבר לדף האודות המלא &larr;
+                </a>
+            </div>
+        </section>
 
     </main>
 
+    <!-- תחתית האתר (Footer) -->
     <footer class="bg-darkSurface border-t border-darkBorder mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-gray-500 text-sm">
                 &copy; נבנה ונחקר בקפידה. כל הזכויות שמורות לפרויקט חקר הסמלים האמריקאיים.
             </p>
             <div class="flex gap-4">
-                <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">חזרה לראשי</a>
+                <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors">אודות (רם)</a>
             </div>
         </div>
     </footer>
 
+    <!-- ניווט תחתון למובייל -->
     <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-4 flex justify-around z-50">
-        <a href="index.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+        <a href="index.html" class="text-brandAccent font-medium flex flex-col items-center">
             <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
             ראשי
         </a>
-        <a href="about.html" class="text-brandAccent font-medium flex flex-col items-center">
+        <a href="about.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
             <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
             אודות
         </a>
     </div>
 
-    <div id="profileModal" class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-opacity duration-300" aria-hidden="true">
+    <!-- ============================================= -->
+    <!-- מבנה החלון הצף (Modal) לתמונת הפרופיל באינדקס -->
+    <!-- ============================================= -->
+    <div id="profileModal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-opacity duration-300" aria-hidden="true">
         <div class="relative max-w-4xl max-h-[90vh] bg-darkSurface rounded-2xl p-2 border-2 border-darkBorder shadow-2xl overflow-hidden">
             
-            <button id="closeModalBtn" class="absolute top-4 left-4 z-[110] bg-darkBase/70 rounded-full p-3 text-gray-400 hover:text-white hover:bg-brandAccent/90 transition-colors focus:outline-none" aria-label="סגור חלון">
+            <button type="button" id="closeModalBtn" class="absolute top-4 left-4 z-[110] bg-darkBase/70 rounded-full p-3 text-gray-400 hover:text-white hover:bg-brandAccent/90 transition-colors focus:outline-none cursor-pointer" aria-label="סגור חלון">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             
@@ -132,40 +211,43 @@
         </div>
     </div>
 
+    <!-- JavaScript לניהול המודל -->
     <script>
         const modal = document.getElementById('profileModal');
-        const openBtn = document.getElementById('openModalBtn');
+        const openBtn = document.getElementById('openProfileModalBtn');
         const closeBtn = document.getElementById('closeModalBtn');
 
-        // פתיחת המודל
-        openBtn.addEventListener('click', () => {
-            modal.classList.add('active');
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
             modal.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('overflow-hidden'); // מניעת גלילה מאחור
+            document.body.classList.add('overflow-hidden');
         });
 
-        // סגירת המודל בלחיצה על כפתור הסגירה
-        closeBtn.addEventListener('click', closeModal);
+        function closeModal() {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+        }
 
-        // סגירת המודל בלחיצה על הרקע הכהה
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeModal();
+        });
+
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeModal();
             }
         });
 
-        // סגירת המודל בלחיצה על מקש ESC
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 closeModal();
             }
         });
-
-        function closeModal() {
-            modal.classList.remove('active');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('overflow-hidden');
-        }
     </script>
 
 </body>
