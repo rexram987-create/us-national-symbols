@@ -1,0 +1,158 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>העיט הקירח | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#eab308', /* זהב צהוב המתאים לעיט */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        /* גודל טקסט קריא ונוח למובייל - לא "טנקי" */
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Header סטטי -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium text-gray-400">
+                <a href="../index.html" class="hover:text-white">ראשי</a>
+                <a href="../about.html" class="hover:text-white">אודות</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl font-black text-white mb-2">מחקר היסטורי מקיף: העיט הקירח (The Bald Eagle) – סמל העוצמה האמריקאית</h2>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף -->
+        <section class="flex flex-row justify-center gap-4 flex-wrap">
+            <button onclick="toggleModal('eagleModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900">
+                <!-- נשתמש בשם הקובץ של תמונת העיט שיש לך, כפי שנראה בצילום המסך -->
+                <img src="../assets/images/symbols/bald-eagle-portrait-majestic.jpg" alt="העיט הקירח" class="w-full h-full object-cover">
+            </button>
+            <div class="w-full text-center mt-2 text-xs text-gray-500">לחץ על התמונה להגדלה</div>
+        </section>
+
+        <!-- הטקסט המחקרי המלא והמשולב - בדיוק כמו בשיחה -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- חלק 1: אימוץ וסיבה -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. תעודת זהות היסטורית: שנת אימוץ וסיבת הבחירה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנת הכרזה ואימוץ רשמי:</strong> העיט הקירח אומץ רשמית כסמל הלאומי של ארצות הברית ב-<strong>20 ביוני 1782</strong>. החלטה זו התקבלה במקביל לאישור העיצוב הסופי של החותם הגדול (The Great Seal) על ידי הקונגרס הקונטיננטלי, בו העיט תופס את המקום המרכזי.</li>
+                    <li><strong>סיבת ההמצאה והאימוץ:</strong> האומה הצעירה, שזה עתה השתחררה משלטון האימפריה הבריטית, חיפשה נואשות סמל ויזואלי שישדר עוצמה, ריבונות, וחירות בלתי מתפשרת. היסטורית, נשרים ועיטים שימשו כסמלי שלטון כמעט לכל אורך ההיסטוריה המערבית, החל מהרפובליקה הרומית (ה"אקווילה") דרך האימפריה הרומית הקדושה ועד לרוסיה הצארית.<br>עם זאת, אבות האומה האמריקאית רצו להתנתק מהסמליות האירופית הישנה, שזוהתה לרוב עם מונרכיות ודיכוי. הבחירה בעיט הקירח הייתה החלטה אסטרטגית וטקטית מובהקת: בניגוד לעיטים האירופיים, העיט הקירח הוא <strong>מין אנדמי (ייחודי) ליבשת צפון אמריקה בלבד</strong>. בחירה זו נועדה להכריז לעולם כולו שארצות הברית אינה עוד "העתק" של מדינה אירופית, אלא ישות עצמאית, פראית, חופשייה, ובעלת זהות משלה.</li>
+                </ul>
+
+                <!-- חלק 2: אטימולוגיה -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. מחקר אטימולוגי מפורק: Bald Eagle</h3>
+                <p>השם "העיט הקירח" מהווה לא פעם מקור לבלבול, שכן ראשו של העיט, מרגע שהוא מגיע לבגרות (סביב גיל 4-5 שנים), עטור נוצות לבנות בוהקות ואינו קירח כלל וכלל.</p>
+                <ul class="list-disc list-inside space-y-3 ml-2">
+                    <li><strong>Bald (קירח):</strong> במקורו ההיסטורי, המילה "Bald" אינה מתייחסת לחוסר שיער או נוצות. היא נגזרת מהמילה באנגלית עתיקה <em>Balde</em> (או <em>Balled</em>), שפירושה המקורי והמדויק היה <strong>"לבן"</strong> או <strong>"בעל כתם לבן בוהק"</strong>. שימוש זה נשמר בביטויים אנגליים עתיקים כמו "Piebald", שמתאר חיה (כמו סוס) עם כתמים לבנים ושחורים בולטים. הפירוש ההיסטורי והאמיתי של השם הוא, אם כן, "העיט בעל הראש הלבן והבוהק".</li>
+                    <li><strong>Eagle (עיט):</strong> נגזרת מהמילה הצרפתית העתיקה <em>Aigle</em>, אשר בעצמה התפתחה מהמילה הלטינית <em>Aquila</em> (עיט/נשר). ישנם חוקרים הסבורים שבלטינית עתיקה, משמעות השורש של המילה קשורה לצבע כהה, שחור או שחור-חום, המתייחס לצבע גופו הכהה של העופות הדורסים הללו.</li>
+                    <li><strong>השם המדעי הלטיני (Haliaeetus leucocephalus):</strong>
+                        <ul class="list-[circle] list-inside ml-6 mt-1 space-y-1">
+                            <li>החלק הראשון, <em>Haliaeetus</em>, מגיע מהשפה היוונית העתיקה: <em>Halos</em> פירושו ים או מלח, ו-<em>Aetos</em> פירושו עיט. הצירוף יוצר "עיט הים".</li>
+                            <li>החלק השני, <em>leucocephalus</em>, גם הוא מיוונית עתיקה: <em>Leukos</em> פירושו לבן, ו-<em>Kephale</em> פירושו ראש.</li>
+                            <li><strong>סינתזה אטימולוגית של השם המדעי:</strong> "עיט הים בעל הראש הלבן".</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- חלק 3: המעצבים -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. המעצבים וההוגים: צ'ארלס תומסון וויליאם ברטון</h3>
+                <p>הצבתו של העיט הקירח כסמל המרכזי של האומה לא הייתה תוצר של הברקה של אדם בודד, אלא שילוב רעיוני של שני אישים מרכזיים שלקחו חלק פעיל בוועדה השלישית והסופית לעיצוב החותם הגדול:</p>
+                <ul class="list-none space-y-4">
+                    <li><strong>צ'ארלס תומסון (Charles Thomson):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                            <li><em>שנות חיים:</em> 29 בנובמבר 1729 – 16 באוגוסט 1824.</li>
+                            <li><em>תפקיד והשפעה:</em> תומסון שימש כמזכיר הקונגרס הקונטיננטלי ונחשב לאיש אשכולות. הוא היה האיש שלקח את שלל הרעיונות המפוזרים והלא-מגובשים של שתי הוועדות הקודמות, וארגן אותם לעיצוב קוהרנטי אחד. תרומתו הקריטית הייתה ההחלטה לשים את העיט האמריקאי במרכז הבמה כשהוא פורש את כנפיו באופן ריבוני וגאה, מחזיק ענף זית (המסמל שלום) בטופר אחד, ואגודת חיצים (המסמלת מלחמה) בטופר השני.</li>
+                        </ul>
+                    </li>
+                    <li><strong>וויליאם ברטון (William Barton):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                            <li><em>שנות חיים:</em> 11 באפריל 1754 – 21 באוקטובר 1817.</li>
+                            <li><em>תפקיד והשפעה:</em> עורך דין ומומחה להרלדיקה (תורת סמלי האצולה, השלטים ומגני האבירים). ברטון היה למעשה הראשון שהציע, באופן רשמי, לשלב עיט בסמל הלאומי. עם זאת, בהצעתו המקורית, הוא התייחס לסוג של עיט אירופאי קטן (Crested Eagle) או עיט הרלדי מסורתי. תומסון לקח את הרעיון של ברטון ושייף אותו, כשהוא מקפיד לשנות את סוג הציפור ספציפית ל"עיט הקירח האמריקאי" – כדי להבטיח את הייצוג הגיאוגרפי הייחודי וההתנתקות המוחלטת מאירופה.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- חלק 4: הפולמוס -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-red-800 pb-2">4. הפולמוס האידיאולוגי: בנג'מין פרנקלין ותרנגול ההודו</h3>
+                <p>אחד הסיפורים המרתקים והידועים ביותר (גם אם לעיתים מסולפים מעט) סביב אימוץ הסמל הוא ההתנגדות האידיאולוגית החריפה של בנג'מין פרנקלין (Benjamin Franklin).</p>
+                <ul class="list-none space-y-4">
+                    <li><em>שנות חיים:</em> 17 בינואר 1706 – 17 באפריל 1790.</li>
+                    <li><strong>הביקורת המוסרית על העיט:</strong> במכתב מפורסם שכתב לבתו שרה (Sarah Bache) בשנת 1784 – שנתיים תמימות לאחר שהקונגרס אימץ את הסמל באופן רשמי – פרנקלין הביע מורת רוח גלויה מהבחירה. הוא טען שהעיט הקירח הוא "ציפור בעלת אופי מוסרי גרוע" (A bird of bad moral character). פרנקלין נימק זאת בכך שהעיט הקירח אינו טורח תמיד לצוד את מזונו בעצמו; במקום זאת, הוא נוהג לשבת על ענפי העצים לאורך הנהר ולגנוב דגים מציפורי שלדג (Osprey) קטנות יותר, שעבדו קשה כדי לדוג. פרנקלין כינה את העיט בבוז "פחדן ועצלן".</li>
+                    <li><strong>החלופה האידיאולוגית - תרנגול ההודו:</strong> באותו מכתב, פרנקלין הציע כי תרנגול ההודו הפראי (Wild Turkey) הוא סמל אמריקאי ראוי ואמיתי הרבה יותר. פרנקלין הודה שתרנגול ההודו נראה אולי קצת גמלוני או "יהיר" במראהו, אך הוא טען שזוהי "ציפור בעלת אומץ ממשי" (A bird of courage), ציפור ילידית שלא תהסס לתקוף חיילים בריטים (Grenadiers) במעילים אדומים שיעזו לפלוש לשטחה או לחווה שלה.</li>
+                    <li class="bg-red-900/20 p-4 rounded-xl border border-red-800/50 text-sm"><em>הערה מחקרית חשובה למניעת מיתוסים:</em> חשוב להדגיש כי פרנקלין מעולם לא הציע את תרנגול ההודו כסמל רשמי במסגרת הדיונים של הקונגרס. הוא שיתף את דעתו הסאטירית, העוקצנית והאידיאולוגית במסגרת התכתבות פרטית בלבד. עם זאת, המכתב שופך אור מרתק על האופן שבו אבות האומה בחנו כל סמל מבעד לעדשה של מוסר ופוליטיקה.</li>
+                </ul>
+
+                <!-- חלק 5: סימבוליזם -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">5. סימבוליזם ואידיאולוגיה לאומית מאחורי העיט</h3>
+                <p>בסופו של דבר, הבחירה בעיט הקירח התבררה כמוצלחת מאוד וסיפקה לארצות הברית בדיוק את הזהות הוויזואלית הנדרשת באותה עת:</p>
+                <ol class="list-decimal list-inside space-y-3 ml-2">
+                    <li><strong>חירות בלתי מוגבלת:</strong> העיט הקירח מעופף בגבהים עצומים ונחשב לחסר טורפים טבעיים של ממש בשמיים. תכונה זו מסמלת אומה עצמאית לחלוטין, חופשייה, שאינה כפופה לאיש.</li>
+                    <li><strong>אריכות ימים ועמידות:</strong> עיטים נחשבים לחיות מאריכות ימים (יכולים לחיות עשרות שנים בטבע). עובדה זו מסמלת את התקווה והאמונה של המייסדים שהרפובליקה החדשה תשרוד ותשגשג לנצח, בניגוד לאימפריות העבר שקרסו.</li>
+                    <li><strong>הפרדת רשויות והרתעה:</strong> עצם העובדה שבחותם הלאומי, העיט מחזיק בשתי רגליו את סמלי המלחמה (חיצים) והשלום (ענף זית), מסמלת איזון כוחות עדין. חשוב לשים לב כי ראשו של העיט מופנה לעבר ענף הזית – רמז ברור לכך שארצות הברית מעדיפה שאיפה כנה לשלום, אך היא מוכנה ומזומנת להגן על עצמה בעוצמה צבאית קטלנית (החיצים) במידת הצורך.</li>
+                </ol>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) -->
+    <div id="eagleModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('eagleModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <!-- נתיב התמונה ששימשנו בו למעלה -->
+            <img src="../assets/images/symbols/bald-eagle-portrait-majestic.jpg" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-black w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
