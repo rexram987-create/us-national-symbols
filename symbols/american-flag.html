@@ -58,8 +58,8 @@
 
         <!-- תמונות לפתיחה בחלון צף -->
         <section class="flex flex-row justify-center gap-4 flex-wrap">
-            <button onclick="toggleModal('flagModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform">
-                <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" alt="הדגל" class="w-full h-full object-cover">
+            <button onclick="toggleModal('flagModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform bg-gray-900">
+                <img src="../assets/images/symbols/us-flag-official.svg" alt="דגל ארצות הברית הרשמי" class="w-full h-full object-cover">
             </button>
             <button onclick="toggleModal('hopkinsonModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform">
                 <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" alt="פרנסיס הופקינסון" class="w-full h-full object-cover">
@@ -133,8 +133,8 @@
 
     <!-- חלונות צפים (Modals) -->
     <div id="flagModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('flagModal', false)">
-        <div class="relative max-w-4xl w-full">
-            <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" class="w-full h-auto rounded-lg shadow-2xl">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-4">
+            <img src="../assets/images/symbols/us-flag-official.svg" class="w-full h-auto rounded">
             <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold">✕</button>
         </div>
     </div>
