@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>אודות החוקר | סמלי האומה האמריקאית</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#dc2626',
+                        brandBlue: '#1e3a8a',
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen flex flex-col font-sans selection:bg-brandAccent selection:text-white transition-colors duration-300">
+
+    <header class="border-b border-darkBorder glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border-2 border-brandAccent shadow-lg overflow-hidden">
+                    <span class="text-white font-bold text-xl">US</span>
+                </div>
+                <h1 class="text-xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="hidden sm:flex gap-6 font-medium">
+                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="about.html" class="text-brandAccent hover:text-red-400 transition-colors">אודות החוקר</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12">
+        
+        <section class="border-b-2 border-brandAccent pb-6 mb-4">
+            <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">אודות הפרויקט והחוקר</h2>
+            <p class="text-xl text-gray-400 mt-4 max-w-3xl">כיצד אהבה להיסטוריה, ביוגרפיות וכלי מחקר מתקדמים התגבשו ליצירת המאגר של סמלי האומה האמריקאית.</p>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            
+            <section class="lg:col-span-2 bg-darkSurface border border-darkBorder rounded-2xl p-8 sm:p-10 shadow-2xl space-y-6 text-lg leading-relaxed text-gray-300">
+                <h3 class="text-2xl font-bold text-white mb-4">השליחות: להנגיש את ההיסטוריה מחדש</h3>
+                <p>
+                    פרויקט זה נולד מתוך ההבנה שסמלים הם השפה הוויזואלית של ההיסטוריה. הם לוכדים בתוכם מאבקים, ניצחונות וערכים שמעצבים אומה. אולם, לעיתים קרובות, המידע עליהם מפוזר, חלקי, או חסר את העומק האטימולוגי שמאפשר להבין את מקורם האמיתי.
+                </p>
+                <p>
+                    המטרה שלנו אינה רק להציג רשימה של סמלים. השליחות היא לחפור עמוק אל תוך הארכיונים הלאומיים (NARA), ספריית הקונגרס ומכון סמית'סוניאן, ולהנגיש לקהל הישראלי והבינלאומי מחקר מעמיק, מדויק וללא "קיצורי דרך". כל קובץ באתר זה עוצב ותוכנן כדי לתת מענה מקיף – החל מהזהות ההיסטורית של המעצבים והאימוץ הרשמי, ועד למשמעות המדויקת של כל מילה ומילה באטימולוגיה המורחבת.
+                </p>
+                <p>
+                    אנחנו מאמינים שהבנת הסמלים הלאומיים חיונית להבנת התרבות הפוליטית והחברתית של ארצות הברית, במיוחד בתקופה של שינויים גלובליים, שבה הזהות הלאומית נבחנת מחדש.
+                </p>
+            </section>
+
+            <aside class="bg-darkSurface border border-darkBorder rounded-2xl p-8 shadow-xl text-center space-y-6 flex flex-col items-center">
+                <h3 class="text-xl font-bold text-white mb-2">אודות החוקר (רם)</h3>
+                
+                <button type="button" id="openModalBtn" class="block w-40 h-40 rounded-full overflow-hidden border-4 border-brandBlue shadow-2xl hover:border-brandAccent transition-colors duration-300 group focus:outline-none focus:ring-4 focus:ring-brandAccent cursor-pointer" aria-label="פתח תמונה מלאה בחלון צף">
+                    <!-- הנתיב תוקן בהתאם לצילום המסך! -->
+                    <img src="assets/images/symbols/ram-profile.jpg" alt="רם, חוקר סמלים אמריקאיים" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </button>
+                
+                <div class="text-gray-400 text-base leading-relaxed space-y-4">
+                    <p>
+                        חוקר וביבליופיל המקדיש את זמנו הפנוי לקריאה מעמיקה של ספרי היסטוריה, מדע, ביוגרפיות ורומנים היסטוריים. תשוקה זו לחקר העבר, בשילוב עם הבנה טכנולוגית, הובילה לפיתוח פרויקט זה.
+                    </p>
+                    <p>
+                        המחקר והפיתוח של האתר בוצעו תוך שימוש מושכל בכלי בינה מלאכותית מתקדמים, ששימשו כ"עוזר מחקר" היסטורי כדי לאמת מקורות, לנתח אטימולוגיות מורכבות, ולעצב סביבת משתמש נקייה, מודרנית ונגישה.
+                    </p>
+                </div>
+            </aside>
+        </div>
+
+    </main>
+
+    <footer class="bg-darkSurface border-t border-darkBorder mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-gray-500 text-sm">
+                &copy; נבנה ונחקר בקפידה. כל הזכויות שמורות לפרויקט חקר הסמלים האמריקאיים.
+            </p>
+            <div class="flex gap-4">
+                <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors">חזרה לראשי</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-4 flex justify-around z-50">
+        <a href="index.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            ראשי
+        </a>
+        <a href="about.html" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            אודות
+        </a>
+    </div>
+
+    <!-- מבנה החלון הצף -->
+    <div id="profileModal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/80 backdrop-blur-md p-4 transition-opacity duration-300" aria-hidden="true">
+        <div class="relative max-w-4xl max-h-[90vh] bg-darkSurface rounded-2xl p-2 border-2 border-darkBorder shadow-2xl overflow-hidden">
+            
+            <button type="button" id="closeModalBtn" class="absolute top-4 left-4 z-[110] bg-darkBase/70 rounded-full p-3 text-gray-400 hover:text-white hover:bg-brandAccent/90 transition-colors focus:outline-none cursor-pointer" aria-label="סגור חלון">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <!-- הנתיב תוקן בהתאם לצילום המסך! -->
+            <img id="modalImage" src="assets/images/symbols/ram-profile.jpg" alt="רם, תמונת פורטרט מלאה" class="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-inner">
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('profileModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        openBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('overflow-hidden');
+        });
+
+        function closeModal() {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        closeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeModal();
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
