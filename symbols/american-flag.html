@@ -1,0 +1,165 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>דגל ארצות הברית | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#dc2626',
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        /* גודל טקסט קריא ונוח למובייל - לא "טנקי" */
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Header סטטי -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium text-gray-400">
+                <a href="../index.html" class="hover:text-white">ראשי</a>
+                <a href="../about.html" class="hover:text-white">אודות</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl font-black text-white mb-2">מחקר היסטורי מקיף: דגל ארצות הברית, פרנסיס הופקינסון וסיפורה של בטסי רוס</h2>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף -->
+        <section class="flex flex-row justify-center gap-4 flex-wrap">
+            <button onclick="toggleModal('flagModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform">
+                <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" alt="הדגל" class="w-full h-full object-cover">
+            </button>
+            <button onclick="toggleModal('hopkinsonModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform">
+                <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" alt="פרנסיס הופקינסון" class="w-full h-full object-cover">
+            </button>
+            <button onclick="toggleModal('betsyModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform">
+                <img src="../assets/images/symbols/betsy-ross-portrait.webp" alt="בטסי רוס" class="w-full h-full object-cover">
+            </button>
+            <div class="w-full text-center mt-2 text-xs text-gray-500">לחץ על התמונות להגדלה</div>
+        </section>
+
+        <!-- הטקסט המחקרי המלא והמשולב -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+                
+                <p>הדגל האמריקאי, המוכר כיום כאחד הסמלים הוויזואליים הבולטים והמשפיעים בעולם, הוא תוצר של אבולוציה היסטורית מתמשכת ולא של רגע קסם בודד.</p>
+
+                <!-- חלק 1: הדגל -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">דגל ארצות הברית (The American Flag)</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנת עיצוב ואימוץ רשמי:</strong> הדגל הרשמי הראשון (המוכר כ"דגל 13 הכוכבים") אושר על ידי הקונגרס הקונטיננטלי השני ב-14 ביוני 1777 (תאריך הנחגג כיום כ"יום הדגל").</li>
+                    <li><strong>סיבת ההמצאה והאימוץ:</strong> עם פרוץ מלחמת העצמאות האמריקאית (1775), הצבא הקונטיננטלי בפיקודו של ג'ורג' וושינגטון לחם תחת שלל דגלים מקומיים של מושבות ויחידות שונות. מצב זה יצר בלבול מסוכן בשדה הקרב. הקונגרס הבין את הצורך הטקטי והמורלי הדחוף בדגל לאומי אחיד שיאגד את 13 המושבות, יספק זיהוי ברור בים (עבור הצי הצעיר) וביבשה, ויהווה סמל ריבוני המכריז על ניתוק מוחלט מהכתר הבריטי (שכן דגל ה"Grand Union" הקודם עדיין כלל את דגל בריטניה בפינתו).</li>
+                    <li><strong>האבולוציה של העיצוב:</strong> חוק הדגל מ-1777 קבע רק שיהיו 13 פסים אדומים ולבנים, ו-13 כוכבים לבנים על רקע כחול, המייצגים "קונסטלציה חדשה". החוק לא ציין כיצד הכוכבים צריכים להיות מסודרים, ולכן הופיעו גרסאות שונות (במעגל, בשורות, בצורת קשת). כיום, לדגל יש 50 כוכבים (המדינה ה-50, הוואי, נוספה ב-1959) ו-13 פסים הנשמרים לזכר המושבות המקוריות.</li>
+                </ul>
+
+                <!-- חלק 2: הופקינסון -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">המעצב המקורי: פרנסיס הופקינסון (Francis Hopkinson)</h3>
+                <p>אף על פי שהאגדה העממית קושרת את עיצוב הדגל לבטסי רוס, המסמכים ההיסטוריים בארכיון הלאומי מצביעים על כך שמי שעיצב ותכנן את הדגל בפועל היה פרנסיס הופקינסון. הופקינסון היה איש אשכולות מרשים: עורך דין, סופר, מלחין, ואחד מחותמי הכרזת העצמאות מטעם מדינת ניו ג'רזי. הוא זה שתכנן את המבנה הבסיסי של הפסים (13 פסים) והקנטון (הריבוע הכחול) עם 13 הכוכבים המשושים במקור. ההוכחה ההיסטורית החזקה ביותר לכך היא מכתב ששלח הופקינסון לקונגרס ב-1780, בו דרש תשלום על עיצוב הדגל הלאומי (יחד עם סמלים נוספים). התשלום שביקש, אגב, היה "רבע חבית של יין ציבורי".</p>
+                
+                <ul class="list-none space-y-4">
+                    <li><strong>שנות חיים:</strong> 21 בספטמבר 1737 – 9 במאי 1791.</li>
+                    <li><strong>אטימולוגיה של השם:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                            <li><strong>Francis (פרנסיס):</strong> נגזר מהמילה הלטינית <em>Franciscus</em> (פרנסיסקוס), שפירושה המילולי הוא "צרפתי" או "אדם השייך לשבט הפרנקים". בשפה האנגלית, השם הפך לנרדף למושג <em>Frank</em> - שפירושו אדם חופשי, ישר וגלוי לב.</li>
+                            <li><strong>Hopkinson (הופקינסון):</strong> שם משפחה אנגלי פטרונימי (על שם האב). <em>Hopkin</em> הוא כינוי חיבה ל-<em>Hob</em> (שהוא עצמו קיצור של השם רוברט - שפירושו מקור גרמני "תהילה זוהרת"), בתוספת הסיומת <em>son</em>. הפירוש המילולי: "בנו של רוברט הקטן והמהולל".</li>
+                        </ul>
+                    </li>
+                    <li><strong>ילדות והשכלה (The Polymath):</strong> פרנסיס נולד ב-1737 בפילדלפיה למשפחה בעלת מעמד והשפעה. אביו, תומאס הופקינסון, היה פוליטיקאי בולט ושותפו של בנג'מין פרנקלין. הוא היה הסטודנט הראשון והבוגר הראשון של הקולג' של פילדלפיה (כיום אוניברסיטת פנסילבניה - UPenn). הוא רכש השכלה משפטית, מוזיקלית ואמנותית רחבה, ואף נחשב למלחין האמריקאי הראשון שכתב מוזיקה חילונית.</li>
+                    <li><strong>אידיאולוגיה והפן הסאטירי:</strong> הופקינסון האמין שהתרבות והסמלים הם הבסיס לזהות הלאומית. הוא היה אחד הסאטיריקנים המבריקים ביותר של תקופת המהפכה, והשתמש בעטו ככלי נשק ללעוג לכתר הבריטי. יצירתו הסאטירית הידועה ביותר, <strong>"A Pretty Story"</strong> (1774), הציגה את היחסים בין בריטניה למושבות כאלגוריה על משפחה מפורקת שבה האב (המלך ג'ורג' השלישי) מתעלל בילדיו. הסאטירה שלו לא הייתה רק שעשוע; היא הייתה כלי גיוס פוליטי רב-עוצמה שסייע לגבש את דעת הקהל בעד עצמאות וניתוק מהאימפריה הבריטית.</li>
+                </ul>
+
+                <!-- חלק 3: השם וההמנון -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">השם: The Star-Spangled Banner (היסטוריה ואטימולוגיה)</h3>
+                <p>השם המוכר של הדגל לא נולד ב-1777, אלא 37 שנים מאוחר יותר, בנסיבות דרמטיות. בבוקר ה-14 בספטמבר 1814, במהלך מלחמת 1812, עורך דין ומשורר בשם פרנסיס סקוט קי צפה בהפצצה ימית בריטית אכזרית על מבצר "פורט מקהנרי" (Fort McHenry) בבולטימור. כשהפציע השחר, מבעד לעשן אבק השריפה, הוא ראה שהדגל האמריקאי (אז בגרסת 15 כוכבים ו-15 פסים) עדיין מתנופף בגאווה. מראה זה עורר בו השראה לכתוב פואמה, שהפכה ללהיט ולבסוף (ב-1931) להמנון הלאומי הרשמי. מאז, הציבור מכנה את הדגל בשם הפואמה.</p>
+                <ul class="list-disc list-inside space-y-1 ml-2">
+                    <li><strong>The:</strong> ה"א הידיעה, המייחדת את האובייקט.</li>
+                    <li><strong>Star:</strong> מהמילה האנגלית העתיקה <em>steorra</em> והפרוטו-גרמאנית <em>sternon</em> (כוכב).</li>
+                    <li><strong>Spangled:</strong> מקור המילה <em>Spangle</em> (באנגלית עתיקה <em>spang</em>) הוא קישוט מתכתי נוצץ. <em>Spangled</em> היא צורת התואר שפירושה: "מקושט או מעוטר בנקודות זוהרות".</li>
+                    <li><strong>Banner:</strong> מקורו בצרפתית עתיקה <em>baniere</em>, ובלטינית מאוחרת <em>bandum</em> (פיסת בד, נס שמונף בקרב).</li>
+                    <li><strong>סינתזה:</strong> הפירוש המילולי והמדויק הוא "הדגל המעוטר בנקודות כוכבים זוהרות".</li>
+                </ul>
+
+                <!-- חלק 4: בטסי רוס -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">בטסי רוס (Betsy Ross) - האישה והאגדה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שם מלא:</strong> אליזבת גריסקום (Elizabeth Griscom). מוכרת כבטסי רוס על שם בעלה הראשון, ג'ון רוס.</li>
+                    <li><strong>שנות חיים:</strong> 1 בינואר 1752 – 30 בינואר 1836.</li>
+                    <li><strong>אטימולוגיה של השם:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                            <li><strong>Elizabeth:</strong> מעברית תנ"כית, "אלישבע". "אלי" (האל שלי) ו-"שבע" (שבועה/שפע). הפירוש: "אלוהים הוא שבועתי". בטסי (Betsy) היא צורת חיבה נפוצה לשם זה.</li>
+                            <li><strong>Griscom:</strong> שם טופונימי (על שם מקום) מאנגליה. נגזר מהמילים <em>Gris</em> (אפור בצרפתית נורמנית) ו-<em>Combe</em> (עמק באנגלית עתיקה), כלומר: "העמק האפור".</li>
+                            <li><strong>Ross:</strong> מקור קלטי, <em>Ros</em>, שמשמעותו חצי אי, כף יבשה (Promontory) או קרחת יער.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ילדות ואידאולוגיה:</strong> בטסי נולדה בפילדלפיה למשפחה קוויקרית. חונכה לפשטות, צניעות ועבודת כפיים, ולמדה את מקצוע התפירה והריפוד (Upholstery). למרות החינוך הנוקשה, היא הפגינה אידאולוגיה של חירות ומחשבה עצמאית: בגיל 21 היא ברחה כדי להתחתן בסתר עם ג'ון רוס (שהיה אפיסקופלי), וכתוצאה מכך סולקה לצמיתות מקהילת הקוויקרים וממשפחתה. מעשה מרדני זה תאם את רוח העצמאות של המהפכה.</li>
+                    <li><strong>הישגים והאגדה:</strong> לאחר שבעלה נהרג בתחילת מלחמת העצמאות (1776), בטסי לקחה על עצמה את ניהול העסק, הישג חריג לאישה צעירה באותה עת, וייצרה דגלים עבור הצי והצבא במשך כ-50 שנה. האגדה המפורסמת (שהופצה על ידי נכדה ב-1870) מספרת שביוני 1776, ג'ורג' וושינגטון הגיע לחנותה עם שרטוט של דגל בעל כוכבים משושים. בטסי הוכיחה לו שניתן לחתוך כוכב מחומש (5 קצוות) בגזירה אחת מהירה, והיא זו שתפרה את הדגל הראשון עם 13 הכוכבים במעגל (כדי שאף מושבה לא תהיה בולטת מעל האחרות). למרות שחלקים מהאגדה שנויים במחלוקת בקרב היסטוריונים, מיומנותה כיצרנית דגלים פטריוטית היא עובדה מבוססת, והיא הפכה לסמל לאומי רב-עוצמה לתרומתן של ה"אמהות המייסדות" להקמת הרפובליקה.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) -->
+    <div id="flagModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('flagModal', false)">
+        <div class="relative max-w-4xl w-full">
+            <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" class="w-full h-auto rounded-lg shadow-2xl">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold">✕</button>
+        </div>
+    </div>
+    <div id="hopkinsonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('hopkinsonModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold">✕</button>
+        </div>
+    </div>
+    <div id="betsyModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('betsyModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/betsy-ross-portrait.webp" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandAccent">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold">✕</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+
+```
