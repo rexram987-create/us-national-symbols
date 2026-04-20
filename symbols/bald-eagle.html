@@ -15,7 +15,7 @@
                         darkBase: '#0a0a0a',
                         darkSurface: '#171717',
                         darkBorder: '#262626',
-                        brandAccent: '#eab308', /* זהב צהוב המתאים לעיט */
+                        brandAccent: '#eab308',
                         brandBlue: '#1e3a8a',
                         goldAccent: '#d4af37',
                     }
@@ -27,7 +27,6 @@
         body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
         .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
         .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
-        /* גודל טקסט קריא ונוח למובייל - לא "טנקי" */
         .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
     </style>
 </head>
@@ -59,13 +58,13 @@
         <!-- תמונות לפתיחה בחלון צף -->
         <section class="flex flex-row justify-center gap-4 flex-wrap">
             <button onclick="toggleModal('eagleModal', true)" class="w-24 h-24 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900">
-                <!-- נשתמש בשם הקובץ של תמונת העיט שיש לך, כפי שנראה בצילום המסך -->
-                <img src="../assets/images/symbols/bald-eagle-portrait-majestic.jpg" alt="העיט הקירח" class="w-full h-full object-cover">
+                <!-- נתיב התמונה תוקן לזה שעובד באינדקס -->
+                <img src="../assets/images/symbols/bald-eagle-portrait-majestic.webp" alt="העיט הקירח" class="w-full h-full object-cover">
             </button>
             <div class="w-full text-center mt-2 text-xs text-gray-500">לחץ על התמונה להגדלה</div>
         </section>
 
-        <!-- הטקסט המחקרי המלא והמשולב - בדיוק כמו בשיחה -->
+        <!-- הטקסט המחקרי המלא -->
         <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
             <div class="content-text space-y-6">
 
@@ -135,8 +134,8 @@
     <!-- חלונות צפים (Modals) -->
     <div id="eagleModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('eagleModal', false)">
         <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
-            <!-- נתיב התמונה ששימשנו בו למעלה -->
-            <img src="../assets/images/symbols/bald-eagle-portrait-majestic.jpg" class="w-full h-auto rounded">
+            <!-- נתיב התמונה תוקן גם כאן -->
+            <img src="../assets/images/symbols/bald-eagle-portrait-majestic.webp" class="w-full h-auto rounded">
             <button class="absolute top-2 left-2 bg-brandAccent text-black w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
         </div>
     </div>
@@ -154,5 +153,6 @@
     </script>
 </body>
 </html>
+
 
 ```
