@@ -1,0 +1,257 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>ההמנון הלאומי | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#dc2626',
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+        .lyrics-box { background: rgba(30, 58, 138, 0.1); border-right: 4px solid #1e3a8a; padding: 1.5rem; border-radius: 0.75rem; font-family: Georgia, serif; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium text-gray-400">
+                <a href="../index.html" class="hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="hover:text-white transition-colors">אודות</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6 text-center sm:text-right">
+            <div class="inline-block bg-brandAccent/20 text-brandAccent px-3 py-1 rounded text-[10px] font-black tracking-widest uppercase mb-3">Official Anthem Archive</div>
+            <h2 class="text-3xl sm:text-5xl font-black text-white mb-2 italic uppercase">The Star-Spangled Banner</h2>
+            <p class="text-goldAccent font-serif text-lg">מחקר היסטורי מקיף: ההמנון הלאומי</p>
+        </section>
+
+        <!-- נגן אודיו של ההמנון -->
+        <section class="bg-darkSurface border border-brandBlue rounded-2xl p-6 shadow-2xl flex flex-col items-center gap-4 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-brandBlue"></div>
+            <h3 class="text-white font-bold text-xl">האזן להמנון הלאומי (אינסטרומנטלי)</h3>
+            <audio controls class="w-full max-w-md bg-darkBase rounded-full outline-none">
+                <source src="https://upload.wikimedia.org/wikipedia/commons/6/65/Star_Spangled_Banner_instrumental.ogg" type="audio/ogg">
+                הדפדפן שלך אינו תומך בנגן האודיו.
+            </audio>
+            <p class="text-xs text-gray-500">ביצוע תזמורת הצי האמריקאי (נחלת הכלל / Public Domain). שימו לב: הנגן משמיע את הלחן עבור הבית הראשון בלבד.</p>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף -->
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('anthemModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" alt="כתב היד המקורי של ההמנון הלאומי" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">כתב היד המקורי</span>
+            </button>
+            <button onclick="toggleModal('keyModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/francis-scott-key-portrait.webp" alt="פרנסיס סקוט קי" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">פרנסיס סקוט קי</span>
+            </button>
+            <button onclick="toggleModal('hopkinsonModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" alt="פרנסיס הופקינסון" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">פרנסיס הופקינסון</span>
+            </button>
+        </section>
+
+        <!-- הטקסט המחקרי המלא והמשולב -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. תעודת זהות היסטורית -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. תעודת זהות היסטורית: שנות יצירה ואימוץ</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>תאריך כתיבת הפואמה:</strong> 14 בספטמבר 1814.</li>
+                    <li><strong>תאריך אימוץ כהמנון רשמי:</strong> 3 במרץ 1931 (נחתם על ידי הנשיא הרברט הובר).</li>
+                    <li><strong>הנסיבות שבהן נכתב השיר (1814):</strong>
+                        במהלך מלחמת 1812 (העימות השני והאחרון בין ארה"ב לבריטניה), הבריטים פלשו לוושינגטון הבירה והעלו באש את הבית הלבן והקפיטול. משם הם המשיכו לעיר הנמל האסטרטגית בולטימור. עורך הדין האמריקאי הצעיר <strong>פרנסיס סקוט קי</strong> הגיע לספינת מלחמה בריטית כדי לשאת ולתת על שחרורו של רופא אמריקאי שבוי (ד"ר וויליאם בינס). הבריטים הסכימו לשחררו, אך סירבו לתת להם לעזוב, מכיוון שהם ידעו את תוכנית ההתקפה הבריטית.<br>
+                        במשך 25 שעות רצופות, ב-13 וב-14 בספטמבר 1814, צפה קי מהספינה הבריטית בהפצצה אכזרית ובלתי פוסקת על <strong>פורט מקהנרי</strong> (Fort McHenry) שהגן על בולטימור. כשהפציע השחר, מבעד לעשן אבק השריפה, קי ציפה לראות את דגל הכניעה הבריטי. במקום זאת, הוא ראה ש"דגל חיל המצב" הענק (שנתפר על ידי מארי פיקרסגיל) עדיין מתנופף בגאווה. בסערת רגשות, הוא שלף מעטפה מהכיס וכתב על גבה את הפואמה "ההגנה על פורט מקהנרי".
+                    </li>
+                    <li><strong>הנסיבות שבגללן נבחר כהמנון לאומי (1931):</strong>
+                        באופן מדהים, במשך יותר מ-150 שנה לא היה לארצות הברית המנון רשמי. שירים כמו "Hail, Columbia" ו-"My Country, 'Tis of Thee" שימשו כהמנונים לא רשמיים. לקראת סוף המאה ה-19, הצבא והצי האמריקאי התחילו לנגן את "הדגל מעוטר הכוכבים" בטקסים רשמיים, והנשיא וודרו וילסון אישר זאת ב-1916.<br>
+                        אבל הזרז האמיתי לחקיקה היה קמפיין ציבורי: בשנת 1929, המדור המפורסם <strong>"Ripley's Believe It or Not!" (ריפלי תאמינו או לא!)</strong> פרסם קריקטורה שבה נכתב: <em>"תאמינו או לא, לארצות הברית אין המנון לאומי!"</em>. הפרסום עורר סערה ציבורית. ארגונים פטריוטיים אספו למעלה מ-5 מיליון חתימות בדרישה להמנון. הקונגרס נכנע ללחץ, וב-1931 החוק עבר.
+                    </li>
+                </ul>
+
+                <!-- 2. מחקר אטימולוגי מפורק -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">2. מחקר אטימולוגי מפורק: היוצר והיצירה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>The Star-Spangled Banner:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                            <li><strong>Star:</strong> אנגלית עתיקה <em>steorra</em> (כוכב).</li>
+                            <li><strong>Spangled:</strong> מאנגלית עתיקה <em>spang</em> (קישוט נוצץ). משמעות התואר: "מעוטר בנקודות זוהרות".</li>
+                            <li><strong>Banner:</strong> לטינית מאוחרת <em>bandum</em> (נס מלחמה / פיסת בד סמלית).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Francis Scott Key (פרנסיס סקוט קי):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                            <li><strong>Francis (פרנסיס):</strong> לטינית <em>Franciscus</em>. הפירוש: אדם השייך לשבט הפרנקים, ומאוחר יותר נרדף למושג "אדם חופשי" (<em>Frank</em>).</li>
+                            <li><strong>Scott (סקוט):</strong> אנגלו-סקסית <em>Scotti</em>. במקור כינוי לשבט קלטי מאירלנד שפלש לסקוטלנד. פירושו: גאלי (דובר גאלית) או נווד.</li>
+                            <li><strong>Key (קי):</strong> אנגלית עתיקה <em>Cæg</em> (מפתח). כשם משפחה, לרוב ניתן לשומר המפתחות של העיר או של טירה חשובה (נושא משרה בעל אמון).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 3. פרנסיס סקוט קי -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-white/20 pb-2">3. פרנסיס סקוט קי - האיש, הילדות והאידיאולוגיה המורכבת</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנות חיים:</strong> 1 באוגוסט 1779 – 11 בינואר 1843.</li>
+                    <li><strong>ילדות והשכלה:</strong> נולד באחוזת המטעים המשפחתית "טרה רוברה" במרילנד למשפחה עשירה ומכובדת. הוא זכה לחינוך קלאסי נרחב ולמד בקולג' סנט ג'ון באנאפוליס. לאחר מכן קרא משפטים והפך לעורך דין בוושינגטון די.סי.</li>
+                    <li><strong>אידיאולוגיה וסתירות (The Paradox of Liberty):</strong> קי מגלם את הפרדוקס האמריקאי של זמנו. מצד אחד, הוא כתב את שיר ההלל הגדול ביותר לחירות האמריקאית ("ארץ החופשיים"). מצד שני, הוא היה אדם עשיר שהחזיק בעבדים שחורים.<br>
+                        האידיאולוגיה שלו הייתה מורכבת וסותרת: כאדם דתי מאוד (אפיסקופלי), הוא התנגד מוסרית לסחר בעבדים ולעיתים קרובות ייצג עבדים שחורים בבתי משפט <em>בחינם</em> כדי לעזור להם לזכות בחירותם. עם זאת, הוא התנגד לביטול גורף של העבדות (Abolitionism). הוא היה ממקימי "חברת ההתיישבות האמריקאית" (ACS) – ארגון אידיאולוגי שפעל כדי לשלוח עבדים משוחררים ואפרו-אמריקאים חופשיים בחזרה לאפריקה (למושבה שהפכה לימים למדינת ליבריה), מתוך אמונה כי גזעים שונים אינם יכולים לחיות יחד בשוויון באמריקה.
+                    </li>
+                </ul>
+
+                <!-- השלמת מידע: הופקינסון -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">המעצב המקורי של הדגל: פרנסיס הופקינסון (Francis Hopkinson)</h3>
+                <p>חשוב לציין את הקשר בין ההמנון ליוצר הסמל שאותו הוא מהלל. הדגל מעוטר הכוכבים שעליו נכתבה הפואמה מבוסס על העיצוב המקורי של הופקינסון.</p>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנות חיים:</strong> 21 בספטמבר 1737 – 9 במאי 1791.</li>
+                    <li><strong>ילדות והשכלה (The Polymath):</strong> פרנסיס נולד ב-1737 בפילדלפיה למשפחה בעלת מעמד והשפעה. אביו, תומאס הופקינסון, היה פוליטיקאי בולט ושותפו של בנג'מין פרנקלין. הוא היה הסטודנט הראשון והבוגר הראשון של הקולג' של פילדלפיה (כיום אוניברסיטת פנסילבניה - UPenn). הוא רכש השכלה משפטית, מוזיקלית ואמנותית רחבה, ואף נחשב למלחין האמריקאי הראשון שכתב מוזיקה חילונית.</li>
+                    <li><strong>אידיאולוגיה והפן הסאטירי:</strong> הופקינסון האמין שהתרבות והסמלים הם הבסיס לזהות הלאומית. הוא היה אחד הסאטיריקנים המבריקים ביותר של תקופת המהפכה, והשתמש בעטו ככלי נשק ללעוג לכתר הבריטי. יצירתו הסאטירית הידועה ביותר, <strong>"A Pretty Story"</strong> (1774), הציגה את היחסים בין בריטניה למושבות כאלגוריה על משפחה מפורקת שבה האב (המלך ג'ורג' השלישי) מתעלל בילדיו. הסאטירה שלו לא הייתה רק שעשוע; היא הייתה כלי גיוס פוליטי רב-עוצמה שסייע לגבש את דעת הקהל בעד עצמאות וניתוק מהאימפריה הבריטית.</li>
+                </ul>
+
+                <!-- 4. הלחן -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">4. הלחן (האירוניה ההיסטורית)</h3>
+                <p>באופן אירוני ביותר, ההמנון האמריקאי המפורסם, המסמל את הניצחון על הבריטים, מושר לפי <strong>לחן בריטי</strong>. המנגינה נכתבה ב-1773 על ידי המלחין הבריטי ג'ון סטאפורד סמית', ושימשה במקור כשיר מועדון ("To Anacreon in Heaven") עבור אגודת ג'נטלמנים חובבי מוזיקה (ויין) בלונדון. הלחן היה פופולרי מאוד באמריקה, וקי התאים את מילות הפואמה שלו בדיוק למקצב הזה.</p>
+
+                <!-- 5. מילות ההמנון המלאות -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-4 border-b border-brandAccent pb-2">5. מילות ההמנון המלאות והצנזורה ההיסטורית</h3>
+                
+                <div class="bg-darkSurface border border-darkBorder rounded-xl p-6 mb-6 shadow-inner">
+                    <h4 class="text-lg font-bold text-brandAccent mb-2">מדוע שרים רק את הבית הראשון?</h4>
+                    <p class="mb-3">כאשר עמד פרנסיס סקוט קי על הסיפון ב-1814, הוא מעולם לא התכוון לכתוב המנון לאומי. הוא כתב פואמה נרטיבית (שיר סיפורי) שנועדה לתאר באופן כרונולוגי ושלם את 25 שעות הקרב הארוכות. לכן, הפואמה דרשה ארבעה בתים כדי להשלים את העלילה (מהחשש בלילה, דרך הגילוי בבוקר, הזעם על האויב, ועד לאמונה באל).</p>
+                    <p class="mb-3">אולם, כאשר הפואמה הפכה רשמית להמנון בשנת 1931, המציאות הכתיבה שני אילוצים מרכזיים שגרמו ל"השמטת" שלושת הבתים האחרונים בשימוש פומבי:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>האילוץ הפרקטי (זמן):</strong> שירת כל ארבעת הבתים בקצב החגיגי של ההמנון אורכת כ-5 דקות. זה ארוך מדי עבור טקסים ציבוריים ואירועי ספורט.</li>
+                        <li><strong>האילוץ הדיפלומטי והמוסרי (הבית השלישי):</strong> הבית השלישי הפך לבעיה גדולה. הוא עלב קשות בבריטים (שהפכו לבעלי ברית של ארה"ב). יתרה מכך, השורה המדברת בזלזול על "שכירי חרב ועבדים" הפכה צורמת וגזענית בעידן שלאחר מלחמת האזרחים וביטול העבדות.</li>
+                    </ul>
+                    <p class="mt-3 font-bold">לפיכך, הנוהג הרשמי (עד היום) הוא ששירת ההמנון הפומבית כוללת אך ורק את הבית הראשון (Stanza 1).</p>
+                </div>
+
+                <p class="mb-4 text-white font-bold italic">הנה הטקסט המקורי המלא, כולל הבתים הגנוזים משימוש פומבי:</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300 lyrics-box" dir="ltr">
+                    <div>
+                        <strong class="text-white block mb-2 text-right dir-rtl">Stanza 1 (הבית המוכר והמושר):</strong>
+                        O say can you see, by the dawn's early light,<br>
+                        What so proudly we hail'd at the twilight's last gleaming,<br>
+                        Whose broad stripes and bright stars through the perilous fight<br>
+                        O'er the ramparts we watch'd were so gallantly streaming?<br>
+                        And the rocket's red glare, the bombs bursting in air,<br>
+                        Gave proof through the night that our flag was still there,<br>
+                        O say does that star-spangled banner yet wave<br>
+                        O'er the land of the free and the home of the brave?
+                    </div>
+                    <div>
+                        <strong class="text-white block mb-2 text-right dir-rtl">Stanza 2 (התשובה והגילוי):</strong>
+                        On the shore dimly seen through the mists of the deep<br>
+                        Where the foe's haughty host in dread silence reposes,<br>
+                        What is that which the breeze, o'er the towering steep,<br>
+                        As it fitfully blows, half conceals, half discloses?<br>
+                        Now it catches the gleam of the morning's first beam,<br>
+                        In full glory reflected now shines in the stream,<br>
+                        'Tis the star-spangled banner - O long may it wave<br>
+                        O'er the land of the free and the home of the brave!
+                    </div>
+                    <div>
+                        <strong class="text-white block mb-2 mt-4 sm:mt-0 text-right dir-rtl">Stanza 3 (הזעם והבית השנוי במחלוקת):</strong>
+                        And where is that band who so vauntingly swore,<br>
+                        That the havoc of war and the battle's confusion<br>
+                        A home and a Country should leave us no more?<br>
+                        Their blood has wash'd out their foul footstep's pollution.<br>
+                        No refuge could save the hireling and slave<br>
+                        From the terror of flight or the gloom of the grave,<br>
+                        And the star-spangled banner in triumph doth wave<br>
+                        O'er the land of the free and the home of the brave.
+                    </div>
+                    <div>
+                        <strong class="text-white block mb-2 mt-4 sm:mt-0 text-right dir-rtl">Stanza 4 (בית הניצחון והאמונה):</strong>
+                        O thus be it ever when freemen shall stand<br>
+                        Between their lov'd home and the war's desolation!<br>
+                        Blest with vict'ry and peace may the heav'n rescued land<br>
+                        Praise the power that hath made and preserv'd us a nation!<br>
+                        Then conquer we must, when our cause it is just,<br>
+                        And this be our motto - "In God is our trust,"<br>
+                        And the star-spangled banner in triumph shall wave<br>
+                        O'er the land of the free and the home of the brave.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) -->
+    <div id="anthemModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('anthemModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="keyModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('keyModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/francis-scott-key-portrait.webp" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="hopkinsonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('hopkinsonModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <footer class="bg-darkSurface py-12 border-t border-darkBorder text-center mt-12">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+
+```
