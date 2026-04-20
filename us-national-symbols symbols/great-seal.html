@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>החותם הגדול | סמלי האומה האמריקאית</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#dc2626',
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen flex flex-col font-sans selection:bg-brandAccent selection:text-white transition-colors duration-300">
+
+    <!-- כותרת ראשית (Header) - סטטית -->
+    <header class="border-b border-darkBorder glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border-2 border-brandAccent shadow-lg overflow-hidden">
+                    <span class="text-white font-bold text-xl">US</span>
+                </div>
+                <h1 class="text-xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="hidden sm:flex gap-6 font-medium">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">אודות החוקר</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- אזור תוכן ראשי -->
+    <main class="flex-grow w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת העמוד ופרטים טכניים -->
+        <section class="border-b-2 border-brandBlue pb-8 text-center sm:text-right flex flex-col sm:flex-row items-center gap-8">
+            
+            <!-- אזור התמונה - הוסב לכפתור הפותח חלון צף -->
+            <button type="button" id="openSealModalBtn" class="w-48 h-48 sm:w-64 sm:h-64 flex-shrink-0 bg-gray-800 rounded-full p-4 border-4 border-darkBorder shadow-2xl flex items-center justify-center relative overflow-hidden group focus:outline-none focus:ring-4 focus:ring-brandBlue cursor-pointer transition-transform hover:scale-105" aria-label="הצג את החותם הגדול בהגדלה">
+                <img src="../assets/images/symbols/great-seal-us.svg" alt="החותם הגדול של ארצות הברית" class="w-full h-full object-contain relative z-10 drop-shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                <div class="absolute inset-0 bg-gradient-to-tr from-brandBlue/20 to-transparent z-0 group-hover:from-brandBlue/40 transition-colors duration-300"></div>
+                <!-- אייקון זכוכית מגדלת קטן שמופיע בריחוף -->
+                <div class="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/30">
+                    <svg class="w-12 h-12 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                </div>
+            </button>
+            
+            <!-- אזור הכותרת -->
+            <div class="flex-grow space-y-4">
+                <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">החותם הגדול</h2>
+                <h3 class="text-2xl text-goldAccent font-serif italic">The Great Seal of the United States</h3>
+                
+                <div class="inline-flex flex-wrap gap-4 mt-4">
+                    <span class="bg-darkSurface border border-darkBorder px-4 py-2 rounded-full text-sm font-medium text-gray-300">📅 שנת אימוץ: 1782</span>
+                    <span class="bg-darkSurface border border-darkBorder px-4 py-2 rounded-full text-sm font-medium text-gray-300">🏛️ מעצב ראשי: צ'ארלס תומסון וויליאם ברטון</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- בלוק 1: מדוע הוא נקרא "החותם הגדול"? -->
+        <article class="bg-darkSurface border border-darkBorder rounded-2xl p-8 shadow-xl">
+            <div class="flex items-center gap-3 mb-6 border-b border-darkBorder pb-4">
+                <span class="text-3xl">📜</span>
+                <h3 class="text-2xl font-bold text-white">מדוע הוא נקרא "החותם הגדול"?</h3>
+            </div>
+            <div class="space-y-4 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    המונח "חותם גדול" (Great Seal) מקורו במסורת המלוכה האירופית והבריטית בפרט. היסטורית, למדינות ולמלכים היו מספר חותמות: חותמות קטנים (Privy Seals) או חותמות פקידותיים ששימשו עבור ענייני יום-יום ומשרדים ספציפיים. לעומתם, הוקדש "חותם גדול" אחד ויחיד ששימש אך ורק לאישור המסמכים החשובים והרשמיים ביותר של המדינה (כגון הסכמי שלום בינלאומיים, בריתות, מינויים רשמיים של שגרירים, ואמנות לאומיות). 
+                </p>
+                <p>
+                    כאשר ארצות הברית הוקמה, אבות האומה אימצו את המונח בכוונה תחילה. הם ביקשו להצהיר כי זהו הסמל הריבוני והעליון ביותר של הרפובליקה החדשה. החותם הגדול אינו שייך למשרד מסוים, אלא מייצג את רצון האומה כולה ואת סמכותה העליונה. כיום, החותם הפיזי המקורי מוחזק תחת משמר קפדני ומופעל על ידי מזכיר המדינה של ארצות הברית (Secretary of State) בלבד.
+                </p>
+            </div>
+        </article>
+
+        <!-- בלוק 2: היסטוריה כללית מורחבת (1776–1782) -->
+        <article class="bg-darkSurface border border-darkBorder rounded-2xl p-8 shadow-xl">
+            <div class="flex items-center gap-3 mb-6 border-b border-darkBorder pb-4">
+                <span class="text-3xl">⏳</span>
+                <h3 class="text-2xl font-bold text-white">היסטוריה מורחבת של היווצרות החותם (1776–1782)</h3>
+            </div>
+            <div class="space-y-4 text-lg text-gray-300 leading-relaxed">
+                <p>
+                    יצירת החותם הגדול הייתה משימה שהקונגרס הקונטיננטלי ראה בה חשיבות עליונה, שכן באותה תקופה, אף מסמך או חוזה בינלאומי לא נחשב תקף מבחינה משפטית ללא חותם שעווה רשמי. התהליך היה רחוק מלהיות פשוט וכלל שלוש ועדות שונות על פני שש שנות מחקר, ויכוחים ועיצוב:
+                </p>
+                <ul class="list-disc list-inside space-y-3 mt-4 text-gray-300 mr-4">
+                    <li><strong class="text-white">הוועדה הראשונה (יולי 1776):</strong> הוקמה באותו יום שבו אומצה הכרזת העצמאות. חבריה היו שלושה מאבות האומה הבכירים ביותר: בנג'מין פרנקלין (Benjamin Franklin), ג'ון אדמס (John Adams), ותומאס ג'פרסון (Thomas Jefferson), יחד עם האמן פייר יוג'ין דו סימיטייר. הוועדה הציעה עיצובים תנ"כיים וקלאסיים (כמו בני ישראל חוצים את ים סוף, או הרקולס), אך הקונגרס דחה את ההצעות כמורכבות ואלגוריות מדי.</li>
+                    <li><strong class="text-white">הוועדה השנייה (מרץ 1780):</strong> לאחר עיכוב בגלל מלחמת העצמאות, הוקמה ועדה חדשה שכללה את פרנסיס הופקינסון (Francis Hopkinson), שעיצב את דגל ארה"ב. הם היו הראשונים להציע מגן של 13 פסים ואת צבעי האדום, לבן וכחול, אך גם עבודתם לא אושרה במלואה.</li>
+                    <li><strong class="text-white">הוועדה השלישית והאישור הסופי (מאי-יוני 1782):</strong> ועדה זו פנתה לעזרתו של וויליאם ברטון (William Barton), מומחה צעיר להרלדיקה, שהציע את רעיון הפירמידה והעיט. לבסוף, מזכיר הקונגרס, <strong>צ'ארלס תומסון (Charles Thomson)</strong>, לקח את כל האלמנטים הטובים מכל שלוש הוועדות, ערך סינתזה יצירתית ואחידה, והחליף את העיט הרגיל ב"עיט קירח" (Bald Eagle) יליד אמריקה. ב-20 ביוני 1782, הקונגרס אישר את הדו"ח הכתוב של תומסון, ובכך נולד החותם הגדול רשמית.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- קונטיינר לשני הצדדים של החותם -->
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-12">
+            
+            <!-- בלוק 3: הצד הקדמי (האובוורס) והאטימולוגיה -->
+            <article class="bg-darkSurface border-t-4 border-t-brandBlue border-r border-l border-b border-darkBorder rounded-b-2xl p-8 shadow-xl">
+                <div class="flex items-center gap-3 mb-6 border-b border-darkBorder pb-4">
+                    <span class="text-3xl">🦅</span>
+                    <h3 class="text-2xl font-bold text-white">הצד הקדמי (The Obverse)</h3>
+                </div>
+                <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                    <p>
+                        הצד הקדמי הוא המוכר ביותר ומופיע על מסמכים רשמיים ודרכונים. במרכזו ניצב <strong>העיט הקירח האמריקאי</strong>, אשר נבחר בשל היותו יליד יבשת צפון אמריקה. מבחינה אטימולוגית, המילה "Bald" (קירח) נגזרת מהמילה האנגלית העתיקה "Balde" שמשמעותה המקורית הייתה "לבן", בהתייחסות לראשו הלבן והבוהק של העיט, ולא לחוסר נוצות.
+                    </p>
+                    <p>
+                        העיט אוחז בטפריו שני אלמנטים מנוגדים: בטופרו השמאלי שלושה עשר חצים (נכונות להגנה ומלחמה), ובטופרו הימני ענף זית הכולל שלושה עשר עלים (השאיפה לשלום). ראשו של העיט מופנה לעבר ענף הזית, כדי להדגיש שהאומה תמיד תעדיף את דרך השלום. בטפס העיט מופיע המוטו הלטיני: <strong>E Pluribus Unum</strong>. האטימולוגיה: "E" (מתוך), "Pluribus" (רבים), "Unum" (אחד). יחד: "מתוך הרבים, אחד".
+                    </p>
+                    
+                    <div class="bg-darkBase p-5 rounded-lg border border-darkBorder mt-4">
+                        <h4 class="text-xl font-bold text-brandAccent mb-2">המגן (The Escutcheon)</h4>
+                        <p class="text-base">
+                            על חזה העיט ניצב מגן עם 13 פסים. בניגוד לדגל האמריקאי, במגן ישנם 7 פסים לבנים ו-6 אדומים, והחלק העליון (ה-Chief) הוא כחול חלק ללא כוכבים. המגן אינו נתמך על ידי אף דמות "תומכת" (Supporter) חיצונית. משמעות הדבר היא שארצות הברית מסתמכת <strong>אך ורק על המידות הטובות והעוצמה של עצמה</strong>, ללא תלות במעצמות זרות. הצבע הלבן מסמל טוהר, האדום קשיחות וגבורה, והכחול מסמל התמדה וצדק.
+                        </p>
+                    </div>
+
+                    <div class="bg-darkBase p-5 rounded-lg border border-darkBorder mt-4">
+                        <h4 class="text-xl font-bold text-yellow-500 mb-2">התפארת (The Glory)</h4>
+                        <p class="text-base">
+                            מעל ראשו של העיט מופיע רכיב הקרוי "The Glory". זוהי קונסטלציה של 13 כוכבים על רקע כחול, המסודרים בצורת הקסגרמה ומוקפים בקרני אור הפורצות מענן. הסמל מבטא מדינה חדשה שתופסת את מקומה בקרב אומות העולם, ואת ההשגחה האלוהית שהוציאה את האומה מתוך חשכת הדיכוי אל אור החירות.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- בלוק 4: הצד האחורי (הרוורס) והאטימולוגיה -->
+            <article class="bg-darkSurface border-t-4 border-t-brandAccent border-r border-l border-b border-darkBorder rounded-b-2xl p-8 shadow-xl">
+                <div class="flex items-center gap-3 mb-6 border-b border-darkBorder pb-4">
+                    <span class="text-3xl">👁️</span>
+                    <h3 class="text-2xl font-bold text-white">הצד האחורי (The Reverse)</h3>
+                </div>
+                <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                    <p>
+                        הצד האחורי של החותם (המופיע על גב שטר הדולר) מציג סמליות עמוקה. במרכזו ניצבת פירמידה קטומה בעלת 13 נדבכים. הפירמידה מסמלת חוזק ועמידות, והעובדה שהיא אינה מושלמת מצביעה על כך שבנייתה של האומה האמריקאית טרם הסתיימה ושהיא בתהליך מתמיד של התפתחות.
+                    </p>
+                    <p>
+                        מעל הפירמידה מרחפת "עין ההשגחה" (Eye of Providence) בתוך משולש קורן, המסמלת את ההשגחה העליונה שליוותה את הקמת האומה.
+                    </p>
+
+                    <div class="bg-darkBase p-5 rounded-lg border border-darkBorder mt-4">
+                        <h4 class="text-xl font-bold text-green-500 mb-2">האטימולוגיה של הצד האחורי</h4>
+                        <ul class="space-y-4 text-base">
+                            <li>
+                                <strong class="text-white">Annuit Cœptis:</strong> מופיע מעל העין. נגזר משירי המשורר הרומי ורגיליוס. "Annuit" (אישר/הסכים), ו-"Cœptis" (התחלות/מאמצים). הפירוש השלם: <em>"הוא נתן את ברכתו למאמצינו"</em>.
+                            </li>
+                            <li>
+                                <strong class="text-white">Novus Ordo Seclorum:</strong> מופיע בתחתית הפירמידה. "Novus" (חדש), "Ordo" (סדר), "Seclorum" (של העידנים/הדורות). הפירוש השלם: <em>"סדר חדש של עידנים"</em>. ביטוי המציין את שנת 1776 (אשר מופיעה בספרות רומיות MDCCLXXVI בבסיס הפירמידה) כתחילתו של עידן פוליטי חופשי חדש בהיסטוריה.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- תחתית האתר (Footer) -->
+    <footer class="bg-darkSurface border-t border-darkBorder mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center sm:text-left">
+            <p class="text-gray-500 text-sm">
+                &copy; נבנה ונחקר בקפידה. כל הזכויות שמורות לפרויקט חקר הסמלים האמריקאיים | החותם הגדול של ארצות הברית.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================= -->
+    <!-- מבנה החלון הצף (Modal) עבור החותם הגדול -->
+    <!-- ============================================= -->
+    <div id="sealModal" class="hidden fixed inset-0 z-[100] items-center justify-center bg-black/85 backdrop-blur-md p-4 transition-opacity duration-300" aria-hidden="true">
+        <!-- מסגרת לתמונה המוגדלת -->
+        <div class="relative max-w-5xl w-full max-h-[95vh] bg-darkSurface rounded-3xl p-8 border-2 border-brandBlue shadow-[0_0_50px_rgba(30,58,138,0.3)] flex items-center justify-center">
+            
+            <button type="button" id="closeSealModalBtn" class="absolute top-4 left-4 z-[110] bg-darkBase/80 rounded-full p-3 text-gray-400 hover:text-white hover:bg-brandAccent transition-colors focus:outline-none cursor-pointer" aria-label="סגור חלון">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <!-- התמונה המוצגת בגדול -->
+            <img src="../assets/images/symbols/great-seal-us.svg" alt="החותם הגדול של ארצות הברית - מוגדל" class="w-full h-auto max-h-[80vh] object-contain drop-shadow-2xl">
+        </div>
+    </div>
+
+    <!-- JavaScript לניהול החלון הצף -->
+    <script>
+        const sealModal = document.getElementById('sealModal');
+        const openSealBtn = document.getElementById('openSealModalBtn');
+        const closeSealBtn = document.getElementById('closeSealModalBtn');
+
+        openSealBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sealModal.classList.remove('hidden');
+            sealModal.classList.add('flex');
+            sealModal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('overflow-hidden'); 
+        });
+
+        function closeSealModal() {
+            sealModal.classList.remove('flex');
+            sealModal.classList.add('hidden');
+            sealModal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        closeSealBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSealModal();
+        });
+
+        sealModal.addEventListener('click', (e) => {
+            if (e.target === sealModal) {
+                closeSealModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !sealModal.classList.contains('hidden')) {
+                closeSealModal();
+            }
+        });
+    </script>
+
+</body>
+</html>
