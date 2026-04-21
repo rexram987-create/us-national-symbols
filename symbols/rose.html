@@ -1,0 +1,202 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>הוורד | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#e11d48', /* אדום-ורד עמוק ויוקרתי */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans selection:bg-brandAccent selection:text-white">
+
+    <!-- Header סטטי עם כפתור החלפת שפה -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">אודות</a>
+                <!-- כפתור מעבר לאנגלית (עתידי) -->
+                <a href="rose-en.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">EN</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">מחקר היסטורי מקיף: הוורד (The Rose) – הפרח הלאומי</h2>
+            <p class="text-brandAccent font-serif text-lg">סמל של חיים, יופי ומסירות: מהכלאותיו של ג'ורג' וושינגטון ועד להכרזה הנשיאותית ההיסטורית.</p>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף -->
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('roseModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/american-national-rose-deep-red.webp" alt="הוורד הלאומי" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">הפרח הלאומי</span>
+            </button>
+            <button onclick="toggleModal('reaganModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/ronald-reagan-rose.jpg" alt="הנשיא רונלד רייגן" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">רונלד רייגן</span>
+            </button>
+            <button onclick="toggleModal('mellonModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/bunny-mellon-portrait.jpg" alt="רייצ'ל (באני) מלון" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">רייצ'ל מלון</span>
+            </button>
+        </section>
+
+        <!-- הטקסט המחקרי המלא -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. תעודת זהות היסטורית -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. תעודת זהות היסטורית: שנת אימוץ וסיבת הבחירה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנת הכרזה ואימוץ רשמי:</strong> 20 בנובמבר 1986. הנשיא רונלד רייגן (Ronald Reagan) חתם על ההצהרה הנשיאותית (Proclamation 5574) שהפכה את הוורד לפרח הלאומי של ארצות הברית. באופן סמלי, טקס החתימה נערך ב"גן הוורדים" (The Rose Garden) המפורסם של הבית הלבן.</li>
+                    <li><strong>סיבת האימוץ:</strong> רייגן ציין בהצהרתו כי: "יותר מכל פרח אחר, אנו מוקירים את הוורד כסמל של חיים, אהבה, מסירות, יופי ונצח... אנו רואים בוורד סמל לשלום ולחיים, ולעתים קרובות אנו מעניקים אותו לאלו שאנו אוהבים". בנוסף לסיבה הרגשית, לוורד יש נוכחות פיזית בכל 50 המדינות בארה"ב, והוא נמצא בגידול תרבותי ובטבע האמריקאי כבר מיליוני שנים.</li>
+                </ul>
+
+                <!-- 2. מחקר אטימולוגי מפורק -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. מחקר אטימולוגי מפורק: Rose</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Rose (וורד):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>המילה באנגלית הגיעה ישירות מהלטינית הקלאסית <em>Rosa</em>. מקור השם הלטיני הוא ככל הנראה השאלה מהשפה היוונית העתיקה: <em>Rhódon</em> (ῥόδον).</li>
+                        </ul>
+                    </li>
+                    <li><strong>המקור הפרסי הקדום:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>בלשנים רבים מאמינים שהיוונים שאלו את המילה מהשפה הפרסית העתיקה (Old Persian), שם המילה <em>Wurdi</em> (או <em>Varda</em>) פירושה היה פשוט "פרח". מכאן גם הגיע השם הארמי-פרסי לעברית של ימינו – <strong>וֶרֶד</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>הבלבול ההיסטורי עם "שושנה":</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>בתרבות היהודית והישראלית ישנו בלבול נפוץ בין הוורד לשושנה. ה"שושנה" המקראית ("כשושנה בין החוחים") מתייחסת ככל הנראה לפרח ממשפחת השושניים (Lily) או לצבעוני. עם זאת, במהלך ימי הביניים באירופה, משוררים יהודים החלו לתרגם את המילה "Rose" למילה העברית "שושנה", וכך השתרש הבלבול בלשון העם עד היום.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 3. הקשר היסטורי: האבות המייסדים וגן הוורדים -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. הקשר היסטורי: האבות המייסדים וגן הוורדים הנשיאותי</h3>
+                <p>מעבר להיותו פרח נוי, הוורד שזור היטב בהיסטוריה האמריקאית, החל ממייסדי האומה ועד לבית הלבן:</p>
+                <ul class="list-disc list-inside space-y-3 ml-4">
+                    <li><strong>ג'ורג' וושינגטון (The First Rose Breeder):</strong> הנשיא הראשון של ארצות הברית לא היה רק מצביא, אלא גם בוטנאי נלהב. באחוזתו ב"מאונט ורנון" (Mount Vernon), הוא עסק בהכלאה וגידול ורדים, ואף פיתח והעניק שם לזן ורדים מיוחד שקרא לו על שם אמו: "ורד מרי וושינגטון" (Mary Washington Rose), זן שממשיך לפרוח עד היום.</li>
+                    <li><strong>גן הוורדים של הבית הלבן (The White House Rose Garden):</strong> למרות שנשיאים קודמים שתלו ורדים סביב הבית הלבן, גן הוורדים הרשמי הוקם לראשונה ב-1913 על ידי אשת הנשיא אלן וילסון (Ellen Wilson). עם זאת, העיצוב האייקוני שאנו מכירים כיום – המשמש כבמה היוקרתית ביותר לנאומים נשיאותיים ומסיבות עיתונאים – תוכנן בשנת 1961 בתקופתו של הנשיא ג'ון פ. קנדי.</li>
+                </ul>
+                
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">המעצבת: רייצ'ל "באני" מלון</strong>
+                    <p>קנדי גייס את גננית הצמרת רייצ'ל "באני" מלון (Rachel Lambert "Bunny" Mellon) לעצב מחדש את הגן כך שישמש חלל פתוח ומרהיב לאירוח דיפלומטי ולאומי. עיצובה שילב מדשאות רחבות ושתילות מדויקות של ורדים, שיצרו את המראה הקלאסי המזוהה עם מוסד הנשיאות עד היום.</p>
+                </div>
+
+                <!-- 4. מאפיינים בוטניים ופיזיים -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-green-700 pb-2">4. מאפיינים בוטניים ופיזיים</h3>
+                <ul class="list-disc list-inside space-y-3 ml-4">
+                    <li><strong>היסטוריה גיאולוגית:</strong> מאובנים שנמצאו בצפון אמריקה, בעיקר בקולורדו ואורגון, מוכיחים כי ורדי בר צמחו ביבשת אמריקה כבר לפני למעלה מ-35 מיליון שנה.</li>
+                    <li><strong>מינים וזנים:</strong> קיימים למעלה מ-150 מינים ביולוגיים שונים של ורדים בעולם, ומתוכם עשרות מינים הם "ילידים" (Native) לצפון אמריקה.</li>
+                    <li><strong>"אין ורד בלי קוצים" – טעות מדעית:</strong> מבחינה בוטנית, מה שאנו מכנים "קוצים" (Thorns) על גזע הוורד הם למעשה <strong>שיכים</strong> (Prickles). בניגוד לקוצים אמיתיים שהם ענפים מנוונים (כמו בעץ הלימון), ה"שיכים" של הוורד הם בליטות חיצוניות של שכבת האפידרמיס (עור הצמח), ותפקידם הוא הגנה מפני אוכלי עשב וסיוע בטיפוס והיאחזות.</li>
+                </ul>
+
+                <!-- מקורות -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">5. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-400">
+                    <li>ארכיון הספרייה הנשיאותית של רונלד רייגן - הצהרה 5574 (1986).</li>
+                    <li>אגודת הורדים האמריקאית (American Rose Society) - היסטוריה של זנים מקומיים.</li>
+                    <li>רשומות אחוזת מאונט ורנון - יומני השתילה של ג'ורג' וושינגטון.</li>
+                    <li>האגודה ההיסטורית של הבית הלבן (White House Historical Association) - תכנון גן הוורדים על ידי באני מלון.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) -->
+    <div id="roseModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('roseModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/american-national-rose-deep-red.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="reaganModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('reaganModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/ronald-reagan-rose.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <div class="absolute bottom-4 left-4 right-4 bg-black/70 text-white text-xs p-2 rounded backdrop-blur-sm text-center">התמונה המקורית (שחור-לבן) נצבעה. מקור: הספרייה הנשיאותית של רייגן.</div>
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="mellonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('mellonModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/bunny-mellon-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <!-- ניווט תחתון למובייל עם כפתור שפה -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-3 flex justify-around z-50">
+        <a href="../index.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            ראשי
+        </a>
+        <a href="../about.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            אודות
+        </a>
+        <a href="rose-en.html" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            EN
+        </a>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12 mb-16 sm:mb-0">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
