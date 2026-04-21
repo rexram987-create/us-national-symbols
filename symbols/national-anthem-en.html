@@ -1,0 +1,256 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The National Anthem | The Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#dc2626',
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+        .lyrics-box { background: rgba(30, 58, 138, 0.1); border-left: 4px solid #1e3a8a; padding: 1.5rem; border-radius: 0.75rem; font-family: Georgia, serif; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Header -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">American National Symbols</h1>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium text-gray-400">
+                <a href="../index-en.html" class="hover:text-white transition-colors">Home</a>
+                <a href="../about-en.html" class="hover:text-white transition-colors">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- Main Title -->
+        <section class="border-b border-darkBorder pb-6 text-center sm:text-left">
+            <div class="inline-block bg-brandAccent/20 text-brandAccent px-3 py-1 rounded text-[10px] font-black tracking-widest uppercase mb-3">Official Anthem Archive</div>
+            <h2 class="text-3xl sm:text-5xl font-black text-white mb-2 italic uppercase">The Star-Spangled Banner</h2>
+            <p class="text-goldAccent font-serif text-lg">Comprehensive Historical Research: The National Anthem</p>
+        </section>
+
+        <!-- Audio Player -->
+        <section class="bg-darkSurface border border-brandBlue rounded-2xl p-6 shadow-2xl flex flex-col items-center gap-4 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-brandBlue"></div>
+            <h3 class="text-white font-bold text-xl">Listen to the National Anthem (Instrumental)</h3>
+            <audio controls class="w-full max-w-md bg-darkBase rounded-full outline-none">
+                <source src="https://upload.wikimedia.org/wikipedia/commons/6/65/Star_Spangled_Banner_instrumental.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+            <p class="text-xs text-gray-500">Performed by the United States Navy Band (Public Domain). Note: The player plays the melody for the first stanza only.</p>
+        </section>
+
+        <!-- Images for Modals -->
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('anthemModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" alt="Original Manuscript of the National Anthem" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Original Manuscript</span>
+            </button>
+            <button onclick="toggleModal('keyModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/francis-scott-key-portrait.webp" alt="Francis Scott Key" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Francis Scott Key</span>
+            </button>
+            <button onclick="toggleModal('hopkinsonModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" alt="Francis Hopkinson" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Francis Hopkinson</span>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. Historical Identity -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. Historical Identity: Creation and Adoption</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Date the Poem was Written:</strong> September 14, 1814.</li>
+                    <li><strong>Date Adopted as Official Anthem:</strong> March 3, 1931 (Signed by President Herbert Hoover).</li>
+                    <li><strong>Circumstances of its Writing (1814):</strong>
+                        During the War of 1812 (the second and final conflict between the US and Britain), the British invaded Washington D.C., setting fire to the White House and the Capitol. From there, they proceeded to the strategic port city of Baltimore. A young American lawyer, <strong>Francis Scott Key</strong>, boarded a British warship to negotiate the release of a captured American physician (Dr. William Beanes). The British agreed to release him but refused to let them leave, as they were privy to the British attack plan.<br>
+                        For 25 consecutive hours, on September 13 and 14, 1814, Key watched from the British ship a brutal and relentless bombardment of <strong>Fort McHenry</strong>, which defended Baltimore. As dawn broke, through the gunpowder smoke, Key expected to see the British flag of surrender. Instead, he saw that the massive "garrison flag" (sewn by Mary Pickersgill) was still waving proudly. In a storm of emotion, he pulled an envelope from his pocket and wrote the poem "Defence of Fort M'Henry" on its back.
+                    </li>
+                    <li><strong>Circumstances of its Selection as National Anthem (1931):</strong>
+                        Amazingly, for over 150 years, the United States did not have an official anthem. Songs like "Hail, Columbia" and "My Country, 'Tis of Thee" served as unofficial anthems. Toward the end of the 19th century, the US Army and Navy began playing "The Star-Spangled Banner" at official ceremonies, and President Woodrow Wilson endorsed this practice in 1916.<br>
+                        But the real catalyst for legislation was a public campaign: in 1929, the famous column <strong>"Ripley's Believe It or Not!"</strong> published a cartoon stating: <em>"Believe It or Not, I can't sing the National Anthem because my country has none!"</em> The publication caused a public uproar. Patriotic organizations collected over 5 million signatures demanding an anthem. Congress yielded to the pressure, and in 1931, the law was passed.
+                    </li>
+                </ul>
+
+                <!-- 2. Etymological Research -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">2. Etymological Research: The Creator and the Creation</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>The Star-Spangled Banner:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>Star:</strong> Old English <em>steorra</em>.</li>
+                            <li><strong>Spangled:</strong> From Old English <em>spang</em> (a sparkling ornament). Adjective meaning: "decorated with glittering spots".</li>
+                            <li><strong>Banner:</strong> Late Latin <em>bandum</em> (a battle standard / symbolic piece of cloth).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Francis Scott Key:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>Francis:</strong> Latin <em>Franciscus</em>. Meaning: a person belonging to the Frankish tribe, later synonymous with "free man" (<em>Frank</em>).</li>
+                            <li><strong>Scott:</strong> Anglo-Saxon <em>Scotti</em>. Originally a nickname for an Irish Celtic tribe that invaded Scotland. Meaning: Gaelic speaker or wanderer.</li>
+                            <li><strong>Key:</strong> Old English <em>Cæg</em> (key). As a surname, it was often given to the keeper of the keys of a town or important castle (a trusted official).</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 3. Francis Scott Key -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-white/20 pb-2">3. Francis Scott Key - The Man, Childhood, and Complex Ideology</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Lifespan:</strong> August 1, 1779 – January 11, 1843.</li>
+                    <li><strong>Childhood and Education:</strong> Born at the family plantation "Terra Rubra" in Maryland to a wealthy and respected family. He received extensive classical education, attending St. John's College in Annapolis. He subsequently read law and became an attorney in Washington D.C.</li>
+                    <li><strong>Ideology and Contradictions (The Paradox of Liberty):</strong> Key embodies the American paradox of his time. On the one hand, he wrote the greatest hymn of praise to American freedom ("the land of the free"). On the other hand, he was a wealthy man who owned Black slaves.<br>
+                        His ideology was complex and contradictory: as a deeply religious man (Episcopalian), he morally opposed the slave trade and often represented Black slaves in court <em>for free</em> to help them win their freedom. However, he opposed the total abolition of slavery (Abolitionism). He was a founding member of the "American Colonization Society" (ACS) – an ideological organization working to send freed slaves and free African Americans back to Africa (to a colony that later became the state of Liberia), believing that different races could not live together in equality in America.
+                    </li>
+                </ul>
+
+                <!-- Supplementary Info: Hopkinson -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">The Original Designer of the Flag: Francis Hopkinson</h3>
+                <p>It is important to note the connection between the anthem and the creator of the symbol it praises. The Star-Spangled Banner upon which the poem was written is based on Hopkinson's original design.</p>
+                <ul class="list-none space-y-4">
+                    <li><strong>Lifespan:</strong> September 21, 1737 – May 9, 1791.</li>
+                    <li><strong>Childhood and Education (The Polymath):</strong> Francis was born in 1737 in Philadelphia to an influential family. His father, Thomas Hopkinson, was a prominent politician and partner of Benjamin Franklin. He was the first student and graduate of the College of Philadelphia (now UPenn). He acquired broad legal, musical, and artistic education, and is considered the first American composer to write secular music.</li>
+                    <li><strong>Ideology and the Satirical Aspect:</strong> Hopkinson believed culture and symbols were the foundation of national identity. He was a brilliant satirist during the Revolution, using his pen to mock the British Crown. His most famous satire, <strong>"A Pretty Story"</strong> (1774), allegorized the Britain-colonies relationship as a broken family. His satire was a powerful political mobilization tool aiding the push for independence.</li>
+                </ul>
+
+                <!-- 4. The Melody -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">4. The Melody (The Historical Irony)</h3>
+                <p>Ironically, the famous American anthem symbolizing the victory over the British is sung to a <strong>British tune</strong>. The melody was written in 1773 by British composer John Stafford Smith, originally serving as a club song ("To Anacreon in Heaven") for a society of gentlemen music (and wine) lovers in London. The tune was very popular in America, and Key fitted the lyrics of his poem exactly to this rhythm.</p>
+
+                <!-- 5. Full Lyrics and Censorship -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-4 border-b border-brandAccent pb-2">5. The Full Anthem Lyrics and Historical Censorship</h3>
+                
+                <div class="bg-darkSurface border border-darkBorder rounded-xl p-6 mb-6 shadow-inner">
+                    <h4 class="text-lg font-bold text-brandAccent mb-2">Why is only the first stanza sung?</h4>
+                    <p class="mb-3">When Francis Scott Key stood on the deck in 1814, he never intended to write a national anthem. He wrote a narrative poem designed to chronicle the entire 25 hours of battle. Therefore, the poem required four stanzas to complete the story arc (from anxiety at night, through discovery in the morning, fury at the enemy, to faith in God).</p>
+                    <p class="mb-3">However, when the poem officially became the anthem in 1931, reality dictated two major constraints causing the "omission" of the last three stanzas in public use:</p>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li><strong>The Practical Constraint (Time):</strong> Singing all four stanzas at the anthem's solemn tempo takes about 5 minutes. This is too long for public ceremonies and sporting events.</li>
+                        <li><strong>The Diplomatic and Moral Constraint (The Third Stanza):</strong> The third stanza became a significant problem. It deeply insulted the British (who had become US allies). Furthermore, the line disparaging "hireling and slave" became jarring and racist in the post-Civil War era after the abolition of slavery.</li>
+                    </ul>
+                    <p class="mt-3 font-bold">Consequently, official protocol (to this day) dictates that public singing of the anthem includes only the first stanza (Stanza 1).</p>
+                </div>
+
+                <p class="mb-4 text-white font-bold italic">Here is the full, original text, including the stanzas hidden from public performance:</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-gray-300 lyrics-box" dir="ltr">
+                    <div>
+                        <strong class="text-white block mb-2">Stanza 1 (The Familiar and Sung Stanza):</strong>
+                        O say can you see, by the dawn's early light,<br>
+                        What so proudly we hail'd at the twilight's last gleaming,<br>
+                        Whose broad stripes and bright stars through the perilous fight<br>
+                        O'er the ramparts we watch'd were so gallantly streaming?<br>
+                        And the rocket's red glare, the bombs bursting in air,<br>
+                        Gave proof through the night that our flag was still there,<br>
+                        O say does that star-spangled banner yet wave<br>
+                        O'er the land of the free and the home of the brave?
+                    </div>
+                    <div>
+                        <strong class="text-white block mb-2">Stanza 2 (The Answer and Discovery):</strong>
+                        On the shore dimly seen through the mists of the deep<br>
+                        Where the foe's haughty host in dread silence reposes,<br>
+                        What is that which the breeze, o'er the towering steep,<br>
+                        As it fitfully blows, half conceals, half discloses?<br>
+                        Now it catches the gleam of the morning's first beam,<br>
+                        In full glory reflected now shines in the stream,<br>
+                        'Tis the star-spangled banner - O long may it wave<br>
+                        O'er the land of the free and the home of the brave!
+                    </div>
+                    <div>
+                        <strong class="text-white block mb-2 mt-4 sm:mt-0">Stanza 3 (The Fury and the Controversial Stanza):</strong>
+                        And where is that band who so vauntingly swore,<br>
+                        That the havoc of war and the battle's confusion<br>
+                        A home and a Country should leave us no more?<br>
+                        Their blood has wash'd out their foul footstep's pollution.<br>
+                        No refuge could save the hireling and slave<br>
+                        From the terror of flight or the gloom of the grave,<br>
+                        And the star-spangled banner in triumph doth wave<br>
+                        O'er the land of the free and the home of the brave.
+                    </div>
+                    <div>
+                        <strong class="text-white block mb-2 mt-4 sm:mt-0">Stanza 4 (The Stanza of Victory and Faith):</strong>
+                        O thus be it ever when freemen shall stand<br>
+                        Between their lov'd home and the war's desolation!<br>
+                        Blest with vict'ry and peace may the heav'n rescued land<br>
+                        Praise the power that hath made and preserv'd us a nation!<br>
+                        Then conquer we must, when our cause it is just,<br>
+                        And this be our motto - "In God is our trust,"<br>
+                        And the star-spangled banner in triumph shall wave<br>
+                        O'er the land of the free and the home of the brave.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="anthemModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('anthemModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/star-spangled-banner-parchment.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="keyModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('keyModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/francis-scott-key-portrait.webp" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="hopkinsonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('hopkinsonModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/francis-hopkinson-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <footer class="bg-darkSurface py-12 border-t border-darkBorder text-center mt-12">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
