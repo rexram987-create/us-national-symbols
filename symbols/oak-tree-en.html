@@ -1,0 +1,197 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Oak Tree | The Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#15803d', /* Deep forest green fitting for the oak */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">American National Symbols</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index-en.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="../about-en.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="oak-tree.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">HE</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">Comprehensive Historical Research: The Oak Tree – The National Tree</h2>
+            <p class="text-brandAccent font-serif text-lg">A symbol of strength and rootedness: from impenetrable warships to the great democratic vote.</p>
+        </section>
+
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('oakModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/american-oak-bark-acorn.webp" alt="The National Oak Tree" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">National Tree</span>
+            </button>
+            <button onclick="toggleModal('humphreysModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/joshua-humphreys-portrait.jpg" alt="Joshua Humphreys" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Joshua Humphreys</span>
+            </button>
+            <button onclick="toggleModal('shipModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/uss-constitution-ship.jpg" alt="USS Constitution" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Old Ironsides</span>
+            </button>
+        </section>
+
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. Historical Identity: Year of Adoption and the Reason for Selection</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Year of Official Declaration and Adoption:</strong> December 2004. Signed into law by President George W. Bush as the official national tree of the United States.</li>
+                    <li><strong>Selection Process (The Democratic Voice):</strong> Unlike symbols chosen by small committees, the Oak was selected through a collaborative process. In 2001, the "National Arbor Day Foundation" held a major online vote. Over 400,000 Americans voted, and the Oak won by a landslide against other famous trees like the Redwood, Maple, and Pine.</li>
+                    <li><strong>Reason for Adoption:</strong> The Oak was chosen for the qualities it represents: strength, long-term durability (longevity), and adaptability. There are over 60 species of oak growing in nearly every state in the US, making it a unifying symbol physically present throughout the continent.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. Etymological Research: Oak Tree</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Oak:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>The word comes from Old English <em>āc</em>. The earlier origin is Proto-Germanic (<em>*aiks</em>). In ancient Germanic languages, the word "oak" was sometimes synonymous with the word "tree" in general, due to the tree's immense importance for construction and heating.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Quercus (Scientific Name):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>This is the classical Latin name for the Oak. Some scholars argue the origin is Ancient Celtic: <em>Quer</em> (beautiful) and <em>Cue</em> (tree). Meaning – "The Beautiful Tree."</li>
+                        </ul>
+                    </li>
+                    <li><strong>The Hebrew Connection (Elon):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>In Hebrew, the name "Elon" (אלון) comes from the root <strong>א-י-ל</strong>, indicating strength and rule (like "Ayil" - ram, or "Ilan" - tree). This is a fascinating linguistic link showing how different cultures identified the oak as a symbol of power.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. Historical Context: The US Navy, Joshua Humphreys, and "Old Ironsides"</h3>
+                <p>The Oak is not just a botanical symbol; it was the backbone of the young US Navy. The strategic use of oak wood officially began in 1794, with the passage of the "Naval Act of 1794" signed by President George Washington. This act authorized the establishment of the new US Navy (which had been disbanded after the Revolutionary War) and the construction of six original frigates to protect American merchant ships from Barbary pirates in the Mediterranean Sea.</p>
+                <p>It was decided to use a specific and unique species of tree called <strong>Southern Live Oak</strong> (<em>Quercus virginiana</em>). This tree grows in the coastal regions of the Southern US and possesses immense density and weight (about 1,200 kg per cubic meter when freshly cut).</p>
+                
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">The Architect: Joshua Humphreys</strong>
+                    <p>The mind behind the ship design and the use of Live Oak was naval architect and shipbuilder Joshua Humphreys of Philadelphia. Humphreys convinced the government that the United States could not compete with the sheer number of ships of the large European navies, and therefore must produce "hybrid" ships: fast and agile like frigates, yet heavily armed and rugged like massive ships-of-the-line. The use of the heavy Live Oak, combined with an engineering design of diagonal riders, prevented the wood from hogging under the weight of the heavy cannons.</p>
+                </div>
+
+                <p>Historical proof of this design was obtained during the War of 1812: British cannonballs were fired at the ship <strong>USS Constitution</strong> and simply "bounced" off the oak hulls without penetrating them. Sailors exclaimed: "Huzzah! Her sides are made of iron!". Since then, the ship earned the mythological nickname "Old Ironsides."</p>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-yellow-700 pb-2">4. Importance to the First Settlers at Jamestown Colony (1607)</h3>
+                <p>The Oak tree was a critical survival resource in the strange land of the New World for the settlers of The Virginia Company, who landed at Jamestown Island in May 1607:</p>
+                <ul class="list-disc list-inside space-y-3 ml-4">
+                    <li><strong>Immediate Construction and Fortification:</strong> The settlers felled oak, pine, and cypress trees to build "James Fort" – a fortified defensive line shaped like a triangle that enclosed the storehouses, houses, and the first church.</li>
+                    <li><strong>Cooperage Industry:</strong> Oak barrels were completely watertight and vital for storing drinking water and preserving salted meat for the winter. Later, when settler John Rolfe began successfully growing tobacco, oak barrels were used to pack the crops sent as commercial export back to England, which saved the colony from economic collapse.</li>
+                    <li><strong>Vital Energy Source:</strong> Due to freezing winters, especially during the tragic period known as "The Starving Time" of 1609-1610, the dense wood of the Oak provided high-quality fuel that produced significant heat over hours for heating the huts and cooking.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-gray-600 pb-2">5. Dimensions and Characteristics (Physical Data)</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Height:</strong> Oak trees can reach a height of 20 to 30 meters, and some species spread over an immense width.</li>
+                    <li><strong>Longevity:</strong> The Oak is a symbol of eternity; it can easily live over 200 years, and there are famous individual trees in the US that have reached ages of over 600 years.</li>
+                    <li><strong>Fruit:</strong> The Acorn became a proverbial symbol in itself ("from little acorns mighty oaks grow"), representing the potential for great growth from humble beginnings.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">6. Archival Historical Sources</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-400">
+                    <li>Naval Act of 1794 and reports of the United States Secretary of War (1794).</li>
+                    <li>USS Constitution Museum Archive in Boston - studies on naval architect Joshua Humphreys' designs.</li>
+                    <li>Captain John Smith's journals and records of The Virginia Company (1607).</li>
+                    <li>Archaeological and forestry studies by the National Park Service (NPS) and Preservation Virginia in the Historic Jamestowne area.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="oakModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('oakModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/american-oak-bark-acorn.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="humphreysModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('humphreysModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/joshua-humphreys-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="shipModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('shipModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/uss-constitution-ship.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-3 flex justify-around z-50">
+        <a href="../index-en.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            Home
+        </a>
+        <a href="../about-en.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            About
+        </a>
+        <a href="oak-tree.html" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            HE
+        </a>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12 mb-16 sm:mb-0">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
