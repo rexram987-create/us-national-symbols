@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="dark">
 <head>
@@ -15,7 +14,7 @@
                         darkBase: '#0a0a0a',
                         darkSurface: '#171717',
                         darkBorder: '#262626',
-                        brandAccent: '#eab308', /* Yellow gold fitting for the eagle */
+                        brandAccent: '#eab308',
                         brandBlue: '#1e3a8a',
                         goldAccent: '#d4af37',
                     }
@@ -32,7 +31,6 @@
 </head>
 <body class="bg-darkBase text-gray-200 min-h-screen font-sans">
 
-    <!-- Static Header -->
     <header class="border-b border-darkBorder bg-darkSurface py-4">
         <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -41,10 +39,21 @@
                 </div>
                 <h1 class="text-xl font-bold text-white tracking-tight">American National Symbols</h1>
             </div>
-            <nav class="flex gap-4 text-sm font-medium text-gray-400">
-                <a href="../index-en.html" class="hover:text-white">Home</a>
-                <a href="../about-en.html" class="hover:text-white">About</a>
+            <nav class="hidden sm:flex gap-6 font-medium items-center">
+                <a href="../index-en.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="../about-en.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <!-- Separator and Hebrew Switch Button -->
+                <div class="h-4 w-px bg-darkBorder"></div>
+                <a href="bald-eagle.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1" title="החלף לעברית">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    HE
+                </a>
             </nav>
+            <!-- Mobile Language Switcher -->
+            <a href="bald-eagle.html" class="sm:hidden text-gray-400 hover:text-white transition-colors flex items-center gap-1 font-medium" title="החלף לעברית">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                HE
+            </a>
         </div>
     </header>
 
@@ -67,14 +76,12 @@
         <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
             <div class="content-text space-y-6">
 
-                <!-- Part 1: Adoption and Reason -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. Historical Identity: Year of Adoption and the Reason for Selection</h3>
                 <ul class="list-none space-y-4">
                     <li><strong>Year of Official Declaration and Adoption:</strong> The Bald Eagle was officially adopted as the national emblem of the United States on <strong>June 20, 1782</strong>. This decision coincided with the approval of the final design for the Great Seal by the Continental Congress, where the eagle occupies the central position.</li>
                     <li><strong>Reason for Invention and Adoption:</strong> The young nation, newly liberated from the British Empire, desperately sought a visual symbol that would project power, sovereignty, and uncompromising liberty. Historically, eagles have served as symbols of power throughout almost all of Western history, from the Roman Republic (the "Aquila") through the Holy Roman Empire, and to Tsarist Russia.<br>However, the American Founding Fathers wanted to disconnect from the old European symbolism, which was often associated with monarchies and oppression. The choice of the Bald Eagle was a distinct strategic and tactical decision: unlike European eagles, the Bald Eagle is a <strong>species endemic (unique) only to the North American continent</strong>. This choice was intended to declare to the world that the United States was not merely a "copy" of a European country, but an independent, wild, free entity with a unique identity of its own.</li>
                 </ul>
 
-                <!-- Part 2: Etymology -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. Etymological Research: Bald Eagle</h3>
                 <p>The name "Bald Eagle" is often a source of confusion, since the eagle's head, once it reaches maturity (around 4-5 years of age), is crowned with bright white feathers and is not bald at all.</p>
                 <ul class="list-disc list-inside space-y-3 ml-4">
@@ -89,7 +96,6 @@
                     </li>
                 </ul>
 
-                <!-- Part 3: The Designers -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. The Designers and Thinkers: Charles Thomson and William Barton</h3>
                 <p>Positioning the Bald Eagle as the central symbol of the nation was not the brilliant stroke of a single individual, but an ideological combination of two key figures who played active roles in the third and final committee for designing the Great Seal:</p>
                 <ul class="list-none space-y-4">
@@ -107,7 +113,6 @@
                     </li>
                 </ul>
 
-                <!-- Part 4: The Polemic -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-red-800 pb-2">4. The Ideological Polemic: Benjamin Franklin and the Turkey</h3>
                 <p>One of the most fascinating and well-known stories (though sometimes slightly distorted) surrounding the adoption of the symbol is the fierce ideological opposition of Benjamin Franklin.</p>
                 <ul class="list-none space-y-4">
@@ -117,7 +122,6 @@
                     <li class="bg-red-900/20 p-4 rounded-xl border border-red-800/50 text-sm"><em>Important Research Note to Prevent Myths:</em> It is important to emphasize that Franklin never proposed the turkey as an official symbol during the Congressional debates. He shared his satirical, stinging, and ideological opinion solely within a private correspondence. Nonetheless, the letter sheds fascinating light on how the Founding Fathers scrutinized every symbol through the lens of morality and politics.</li>
                 </ul>
 
-                <!-- Part 5: Symbolism -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">5. Symbolism and National Ideology Behind the Eagle</h3>
                 <p>Ultimately, the choice of the Bald Eagle proved highly successful and provided the United States with exactly the visual identity required at the time:</p>
                 <ol class="list-decimal list-inside space-y-3 ml-4">
@@ -130,7 +134,6 @@
         </section>
     </main>
 
-    <!-- Floating Modal -->
     <div id="eagleModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('eagleModal', false)">
         <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
             <img src="../assets/images/symbols/bald-eagle-portrait-majestic.webp" class="w-full h-auto rounded">
@@ -151,5 +154,3 @@
     </script>
 </body>
 </html>
-
-```
