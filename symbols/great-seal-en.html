@@ -1,0 +1,186 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Great Seal | The Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#dc2626',
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Static Header -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">American National Symbols</h1>
+            </div>
+            <nav class="flex gap-4 text-sm font-medium text-gray-400">
+                <a href="../index-en.html" class="hover:text-white transition-colors">Home</a>
+                <a href="../about-en.html" class="hover:text-white transition-colors">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- Main Title -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl font-black text-white mb-2">Comprehensive Historical Research: The Great Seal of the United States</h2>
+        </section>
+
+        <!-- Image for Modal -->
+        <section class="flex flex-row justify-center gap-4 flex-wrap">
+            <button onclick="toggleModal('sealModal', true)" class="w-32 h-32 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform bg-gray-800 p-2">
+                <img src="../assets/images/symbols/great-seal-us.svg" alt="The Great Seal of the United States" class="w-full h-full object-contain drop-shadow-xl">
+            </button>
+            <div class="w-full text-center mt-2 text-xs text-gray-500">Click on the image to enlarge</div>
+        </section>
+
+        <!-- Full Research Text -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- Part 1: History and Design -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. Historical Identity: The Long Journey to Adoption</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Year of Initial Commission:</strong> July 4, 1776 (The exact same day the Declaration of Independence was adopted).</li>
+                    <li><strong>Year of Official Adoption:</strong> June 20, 1782.</li>
+                    <li><strong>Reason for Invention and Adoption:</strong> Every sovereign nation in the 18th century required an official seal to authenticate international treaties, commissions, and official documents. For the newly declared United States, creating a seal was not just an administrative necessity, but a vital declaration of sovereignty and legitimacy to the world (especially to European powers like France, whose support was desperately needed).</li>
+                    <li><strong>The Design Process (The Three Committees):</strong> Creating the Great Seal was so complex and ideologically charged that it took six years, three different committees, and the involvement of 14 men before a final design was approved.
+                        <ul class="list-disc list-inside space-y-2 mt-2 ml-4">
+                            <li><em>The First Committee (1776):</em> Included Benjamin Franklin, John Adams, and Thomas Jefferson. They proposed elaborate, almost biblical or classical scenes (e.g., Moses dividing the Red Sea, or Hercules). Their designs were deemed too complex for a seal and were rejected.</li>
+                            <li><em>The Second Committee (1780):</em> Focused more on heraldry (the study of coats of arms). They introduced elements like the 13 red and white stripes and the olive branch, but the overall design was still not satisfactory.</li>
+                            <li><em>The Third Committee (1782):</em> Led by William Barton, who introduced the eagle. However, it was Charles Thomson who finally synthesized elements from all three committees into the elegant, powerful design we know today.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Part 2: Etymology -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">2. Etymological Research: The Latin Mottos</h3>
+                <p>The Great Seal features three profound Latin mottos, carefully chosen to reflect the nation's ideology.</p>
+                <ul class="list-none space-y-4">
+                    <li><strong>E Pluribus Unum (On the Obverse/Front):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>E / Ex:</strong> "Out of" or "From".</li>
+                            <li><strong>Pluribus:</strong> "Many" (plural form).</li>
+                            <li><strong>Unum:</strong> "One" (neuter singular).</li>
+                            <li><strong>Meaning:</strong> "Out of Many, One". This perfectly encapsulates the core American challenge and achievement: forging a single, unified nation out of thirteen distinct and diverse colonies.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Annuit Cœptis (On the Reverse/Back):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>Annuit:</strong> "He [God] has favored" or "He has nodded [in agreement/approval]".</li>
+                            <li><strong>Cœptis:</strong> "Our undertakings" or "Our beginnings".</li>
+                            <li><strong>Meaning:</strong> "[Providence] has favored our undertakings". A reflection of the Founders' belief that the creation of the United States was guided and blessed by divine providence.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Novus Ordo Seclorum (On the Reverse/Back):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>Novus:</strong> "New".</li>
+                            <li><strong>Ordo:</strong> "Order" or "Series".</li>
+                            <li><strong>Seclorum:</strong> "Of the ages" or "Of the generations".</li>
+                            <li><strong>Meaning:</strong> "A New Order of the Ages". Coined by Charles Thomson, signifying that the American Revolution marked the beginning of a new era of freedom and democracy, fundamentally changing the course of human history.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Part 3: The Masterminds -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">3. The Masterminds: Charles Thomson and William Barton</h3>
+                <p>The final synthesis of the Great Seal is credited primarily to two men from the final committee.</p>
+                
+                <ul class="list-none space-y-6 mt-4">
+                    <!-- Charles Thomson -->
+                    <li class="bg-darkBase/50 p-4 rounded-lg border border-darkBorder/50">
+                        <strong class="text-lg text-brandBlue">Charles Thomson</strong>
+                        <ul class="list-none space-y-2 mt-2">
+                            <li><strong>Lifespan:</strong> November 29, 1729 – August 16, 1824.</li>
+                            <li><strong>Etymology:</strong>
+                                <ul class="list-disc list-inside ml-4 text-sm">
+                                    <li><em>Charles:</em> From Germanic <em>Karl</em>, meaning "free man".</li>
+                                    <li><em>Thomson:</em> Patronymic, "Son of Thomas". Thomas is from Aramaic <em>Ta'oma</em>, meaning "Twin".</li>
+                                </ul>
+                            </li>
+                            <li><strong>Childhood & Education:</strong> Born in Ireland, he immigrated to America at age 10. His mother died on the journey, and his father died just as they reached the American shore, leaving him an orphan. Despite this, he became a highly educated classical scholar and a successful teacher in Philadelphia.</li>
+                            <li><strong>Role & Ideology:</strong> Thomson was the Secretary of the Continental Congress for its entire existence (15 years). He was known as the "Sam Adams of Philadelphia" for his radical pro-independence stance. For the Seal, he was the brilliant synthesizer. He took Barton's complex heraldry and simplified it. It was Thomson who insisted on replacing Barton's generic eagle with the native <em>American Bald Eagle</em>, and it was he who placed the olive branch (peace) and arrows (war) in the eagle's talons, ensuring the eagle faced the olive branch to signify a preference for peace.</li>
+                        </ul>
+                    </li>
+
+                    <!-- William Barton -->
+                    <li class="bg-darkBase/50 p-4 rounded-lg border border-darkBorder/50">
+                        <strong class="text-lg text-goldAccent">William Barton</strong>
+                        <ul class="list-none space-y-2 mt-2">
+                            <li><strong>Lifespan:</strong> April 11, 1754 – October 21, 1817.</li>
+                            <li><strong>Etymology:</strong>
+                                <ul class="list-disc list-inside ml-4 text-sm">
+                                    <li><em>William:</em> From Germanic <em>Willahelm</em> ("will/desire" + "helmet/protection"). Meaning "Resolute protector".</li>
+                                    <li><em>Barton:</em> Old English toponymic surname. <em>Bere</em> (barley) + <em>tun</em> (enclosure/settlement). Meaning "Barley farm".</li>
+                                </ul>
+                            </li>
+                            <li><strong>Childhood & Education:</strong> Born in Philadelphia to a prominent family (nephew of David Rittenhouse, a famous astronomer). He studied law in England and became an expert in heraldry—the strict European rules of designing coats of arms.</li>
+                            <li><strong>Role & Ideology:</strong> Barton provided the technical expertise the Congress lacked. While Thomson provided the grand ideological vision, Barton ensured the design followed heraldic rules so it would be respected by European monarchs. Barton's crucial contribution to the third committee was the introduction of the eagle as the central figure, though his initial sketch featured a European-style crested eagle before Thomson changed it to the Bald Eagle.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Part 4: Symbolism -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">4. Core Symbolism (The Obverse)</h3>
+                <ul class="list-disc list-inside space-y-3 ml-2">
+                    <li><strong>The Constellation of 13 Stars:</strong> Above the eagle's head, breaking through a cloud (glory), symbolizing the new nation taking its place among the sovereign powers.</li>
+                    <li><strong>The Shield (Escutcheon):</strong> Unlike a traditional coat of arms, the shield on the eagle's breast is unsupported by any side figures (supporters). Thomson explicitly stated this signifies that the United States ought to rely on its own virtue and strength alone. It features 13 vertical stripes (representing the states) united by a blue chief (top bar, representing Congress).</li>
+                    <li><strong>The Olive Branch and Arrows:</strong> Held in the talons. 13 leaves and 13 olives for peace, 13 arrows for war. The eagle's head is turned toward the olive branch, indicating a desire for peace but readiness for defense.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Modal -->
+    <div id="sealModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('sealModal', false)">
+        <div class="relative max-w-3xl w-full bg-gray-900 rounded-lg shadow-2xl p-6 border-4 border-brandBlue flex items-center justify-center">
+            <img src="../assets/images/symbols/great-seal-us.svg" class="w-full max-w-md h-auto drop-shadow-2xl">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <footer class="bg-darkSurface py-12 border-t border-darkBorder text-center mt-12">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
