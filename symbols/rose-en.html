@@ -1,0 +1,202 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Rose | The Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#e11d48', /* Deep, luxurious rose red */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans selection:bg-brandAccent selection:text-white">
+
+    <!-- Static Header with Language Switch Button -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">American National Symbols</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index-en.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="../about-en.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <!-- Language Switch Button to Hebrew -->
+                <a href="rose.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">HE</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- Main Title -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">Comprehensive Historical Research: The Rose – The National Floral Emblem</h2>
+            <p class="text-brandAccent font-serif text-lg">A symbol of life, beauty, and devotion: from George Washington's breeding to the historic presidential proclamation.</p>
+        </section>
+
+        <!-- Images for Modals -->
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('roseModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/american-national-rose-deep-red.webp" alt="The National Rose" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Floral Emblem</span>
+            </button>
+            <button onclick="toggleModal('reaganModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/ronald-reagan-rose.jpg" alt="President Ronald Reagan" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Ronald Reagan</span>
+            </button>
+            <button onclick="toggleModal('mellonModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/bunny-mellon-portrait.jpg" alt="Rachel (Bunny) Mellon" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Rachel Mellon</span>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. Historical Identity -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. Historical Identity: Year of Adoption and the Reason for Selection</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Year of Official Declaration and Adoption:</strong> November 20, 1986. President Ronald Reagan signed Proclamation 5574, establishing the rose as the national floral emblem of the United States. Symbolically, the signing ceremony was held in the famous White House Rose Garden.</li>
+                    <li><strong>Reason for Adoption:</strong> In his proclamation, Reagan noted: "More often than any other flower, we hold the rose dear as the symbol of life and love and devotion, of beauty and eternity... We see proofs of this everywhere. The study of fossils reveals that the rose has existed in America for age upon age. We have always cultivated roses in our gardens." In addition to the emotional reason, the rose has a physical presence in all 50 US states, growing both in cultivated gardens and in the American wild.</li>
+                </ul>
+
+                <!-- 2. Etymological Research -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. Etymological Research: Rose</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Rose:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>The English word came directly from the Classical Latin <em>Rosa</em>. The origin of the Latin name is likely a borrowing from Ancient Greek: <em>Rhódon</em> (ῥόδον).</li>
+                        </ul>
+                    </li>
+                    <li><strong>The Ancient Persian Origin:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>Many linguists believe the Greeks borrowed the word from Old Persian, where the word <em>Wurdi</em> (or <em>Varda</em>) simply meant "flower." This is also the source of the Aramaic-Persian name that evolved into the modern Hebrew word for rose – <strong>Vered</strong>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>The Historical Confusion with "Lily" (Shoshana):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>In Jewish and Israeli culture, there is a common confusion between the rose and the lily. The biblical "Shoshana" ("like a lily among thorns") likely refers to a flower from the Liliaceae family or a tulip. However, during the Middle Ages in Europe, Jewish poets began translating the word "Rose" to the Hebrew word "Shoshana," and thus the confusion became rooted in the vernacular to this day.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 3. Historical Context: Founding Fathers and the Rose Garden -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. Historical Context: The Founding Fathers and the Presidential Rose Garden</h3>
+                <p>Beyond being an ornamental flower, the rose is deeply intertwined with American history, from the nation's founders to the White House:</p>
+                <ul class="list-disc list-inside space-y-3 ml-4">
+                    <li><strong>George Washington (The First Rose Breeder):</strong> The first President of the United States was not only a military commander but also an avid botanist. At his estate, Mount Vernon, he engaged in crossbreeding and cultivating roses, even developing and naming a special rose variety after his mother: the "Mary Washington Rose," a variety that continues to bloom today.</li>
+                    <li><strong>The White House Rose Garden:</strong> Although previous presidents had planted roses around the White House, the official Rose Garden was first established in 1913 by First Lady Ellen Wilson. However, the iconic design we know today—which serves as the most prestigious stage for presidential speeches and press conferences—was planned in 1961 during the tenure of President John F. Kennedy.</li>
+                </ul>
+                
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">The Designer: Rachel "Bunny" Mellon</strong>
+                    <p>Kennedy enlisted top horticulturist Rachel Lambert "Bunny" Mellon to redesign the garden so it would serve as an open, spectacular space for diplomatic and national hosting. Her design combined wide lawns and precise plantings of roses, creating the classic look associated with the presidency to this day.</p>
+                </div>
+
+                <!-- 4. Botanical and Physical Characteristics -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-green-700 pb-2">4. Botanical and Physical Characteristics</h3>
+                <ul class="list-disc list-inside space-y-3 ml-4">
+                    <li><strong>Geological History:</strong> Fossils found in North America, primarily in Colorado and Oregon, prove that wild roses grew on the American continent over 35 million years ago.</li>
+                    <li><strong>Species and Varieties:</strong> There are over 150 different biological species of roses in the world, and among them, dozens are native to North America.</li>
+                    <li><strong>"No Rose Without Thorns" – A Scientific Error:</strong> Botanically speaking, what we call "thorns" on a rose stem are actually <strong>prickles</strong>. Unlike true thorns, which are modified stems (like on a lemon tree), the prickles of a rose are outgrowths of the epidermis (the plant's skin layer), and their function is protection against herbivores and assisting in climbing and clinging.</li>
+                </ul>
+
+                <!-- Sources -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">5. Archival Historical Sources</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-400">
+                    <li>Ronald Reagan Presidential Library Archive - Proclamation 5574 (1986).</li>
+                    <li>American Rose Society - History of native species.</li>
+                    <li>Mount Vernon Estate Records - George Washington's planting diaries.</li>
+                    <li>White House Historical Association - The design of the Rose Garden by Bunny Mellon.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="roseModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('roseModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/american-national-rose-deep-red.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="reaganModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('reaganModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/ronald-reagan-rose.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <div class="absolute bottom-4 left-4 right-4 bg-black/70 text-white text-xs p-2 rounded backdrop-blur-sm text-center">Original B&W photograph colorized. Source: Reagan Presidential Library.</div>
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="mellonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('mellonModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/bunny-mellon-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation with Language Switch -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-3 flex justify-around z-50">
+        <a href="../index-en.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            Home
+        </a>
+        <a href="../about-en.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            About
+        </a>
+        <a href="rose.html" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            HE
+        </a>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12 mb-16 sm:mb-0">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
