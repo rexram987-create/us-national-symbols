@@ -1,0 +1,210 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>עץ האלון | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#15803d', /* ירוק יער עמוק שמתאים לאלון */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Header סטטי עם כפתור החלפת שפה -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">אודות</a>
+                <!-- כפתור מעבר לאנגלית (עתידי) -->
+                <a href="oak-tree-en.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">EN</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">מחקר היסטורי מקיף: עץ האלון (Oak Tree) – העץ הלאומי</h2>
+            <p class="text-brandAccent font-serif text-lg">סמל של עוצמה ושורשיות: מספינות המלחמה הבלתי חדירות ועד להצבעה הדמוקרטית הגדולה.</p>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף -->
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('oakModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/american-oak-bark-acorn.webp" alt="עץ האלון הלאומי" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">העץ הלאומי</span>
+            </button>
+            <button onclick="toggleModal('humphreysModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/joshua-humphreys-portrait.jpg" alt="ג'ושוע המפריז" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">ג'ושוע המפריז</span>
+            </button>
+            <button onclick="toggleModal('shipModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/uss-constitution-ship.jpg" alt="USS Constitution" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Old Ironsides</span>
+            </button>
+        </section>
+
+        <!-- הטקסט המחקרי המלא -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. תעודת זהות היסטורית -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. תעודת זהות היסטורית: שנת אימוץ וסיבת הבחירה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנת הכרזה ואימוץ רשמי:</strong> דצמבר 2004. הנשיא ג'ורג' וו. בוש חתם על החקיקה שהפכה את האלון לעץ הלאומי הרשמי של ארצות הברית.</li>
+                    <li><strong>תהליך הבחירה (הקול הדמוקרטי):</strong> בשונה מסמלים אחרים שנבחרו על ידי ועדות מצומצמות, האלון נבחר בתהליך שיתופי. בשנת 2001, "קרן יום העץ הלאומית" (National Arbor Day Foundation) ערכה הצבעה אינטרנטית גדולה. למעלה מ-400,000 אמריקאים הצביעו, והאלון ניצח בפער עצום עצים מפורסמים אחרים כמו הסקויה, המייפל והאורן.</li>
+                    <li><strong>סיבת האימוץ:</strong> האלון נבחר בגלל התכונות שהוא מייצג: כוח, עמידות לאורך זמן (אריכות ימים) ויכולת הסתגלות. ישנם למעלה מ-60 מינים של אלון שצומחים כמעט בכל מדינה בארה"ב, מה שהופך אותו לסמל מאחד שנוכח פיזית בכל מקום ביבשת.</li>
+                </ul>
+
+                <!-- 2. מחקר אטימולוגי מפורק -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. מחקר אטימולוגי מפורק: Oak Tree</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Oak (אלון):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>המילה מגיעה מהאנגלית העתיקה <em>āc</em>. המקור הקדום ביותר הוא פרוטו-גרמאני (<em>*aiks</em>). בשפות גרמאניות עתיקות, המילה "אלון" הייתה לעיתים שם נרדף למילה "עץ" באופן כללי, בגלל חשיבותו העצומה של העץ לבנייה ולחימום.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Quercus (השם המדעי):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>זהו השם הלטיני הקלאסי לאלון. יש חוקרים שטוענים שהמקור הוא קלטי עתיק: <em>Quer</em> (יפה) ו-<em>Cue</em> (עץ). כלומר – "העץ היפה".</li>
+                        </ul>
+                    </li>
+                    <li><strong>הקשר העברי (אלון):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>בעברית, השם "אלון" מגיע מהשורש <strong>א-י-ל</strong>, המציין כוח ושלטון (כמו "איל" או "אילן"). זהו קשר לשוני מרתק שמראה כיצד תרבויות שונות זיהו באלון את סמל העוצמה.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 3. הקשר היסטורי: הצי האמריקאי -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. הקשר היסטורי: הצי האמריקאי, ג'ושוע המפריז ו-"Old Ironsides"</h3>
+                <p>האלון אינו רק סמל בוטני; הוא היה עמוד השדרה של הצי האמריקאי הצעיר. השימוש האסטרטגי בעץ האלון החל באופן רשמי בשנת 1794, עם העברת "חוק הצי" (Naval Act of 1794) עליו חתם הנשיא ג'ורג' וושינגטון. חוק זה אישר את הקמת הצי האמריקאי החדש (שפורק לאחר מלחמת העצמאות) ובנייתן של שש פריגטות ראשונות כדי להגן על אוניות סוחר אמריקאיות מפני שודדי ים ברברים בים התיכון.</p>
+                <p>הוחלט להשתמש במין ספציפי וייחודי של עץ בשם <strong>אלון חי דרומי</strong> (Southern Live Oak - <em>Quercus virginiana</em>). עץ זה צומח באזורי החוף של דרום ארה"ב והוא בעל צפיפות ומשקל אדירים (כ-1,200 ק"ג למטר מעוקב כשהוא נכרת טרי).</p>
+                
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">הארכיטקט ג'ושוע המפריז (Joshua Humphreys)</strong>
+                    <p>המוח מאחורי תכנון הספינות והשימוש באלון החי היה ארכיטקט הצי ובונה הספינות ג'ושוע המפריז מפילדלפיה. המפריז שכנע את הממשל שארצות הברית לא יכולה להתחרות בכמות הספינות של הציים האירופיים הגדולים, ולכן עליה לייצר ספינות "היברידיות": מהירות וזריזות כמו פריגטות, אך חמושות בכבדות וחסונות כמו אוניות קו עצומות. שימוש באלון החי הכבד, יחד עם תכנון הנדסי של צלעות אלכסוניות, מנע מהעץ להתעקם תחת משקל התותחים.</p>
+                </div>
+
+                <p>ההוכחה ההיסטורית לתכנון זה התקבלה במלחמת 1812: כדורי תותח בריטיים נורו לעבר הספינה <strong>USS Constitution</strong> ופשוט "קפצו" חזרה מדפנות האלון מבלי לחדור אותן. המלחים קראו בהתפעלות: "Huzzah! Her sides are made of iron!" (הידד! הדפנות שלה עשויות מברזל!). מאז זכתה הספינה לכינוי המיתולוגי "Old Ironsides".</p>
+
+                <!-- 4. ג'יימסטאון -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-yellow-700 pb-2">4. חשיבותו למתיישבים הראשונים במושבת ג'יימסטאון (1607)</h3>
+                <p>עץ האלון היה משאב הישרדותי קריטי במרחב הזר של העולם החדש עבור מתיישבי חברת וירג'יניה (The Virginia Company), שנחתו באי ג'יימסטאון במאי 1607:</p>
+                <ul class="list-disc list-inside space-y-3 ml-4">
+                    <li><strong>בנייה וביצור מיידי:</strong> המתיישבים חטבו עצי אלון, אורן וברוש כדי לבנות את "מבצר ג'יימס" (James Fort) – קו הגנה מבוצר בצורת משולש שהקיף את המחסנים, הבתים והכנסייה הראשונה.</li>
+                    <li><strong>תעשיית החביות (Cooperage):</strong> חביות עץ אלון היו אטומות לחלוטין וחיוניות לאגירת מי שתייה ושימור בשר מומלח לחורף. מאוחר יותר, כשהמתיישב ג'ון רולף החל לגדל טבק, חביות האלון שימשו לאריזת היבולים שנשלחו כייצוא מסחרי חזרה לאנגליה, מה שהציל את המושבה מקריסה כלכלית.</li>
+                    <li><strong>מקור אנרגיה חיוני:</strong> בשל החורפים הקפואים, ובמיוחד בתקופה הטרגית שנודעה כ"זמן הרעב" (The Starving Time) של 1609-1610, העצה הצפופה של האלון סיפקה חומר בעירה איכותי שהפיק חום רב לאורך שעות עבור חימום הבקתות ובישול.</li>
+                </ul>
+
+                <!-- 5. ממדים -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-gray-600 pb-2">5. ממדים ומאפיינים (נתונים פיזיים)</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>גובה:</strong> עצי אלון יכולים להגיע לגובה של 20 עד 30 מטרים, וישנם מינים שמתפרסים לרוחב עצום.</li>
+                    <li><strong>אורך חיים:</strong> האלון הוא סמל לנצחיות; הוא יכול לחיות בקלות מעל 200 שנה, וישנם פרטים מפורסמים בארה"ב שהגיעו לגיל של למעלה מ-600 שנה.</li>
+                    <li><strong>פרי:</strong> הבלוט (Acorn) הפך בעצמו לסמל פתגמי ("מאלוני ענק צומחים בלוטים קטנים"), המייצג פוטנציאל לצמיחה גדולה מהתחלה צנועה.</li>
+                </ul>
+
+                <!-- 6. מקורות -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">6. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-400">
+                    <li>חוק הצי של 1794 (Naval Act of 1794) ודיווחי שר המלחמה של ארצות הברית (1794).</li>
+                    <li>ארכיון מוזיאון הספינה USS Constitution בבוסטון - מחקרים על תוכניותיו של הארכיטקט ג'ושוע המפריז.</li>
+                    <li>יומניו של סרן ג'ון סמית' ורשומות חברת וירג'יניה (The Virginia Company) משנת 1607.</li>
+                    <li>מחקרי ארכיאולוגיה ויערנות של שירות הפארקים הלאומיים (NPS) וארגון Preservation Virginia באזור ג'יימסטאון ההיסטורית.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) -->
+    <div id="oakModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('oakModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/american-oak-bark-acorn.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="humphreysModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('humphreysModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/joshua-humphreys-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="shipModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('shipModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/uss-constitution-ship.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <!-- ניווט תחתון למובייל עם כפתור שפה -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-3 flex justify-around z-50">
+        <a href="../index.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            ראשי
+        </a>
+        <a href="../about.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            אודות
+        </a>
+        <a href="oak-tree-en.html" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            EN
+        </a>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12 mb-16 sm:mb-0">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
