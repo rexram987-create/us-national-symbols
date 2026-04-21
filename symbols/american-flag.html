@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="dark">
 <head>
@@ -27,7 +26,6 @@
         body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
         .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
         .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
-        /* גודל טקסט קריא ונוח למובייל - לא "טנקי" */
         .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
     </style>
 </head>
@@ -42,10 +40,21 @@
                 </div>
                 <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
             </div>
-            <nav class="flex gap-4 text-sm font-medium text-gray-400">
-                <a href="../index.html" class="hover:text-white">ראשי</a>
-                <a href="../about.html" class="hover:text-white">אודות</a>
+            <nav class="hidden sm:flex gap-6 font-medium items-center">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">אודות</a>
+                <!-- קו מפריד וכפתור מעבר לאנגלית -->
+                <div class="h-4 w-px bg-darkBorder"></div>
+                <a href="american-flag-en.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1" title="Switch to English">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    EN
+                </a>
             </nav>
+            <!-- כפתור שפה למובייל -->
+            <a href="american-flag-en.html" class="sm:hidden text-gray-400 hover:text-white transition-colors flex items-center gap-1 font-medium" title="Switch to English">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                EN
+            </a>
         </div>
     </header>
 
@@ -70,13 +79,12 @@
             <div class="w-full text-center mt-2 text-xs text-gray-500">לחץ על התמונות להגדלה</div>
         </section>
 
-        <!-- הטקסט המחקרי המלא והמשולב -->
+        <!-- הטקסט המחקרי המלא -->
         <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
             <div class="content-text space-y-6">
                 
                 <p>הדגל האמריקאי, המוכר כיום כאחד הסמלים הוויזואליים הבולטים והמשפיעים בעולם, הוא תוצר של אבולוציה היסטורית מתמשכת ולא של רגע קסם בודד.</p>
 
-                <!-- חלק 1: הדגל -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">דגל ארצות הברית (The American Flag)</h3>
                 <ul class="list-none space-y-4">
                     <li><strong>שנת עיצוב ואימוץ רשמי:</strong> הדגל הרשמי הראשון (המוכר כ"דגל 13 הכוכבים") אושר על ידי הקונגרס הקונטיננטלי השני ב-14 ביוני 1777 (תאריך הנחגג כיום כ"יום הדגל").</li>
@@ -84,26 +92,23 @@
                     <li><strong>האבולוציה של העיצוב:</strong> חוק הדגל מ-1777 קבע רק שיהיו 13 פסים אדומים ולבנים, ו-13 כוכבים לבנים על רקע כחול, המייצגים "קונסטלציה חדשה". החוק לא ציין כיצד הכוכבים צריכים להיות מסודרים, ולכן הופיעו גרסאות שונות (במעגל, בשורות, בצורת קשת). כיום, לדגל יש 50 כוכבים (המדינה ה-50, הוואי, נוספה ב-1959) ו-13 פסים הנשמרים לזכר המושבות המקוריות.</li>
                 </ul>
 
-                <!-- חלק 2: הופקינסון -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">המעצב המקורי: פרנסיס הופקינסון (Francis Hopkinson)</h3>
-                <p>אף על פי שהאגדה העממית קושרת את עיצוב הדגל לבטסי רוס, המסמכים ההיסטוריים בארכיון הלאומי מצביעים על כך שמי שעיצב ותכנן את הדגל בפועל היה פרנסיס הופקינסון. הופקינסון היה איש אשכולות מרשים: עורך דין, סופר, מלחין, ואחד מחותמי הכרזת העצמאות מטעם מדינת ניו ג'רזי. הוא זה שתכנן את המבנה הבסיסי של הפסים (13 פסים) והקנטון (הריבוע הכחול) עם 13 הכוכבים המשושים במקור. ההוכחה ההיסטורית החזקה ביותר לכך היא מכתב ששלח הופקינסון לקונגרס ב-1780, בו דרש תשלום על עיצוב הדגל הלאומי (יחד עם סמלים נוספים). התשלום שביקש, אגב, היה "רבע חבית של יין ציבורי".</p>
-                
+                <p>אף על פי שהאגדה העממית קושרת את עיצוב הדגל לבטסי רוס, המסמכים ההיסטוריים בארכיון הלאומי מצביעים על כך שמי שעיצב ותכנן את הדגל בפועל היה פרנסיס הופקינסון.</p>
                 <ul class="list-none space-y-4">
                     <li><strong>שנות חיים:</strong> 21 בספטמבר 1737 – 9 במאי 1791.</li>
                     <li><strong>אטימולוגיה של השם:</strong>
-                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
                             <li><strong>Francis (פרנסיס):</strong> נגזר מהמילה הלטינית <em>Franciscus</em> (פרנסיסקוס), שפירושה המילולי הוא "צרפתי" או "אדם השייך לשבט הפרנקים". בשפה האנגלית, השם הפך לנרדף למושג <em>Frank</em> - שפירושו אדם חופשי, ישר וגלוי לב.</li>
                             <li><strong>Hopkinson (הופקינסון):</strong> שם משפחה אנגלי פטרונימי (על שם האב). <em>Hopkin</em> הוא כינוי חיבה ל-<em>Hob</em> (שהוא עצמו קיצור של השם רוברט - שפירושו מקור גרמני "תהילה זוהרת"), בתוספת הסיומת <em>son</em>. הפירוש המילולי: "בנו של רוברט הקטן והמהולל".</li>
                         </ul>
                     </li>
                     <li><strong>ילדות והשכלה (The Polymath):</strong> פרנסיס נולד ב-1737 בפילדלפיה למשפחה בעלת מעמד והשפעה. אביו, תומאס הופקינסון, היה פוליטיקאי בולט ושותפו של בנג'מין פרנקלין. הוא היה הסטודנט הראשון והבוגר הראשון של הקולג' של פילדלפיה (כיום אוניברסיטת פנסילבניה - UPenn). הוא רכש השכלה משפטית, מוזיקלית ואמנותית רחבה, ואף נחשב למלחין האמריקאי הראשון שכתב מוזיקה חילונית.</li>
-                    <li><strong>אידיאולוגיה והפן הסאטירי:</strong> הופקינסון האמין שהתרבות והסמלים הם הבסיס לזהות הלאומית. הוא היה אחד הסאטיריקנים המבריקים ביותר של תקופת המהפכה, והשתמש בעטו ככלי נשק ללעוג לכתר הבריטי. יצירתו הסאטירית הידועה ביותר, <strong>"A Pretty Story"</strong> (1774), הציגה את היחסים בין בריטניה למושבות כאלגוריה על משפחה מפורקת שבה האב (המלך ג'ורג' השלישי) מתעלל בילדיו. הסאטירה שלו לא הייתה רק שעשוע; היא הייתה כלי גיוס פוליטי רב-עוצמה שסייע לגבש את דעת הקהל בעד עצמאות וניתוק מהאימפריה הבריטית.</li>
+                    <li><strong>אידיאולוגיה והפן הסאטירי:</strong> הופקינסון האמין שהתרבות והסמלים הם הבסיס לזהות הלאומית. הוא היה אחד הסאטיריקנים המבריקים ביותר של תקופת המהפכה, והשתמש בעטו ככלי נשק ללעוג לכתר הבריטי. יצירתו הסאטירית הידועה ביותר, <strong>"A Pretty Story"</strong> (1774), הציגה את היחסים בין בריטניה למושבות כאלגוריה על משפחה מפורקת שבה האב (המלך ג'ורג' השלישי) מתעלל בילדיו. הסאטירה שלו לא הייתה רק שעשוע; היא הייתה כלי גיוס פוליטי רב-עוצמה שסייע לגבש את דעת הקהל בעד עצמאות וניתוק מהאימפריה הבריטית. עיצוב הדגל שלו (הכולל 13 פסים וקנטון כחול) אושר היסטורית באמצעות מכתב דרישת תשלום ("רבע חבית של יין ציבורי") ששלח לקונגרס.</li>
                 </ul>
 
-                <!-- חלק 3: השם וההמנון -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">השם: The Star-Spangled Banner (היסטוריה ואטימולוגיה)</h3>
                 <p>השם המוכר של הדגל לא נולד ב-1777, אלא 37 שנים מאוחר יותר, בנסיבות דרמטיות. בבוקר ה-14 בספטמבר 1814, במהלך מלחמת 1812, עורך דין ומשורר בשם פרנסיס סקוט קי צפה בהפצצה ימית בריטית אכזרית על מבצר "פורט מקהנרי" (Fort McHenry) בבולטימור. כשהפציע השחר, מבעד לעשן אבק השריפה, הוא ראה שהדגל האמריקאי (אז בגרסת 15 כוכבים ו-15 פסים) עדיין מתנופף בגאווה. מראה זה עורר בו השראה לכתוב פואמה, שהפכה ללהיט ולבסוף (ב-1931) להמנון הלאומי הרשמי. מאז, הציבור מכנה את הדגל בשם הפואמה.</p>
-                <ul class="list-disc list-inside space-y-1 ml-2">
+                <ul class="list-disc list-inside space-y-1 ml-4">
                     <li><strong>The:</strong> ה"א הידיעה, המייחדת את האובייקט.</li>
                     <li><strong>Star:</strong> מהמילה האנגלית העתיקה <em>steorra</em> והפרוטו-גרמאנית <em>sternon</em> (כוכב).</li>
                     <li><strong>Spangled:</strong> מקור המילה <em>Spangle</em> (באנגלית עתיקה <em>spang</em>) הוא קישוט מתכתי נוצץ. <em>Spangled</em> היא צורת התואר שפירושה: "מקושט או מעוטר בנקודות זוהרות".</li>
@@ -111,13 +116,12 @@
                     <li><strong>סינתזה:</strong> הפירוש המילולי והמדויק הוא "הדגל המעוטר בנקודות כוכבים זוהרות".</li>
                 </ul>
 
-                <!-- חלק 4: בטסי רוס -->
                 <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">בטסי רוס (Betsy Ross) - האישה והאגדה</h3>
                 <ul class="list-none space-y-4">
                     <li><strong>שם מלא:</strong> אליזבת גריסקום (Elizabeth Griscom). מוכרת כבטסי רוס על שם בעלה הראשון, ג'ון רוס.</li>
                     <li><strong>שנות חיים:</strong> 1 בינואר 1752 – 30 בינואר 1836.</li>
                     <li><strong>אטימולוגיה של השם:</strong>
-                        <ul class="list-disc list-inside space-y-1 mt-1 ml-2">
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
                             <li><strong>Elizabeth:</strong> מעברית תנ"כית, "אלישבע". "אלי" (האל שלי) ו-"שבע" (שבועה/שפע). הפירוש: "אלוהים הוא שבועתי". בטסי (Betsy) היא צורת חיבה נפוצה לשם זה.</li>
                             <li><strong>Griscom:</strong> שם טופונימי (על שם מקום) מאנגליה. נגזר מהמילים <em>Gris</em> (אפור בצרפתית נורמנית) ו-<em>Combe</em> (עמק באנגלית עתיקה), כלומר: "העמק האפור".</li>
                             <li><strong>Ross:</strong> מקור קלטי, <em>Ros</em>, שמשמעותו חצי אי, כף יבשה (Promontory) או קרחת יער.</li>
@@ -160,6 +164,3 @@
     </script>
 </body>
 </html>
-
-
-```
