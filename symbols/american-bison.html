@@ -1,0 +1,212 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>הביזון האמריקאי | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#ca8a04', /* צבע אדמה/זהב כהה שמתאים לביזון */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans">
+
+    <!-- Header סטטי עם כפתור החלפת שפה -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border border-brandAccent">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">אודות</a>
+                <!-- כפתור מעבר לאנגלית (עתידי) -->
+                <a href="#" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">EN</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">מחקר היסטורי מקיף: הביזון האמריקאי (American Bison) – היונק הלאומי</h2>
+            <p class="text-brandAccent font-serif text-lg">סמל ההישרדות, הטרגדיה והגאולה האקולוגית של המערב הפרוע.</p>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף -->
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('bisonModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/american-bison-rugged-realism.webp" alt="הביזון האמריקאי" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">היונק הלאומי</span>
+            </button>
+            <button onclick="toggleModal('hornadayModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/william-hornaday-portrait.jpg" alt="ויליאם טמפל הורנאדיי" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">ויליאם הורנאדיי</span>
+            </button>
+            <button onclick="toggleModal('rooseveltModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandBlue hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/theodore-roosevelt-portrait.jpg" alt="תיאודור רוזוולט" class="w-full h-full object-cover grayscale">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">תיאודור רוזוולט</span>
+            </button>
+        </section>
+
+        <!-- הטקסט המחקרי המלא -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. תעודת זהות היסטורית -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. תעודת זהות היסטורית: שנת אימוץ וסיבת הבחירה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנת הכרזה ואימוץ רשמי:</strong> 9 במאי 2016. חתום על ידי הנשיא ברק אובמה במסגרת חוק "מורשת הביזון הלאומי" (National Bison Legacy Act). הביזון הצטרף לעיט הקירח כסמל לאומי מקביל (העיט הוא העוף הלאומי, הביזון הוא היונק הלאומי).</li>
+                    <li><strong>סיבת ההמצאה והאימוץ:</strong> בניגוד לסמלים שעוצבו כדי לשדר כוח מול אירופה (כמו החותם הגדול), אימוץ הביזון נבע ממקום של כבוד תרבותי וחשבון נפש היסטורי. הביזון מסמל את המורשת המקורית של "הספר" (The Frontier) האמריקאי. במשך אלפי שנים הוא היה מקור החיים (מזון, ביגוד, מחסה, ודת) עבור השבטים הילידים (האינדיאנים) במישורים הגדולים. אימוצו נועד להוקיר את ההיסטוריה הילידית, אתוס ההישרדות האמריקאי, ואת אחת מהצלחות השימור האקולוגי הגדולות בהיסטוריה האנושית.</li>
+                </ul>
+
+                <!-- 2. מחקר אטימולוגי מפורק -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. מחקר אטימולוגי מפורק: American Bison</h3>
+                <p>טעות נפוצה היא לקרוא לביזון בשם "באפלו" (Buffalo). מדעית וזואולוגית, הביזון אינו קשור לבאפלו (תאו המים האסייתי או תאו הכף האפריקאי). הכינוי "באפלו" ניתן לו בטעות על ידי מתיישבים צרפתים ואנגלים שראו חיה גדולה דמוית שור וקראו לה <em>Boeuf</em> (שור בצרפתית) או <em>Buffelo</em>.</p>
+                <ul class="list-none space-y-4">
+                    <li><strong>American (אמריקאי):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li>נגזר משמו של <strong>אמריגו וספוצ'י</strong> (Amerigo Vespucci), חוקר הארצות והקרטוגרף האיטלקי (1451-1512), שהיה הראשון להבין שהיבשת שגילה קולומבוס אינה אסיה, אלא יבשת חדשה לחלוטין.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bison (ביזון):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>מקור לטיני ויווני:</strong> המילה מגיעה ישירות מלטינית קלאסית <em>Bison</em> וביוונית <em>Bisōn</em>.</li>
+                            <li><strong>שורש גרמאני עתיק:</strong> המקור הקדום יותר הוא מהשפה הפרוטו-גרמאנית <em>*wisand-</em> (או <em>wisunt</em>), שפירושו היה פשוט "שור בר" או "חיה מסריחה" (ככל הנראה בהתייחס לריח המוסק החזק שהזכרים מפיצים בעונת הייחום).</li>
+                        </ul>
+                    </li>
+                    <li><strong>השם המדעי - Bison bison:</strong> כפילות השם (טאוטינימיה) מסמנת בזואולוגיה שמין זה הוא ה"טיפוס" (Type Species) המקורי והמובהק ביותר של הסוג שלו.</li>
+                </ul>
+
+                <!-- 3. ההוגים ומצילי הביזון -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandBlue pb-2">3. מצילי הסמל: ההוגים ומובילי תנועת השימור</h3>
+                <p>הביזון לא היה שורד כסמל אלמלא שני אישים שהגו את מבצע השימור הלאומי הראשון בתולדות ארה"ב, והקימו יחד את "חברת הביזון האמריקאית" בשנת 1905.</p>
+                
+                <ul class="list-none space-y-6 mt-4">
+                    <!-- ויליאם טמפל הורנאדיי -->
+                    <li class="bg-darkBase/50 p-4 rounded-lg border border-darkBorder/50">
+                        <strong class="text-lg text-white">1. ויליאם טמפל הורנאדיי (William Temple Hornaday)</strong>
+                        <ul class="list-none space-y-2 mt-2">
+                            <li><strong>שנות חיים:</strong> 1 בדצמבר 1854 – 6 במרץ 1937.</li>
+                            <li><strong>ילדות:</strong> נולד באינדיאנה וגדל בחווה באיווה. מילדותו הוקסם מעולם החי, אך ברוח התקופה, אהבתו לחיות התבטאה בציד ובפחתנות (פחלוץ). הוא הפך לפחלצן הראשי של המוזיאון הלאומי של ארה"ב (הסמית'סוניאן).</li>
+                            <li><strong>אידיאולוגיה והמהפך:</strong> הורנאדיי עבר מהפך אידיאולוגי דרמטי. ב-1886 הוא יצא למסע למונטנה כדי לצוד כמה ביזונים אחרונים עבור תצוגה במוזיאון (לפני שייכחדו לחלוטין). כשהגיע לשם ונחשף להיקף ההשמדה המחריד – מישורים עצומים המכוסים בעצמות לבנות בלבד – הוא חווה משבר מוסרי. האידיאולוגיה שלו השתנתה מקצה לקצה: הוא האמין שלממשלה ולחברה האנושית יש חובה מוסרית אקטיבית לשמור על חיות הבר מפני תאוות הבצע המסחרית של האדם.</li>
+                            <li><strong>הישגים:</strong> במקום להשאיר את הביזונים כפוחלצים, הוא הגה רעיון מהפכני: הוא אסף כמה ביזונים חיים והקים את התצוגה החיה הראשונה מאחורי מכון הסמית'סוניאן. תצוגה זו הפכה לימים ל<strong>גן החיות הלאומי של ארצות הברית</strong> (National Zoo). הוא כיהן כמנהל הראשון של גן החיות בברונקס, והוביל את פרויקט ההרביה והשחרור חזרה לטבע של הביזונים למערב.</li>
+                        </ul>
+                    </li>
+
+                    <!-- תיאודור רוזוולט -->
+                    <li class="bg-darkBase/50 p-4 rounded-lg border border-darkBorder/50">
+                        <strong class="text-lg text-brandAccent">2. תיאודור רוזוולט (Theodore Roosevelt)</strong>
+                        <ul class="list-none space-y-2 mt-2">
+                            <li><strong>שנות חיים:</strong> 27 באוקטובר 1858 – 6 בינואר 1919.</li>
+                            <li><strong>ילדות:</strong> נולד למשפחה אריסטוקרטית ועשירה בניו יורק. כילד סבל מאסתמה חריפה ופיזיות חלשה. במאמץ להתגבר על מחלתו, הוא אימץ אורח חיים של ספורט מאומץ, היאבקות, ויציאה לטבע הפראי – תפיסה שכינה "החיים המאומצים" (The Strenuous Life).</li>
+                            <li><strong>אידיאולוגיה (נשיא השימור):</strong> רוזוולט האמין שהמשאבים הטבעיים של אמריקה (יערות, נהרות וחיות בר) אינם בלתי נדלים. הוא תפס את הטבע הפראי (Wilderness) כחלק מהותי מחישול האופי והזהות האמריקאית. הוא טען שחברה שמשמידה את הטבע שלה, משמידה את נשמתה. כנשיא ה-26, הוא הפעיל את כל כובד משקלו הפוליטי נגד אינטרסים כלכליים כדי לשמר אדמות.</li>
+                            <li><strong>הישגים:</strong> רוזוולט ייסד את שירות היערות של ארה"ב, והכריז על 5 פארקים לאומיים, 18 מונומנטים לאומיים (ביניהם הגרנד קניון), ו-51 שמורות ציפורים, תוך שימור של כ-230 מיליון אקרים של אדמה ציבורית. יחד עם הורנאדיי, הוא הקים את חברת הביזון האמריקאית והפך לאחד הגורמים המכריעים בהצלת המין מהכחדה.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- 4. ההכחדה והגאולה -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-red-800 pb-2">4. הקשר היסטורי: ההשמדה הכמעט-מוחלטת והגאולה</h3>
+                <p>כדי להבין מדוע הביזון הוא סמל כה עוצמתי, חובה להבין את הטרגדיה שעבר:</p>
+                <ul class="list-disc list-inside space-y-3 ml-2">
+                    <li><strong>שפע בלתי נתפס:</strong> לפני הגעת המתיישבים האירופאים, הוערך כי בין <strong>30 ל-60 מיליון ביזונים</strong> נדדו במישורים הגדולים. העדרים היו כה עצומים עד שהם הרעידו את האדמה, וצבעו את האופק בשחור.</li>
+                    <li><strong>ההשמדה המכוונת (1860-1890):</strong> בניית מסילות הברזל במערב הביאה עמה ציידים מסחריים שטבחו בביזונים רק עבור עורותיהם (והשאירו את הבשר להירקב). חמור מכך, <strong>צבא ארצות הברית והממשל עודדו את טבח הביזונים כטקטיקה צבאית מובהקת</strong>. הילידים האמריקאים (האינדיאנים) היו תלויים לחלוטין בביזון למחייתם. הגנרל פיליפ שרידן טען שהשמדת הביזונים היא הדרך המהירה והיעילה ביותר להכריע את האינדיאנים, להרעיב אותם ולהכריח אותם להיכנס לשמורות. הציטוט המיוחס לתקופה היה: "כל ביזון מת הוא אינדיאני מת".</li>
+                    <li><strong>סף תהום:</strong> בשנת 1889, נותרו בכל רחבי צפון אמריקה פחות מ-<strong>1,000 ביזונים</strong> (מתוכם רק כמה מאות בטבע). המין עמד מרחק פסיעה מהכחדה מוחלטת.</li>
+                    <li><strong>התחייה:</strong> בזכות התערבותם של הורנאדיי, רוזוולט וארגוני השימור, נחקקו חוקי הגנה, וביזונים שגודלו בגני חיות שוחררו חזרה לשמורות ופארקים לאומיים (כמו ילוסטון). כיום חיים בארה"ב כחצי מיליון ביזונים.</li>
+                </ul>
+
+                <!-- 5. מידות ומצב שימור -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-goldAccent pb-2">5. ממדים, משקל ומצב שימור</h3>
+                <p>הביזון הוא היונק היבשתי הגדול ביותר ביבשת צפון אמריקה. זכר בוגר מתנשא לגובה של 1.5 עד 2 מטרים בכתפיו (הגיבנת המפורסמת), אורכו מגיע ל-2.1 עד 3.5 מטרים, ומשקלו העצום עשוי לחצות את קו ה-900 קילוגרם (כמעט טונה). מבחינת מצב השימור שלו (Conservation status), לאחר שניצל מהכחדה מוחלטת, מצבו מוגדר כיום ברשימה האדומה של ה-IUCN כ"קרוב לסיכון" (Near Threatened); מתוך כחצי מיליון ביזונים שחיים כיום בארה"ב, הרוב המוחלט גדל בחוות, ורק כ-30,000 מתוכם נחשבים כחיות בר לחלוטין החיות בשמורות טבע ובפארקים הלאומיים.</p>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) -->
+    <div id="bisonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('bisonModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/american-bison-rugged-realism.webp" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-black w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="hornadayModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('hornadayModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/william-hornaday-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-black w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="rooseveltModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('rooseveltModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/theodore-roosevelt-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandBlue">
+            <button class="absolute top-2 left-2 bg-brandAccent text-black w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <!-- ניווט תחתון למובייל עם כפתור שפה -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-3 flex justify-around z-50">
+        <a href="../index.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            ראשי
+        </a>
+        <a href="../about.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            אודות
+        </a>
+        <a href="#" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            EN
+        </a>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12 mb-16 sm:mb-0">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+
+```
