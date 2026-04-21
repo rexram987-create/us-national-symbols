@@ -43,9 +43,15 @@
                 </div>
                 <h1 class="text-xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
             </div>
-            <nav class="hidden sm:flex gap-6 font-medium">
+            <nav class="hidden sm:flex gap-6 font-medium items-center">
                 <a href="index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
                 <a href="about.html" class="text-brandAccent hover:text-red-400 transition-colors">אודות החוקר</a>
+                <!-- קו מפריד וכפתור מעבר לאנגלית -->
+                <div class="h-4 w-px bg-darkBorder"></div>
+                <a href="about-en.html" class="text-gray-400 hover:text-white transition-colors flex items-center gap-1" title="Switch to English">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    EN
+                </a>
             </nav>
         </div>
     </header>
@@ -76,7 +82,6 @@
                 <h3 class="text-xl font-bold text-white mb-2">אודות החוקר (רם)</h3>
                 
                 <button type="button" id="openModalBtn" class="block w-40 h-40 rounded-full overflow-hidden border-4 border-brandBlue shadow-2xl hover:border-brandAccent transition-colors duration-300 group focus:outline-none focus:ring-4 focus:ring-brandAccent cursor-pointer" aria-label="פתח תמונה מלאה בחלון צף">
-                    <!-- הנתיב תוקן בהתאם לצילום המסך! -->
                     <img src="assets/images/symbols/ram-profile.jpg" alt="רם, חוקר סמלים אמריקאיים" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
                 </button>
                 
@@ -113,6 +118,10 @@
             <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
             אודות
         </a>
+        <a href="about-en.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            EN
+        </a>
     </div>
 
     <!-- מבנה החלון הצף -->
@@ -123,7 +132,6 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             
-            <!-- הנתיב תוקן בהתאם לצילום המסך! -->
             <img id="modalImage" src="assets/images/symbols/ram-profile.jpg" alt="רם, תמונת פורטרט מלאה" class="w-full h-auto max-h-[85vh] object-contain rounded-lg shadow-inner">
         </div>
     </div>
@@ -168,4 +176,3 @@
 
 </body>
 </html>
-```
