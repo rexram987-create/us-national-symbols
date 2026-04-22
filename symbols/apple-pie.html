@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>פאי התפוחים | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#ea580c',
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1.05rem; line-height: 1.8; color: #d1d5db; }
+        @media (max-width: 480px) { .content-text { font-size: 1rem; } }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans selection:bg-brandAccent selection:text-white">
+
+    <header class="border-b border-darkBorder bg-darkSurface py-5 sticky top-0 z-50 glass-effect">
+        <div class="max-w-4xl mx-auto px-6 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandAccent flex items-center justify-center border border-darkBorder shadow-lg">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="apple-pie-en.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <span class="text-xs font-bold">EN</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 flex flex-col gap-12">
+        
+        <section class="border-b border-darkBorder pb-8">
+            <h2 class="text-4xl sm:text-5xl font-black text-white mb-4 leading-tight">פאי התפוחים (Apple Pie)</h2>
+            <p class="text-brandAccent font-serif text-xl italic leading-relaxed">סמל בלתי רשמי של חירות, נוסטלגיה וביתיות: "אמריקאי כמו פאי תפוחים".</p>
+        </section>
+
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('pieModal', true)" class="flex flex-col items-center gap-3 group">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-2xl">
+                    <img src="../assets/images/symbols/apple-pie-icon.jpg" alt="פאי תפוחים" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs text-gray-400 font-bold uppercase tracking-widest text-center">פאי התפוחים</span>
+            </button>
+            <button onclick="toggleModal('chapmanModal', true)" class="flex flex-col items-center gap-3 group">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-white/10 hover:scale-105 transition-transform shadow-2xl">
+                    <img src="../assets/images/symbols/john-chapman-portrait.jpg" alt="ג'ון צ'פמן" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs text-gray-400 font-bold uppercase tracking-widest text-center">ג'ון צ'פמן</span>
+            </button>
+            <button onclick="toggleModal('simmonsModal', true)" class="flex flex-col items-center gap-3 group">
+                <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-goldAccent hover:scale-105 transition-transform shadow-2xl">
+                    <img src="../assets/images/symbols/amelia-simmons-book.jpg" alt="אמיליה סימונס" class="w-full h-full object-cover">
+                </div>
+                <span class="text-xs text-gray-400 font-bold uppercase tracking-widest text-center">אמיליה סימונס</span>
+            </button>
+        </section>
+
+        <section class="bg-darkSurface border border-darkBorder rounded-3xl p-8 sm:p-12 shadow-2xl">
+            <div class="content-text space-y-10">
+
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 border-r-4 border-brandAccent pr-4">1. תעודת זהות היסטורית: מקור והתפתחות</h3>
+                    <ul class="space-y-4">
+                        <li><strong class="text-white">שנות האימוץ וההכרה:</strong> למרות שפאי תפוחים אינו סמל לאומי מעוגן בחוק, הוא אומץ באופן אורגני על ידי התרבות האמריקאית החל מהמאה ה-18. בשנת 1796 פורסם ספר הבישול האמריקאי הראשון שכלל את המתכון בגרסתו המוכרת, ובמהלך מלחמת העולם השנייה הפך הקינוח לסמל רשמי-למחצה של תעמולת פטריוטיות.</li>
+                        <li><strong class="text-white">סיבת האימוץ:</strong> התפוח, שהגיע מאירופה ואסיה, התאקלם באופן מושלם באקלים הצפון-אמריקאי ושגשג. הפאי, מאפה זול יחסית ומשביע, הפך למאכל הישרדותי של המתיישבים הראשונים, ולאחר מכן לסמל של שפע, משפחתיות, ושל ארצות הברית כמקום של בית מנחם ומגונן.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 border-r-4 border-brandAccent pr-4">2. מחקר אטימולוגי מפורק: מושגים ושמות</h3>
+                    <div class="space-y-6">
+                        <div class="bg-darkBase/40 p-5 rounded-2xl border border-darkBorder">
+                            <strong class="text-brandAccent text-lg block mb-2">פאי תפוחים (Apple Pie):</strong>
+                            <p><strong class="text-white">Apple (תפוח):</strong> מהאנגלית העתיקה <em>Æppel</em>, שמקורה בפרוטו-גרמאנית <em>Aplaz</em>. המונח הקדום התייחס לכל פרי עץ שאינו פרי יער (כולל אגוזים).</p>
+                            <p><strong class="text-white">Pie (פאי / מאפה):</strong> מקור המילה מהאנגלית התיכונה במאה ה-14. בלשנים מעריכים כי המילה קשורה לציפור העקעק (Magpie, שנקראה אז <em>Pie</em>). כפי שהעקעק אוסף חפצים שונים ומעורבבים לקן שלו, כך הפאי הוא מאפה המאגד בתוכו מרכיבים שונים ומעורבבים תחת קרום בצק.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-darkBase/40 p-5 rounded-2xl border border-darkBorder">
+                                <strong class="text-white text-lg block mb-2">ג'ון צ'פמן (John Chapman):</strong>
+                                <p><strong class="text-gray-400">John:</strong> הגרסה האנגלית ל"יוחנן" (האל חנן) או יהונתן.</p>
+                                <p><strong class="text-gray-400">Chapman:</strong> מהאנגלית הישנה <em>Cēapmann</em> – סוחר או רוכל (Ceap = סחר, Mann = איש).</p>
+                            </div>
+                            <div class="bg-darkBase/40 p-5 rounded-2xl border border-darkBorder">
+                                <strong class="text-white text-lg block mb-2">אמיליה סימונס (Amelia Simmons):</strong>
+                                <p><strong class="text-gray-400">Amelia:</strong> מהשורש הגרמאני <em>Amal</em> – עבודה או חריצות.</p>
+                                <p><strong class="text-gray-400">Simmons:</strong> שם פטרונימי שמשמעותו "בנו של סיימון" (שמעון).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-6 border-r-4 border-brandAccent pr-4">3. האנשים מאחורי הסמל: האמת ההיסטורית וההשפעה התרבותית</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-black text-white flex items-center gap-2">
+                                <span class="w-2 h-8 bg-brandAccent rounded-full"></span>
+                                א. כיבוש השממה: האמת והמיתוס של ג'וני אפלסיד
+                            </h4>
+                            <p>התפיסה התרבותית המקובלת בארצות הברית מציירת את ג'וני אפלסיד כנווד תמהוני, יחף, החובש סיר פח על ראשו ומפזר זרעי תפוחים באקראי לכל עבר. המציאות, לעומת זאת, הייתה מרתקת הרבה יותר והשפיעה עמוקות על הכלכלה האמריקאית.</p>
+                            <p>ג'ון צ'פמן היה למעשה איש עסקים מבריק, יזם נדל"ן וחלוץ חקלאי. בסוף המאה ה-18, כשהחזית האמריקאית (ה"ספר") החלה לנוע מערבה מעבר להרי האפלצ'ים, החוק דרש ממתיישבים חדשים לנטוע לפחות 50 עצי פרי בשטחם כדי להוכיח שהם אכן מיישבים את האדמה. צ'פמן זיהה את ההזדמנות: הוא היה נודד לפני גלי ההגירה, מאתר חלקות טובות, ושותל בהן עשרות אלפי זרעי תפוחים שהקים כמשתלות מגודרות. כשהמתיישבים הגיעו, המשתלה כבר הייתה מוכנה, והוא מכר להם שתילים במחיר סמלי או בסחר חליפין.</p>
+                            <p><strong class="text-brandAccent">סיידר במקום מים:</strong> התפוחים שצ'פמן נטע כלל לא היו תפוחי מאכל, אלא תפוחים חמוצים שנועדו לייצור סיידר אלכוהולי (Hard Cider). באותם ימים, מים היו לרוב מזוהמים ומסוכנים לשתייה. סיידר, בזכות תהליך ההתססה, היה משקה בטוח לחלוטין שמשפחות שלמות שתו מדי יום. צ'פמן לא הביא למתיישבים קינוח; הוא הביא להם הישרדות.</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h4 class="text-xl font-black text-white flex items-center gap-2">
+                                <span class="w-2 h-8 bg-brandAccent rounded-full"></span>
+                                ב. עיצוב הבית: אמיליה סימונס והכרזת העצמאות הקולינרית
+                            </h4>
+                            <p>אם ג'ון צ'פמן סיפק את חומר הגלם, אמיליה סימונס הייתה זו שלימדה את האומה מה לעשות איתו במטבח. הספר שלה, <em>American Cookery</em> (1796), לא היה סתם אוסף מתכונים אלא הצהרה פוליטית ותרבותית חתרנית. עד פרסומו, נשות ארה"ב השתמשו בספרי בישול בריטיים שדרשו מרכיבים שלא היו זמינים באמריקה.</p>
+                            <p>סימונס, שהגדירה עצמה כ"יתומה אמריקאית", החליפה את המרכיבים הבריטיים בתוצרת מקומית כמו קמח תירס, דלעות וחמוציות. היא המציאה את השימוש ב<strong>פנינה-אפר (Pearlash)</strong> – חומר התפחה שהופק מאפר עצים שרופים, שהיה זמין לכל מתיישב והקדים את אבקת האפייה המודרנית. היא נתנה לנשים האמריקאיות את התחושה שהן בונות תרבות קולינרית חדשה ועשירה. באמצעות ספרה, פאי התפוחים הפך ממאפה בריטי כבד לסמל של חום וזהות לאומית.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 border-r-4 border-brandAccent pr-4">4. ההשפעה והמשמעות התרבותית</h3>
+                    <p>הקשר בין פאי התפוחים לזהות האמריקאית הגיע לשיאו בסוף המאה ה-19 ובתחילת המאה ה-20. כאשר מיליוני מהגרים הגיעו לארצות הברית, לימוד אפיית פאי נחשב לחלק בלתי נפרד מ"אמריקניזציה". במהלך מלחמת העולם השנייה, כשהחיילים נשאלו למען מה הם נלחמים, התשובה הפכה למטבע הלשון: <span class="text-white italic">"For Mom and Apple Pie"</span>. הפאי הפך למטאפורה לשלום, שפע, וביתיות.</p>
+                </div>
+
+                <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                    <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">5. מקורות היסטוריים ארכיוניים</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>ספר הבישול האמריקאי - American Cookery, אמיליה סימונס (1796).</li>
+                        <li>החברה ההיסטורית של אוהיו (Ohio Historical Society) - ארכיוני ג'ון צ'פמן.</li>
+                        <li>אגודת התפוחים האמריקאית (US Apple Association).</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="pieModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('pieModal', false)">
+        <div class="relative max-w-2xl w-full bg-gray-900 rounded-3xl shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/apple-pie-icon.jpg" class="w-full h-auto rounded-2xl">
+            <div class="absolute bottom-6 left-6 right-6 bg-black/80 text-white text-xs p-3 rounded-xl backdrop-blur-sm text-center">פאי התפוחים הקלאסי עם תבנית "שתי וערב" (Lattice).</div>
+            <button class="absolute top-4 left-4 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    
+    <div id="chapmanModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('chapmanModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/john-chapman-portrait.jpg" class="w-full h-auto rounded-3xl shadow-2xl border-4 border-white/10">
+            <button class="absolute top-4 left-4 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <div id="simmonsModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('simmonsModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/amelia-simmons-book.jpg" class="w-full h-auto rounded-3xl shadow-2xl border-4 border-goldAccent">
+            <button class="absolute top-4 left-4 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
