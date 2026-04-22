@@ -1,0 +1,278 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Declaration of Independence | National Symbols Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        parchment: { 100: '#fdf6e3', 200: '#fdf6e3' }
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header / Navigation (Absolute - Will not follow on scroll) -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index-en.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group">
+                    <i data-lucide="arrow-left" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">Declaration of Independence</h1>
+                    <p class="text-xs md:text-sm text-gold-400 font-medium">1776 | Founding Document</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="declaration.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="Hebrew">
+                    HE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="scroll" class="w-16 h-16 mx-auto text-gold-400 mb-6 drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The Declaration of Independence</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                The document that founded the nation, created the American Creed, and changed the course of world history.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16">
+            <button onclick="openModal('modal-jefferson')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl">
+                <img src="../assets/images/symbols/jefferson-portrait.webp" alt="Thomas Jefferson" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">Thomas Jefferson</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge Image</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-document')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-gold-500/50 hover:border-gold-400 transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-10">
+                <img src="../assets/images/symbols/declaration-signatures.webp" alt="Declaration of Independence" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-gold-400 font-bold text-sm md:text-lg drop-shadow-md">Original Document</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge Image</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-committee')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl">
+                <img src="../assets/images/symbols/committee-of-five.webp" alt="Committee of Five" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">Committee of Five</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge Image</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Research Content -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">Historical Identity: Origin & Evolution</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">Adoption and Recognition:</strong> The Declaration was officially adopted by the Second Continental Congress on <strong>July 4, 1776</strong>. Contrary to popular myth, most delegates did not sign it on July 4th, but rather on August 2, 1776.</li>
+                    <li><strong class="text-white">Reason for Adoption:</strong> The Revolutionary War had begun a year prior. The Declaration served three primary purposes: to explain to the world (especially France) why the rebellion was legally and morally justified, to unite the 13 colonies under a shared cause, and to sever political ties with Great Britain permanently.</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">Deconstructed Etymological Research</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-l-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">Declaration</h4>
+                        <p class="text-slate-300 text-lg">Originates from Latin: <span class="italic text-gold-400">Declarare</span> (to make clear, to reveal). It is composed of <span class="font-semibold text-white">De-</span> (completely) and <span class="font-semibold text-white">Clarare</span> (to clarify/illuminate). The profound literal meaning is exposing the political truth to the light of day.</p>
+                    </div>
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-l-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">Independence</h4>
+                        <p class="text-slate-300 text-lg">Composed of the Latin prefix <span class="font-semibold text-white">In-</span> (not) and the verb <span class="italic text-gold-400">Dependere</span> (to hang from, or rely upon). The literal meaning is "not to rely on another"—to stand on one's own two feet.</p>
+                    </div>
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-l-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">Thomas Jefferson</h4>
+                        <ul class="list-disc list-inside space-y-2 text-slate-300 text-lg marker:text-gold-500">
+                            <li><strong class="text-white">Thomas:</strong> An ancient Aramaic name, "Ta'oma", which translates literally to "Twin".</li>
+                            <li><strong class="text-white">Jefferson:</strong> An English patronymic surname meaning "Son of Jeffrey". Jeffrey derives from Old Germanic roots (<span class="italic">Gaufrid</span>), meaning "God's peace".</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">The People Behind the Symbol</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-xl font-bold text-gold-400 mb-3">Thomas Jefferson (1743 – 1826) - Principal Author</h4>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Early Life & Education:</strong> Born in Virginia to a wealthy planter family. Jefferson was a true polymath: an architect, philosopher, scientist, and linguist. He avidly read the European Enlightenment thinkers, particularly John Locke, from whom he borrowed the concept of "natural rights."
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">Ideology & The American Paradox:</strong> Jefferson was only 33 when he drafted the document. He penned the most revolutionary and moral words in human history ("all men are created equal"). Yet herein lies his greatest paradox: Jefferson owned hundreds of slaves at his Monticello plantation and, with few exceptions, never freed them. 
+                        </p>
+                    </div>
+                    <div class="bg-navy-900/40 p-4 rounded-lg">
+                        <h4 class="text-lg font-bold text-white mb-2">John Hancock</h4>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            President of the Continental Congress. He was the first to sign the Declaration, doing so in huge, flamboyant letters. Legend says he signed it so large "so King George could read it without his spectacles." To this day, the term "John Hancock" is American slang for a signature.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+             <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="file-text" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">Anatomy of the Document</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                    The Declaration is not a legal blueprint like the Constitution, but rather a moral philosophy and an indictment. It is divided into several parts:
+                </p>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">The Preamble:</strong> Here, Jefferson formulates the moral justification for rebellion. It contains the most famous sentence ever written in the English language regarding human rights.</li>
+                    <li><strong class="text-white">Grievances:</strong> This makes up the bulk of the document, listing 27 specific abuses committed by King George III (taxation without consent, quartering troops, abolishing laws).</li>
+                    <li><strong class="text-white">Final Declaration:</strong> The conclusion where the colonies officially declare themselves "Free and Independent States."</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">Cultural Impact and Meaning</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                    If the Constitution is the "law", the Declaration is the "American Creed". It was initially written merely to justify a separation from Britain, but the promise that "all men are created equal" took on a life of its own:
+                </p>
+                <ul class="space-y-3 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong>Abraham Lincoln</strong> invoked it in his Gettysburg Address to prove the nation was born in 1776 around the concept of equality.</li>
+                    <li><strong>Martin Luther King Jr.</strong> quoted it in his "I Have a Dream" speech (1963), calling it a "promissory note" that America needed to cash for its Black citizens.</li>
+                </ul>
+            </section>
+
+             <!-- Link to Full Text -->
+             <section class="mt-12 text-center pt-8 border-t border-navy-600">
+                <a href="declaration-text-en.html" class="inline-flex flex-col items-center justify-center p-6 bg-gradient-to-br from-navy-700 to-navy-900 border border-gold-500/50 rounded-xl hover:border-gold-400 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] transition-all group w-full md:w-2/3 mx-auto">
+                    <i data-lucide="book-open" class="w-10 h-10 text-gold-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-xl md:text-2xl font-bold text-white mb-2">Read the Full Text</span>
+                    <span class="text-slate-400 text-sm md:text-base">The complete original 1,337-word historic document</span>
+                </a>
+             </section>
+
+        </article>
+    </main>
+
+    <!-- Modals -->
+    <div id="modal-jefferson" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-jefferson')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/jefferson-portrait.webp" alt="Thomas Jefferson" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">Thomas Jefferson, 1776</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    The 33-year-old Jefferson in his rented room in Philadelphia, where he drafted the words that would change the world.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-document" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-document')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/declaration-signatures.webp" alt="Declaration Signatures Close-up" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">The Original Document</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    A close-up of the Declaration parchment. The bottom prominently features John Hancock's massive signature. The aged ink tells the story of the nation's birth.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-committee" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-committee')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/committee-of-five.webp" alt="Committee of Five" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">The Committee of Five</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    The historic moment in Independence Hall where John Adams, Benjamin Franklin, Thomas Jefferson, Robert Livingston, and Roger Sherman present the draft to the Continental Congress.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
