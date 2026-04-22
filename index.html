@@ -39,142 +39,143 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array - Links & Images strictly matched to GitHub Screenshots
+        // Symbol Data Array - Filenames strictly matched to GitHub Screenshots
         const symbolsData = [
             {
                 id: 'declaration',
                 category: 'vision',
-                title: 'הכרזת העצמאות',
-                year: '1776',
+                title: `הכרזת העצמאות`,
+                year: `1776`,
                 description: `המסמך שכונן את האומה ויצר את ה'אני מאמין' האמריקאי, בהובלתו של תומאס ג'פרסון.`,
-                icon: 'scroll',
-                image: 'assets/images/symbols/declaration-signatures.webp',
-                link: 'symbols/declaration.html',
+                icon: `scroll`,
+                image: `assets/images/symbols/declaration-signatures.webp`,
+                link: `symbols/declaration.html`,
                 isNew: true
             },
             {
                 id: 'constitution',
                 category: 'vision',
-                title: 'חוקת ארצות הברית',
-                year: '1787',
+                title: `חוקת ארצות הברית`,
+                year: `1787`,
                 description: `הסמל האזרחי העליון והחוזה המקודש של הרפובליקה, מבית מדרשו של ג'יימס מדיסון.`,
-                icon: 'scale',
-                image: 'assets/images/symbols/constitution-document.webp',
-                link: 'symbols/constitution.html',
+                icon: `scale`,
+                image: `assets/images/symbols/constitution-document.webp`,
+                link: `symbols/constitution.html`,
                 isNew: false
             },
             {
                 id: 'motto',
                 category: 'vision',
-                title: 'המוטו הלאומי',
-                year: '1956',
+                title: `המוטו הלאומי`,
+                year: `1956`,
                 description: `In God We Trust - שורשיו ההיסטוריים, משמעותו התאולוגית ומלחמות הדת שסביבו.`,
-                icon: 'quote',
-                image: 'assets/images/symbols/great-seal-us.svg',
-                link: 'symbols/motto.html',
+                icon: `quote`,
+                image: `assets/images/symbols/great-seal-us.svg`,
+                link: `symbols/motto.html`,
                 isNew: false
             },
             {
                 id: 'flag',
                 category: 'identity',
-                title: 'דגל ארצות הברית',
-                year: '1777',
+                title: `דגל ארצות הברית`,
+                year: `1777`,
                 description: `ההיסטוריה, המיתוס של בטסי רוס, והאבולוציה של 'הפסים והכוכבים'.`,
-                icon: 'flag',
-                image: 'assets/images/symbols/star-spangled-banner-pa.webp',
-                link: 'symbols/american-flag.html',
+                icon: `flag`,
+                image: `assets/images/symbols/star-spangled-banner-parchment.webp`,
+                link: `symbols/american-flag.html`,
                 isNew: false
             },
             {
                 id: 'anthem',
                 category: 'identity',
-                title: 'ההמנון הלאומי',
-                year: '1814',
+                title: `ההמנון הלאומי`,
+                year: `1814`,
                 description: `'הדגל זרוע הכוכבים' - שיר שנולד בלב קרב ימי עקוב מדם במלחמת 1812.`,
-                icon: 'music',
-                image: 'assets/images/symbols/independence-hall.jpeg',
-                link: 'symbols/national-anthem.html',
+                icon: `music`,
+                image: `assets/images/symbols/independence-hall.jpeg`,
+                link: `symbols/national-anthem.html`,
                 isNew: false
             },
             {
                 id: 'seal',
                 category: 'identity',
-                title: 'החותם הגדול',
-                year: '1782',
+                title: `החותם הגדול`,
+                year: `1782`,
                 description: `הסמל הרשמי המשלב את העיט, עלי הזית והחצים. ההנדסה שמאחורי החותם.`,
-                icon: 'stamp',
-                image: 'assets/images/symbols/great-seal-us.svg',
-                link: 'symbols/great-seal.html',
+                icon: `stamp`,
+                image: `assets/images/symbols/great-seal-us.svg`,
+                link: `symbols/great-seal.html`,
                 isNew: false
             },
             {
                 id: 'uncle-sam',
                 category: 'identity',
-                title: 'הדוד סם',
-                year: '1812',
+                title: `הדוד סם`,
+                year: `1812`,
                 description: `מסוחר בשר אלמוני מניו יורק לאייקון הגיוס המפורסם בעולם שעוצב על ידי ג'יימס פלאג.`,
-                icon: 'user-circle',
-                image: 'assets/images/symbols/james-flagg-portrait.jpg',
-                link: 'symbols/uncle-sam.html',
+                icon: `user-circle`,
+                image: `assets/images/symbols/james-flagg-portrait.jpg`,
+                link: `symbols/uncle-sam.html`,
                 isNew: false
             },
             {
                 id: 'eagle',
                 category: 'nature',
-                title: 'העיט הקירח',
-                year: '1782',
+                title: `העיט הקירח`,
+                year: `1782`,
                 description: `הציפור הלאומית המסמלת חירות ועוצמה. כולל המחלוקת ההיסטורית עם בנג'מין פרנקלין.`,
-                icon: 'bird',
-                image: 'assets/images/symbols/bald-eagle-portrait-maje.webp',
-                link: 'symbols/bald-eagle.html',
+                icon: `bird`,
+                image: `assets/images/symbols/bald-eagle-portrait-majestic.webp`,
+                link: `symbols/bald-eagle.html`,
                 isNew: false
             },
             {
                 id: 'bison',
                 category: 'nature',
-                title: 'הביזון האמריקאי',
-                year: '2016',
+                title: `הביזון האמריקאי`,
+                year: `2016`,
                 description: `היונק הלאומי. סמל לעוצמת הערבות, לטרגדיית ההכחדה ולמאמץ השימור הענק.`,
-                icon: 'paw-print',
-                image: 'assets/images/symbols/american-bison-rugged-r.webp',
-                link: 'symbols/american-bison.html',
+                icon: `paw-print`,
+                image: `assets/images/symbols/american-bison-rugged-realism.webp`,
+                link: `symbols/american-bison.html`,
                 isNew: false
             },
             {
                 id: 'oak-tree',
                 category: 'nature',
-                title: 'עץ האלון',
-                year: '2004',
+                title: `עץ האלון`,
+                year: `2004`,
                 description: `העץ הלאומי המסמל חוזק, עמידות ושורשים עמוקים באדמה האמריקאית.`,
-                icon: 'tree-pine',
-                image: 'assets/images/symbols/american-oak-bark-acor.webp',
-                link: 'symbols/oak-tree.html',
+                icon: `tree-pine`,
+                image: `assets/images/symbols/american-oak-bark-acorn.webp`,
+                link: `symbols/oak-tree.html`,
                 isNew: false
             },
             {
                 id: 'rose',
                 category: 'nature',
-                title: 'הוורד',
-                year: '1986',
+                title: `הוורד`,
+                year: `1986`,
                 description: `הפרח הלאומי של ארצות הברית המסמל חיים, אהבה ומסירות. הוכרז רשמית בגן הוורדים.`,
-                icon: 'flower-2',
-                image: 'assets/images/symbols/american-national-rose-red.webp',
-                link: 'symbols/rose.html',
+                icon: `flower-2`,
+                image: `assets/images/symbols/american-national-rose-deep-red.webp`,
+                link: `symbols/rose.html`,
                 isNew: false
             },
             {
                 id: 'apple-pie',
                 category: 'nature',
-                title: 'פאי תפוחים',
-                year: '1800s',
+                title: `פאי תפוחים`,
+                year: `1800s`,
                 description: `הסמל הקולינרי הבלתי רשמי של ארצות הברית - 'As American as apple pie'.`,
-                icon: 'chef-hat',
-                image: 'assets/images/symbols/apple-pie-icon.jpg',
-                link: 'symbols/apple-pie.html',
+                icon: `chef-hat`,
+                image: `assets/images/symbols/apple-pie-icon.jpg`,
+                link: `symbols/apple-pie.html`,
                 isNew: false
             }
         ];
 
+        // Component: Individual Card
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -189,9 +190,10 @@
                             src={symbol.image} 
                             alt={symbol.title} 
                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            loading="lazy"
                             onError={(e) => { 
                                 e.target.onerror = null; 
-                                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">נתיב תמונה לא תקין בגיטהאב</text></svg>'; 
+                                e.target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">נתיב קובץ חסר בגיטהאב</text></svg>`; 
                             }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-800 via-navy-800/20 to-transparent"></div>
@@ -252,7 +254,7 @@
             const natureSymbols = symbolsData.filter(s => s.category === 'nature');
 
             return (
-                <div>
+                <div className="min-h-screen">
                     <header className="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                             <div className="flex items-center gap-4">
