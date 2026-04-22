@@ -39,7 +39,6 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array - Filenames strictly matched to GitHub Screenshots
         const symbolsData = [
             {
                 id: 'declaration',
@@ -114,7 +113,7 @@
                 year: `1812`,
                 description: `מסוחר בשר אלמוני מניו יורק לאייקון הגיוס המפורסם בעולם שעוצב על ידי ג'יימס פלאג.`,
                 icon: `user-circle`,
-                image: `assets/images/symbols/james-flagg-portrait.jpg`,
+                image: `assets/images/symbols/uncle-sam-icon.jpg`,
                 link: `symbols/uncle-sam.html`,
                 isNew: false
             },
@@ -175,7 +174,6 @@
             }
         ];
 
-        // Component: Individual Card
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
