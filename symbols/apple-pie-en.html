@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Apple Pie | The Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#ea580c', /* Amber/Orange for the apple pie theme */
+                        brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans selection:bg-brandAccent selection:text-white">
+
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandAccent flex items-center justify-center border border-darkBorder shadow-lg">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">American National Symbols</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index-en.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="../about-en.html" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="apple-pie.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">HE</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">Comprehensive Historical Research: The Apple Pie</h2>
+            <p class="text-brandAccent font-serif text-lg">An unofficial symbol of freedom, nostalgia, and domesticity: "As American as apple pie."</p>
+        </section>
+
+        <section class="flex flex-row justify-center gap-6 flex-wrap">
+            <button onclick="toggleModal('pieModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/apple-pie-icon.jpg" alt="Apple Pie" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Apple Pie</span>
+            </button>
+            <button onclick="toggleModal('chapmanModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/john-chapman-portrait.jpg" alt="John Chapman" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">John Chapman</span>
+            </button>
+            <button onclick="toggleModal('simmonsModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-goldAccent hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/amelia-simmons-book.jpg" alt="Amelia Simmons" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Amelia Simmons</span>
+            </button>
+        </section>
+
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. Historical Identity: Origin and Development</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Years of Adoption and Recognition:</strong> Although the apple pie is not a legally codified national symbol, it was organically adopted by American culture beginning in the 18th century. In 1796, the first American cookbook was published containing the familiar recipe, and during World War II, the dessert became a semi-official symbol of patriotic propaganda.</li>
+                    <li><strong>Reason for Adoption:</strong> The apple, which arrived from Europe and Asia, acclimated perfectly to the North American climate and thrived. The pie, a relatively cheap and filling pastry, became a survival food for the early settlers, and later a symbol of abundance, family, and of the United States as a place of a comforting and protective home.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. Etymological Research: Concepts and Names</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>Apple Pie:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>Apple:</strong> From the Old English <em>Æppel</em>, originating from the Proto-Germanic <em>Aplaz</em>. The ancient term referred to any tree fruit other than a berry (including nuts).</li>
+                            <li><strong>Pie:</strong> The word's origin is from Middle English in the 14th century. Linguists estimate that the word is related to the Magpie bird (then called <em>Pie</em>). Just as the magpie collects various mixed objects for its nest, the pie is a pastry that brings together various mixed ingredients under a crust.</li>
+                        </ul>
+                    </li>
+                    <li><strong>John "Johnny Appleseed" Chapman:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>John:</strong> The English version of the Hebrew name "Yochanan" (God has been gracious).</li>
+                            <li><strong>Chapman:</strong> An Old English surname (from Old English <em>Cēapmann</em>) meaning a merchant, businessman, or peddler (Ceap = trade, Mann = man).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Amelia Simmons:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-1 ml-4">
+                            <li><strong>Amelia:</strong> A name originating in Germanic languages (root word <em>Amal</em>), meaning work, effort, or industriousness.</li>
+                            <li><strong>Simmons:</strong> A patronymic surname meaning "son of Simon." Simon is the Greek version of the Hebrew name "Shimon".</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-white/20 pb-2">3. The People Behind the Symbol: Conquering the Wilderness and Shaping the Home</h3>
+
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-brandAccent mb-2 block">A. Conquering the Wilderness: The Truth and Myth of John "Johnny Appleseed" Chapman (1774–1845)</strong>
+                    <p class="mb-3">The common cultural perception in the United States paints Johnny Appleseed as an eccentric barefoot nomad, wearing a tin pot on his head and randomly scattering apple seeds everywhere. Reality, however, was far more fascinating and profoundly affected the American economy.</p>
+                    <p class="mb-3">John Chapman was actually a brilliant businessman, real estate entrepreneur, and agricultural pioneer. In the late 18th century, as the American frontier began to move west across the Appalachian Mountains (to the Ohio and Indiana regions), the law required new settlers to plant at least 50 fruit trees on their land to prove they were actually settling it (Land Grants).</p>
+                    <p class="mb-3">Chapman recognized the opportunity: he would roam ahead of the waves of migration, locate good plots of land, clear them, plant tens of thousands of apple seeds (which he collected for free from cider mills in Pennsylvania), and establish fenced nurseries. When the settlers finally arrived in the area, the nursery was already prepared, and Chapman sold them saplings for a nominal price or in barter (like used clothing, which explains his unkempt appearance).</p>
+                    <p class="mb-3"><strong>Cider instead of water:</strong> The apples Chapman planted were not eating apples ("table apples" were grafted in special nurseries, and Chapman opposed grafting for religious reasons). His apples were sour and astringent, intended for one purpose: the production of <strong>Hard Cider</strong>. In those days on the frontier, water was often polluted and dangerous to drink. Cider, thanks to the fermentation process and its alcohol content, was a perfectly safe beverage, and entire families—including children—drank it daily. Chapman did not bring the settlers a dessert; he brought them survival.</p>
+                    <p><strong>Rooting in culture:</strong> Chapman became a legend in his own lifetime due to his unique character (he was a pacifist, a vegetarian, befriended Native American tribes, and refused to harm animals). After his death in 1845, the "Johnny Appleseed" legend was detached from its alcoholic and business context, becoming a clear symbol of the American expansion vision (Manifest Destiny)—a figure bringing abundance, culture, and new life to the wild wilderness.</p>
+                </div>
+
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">B. Shaping the Home: Amelia Simmons and Culinary Independence (Late 18th Century)</strong>
+                    <p class="mb-3">If John Chapman provided the raw material, Amelia Simmons was the one who taught the nation what to do with it in the kitchen. Her book, <em>American Cookery</em>, published in 1796 (only 20 years after the US Declaration of Independence), was not just a collection of recipes. It was a subversive political and cultural statement.</p>
+                    <p class="mb-3">Until the book's publication, American women used British cookbooks (mainly by Susannah Carter). These cookbooks required ingredients that were available in England but expensive or unobtainable in America (like high-quality oats, rare spices, and European brick oven baking techniques).</p>
+                    <p class="mb-3">Simmons, who defined herself on the book's cover as an "American Orphan," changed the rules: she replaced British oats with native cornmeal, incorporated local pumpkins, cranberries, and pecans (native words that entered the printed culinary lexicon for the first time), and invented the use of <strong>Pearlash</strong>—a leavening agent derived from the ashes of burned trees (predating modern baking powder), which was available to every American settler who cleared the forests.</p>
+                    <p><strong>Rooting in culture:</strong> Simmons essentially created the independent American cuisine. She gave American women the feeling that they were not "second-class Englishwomen" trying to recreate European recipes, but were building a new, rich, and local culinary culture. In her book, recipes for an American apple pie appeared for the first time, turning the pastry from a heavy British symbol into a symbol of warmth, patriotism, and American national identity.</p>
+                </div>
+
+                <h3 class="text-xl font-bold text-white mt-10 mb-2 border-b border-goldAccent pb-2">4. Cultural Impact and Significance</h3>
+                <p>The connection between the apple pie and American identity peaked in the late 19th and early 20th centuries. When millions of immigrants arrived in the United States, learning to bake a pie was considered an integral part of "Americanization."</p>
+                <p>During World War II, when journalists asked American soldiers crossing the ocean to Europe what they were fighting for, the standard answer dictated by propaganda became the idiom: <em>"For Mom and Apple Pie."</em> The pie was not just food—it was a metaphor for peace, abundance, domesticity, and the freedom they had left behind to defend the world.</p>
+
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">5. Archival Historical Sources</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-400">
+                    <li>The American Cookbook - <em>American Cookery</em>, Amelia Simmons (1796 Edition, Library of Congress).</li>
+                    <li>Ohio Historical Society - Land and nursery archives of John Chapman.</li>
+                    <li>US Apple Association - Historical data on the spread of the fruit.</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="pieModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('pieModal', false)">
+        <div class="relative max-w-4xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandAccent">
+            <img src="../assets/images/symbols/apple-pie-icon.jpg" class="w-full h-auto rounded">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="chapmanModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('chapmanModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/john-chapman-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    <div id="simmonsModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('simmonsModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/amelia-simmons-book.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-goldAccent">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
