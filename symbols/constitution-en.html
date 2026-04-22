@@ -72,13 +72,13 @@
             </button>
             <button onclick="toggleModal('hallModal', true)" class="flex flex-col items-center gap-3 group">
                 <div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2 border-goldAccent hover:scale-105 transition-transform shadow-2xl">
-                    <img src="../assets/images/symbols/independence-hall.jpg" alt="Independence Hall" class="w-full h-full object-cover">
+                    <!-- The correct .jpeg path -->
+                    <img src="../assets/images/symbols/independence-hall.jpeg" alt="Independence Hall" class="w-full h-full object-cover">
                 </div>
                 <span class="text-xs text-gray-400 font-bold uppercase tracking-widest text-center">Independence Hall</span>
             </button>
         </section>
 
-        <!-- Full Research Text -->
         <section class="bg-darkSurface border border-darkBorder rounded-3xl p-8 sm:p-12 shadow-2xl">
             <div class="content-text space-y-10">
 
@@ -191,7 +191,8 @@
 
     <div id="hallModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('hallModal', false)">
         <div class="relative max-w-2xl w-full">
-            <img src="../assets/images/symbols/independence-hall.jpg" class="w-full h-auto rounded-3xl shadow-2xl border-4 border-goldAccent">
+            <!-- The correct .jpeg path -->
+            <img src="../assets/images/symbols/independence-hall.jpeg" class="w-full h-auto rounded-3xl shadow-2xl border-4 border-goldAccent">
             <button class="absolute top-4 left-4 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
         </div>
     </div>
