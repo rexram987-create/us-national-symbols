@@ -1,0 +1,252 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>הדוד סם | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        brandAccent: '#1e3a8a', /* כחול-דגל אמריקאי עמוק */
+                        brandRed: '#dc2626',
+                        goldAccent: '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        .glass-effect { background: rgba(23, 23, 23, 0.8); backdrop-filter: blur(10px); }
+        .modal-overlay { background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px); z-index: 1000; }
+        .content-text { font-size: 1rem; line-height: 1.8; color: #d1d5db; }
+    </style>
+</head>
+<body class="bg-darkBase text-gray-200 min-h-screen font-sans selection:bg-brandAccent selection:text-white">
+
+    <!-- Header סטטי עם כפתור החלפת שפה -->
+    <header class="border-b border-darkBorder bg-darkSurface py-4">
+        <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-brandAccent flex items-center justify-center border border-brandRed">
+                    <span class="text-white font-bold text-lg">US</span>
+                </div>
+                <h1 class="text-xl font-bold text-white tracking-tight">סמלי האומה האמריקאית</h1>
+            </div>
+            <nav class="flex items-center gap-6 font-medium text-sm">
+                <a href="../index.html" class="text-gray-400 hover:text-white transition-colors">ראשי</a>
+                <a href="../about.html" class="text-gray-400 hover:text-white transition-colors">אודות</a>
+                <!-- כפתור מעבר לאנגלית (עתידי) -->
+                <a href="uncle-sam-en.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span class="text-xs font-bold">EN</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-12 flex flex-col gap-12">
+        
+        <!-- כותרת ראשית -->
+        <section class="border-b border-darkBorder pb-6">
+            <h2 class="text-3xl sm:text-4xl font-black text-white mb-2">מחקר היסטורי מקיף: הדוד סם (Uncle Sam) – האנשת האומה</h2>
+            <p class="text-brandAccent font-serif text-lg">מסוחר בשר אלמוני, דרך קריקטורות ועד לכרזת הגיוס המשפיעה ביותר בהיסטוריה.</p>
+        </section>
+
+        <!-- תמונות לפתיחה בחלון צף (4 חלונות) -->
+        <section class="flex flex-row justify-center gap-4 sm:gap-6 flex-wrap">
+            <button onclick="toggleModal('samModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-brandRed hover:scale-105 transition-transform bg-gray-900 shadow-xl">
+                    <img src="../assets/images/symbols/uncle-sam-icon.jpg" alt="הדוד סם" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center">הדוד סם<br>(I Want YOU)</span>
+            </button>
+            <button onclick="toggleModal('wilsonModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/samuel-wilson-portrait.jpg" alt="סמואל ווילסון" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center">סמואל<br>ווילסון</span>
+            </button>
+            <button onclick="toggleModal('nastModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-brandAccent hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/thomas-nast-portrait.jpg" alt="תומאס נאסט" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center">תומאס<br>נאסט</span>
+            </button>
+            <button onclick="toggleModal('flaggModal', true)" class="flex flex-col items-center gap-2 group">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-goldAccent hover:scale-105 transition-transform shadow-xl">
+                    <img src="../assets/images/symbols/james-flagg-portrait.jpg" alt="ג'יימס מונטגומרי פלאג" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[10px] text-gray-400 font-bold uppercase tracking-widest text-center">ג'יימס מ.<br>פלאג</span>
+            </button>
+        </section>
+
+        <!-- הטקסט המחקרי המלא -->
+        <section class="bg-darkSurface border border-darkBorder rounded-2xl p-6 sm:p-8 shadow-xl">
+            <div class="content-text space-y-6">
+
+                <!-- 1. תעודת זהות היסטורית -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">1. תעודת זהות היסטורית: שנת הכרזה, יוצרים וסיבת הבחירה</h3>
+                <ul class="list-none space-y-4">
+                    <li><strong>שנת הכרזה והכרה רשמית:</strong> 15 בספטמבר 1961. הקונגרס האמריקאי (הקונגרס ה-87) העביר החלטה רשמית המכירה בסמואל ווילסון כ"אביו ומקור השראתו של הסמל הלאומי של אמריקה". עם זאת, יצירת הדימוי החזותי נמשכה לאורך עשרות שנים (משנות ה-70 של המאה ה-19 ועד 1917).</li>
+                    <li><strong>ההוגים והיוצרים:</strong> סמל זה אינו פרי יצירתו של אדם אחד, אלא שילוב של שלושה: סמואל ווילסון (המקור השמי), תומאס נאסט (המעצב החזותי הראשון), וג'יימס מונטגומרי פלאג (יוצר הכרזה האייקונית).</li>
+                    <li><strong>סיבת הבחירה והאימוץ:</strong> הדוד סם הפך לכינוי החיבה והסמכות של הממשל הפדרלי. הוא מסמל פטריוטיות עזה, תחושת חובה אזרחית, ואת כוחה של המדינה לגייס ולאחד את אזרחיה בעתות משבר מלחמתי וכלכלי.</li>
+                </ul>
+
+                <!-- 2. מחקר אטימולוגי מפורק -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-brandAccent pb-2">2. מחקר אטימולוגי מפורק: שמות ומקורות</h3>
+                <p class="mb-4">פירוק אטימולוגי של המושג ושל שמות האישים המעורבים ביצירתו:</p>
+                
+                <div class="space-y-6 ml-4">
+                    <div>
+                        <strong class="text-lg text-brandRed">הדוד סם (Uncle Sam) ו-U.S:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li><strong>Uncle (דוד):</strong> הגיעה מהצרפתית העתיקה (Oncle), ששאבה אותה מהלטינית הקלאסית <em>Avunculus</em> ("אח האם").</li>
+                            <li><strong>Sam (סם):</strong> קיצור חיבה לשם Samuel.</li>
+                            <li><strong>U.S:</strong> ראשי התיבות של United States. <em>United</em> מהלטינית <em>Unitus</em> (מאוחד), ו-<em>States</em> מהלטינית <em>Status</em> (מצב, או מעמד פוליטי).</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="text-lg text-white">סמואל ווילסון (Samuel Wilson):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li><strong>Samuel (שמואל):</strong> מקור עברי תנ"כי. "שם האל" או "שמע אל" (האל שמע את תפילתי).</li>
+                            <li><strong>Wilson (ווילסון):</strong> פטרונים אנגלי ("בנו של וויל"). <em>Will</em> הוא קיצור של ויליאם (William), מהגרמאנית העתיקה <em>Willahelm</em>: <em>Wil</em> (רצון) ו-<em>Helm</em> (מגן). "מגן בעל כוח רצון".</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="text-lg text-white">תומאס נאסט (Thomas Nast):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li><strong>Thomas (תומאס):</strong> מקור ארמי עתיק. "תאומא" (Ta'oma) שמשמעותה המילולית היא "תאום".</li>
+                            <li><strong>Nast (נאסט):</strong> מקור גרמני-בווארי. עיוות של השם היווני "Anastasius" (אנסטסיוס), שמשמעותו "קם לתחייה" (Resurrection).</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <strong class="text-lg text-white">ג'יימס מונטגומרי פלאג (James Montgomery Flagg):</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <li><strong>James (ג'יימס):</strong> אנגלית לשם העברי "יעקב" (עוקב). התגלגל ללטינית כ-Iacomus.</li>
+                            <li><strong>Montgomery (מונטגומרי):</strong> אצילי נורמני-צרפתי. <em>Mont</em> (הר) ו-<em>Gomeric</em> (כוח וגבר). "ההר של גומרי".</li>
+                            <li><strong>Flagg (פלאג):</strong> טופוגרפי אנגלי. מהאנגלית העתיקה <em>Flagg</em> (סוף/קנה בביצה) או <em>Flagge</em> (אבן ריצוף).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 3. האנשים מאחורי הסמל -->
+                <h3 class="text-xl font-bold text-white mt-10 mb-2 border-b border-brandRed pb-2">3. האנשים מאחורי הסמל (ביוגרפיה, אידאולוגיה והישגים)</h3>
+
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">א. סמואל ווילסון (1766 – 1854)</strong>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li><strong>ילדות:</strong> נולד במסצ'וסטס להורים ממוצא סקוטי-אירי. בגיל 15 התגייס לצבא הקונטיננטלי במלחמת העצמאות כאחראי אריזת בשר.</li>
+                        <li><strong>אידאולוגיה:</strong> פטריוט מובהק. האמין בעבודה קשה, מסחר הוגן, וחובה לתמוך בכוחות המזוינים הלוחמים למען הריבונות.</li>
+                        <li><strong>הישגים:</strong> הקים עסק משגשג בטרוי, ניו יורק. במלחמת 1812 סיפק בשר לצבא ארה"ב. חביותיו סומנו "U.S" (רכוש הממשלה). החיילים כינו אותו בחיבה "הדוד סם", והתבדחו שהבשר מגיע מ-"Uncle Sam", מה שהוליד את המיתוס הלשוני לממשלת ארצות הברית.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">ב. תומאס נאסט (1840 – 1902)</strong>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li><strong>ילדות:</strong> נולד בגרמניה והיגר לניו יורק בגיל שש. תלמיד חלש אך בעל כישרון ציור פנומנלי. נשר בגיל 15 לעבוד כמאייר עיתונות.</li>
+                        <li><strong>אידאולוגיה:</strong> מתנגד חריף לעבדות ולוחם בשחיתות הפוליטית בניו יורק. האמין בכוחה של הקריקטורה לחנך את ההמונים.</li>
+                        <li><strong>הישגים:</strong> "אבי הקריקטורה הפוליטית האמריקאית". בשנות ה-70 של המאה ה-19, הוא צייר את המושג "הדוד סם" כגבר רזה עם זקן תיש, כובע צילינדר ומכנסי פסים, וקיבע את מראהו. (עיצב גם את סנטה קלאוס וסמל הפיל הרפובליקני).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-darkBase/50 p-5 rounded-lg border border-darkBorder/50 my-4">
+                    <strong class="text-lg text-white mb-2 block">ג. ג'יימס מונטגומרי פלאג (1877 – 1960)</strong>
+                    <ul class="list-disc list-inside space-y-2 text-sm">
+                        <li><strong>ילדות:</strong> נולד בניו יורק. "ילד פלא"; בגיל 12 מכר איורים, ובגיל 15 עבד כמאייר קבוע. למד בלונדון ופריז.</li>
+                        <li><strong>אידאולוגיה:</strong> תמך באקטיביזם לאומי. ראה באמנות נשק תעמולתי לגיוס האומה ורצה לעורר מחויבות אישית אצל כל אזרח במלחמת העולם הראשונה.</li>
+                        <li><strong>הישגים:</strong> יצר ב-1917 את כרזת *"I Want YOU for U.S. Army"*. הדוד סם מצביע היישר אל הצופה. פלאג השתמש בפניו שלו עצמו כמודל. הכרזה הודפסה במיליוני עותקים והפכה ליצירת האמנות המוכרת באמריקה.</li>
+                    </ul>
+                </div>
+
+                <!-- 4. השפעה ומשמעות -->
+                <h3 class="text-xl font-bold text-white mt-10 mb-2 border-b border-goldAccent pb-2">4. ההשפעה והמשמעות התרבותית</h3>
+                <p>הדוד סם הוא דוגמה נדירה לאופן שבו "בדיחה" של חיילים הופכת למנוע פסיכולוגי של מעצמה. ההשפעה שלו חורגת מאיור יפה; כרזת ה-"I Want YOU" יצרה מהפכה בפסיכולוגיה של ההמונים. האצבע המורה והמבט החודר שברו את ה"קיר הרביעי" ופנו ישירות למצפון האישי של כל צעיר שעבר ברחוב, והפכו את הממשל הפדרלי ה"רחוק" וה"בירוקרטי" לדמות אב סמכותית הקוראת לעזרה.</p>
+                <p>בעולם, הדוד סם הפך למטאפורה הויזואלית האולטימטיבית לאמריקה. בעלות בריתה השתמשו בו כסמל של שפע, בעוד אויביה ציירו אותו בקריקטורות כאימפריאליסט. כך או אחרת, הוא הפך לפנים האנושיות של ארצות הברית.</p>
+
+                <!-- מקורות -->
+                <h3 class="text-xl font-bold text-white mt-8 mb-2 border-b border-darkBorder pb-2">5. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-2 ml-4 text-sm text-gray-400">
+                    <li>החלטת הקונגרס ה-87 (87th Congress), ספטמבר 1961 - הכרה רשמית בסמואל ווילסון.</li>
+                    <li>ארכיון החברה ההיסטורית של מחוז רנסלייר (Rensselaer County Historical Society).</li>
+                    <li>אוסף הקריקטורות של תומאס נאסט (Thomas Nast) - מגזין Harper's Weekly.</li>
+                    <li>ספריית הקונגרס (Library of Congress) - אוסף כרזות מלחמת העולם הראשונה (פרויקט פלאג).</li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- חלונות צפים (Modals) ל-4 תמונות -->
+    <div id="samModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('samModal', false)">
+        <div class="relative max-w-2xl w-full bg-gray-900 rounded-lg shadow-2xl p-2 border-4 border-brandRed">
+            <img src="../assets/images/symbols/uncle-sam-icon.jpg" class="w-full h-auto rounded">
+            <div class="absolute bottom-4 left-4 right-4 bg-black/80 text-white text-xs p-2 rounded backdrop-blur-sm text-center">הכרזה המקורית מאת ג'יימס מונטגומרי פלאג (1917). הממשל השתמש בה לגיוס במלחמות העולם.</div>
+            <button class="absolute top-2 left-2 bg-brandRed text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+    
+    <div id="wilsonModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('wilsonModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/samuel-wilson-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-white/20">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <div id="nastModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('nastModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/thomas-nast-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-brandAccent">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <div id="flaggModal" class="hidden fixed inset-0 modal-overlay items-center justify-center p-4" onclick="toggleModal('flaggModal', false)">
+        <div class="relative max-w-2xl w-full">
+            <img src="../assets/images/symbols/james-flagg-portrait.jpg" class="w-full h-auto rounded-lg shadow-2xl border-4 border-goldAccent">
+            <button class="absolute top-2 left-2 bg-brandAccent text-white w-10 h-10 rounded-full font-bold shadow-lg">✕</button>
+        </div>
+    </div>
+
+    <!-- ניווט תחתון למובייל עם כפתור שפה -->
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-3 flex justify-around z-50">
+        <a href="../index.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            ראשי
+        </a>
+        <a href="../about.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            אודות
+        </a>
+        <a href="uncle-sam-en.html" class="text-brandAccent font-medium flex flex-col items-center">
+            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            EN
+        </a>
+    </div>
+
+    <footer class="bg-darkSurface py-16 border-t border-darkBorder text-center mt-12 mb-16 sm:mb-0">
+        <p class="text-gray-600 text-[10px] font-black tracking-[0.5em] uppercase italic">The National Symbols Archive | Ram Shalev | 2026</p>
+    </footer>
+
+    <script>
+        function toggleModal(id, show) {
+            const el = document.getElementById(id);
+            if (show) { el.classList.remove('hidden'); el.classList.add('flex'); document.body.style.overflow = 'hidden'; }
+            else { el.classList.add('hidden'); el.classList.remove('flex'); document.body.style.overflow = 'auto'; }
+        }
+    </script>
+</body>
+</html>
+
+```
