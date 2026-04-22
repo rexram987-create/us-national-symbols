@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="dark">
 <head>
@@ -15,7 +16,6 @@
                     colors: {
                         navy: { 900: '#0a192f', 800: '#112240', 700: '#233554' },
                         gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
-                        parchment: { 100: '#fdf6e3', 200: '#fdf6e3' }
                     },
                     fontFamily: {
                         sans: ['Heebo', 'sans-serif'],
@@ -37,6 +37,7 @@
 </head>
 <body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
 
+    <!-- Header / Navigation (Absolute) -->
     <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
@@ -57,8 +58,10 @@
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
         
+        <!-- Hero Section -->
         <section class="text-center mb-16 relative">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
             <i data-lucide="scroll" class="w-16 h-16 mx-auto text-gold-400 mb-6 drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"></i>
@@ -68,6 +71,7 @@
             </p>
         </section>
 
+        <!-- Feature Images Grid -->
         <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16">
             <button onclick="openModal('modal-jefferson')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl">
                 <img src="../assets/images/symbols/jefferson-portrait.webp" alt="תומאס ג'פרסון" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
@@ -95,19 +99,22 @@
             </button>
         </section>
 
+        <!-- Research Content -->
         <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
             
+            <!-- Section 1: History -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
                     <h3 class="text-2xl font-bold text-white">תעודת זהות היסטורית: מקור והתפתחות</h3>
                 </div>
                 <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
-                    <li><strong class="text-white">שנות האימוץ וההכרה:</strong> ההכרזה אומצה רשמית על ידי הקונגרס הקונטיננטלי השני ב-<strong>4 ביולי 1776</strong>. למרות המיתוס, רוב הצירים לא חתמו עליה ב-4 ביולי, אלא ב-2 באוגוסט 1776.</li>
-                    <li><strong class="text-white">סיבת האימוץ:</strong> מלחמת העצמאות החלה שנה קודם לכן. ההכרזה נועדה להסביר לעולם מדוע המרד מוצדק, לאחד את המושבות, ולנתק סופית את הקשרים עם בריטניה.</li>
+                    <li><strong class="text-white">שנות האימוץ וההכרה:</strong> ההכרזה אומצה רשמית על ידי הקונגרס הקונטיננטלי השני ב-<strong>4 ביולי 1776</strong>. למרות המיתוס שנוצר בציורים היסטוריים, רוב הצירים לא חתמו עליה ב-4 ביולי. המסמך המקורי נחתם בפועל כחודש לאחר מכן, ב-2 באוגוסט 1776, לאחר שיוצר עותק מהודר על קלף (Engrossed copy).</li>
+                    <li><strong class="text-white">סיבת האימוץ:</strong> מלחמת העצמאות החלה למעשה שנה קודם לכן (באפריל 1775). בתחילה, אמריקאים רבים נלחמו רק למען זכויותיהם כנתינים בריטים ("אין מיסוי ללא ייצוג"). אך ככל שהמלחמה החריפה והמלך ג'ורג' השלישי הכריז על המושבות כמורדות ושכר שכירי חרב גרמנים, המנהיגות האמריקאית הבינה שאין דרך חזרה. ההכרזה נועדה לשלוש מטרות עיקריות: לספק צידוק מוסרי ופילוסופי למרד, לאחד את כל 13 המושבות תחת מטרה לאומית אחת, ולהוכיח לעולם (ובעיקר לצרפת) שארצות הברית היא מדינה ריבונית שניתן לחתום איתה על בריתות צבאיות.</li>
                 </ul>
             </section>
 
+            <!-- Section 2: Etymology -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
@@ -116,37 +123,136 @@
                 <div class="space-y-6">
                     <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
                         <h4 class="text-xl font-bold text-white mb-2">הצהרה (Declaration)</h4>
-                        <p class="text-slate-300 text-lg">מקור המילה בלטינית: <span class="italic text-gold-400">Declarare</span> (להפוך לברור, לחשוף). כלומר, חשיפת האמת הפוליטית לאור השמש.</p>
+                        <p class="text-slate-300 text-lg">מקור המילה בלטינית: <span class="italic text-gold-400">Declarare</span>. מורכב מ-<strong class="text-white">De-</strong> (פעולה מוחלטת) ו-<strong class="text-white">Clarare</strong> (להבהיר/להאיר). הפירוש המילולי הוא "חשיפת האמת הפוליטית לאור השמש" – פעולה פומבית שאינה ניתנת להכחשה.</p>
                     </div>
                     <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
                         <h4 class="text-xl font-bold text-white mb-2">עצמאות (Independence)</h4>
-                        <p class="text-slate-300 text-lg">הפירוש המילולי והעמוק הוא "לא להיות תלוי באחר", לעמוד על שתי רגליים בזכות עצמך.</p>
-                    </div>
-                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
-                        <h4 class="text-xl font-bold text-white mb-2">תומאס ג'פרסון (Thomas Jefferson)</h4>
-                        <ul class="list-disc list-inside space-y-2 text-slate-300 text-lg marker:text-gold-500">
-                            <li><strong class="text-white">Thomas (תומאס):</strong> שם ממקור ארמי עתיק. "תאומא" שמשמעותה המילולית היא "תאום".</li>
-                            <li><strong class="text-white">Jefferson (ג'פרסון):</strong> שם פטרונימי אנגלי שמשמעותו "בנו של ג'פרי", שפירושו "שלום אלוהי".</li>
-                        </ul>
+                        <p class="text-slate-300 text-lg">מורכב מהקידומת הלטינית <span class="font-semibold text-white">-In</span> (לא) והפועל <span class="italic text-gold-400">Dependere</span> (להיות תלוי ב-). הפירוש המילולי והעמוק הוא "לא להיות תלוי באחר", לעמוד איתן על שתי רגליים בזכות עצמך, ללא הישענות על גוף חיצוני.</p>
                     </div>
                 </div>
             </section>
 
+            <!-- Section 3: The People -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
                     <h3 class="text-2xl font-bold text-white">האנשים מאחורי הסמל</h3>
                 </div>
-                <div class="space-y-6">
-                    <div>
-                        <h4 class="text-xl font-bold text-gold-400 mb-3">תומאס ג'פרסון (1743 – 1826) - המחבר הראשי</h4>
+                <div class="space-y-8">
+                    
+                    <!-- Thomas Jefferson -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                            תומאס ג'פרסון (1743 – 1826) - המחבר הראשי
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Thomas:</strong> מארמית עתיקה, "תאומא" (תאום).</li>
+                                <li><strong class="text-white">Jefferson:</strong> "בנו של ג'פרי", ששורשיו בגרמאנית עתיקה (Gaufrid), שפירושה "שלום אלוהי".</li>
+                            </ul>
+                        </div>
+                        
                         <p class="text-lg text-slate-300 leading-relaxed mb-3">
-                            ג'פרסון היה פולימאת אמיתי: אדריכל, פילוסוף, מדען ובלשן. הוא כתב את המילים המהפכניות ביותר בהיסטוריה האנושית ("כל בני האדם נבראו שווים") בזמן שהחזיק בעבדים בעצמו, מה שמייצר את הפרדוקס האמריקאי המפורסם.
+                            <strong class="text-white">ילדות והשכלה:</strong> נולד בווירג'יניה למשפחת חוואים עשירה. פולימאת אמיתי: אדריכל, פילוסוף, מדען, חקלאי ובלשן השולט ביוונית, לטינית וצרפתית. הושפע עמוקות מג'ון לוק ומתנועת הנאורות.
+                        </p>
+
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">חלקו ביצירת המסמך:</strong> הקונגרס מינה ועדה של חמישה (בהם ג'ון אדמס ובנג'מין פרנקלין) לנסח את ההכרזה. אדמס שכנע את הוועדה להטיל את משימת הכתיבה על ג'פרסון בן ה-33, וטען שג'פרסון הוא וירג'יני ויש לו "עט שמח" (A happy pen) ורהוט. ג'פרסון שכר חדר בבית לבנים בפילדלפיה (Graff House), הסתגר בו במשך 17 ימים, וכתב את הטיוטה על שולחן כתיבה נייד קטן שהוא עצמו תכנן ובנה. למעט שינויי עריכה קלים של פרנקלין ואדמס, המילים ששינו את העולם היו פרי עטו הבלעדי.
+                        </p>
+                        
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">אידאולוגיה ו"הפרדוקס האמריקאי":</strong> ג'פרסון טבע את המונח "כל בני האדם נבראו שווים". עם זאת, הוא החזיק במהלך חייו בלמעלה מ-600 עבדים שחורים באחוזתו מונטיצ'לו. בטיוטה המקורית, הוא דווקא כלל פסקה נוקבת נגד סחר העבדים (והאשים את המלך הבריטי), אך נציגי מדינות הדרום דרשו למחוק אותה, והוא נכנע. הוא הבין את העוול המוסרי שבעבדות אך מעולם לא פעל פוליטית לבטלה או שחרר את עבדיו בחייו, מה שמייצר את הפרדוקס הכואב ביותר של הרפובליקה.
+                        </p>
+                    </div>
+
+                    <!-- John Hancock -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="feather" class="w-5 h-5"></i>
+                            ג'ון הנקוק (John Hancock) והחתימה המפורסמת
+                        </h4>
+                        
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">John (ג'ון):</strong> מהשם העברי יוחנן ("יהוה חנן").</li>
+                                <li><strong class="text-white">Hancock (הנקוק):</strong> שם אנגלי מהמילה Hancoc, שהיא חיבה לשם Han/Hanne (כנראה צורה מוקדמת של הנס או יוהאן), בתוספת הסיומת coc (תרנגול).</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ביוגרפיה ותפקיד:</strong> הנקוק (1737–1793) היה סוחר עשיר ממסצ'וסטס ופוליטיקאי כריזמטי. הוא נבחר לשמש כנשיא הקונגרס הקונטיננטלי, ותפקידו היה לנהל את הדיונים הסוערים שהובילו לאישור ההכרזה.
+                        </p>
+
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">החתימה שהפכה לאגדה:</strong> כמקובל, בהיותו נשיא הקונגרס, הנקוק היה הראשון לחתום על המסמך הרישמי ב-2 באוגוסט 1776. הוא עשה זאת במרכז הדף, באותיות ענקיות, ראוותניות ומסולסלות במיוחד. האגדה ההיסטורית מספרת שהוא חתם בגודל עצום "כדי שהמלך ג'ורג' יוכל לקרוא את זה בלי צורך במשקפיים שלו". החתימה שלו הפכה לכל כך בולטת ומזוהה עם המסמך, שעד היום באמריקה, הביטוי <em>"Put your John Hancock"</em> הוא סלנג רשמי המבקש מאדם לשים את חתימתו על מסמך.
                         </p>
                     </div>
                 </div>
             </section>
 
+             <!-- Section 4: Anatomy (Expanded) -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="file-text" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">האנטומיה של המסמך</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                    ההכרזה אינה מסמך משפטי או חוקה, אלא הצהרת כוונות, מניפסט מוסרי וכתב אישום. ג'פרסון בנה את המסמך במבנה לוגי ורטורי קפדני המחולק לחמישה חלקים:
+                </p>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white">המבוא (The Introduction):</strong> 
+                        מסביר מדוע המסמך נכתב בכלל. ג'פרסון מציין שכאשר עם מחליט לנתק קשרים, "מתן כבוד ראוי לדעותיהם של בני האדם" דורש ממנו להסביר לעולם מדוע. זהו למעשה תרגיל ביחסי ציבור בינלאומיים שנועד להשיג לגיטימציה.
+                    </li>
+                    <li>
+                        <strong class="text-white">הפילוסופיה והזכויות הטבעיות (The Preamble):</strong> 
+                        הליבה של "האני מאמין" האמריקאי. כאן מופיע המשפט המפורסם: <em>"אנו סבורים שאמיתות אלו מובנות מאליהן: שכל בני האדם נבראו שווים"</em>. החלק מגדיר שהזכויות ל"חיים, חירות ורדיפה אחר האושר" ניתנו מהבורא ולא ממלך, והרעיון הרדיקלי ביותר לתקופתו: ממשלות קיימות רק כדי לשרת זכויות אלו, וסמכותן נובעת אך ורק מ"הסכמת הנמשלים" (Consent of the governed).
+                    </li>
+                    <li>
+                        <strong class="text-white">כתב האישום (The Indictment / Grievances):</strong> 
+                        החלק הארוך ביותר במסמך המכיל 27 תלונות ספציפיות המופנות ישירות נגד המלך ג'ורג' השלישי. הרשימה נועדה להוכיח שהמלך הפך לעריץ. היא כוללת האשמות כמו: מיסוי ללא ייצוג, ביטול בתי משפט, החזקת צבא זר בערים בעת שלום, ושכירת שכירי חרב "הסיאנים" זרים כדי להרוג אזרחים.
+                    </li>
+                    <li>
+                        <strong class="text-white">הוקעת העם הבריטי (The Denunciation):</strong> 
+                        חלק שלעתים מתעלמים ממנו, בו המושבות מצהירות כי הן פנו גם ל"אחינו הבריטים" (אזרחי בריטניה) וביקשו את עזרתם, אך גם הם היו "חירשים לקול הצדק". לכן המושבות נאלצות להכריז גם עליהם כ"אויבים במלחמה, וכידידים בשלום".
+                    </li>
+                    <li>
+                        <strong class="text-white">ההכרזה הסופית (The Conclusion):</strong> 
+                        ניתוק הקשרים המוחלט. המושבות מכריזות על עצמן כ"מדינות חופשיות ועצמאיות" בעלות סמכות להכריז מלחמה, לכרות בריתות ולסחור. המסמך נחתם בשבועה דרמטית של צירי הקונגרס: <em>"אנו מתחייבים זה לזה בחיינו, ברכושנו ובכבודנו הקדוש"</em> - שבועה שמשמעותה הייתה הוצאה להורג בעוון בגידה בממלכה, לו המרד היה נכשל.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section 5: Impact (Expanded) -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">ההשפעה והמשמעות התרבותית</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    ב-1776, המשפט "כל בני האדם נבראו שווים" לא שיקף את המציאות האמריקאית (שכללה עבדות, וחוסר זכויות לנשים וחסרי רכוש), אך הוא הציב <strong>רף מוסרי חסר תקדים</strong> שהניע את כל תנועות זכויות האדם מאז ועד היום:
+                </p>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white">מלחמת האזרחים והמהפכה של לינקולן:</strong> 
+                        נשיא ארה"ב, אברהם לינקולן, סירב לקבל את חוקת ארה"ב (שאפשרה עבדות) כבסיס המוסרי של המדינה. ב"נאום גטיסבורג" (1863), הוא הציב את הכרזת העצמאות כמסמך המכונן האמיתי, וקבע שאמריקה "הרתה ונוצרה" ב-1776 סביב רעיון השוויון, ובכך הפך את שחרור העבדים למטרה הלאומית העליונה.
+                    </li>
+                    <li>
+                        <strong class="text-white">תנועת זכויות הנשים וזכויות האזרח:</strong> 
+                        בוועידת סנקה פולס ב-1848, פעילות זכויות הנשים ניסחו את "הצהרת העמדות" ושינו מילה אחת במסמך של ג'פרסון כדי לדרוש זכות הצבעה: "כל הגברים <em>והנשים</em> נבראו שווים". ב-1963, מנהיג זכויות האזרח <strong>מרטין לותר קינג</strong> צטט את ההכרזה בנאום "יש לי חלום", וכינה אותה "שטר חוב" שאמריקה חתמה עליו, ועליה לפרוע אותו כעת לאזרחיה השחורים.
+                    </li>
+                    <li>
+                        <strong class="text-white">השפעה גלובלית ובינלאומית:</strong> 
+                        ההכרזה עוררה גלים ברחבי העולם. היא סיפקה את המסגרת הרעיונית ל"הצהרת זכויות האדם והאזרח" במהפכה הצרפתית (1789). היא היוותה השראה למרד העבדים בהאיטי ולתנועות שחרור בדרום אמריקה נגד ספרד. אפילו הו צ'י מין, מנהיג צפון וייטנאם, בחר לצטט במדויק את תומאס ג'פרסון בנאום העצמאות של וייטנאם ב-1945 נגד האימפריה הצרפתית. הכרזת העצמאות האמריקאית הפכה לטקסט האוניברסלי של זכות ההגדרה העצמית.
+                    </li>
+                </ul>
+            </section>
+
+             <!-- Link to Full Text -->
              <section class="mt-12 text-center pt-8 border-t border-navy-600">
                 <a href="declaration-text.html" class="inline-flex flex-col items-center justify-center p-6 bg-gradient-to-br from-navy-700 to-navy-900 border border-gold-500/50 rounded-xl hover:border-gold-400 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] transition-all group w-full md:w-2/3 mx-auto">
                     <i data-lucide="book-open" class="w-10 h-10 text-gold-400 mb-3 group-hover:scale-110 transition-transform"></i>
@@ -158,6 +264,8 @@
         </article>
     </main>
 
+    <!-- Modals -->
+    <!-- Modal 1: Jefferson -->
     <div id="modal-jefferson" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
             <button onclick="closeModal('modal-jefferson')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm">
@@ -166,7 +274,39 @@
             <img src="../assets/images/symbols/jefferson-portrait.webp" alt="תומאס ג'פרסון" class="w-full h-auto object-cover rounded-t-2xl">
             <div class="p-6">
                 <h3 class="text-2xl font-bold text-gold-400 mb-2">תומאס ג'פרסון, 1776</h3>
-                <p class="text-slate-300 text-lg leading-relaxed">ג'פרסון בן ה-33 בחדרו בפילדלפיה, שם ניסח את המילים ששינו את העולם.</p>
+                <p class="text-slate-300 text-lg leading-relaxed">ג'פרסון בן ה-33 בחדרו בפילדלפיה, שם ניסח את המילים ששינו את העולם על שולחן נייד שתכנן בעצמו.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: The Document -->
+    <div id="modal-document" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-document')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/declaration-signatures.webp" alt="הכרזת העצמאות" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">המסמך המקורי והחתימות</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    תקריב על קלף ההכרזה (Engrossed copy). בחלק התחתון בולטת חתימתו הענקית של ג'ון הנקוק, נשיא הקונגרס, שחתם ראשון ובגדול.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Committee of Five -->
+    <div id="modal-committee" class="fixed fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-committee')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/committee-of-five.webp" alt="ועדת החמישה" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">ועדת החמישה</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    הרגע ההיסטורי באולם העצמאות שבו אדמס, פרנקלין, ג'פרסון, ליווינגסטון ושרמן מציגים את טיוטת ההכרזה בפני הקונגרס.
+                </p>
             </div>
         </div>
     </div>
@@ -196,3 +336,6 @@
     </script>
 </body>
 </html>
+
+
+```
