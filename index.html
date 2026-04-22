@@ -6,7 +6,6 @@
     <title>ארכיון הסמלים הלאומיים של ארצות הברית</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- React & Babel -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -38,7 +37,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array - Links updated perfectly to match GitHub screenshot
+        // Symbol Data Array - Image paths perfectly matched to your GitHub assets
         const symbolsData = [
             {
                 id: 'declaration',
@@ -58,8 +57,19 @@
                 year: '1787',
                 description: `הסמל האזרחי העליון והחוזה המקודש של הרפובליקה, מבית מדרשו של ג'יימס מדיסון.`,
                 icon: 'scale',
-                image: 'assets/images/symbols/constitution.webp',
+                image: 'assets/images/symbols/constitution-document.webp',
                 link: 'symbols/constitution.html',
+                isNew: false
+            },
+            {
+                id: 'motto',
+                category: 'vision',
+                title: 'המוטו הלאומי',
+                year: '1956',
+                description: `In God We Trust - שורשיו ההיסטוריים, משמעותו התאולוגית ומלחמות הדת שסביבו.`,
+                icon: 'quote',
+                image: 'assets/images/symbols/great-seal-us.svg',
+                link: 'symbols/motto.html',
                 isNew: false
             },
             {
@@ -69,7 +79,7 @@
                 year: '1777',
                 description: `ההיסטוריה, המיתוס של בטסי רוס, והאבולוציה של 'הפסים והכוכבים'.`,
                 icon: 'flag',
-                image: 'assets/images/symbols/american-flag.webp',
+                image: 'assets/images/symbols/star-spangled-banner-pa.webp',
                 link: 'symbols/american-flag.html',
                 isNew: false
             },
@@ -80,7 +90,7 @@
                 year: '1814',
                 description: `'הדגל זרוע הכוכבים' - שיר שנולד בלב קרב ימי עקוב מדם במלחמת 1812.`,
                 icon: 'music',
-                image: 'assets/images/symbols/national-anthem.webp',
+                image: 'assets/images/symbols/independence-hall.jpeg',
                 link: 'symbols/national-anthem.html',
                 isNew: false
             },
@@ -91,7 +101,7 @@
                 year: '1782',
                 description: `הסמל הרשמי המשלב את העיט, עלי הזית והחצים. ההנדסה שמאחורי החותם.`,
                 icon: 'stamp',
-                image: 'assets/images/symbols/great-seal.webp',
+                image: 'assets/images/symbols/great-seal-us.svg',
                 link: 'symbols/great-seal.html',
                 isNew: false
             },
@@ -102,7 +112,7 @@
                 year: '1812',
                 description: `מסוחר בשר אלמוני מניו יורק לאייקון הגיוס המפורסם בעולם שעוצב על ידי ג'יימס פלאג.`,
                 icon: 'user-circle',
-                image: 'assets/images/symbols/uncle-sam.webp',
+                image: 'assets/images/symbols/james-flagg-portrait.jpg',
                 link: 'symbols/uncle-sam.html',
                 isNew: false
             },
@@ -113,7 +123,7 @@
                 year: '1782',
                 description: `הציפור הלאומית המסמלת חירות ועוצמה. כולל המחלוקת ההיסטורית עם בנג'מין פרנקלין.`,
                 icon: 'bird',
-                image: 'assets/images/symbols/bald-eagle.webp',
+                image: 'assets/images/symbols/bald-eagle-portrait-maje.webp',
                 link: 'symbols/bald-eagle.html',
                 isNew: false
             },
@@ -124,7 +134,7 @@
                 year: '2016',
                 description: `היונק הלאומי. סמל לעוצמת הערבות, לטרגדיית ההכחדה ולמאמץ השימור הענק.`,
                 icon: 'paw-print',
-                image: 'assets/images/symbols/american-bison.webp',
+                image: 'assets/images/symbols/american-bison-rugged-r.webp',
                 link: 'symbols/american-bison.html',
                 isNew: false
             },
@@ -135,7 +145,7 @@
                 year: '2004',
                 description: `העץ הלאומי המסמל חוזק, עמידות ושורשים עמוקים באדמה האמריקאית.`,
                 icon: 'tree-pine',
-                image: 'assets/images/symbols/oak-tree.webp',
+                image: 'assets/images/symbols/american-oak-bark-acor.webp',
                 link: 'symbols/oak-tree.html',
                 isNew: false
             },
@@ -146,7 +156,7 @@
                 year: '1986',
                 description: `הפרח הלאומי של ארצות הברית המסמל חיים, אהבה ומסירות. הוכרז רשמית בגן הוורדים.`,
                 icon: 'flower-2',
-                image: 'assets/images/symbols/rose.webp',
+                image: 'assets/images/symbols/american-national-rose.webp',
                 link: 'symbols/rose.html',
                 isNew: false
             },
@@ -157,13 +167,13 @@
                 year: '1800s',
                 description: `הסמל הקולינרי הבלתי רשמי של ארצות הברית - 'As American as apple pie'.`,
                 icon: 'chef-hat',
-                image: 'assets/images/symbols/apple-pie.webp',
+                image: 'assets/images/symbols/apple-pie-icon.jpg',
                 link: 'symbols/apple-pie.html',
                 isNew: false
             }
         ];
 
-        // Component: Individual Card with Image
+        // Component: Individual Card
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -173,8 +183,6 @@
 
             return (
                 <a href={symbol.link} className="group relative bg-navy-800/80 backdrop-blur-md border border-navy-600 rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-gold-500 hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:-translate-y-1 block">
-                    
-                    {/* Image Header Section */}
                     <div className="relative h-48 w-full overflow-hidden bg-navy-900">
                         <img 
                             src={symbol.image} 
@@ -186,21 +194,16 @@
                             }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-800 via-navy-800/20 to-transparent"></div>
-                        
-                        {/* New Badge */}
                         {symbol.isNew && (
                             <div className="absolute top-3 right-3 bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-navy-900 z-10 animate-pulse">
                                 חדש!
                             </div>
                         )}
-                        
-                        {/* Icon Overlay */}
                         <div className="absolute top-3 left-3 p-2 bg-navy-900/80 backdrop-blur-sm rounded-xl border border-navy-700 text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors shadow-lg z-10">
                             <i data-lucide={symbol.icon} className="w-5 h-5"></i>
                         </div>
                     </div>
 
-                    {/* Content Section */}
                     <div className="p-6 flex flex-col flex-grow bg-navy-800/80">
                         <div className="flex items-center justify-between mb-3">
                             <h3 className="text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
@@ -222,7 +225,6 @@
             );
         };
 
-        // Component: Category Section
         const CategorySection = ({ title, icon, symbols }) => (
             <section className="mb-16">
                 <div className="flex items-center gap-3 mb-8 border-b border-navy-700/50 pb-4">
@@ -237,7 +239,6 @@
             </section>
         );
 
-        // Main App Component
         const App = () => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -282,7 +283,6 @@
                         <CategorySection title="החזון והחוק" icon="scale" symbols={visionSymbols} />
                         <CategorySection title="זהות לאומית וסמלים היסטוריים" icon="flag" symbols={identitySymbols} />
                         <CategorySection title="טבע, פולקלור ותרבות" icon="leaf" symbols={natureSymbols} />
-
                     </main>
 
                     <footer className="bg-navy-900/90 border-t border-navy-700 py-8">
