@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U.S. National Symbols Archive</title>
+    <title>National Symbols Archive | United States</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- React & Babel -->
@@ -38,132 +39,143 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array - Links updated perfectly to match GitHub screenshot, Images added
+        // Symbol Data Array - English version strictly matched to your GitHub assets
         const symbolsData = [
             {
                 id: 'declaration',
                 category: 'vision',
-                title: 'Declaration of Independence',
-                year: '1776',
+                title: `Declaration of Independence`,
+                year: `1776`,
                 description: `The founding document that created the American Creed, spearheaded by Thomas Jefferson.`,
-                icon: 'scroll',
-                image: 'assets/images/symbols/declaration-signatures.webp',
-                link: 'symbols/declaration-en.html',
+                icon: `scroll`,
+                image: `assets/images/symbols/declaration-signatures.webp`,
+                link: `symbols/declaration-en.html`,
                 isNew: true
             },
             {
                 id: 'constitution',
                 category: 'vision',
-                title: 'The U.S. Constitution',
-                year: '1787',
+                title: `The U.S. Constitution`,
+                year: `1787`,
                 description: `The supreme civic symbol and sacred contract of the Republic, engineered by James Madison.`,
-                icon: 'scale',
-                image: 'assets/images/symbols/constitution.webp',
-                link: 'symbols/constitution-en.html',
+                icon: `scale`,
+                image: `assets/images/symbols/constitution-document.webp`,
+                link: `symbols/constitution-en.html`,
+                isNew: false
+            },
+            {
+                id: 'motto',
+                category: 'vision',
+                title: `The National Motto`,
+                year: `1956`,
+                description: `In God We Trust - its historical roots, theological meaning, and the religious battles surrounding it.`,
+                icon: `quote`,
+                image: `assets/images/symbols/great-seal-us.svg`,
+                link: `symbols/motto-en.html`,
                 isNew: false
             },
             {
                 id: 'flag',
                 category: 'identity',
-                title: 'The American Flag',
-                year: '1777',
+                title: `The American Flag`,
+                year: `1777`,
                 description: `The history, the Betsy Ross myth, and the evolution of the 'Stars and Stripes'.`,
-                icon: 'flag',
-                image: 'assets/images/symbols/american-flag.webp',
-                link: 'symbols/american-flag-en.html',
+                icon: `flag`,
+                image: `assets/images/symbols/us-flag-official.svg`,
+                link: `symbols/american-flag-en.html`,
                 isNew: false
             },
             {
                 id: 'anthem',
                 category: 'identity',
-                title: 'The National Anthem',
-                year: '1814',
-                description: `The Star-Spangled Banner - a poem born in the heart of a bloody naval battle during the War of 1812.`,
-                icon: 'music',
-                image: 'assets/images/symbols/national-anthem.webp',
-                link: 'symbols/national-anthem-en.html',
+                title: `The National Anthem`,
+                year: `1814`,
+                description: `'The Star-Spangled Banner' - a poem born in the heart of a bloody naval battle during the War of 1812.`,
+                icon: `music`,
+                image: `assets/images/symbols/independence-hall.jpeg`,
+                link: `symbols/national-anthem-en.html`,
                 isNew: false
             },
             {
                 id: 'seal',
                 category: 'identity',
-                title: 'The Great Seal',
-                year: '1782',
+                title: `The Great Seal`,
+                year: `1782`,
                 description: `The official emblem combining the eagle, olive branches, and arrows. The engineering behind the seal.`,
-                icon: 'stamp',
-                image: 'assets/images/symbols/great-seal.webp',
-                link: 'symbols/great-seal-en.html',
+                icon: `stamp`,
+                image: `assets/images/symbols/great-seal-us.svg`,
+                link: `symbols/great-seal-en.html`,
                 isNew: false
             },
             {
                 id: 'uncle-sam',
                 category: 'identity',
-                title: 'Uncle Sam',
-                year: '1812',
+                title: `Uncle Sam`,
+                year: `1812`,
                 description: `From an unknown New York meatpacker to the world's most famous recruitment icon designed by James Flagg.`,
-                icon: 'user-circle',
-                image: 'assets/images/symbols/uncle-sam.webp',
-                link: 'symbols/uncle-sam-en.html',
+                icon: `user-circle`,
+                image: `assets/images/symbols/uncle-sam-icon.jpg`,
+                link: `symbols/uncle-sam-en.html`,
                 isNew: false
             },
             {
                 id: 'eagle',
                 category: 'nature',
-                title: 'The Bald Eagle',
-                year: '1782',
+                title: `The Bald Eagle`,
+                year: `1782`,
                 description: `The national bird symbolizing freedom and strength. Includes the historical dispute with Benjamin Franklin.`,
-                icon: 'bird',
-                image: 'assets/images/symbols/bald-eagle.webp',
-                link: 'symbols/bald-eagle-en.html',
+                icon: `bird`,
+                image: `assets/images/symbols/bald-eagle-portrait-majestic.webp`,
+                link: `symbols/bald-eagle-en.html`,
                 isNew: false
             },
             {
                 id: 'bison',
                 category: 'nature',
-                title: 'The American Bison',
-                year: '2016',
-                description: `The national mammal. A symbol of prairie majesty, the tragedy of near-extinction, and massive conservation efforts.`,
-                icon: 'paw-print',
-                image: 'assets/images/symbols/american-bison.webp',
-                link: 'symbols/american-bison-en.html',
+                title: `The American Bison`,
+                year: `2016`,
+                description: `The national mammal. A symbol of prairie majesty, the tragedy of near-extinction, and conservation efforts.`,
+                icon: `paw-print`,
+                image: `assets/images/symbols/american-bison-rugged-realism.webp`,
+                link: `symbols/american-bison-en.html`,
                 isNew: false
             },
             {
                 id: 'oak-tree',
                 category: 'nature',
-                title: 'The Oak Tree',
-                year: '2004',
+                title: `The Oak Tree`,
+                year: `2004`,
                 description: `The national tree symbolizing strength, endurance, and deep roots in American soil.`,
-                icon: 'tree-pine',
-                image: 'assets/images/symbols/oak-tree.webp',
-                link: 'symbols/oak-tree-en.html',
+                icon: `tree-pine`,
+                image: `assets/images/symbols/american-oak-bark-acorn.webp`,
+                link: `symbols/oak-tree-en.html`,
                 isNew: false
             },
             {
                 id: 'rose',
                 category: 'nature',
-                title: 'The Rose',
-                year: '1986',
-                description: `The national floral emblem of the US, symbolizing life, love, and devotion. Officially declared in the Rose Garden.`,
-                icon: 'flower-2',
-                image: 'assets/images/symbols/rose.webp',
-                link: 'symbols/rose-en.html',
+                title: `The Rose`,
+                year: `1986`,
+                description: `The national floral emblem of the US, symbolizing life, love, and devotion. Declared in the Rose Garden.`,
+                icon: `flower-2`,
+                image: `assets/images/symbols/american-national-rose-deep-red.webp`,
+                link: `symbols/rose-en.html`,
                 isNew: false
             },
             {
                 id: 'apple-pie',
                 category: 'nature',
-                title: 'Apple Pie',
-                year: '1800s',
+                title: `Apple Pie`,
+                year: `1800s`,
                 description: `The unofficial culinary symbol of the United States - 'As American as apple pie'.`,
-                icon: 'chef-hat',
-                image: 'assets/images/symbols/apple-pie.webp',
-                link: 'symbols/apple-pie-en.html',
+                icon: `chef-hat`,
+                image: `assets/images/symbols/apple-pie-icon.jpg`,
+                link: `symbols/apple-pie-en.html`,
                 isNew: false
             }
         ];
 
-        // Component: Individual Card with Image
+        // Component: Individual Card with Header Image
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -173,34 +185,28 @@
 
             return (
                 <a href={symbol.link} className="group relative bg-navy-800/80 backdrop-blur-md border border-navy-600 rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-gold-500 hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:-translate-y-1 block">
-                    
-                    {/* Image Header Section */}
                     <div className="relative h-48 w-full overflow-hidden bg-navy-900">
                         <img 
                             src={symbol.image} 
                             alt={symbol.title} 
                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            loading="lazy"
                             onError={(e) => { 
                                 e.target.onerror = null; 
-                                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="16" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">Image updating soon</text></svg>'; 
+                                e.target.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">Asset Not Found in GitHub</text></svg>`; 
                             }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-800 via-navy-800/20 to-transparent"></div>
-                        
-                        {/* New Badge */}
                         {symbol.isNew && (
                             <div className="absolute top-3 right-3 bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-navy-900 z-10 animate-pulse">
                                 New!
                             </div>
                         )}
-                        
-                        {/* Icon Overlay */}
                         <div className="absolute top-3 left-3 p-2 bg-navy-900/80 backdrop-blur-sm rounded-xl border border-navy-700 text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors shadow-lg z-10">
                             <i data-lucide={symbol.icon} className="w-5 h-5"></i>
                         </div>
                     </div>
 
-                    {/* Content Section */}
                     <div className="p-6 flex flex-col flex-grow bg-navy-800/80">
                         <div className="flex items-center justify-between mb-3">
                             <h3 className="text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
@@ -222,7 +228,6 @@
             );
         };
 
-        // Component: Category Section
         const CategorySection = ({ title, icon, symbols }) => (
             <section className="mb-16">
                 <div className="flex items-center gap-3 mb-8 border-b border-navy-700/50 pb-4">
@@ -237,7 +242,6 @@
             </section>
         );
 
-        // Main App Component
         const App = () => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -250,7 +254,7 @@
             const natureSymbols = symbolsData.filter(s => s.category === 'nature');
 
             return (
-                <div>
+                <div className="min-h-screen">
                     <header className="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                             <div className="flex items-center gap-4">
@@ -282,7 +286,6 @@
                         <CategorySection title="The Vision & The Law" icon="scale" symbols={visionSymbols} />
                         <CategorySection title="National Identity & History" icon="flag" symbols={identitySymbols} />
                         <CategorySection title="Nature, Folklore & Culture" icon="leaf" symbols={natureSymbols} />
-
                     </main>
 
                     <footer className="bg-navy-900/90 border-t border-navy-700 py-8">
@@ -300,3 +303,5 @@
     </script>
 </body>
 </html>
+
+```
