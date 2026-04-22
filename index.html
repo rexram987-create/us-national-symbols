@@ -39,14 +39,14 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array with Categories
+        // Symbol Data Array with Categories (Using Backticks for strict string parsing)
         const symbolsData = [
             {
                 id: 'declaration',
                 category: 'vision',
                 title: 'הכרזת העצמאות',
                 year: '1776',
-                description: "המסמך שכונן את האומה ויצר את ה'אני מאמין' האמריקאי, בהובלתו של תומאס ג'פרסון.",
+                description: `המסמך שכונן את האומה ויצר את ה'אני מאמין' האמריקאי, בהובלתו של תומאס ג'פרסון.`,
                 icon: 'scroll',
                 link: 'symbols/declaration.html',
                 isNew: true
@@ -56,7 +56,7 @@
                 category: 'vision',
                 title: 'חוקת ארצות הברית',
                 year: '1787',
-                description: "הסמל האזרחי העליון והחוזה המקודש של הרפובליקה, מבית מדרשו של ג'יימס מדיסון.",
+                description: `הסמל האזרחי העליון והחוזה המקודש של הרפובליקה, מבית מדרשו של ג'יימס מדיסון.`,
                 icon: 'scale',
                 link: 'symbols/constitution.html',
                 isNew: false
@@ -66,7 +66,7 @@
                 category: 'vision',
                 title: 'המוטו הלאומי',
                 year: '1956',
-                description: "In God We Trust - שורשיו ההיסטוריים, משמעותו התאולוגית ומלחמות הדת שסביבו.",
+                description: `In God We Trust - שורשיו ההיסטוריים, משמעותו התאולוגית ומלחמות הדת שסביבו.`,
                 icon: 'quote',
                 link: 'symbols/motto.html',
                 isNew: false
@@ -76,7 +76,7 @@
                 category: 'identity',
                 title: 'דגל ארצות הברית',
                 year: '1777',
-                description: "ההיסטוריה, המיתוס של בטסי רוס, והאבולוציה של 'הפסים והכוכבים'.",
+                description: `ההיסטוריה, המיתוס של בטסי רוס, והאבולוציה של 'הפסים והכוכבים'.`,
                 icon: 'flag',
                 link: 'symbols/flag.html',
                 isNew: false
@@ -86,7 +86,7 @@
                 category: 'identity',
                 title: 'ההמנון הלאומי',
                 year: '1814',
-                description: "'הדגל זרוע הכוכבים' - שיר שנולד בלב קרב ימי עקוב מדם במלחמת 1812.",
+                description: `'הדגל זרוע הכוכבים' - שיר שנולד בלב קרב ימי עקוב מדם במלחמת 1812.`,
                 icon: 'music',
                 link: 'symbols/anthem.html',
                 isNew: false
@@ -96,7 +96,7 @@
                 category: 'identity',
                 title: 'החותם הגדול',
                 year: '1782',
-                description: "הסמל הרשמי המשלב את העיט, עלי הזית והחצים. ההנדסה שמאחורי החותם.",
+                description: `הסמל הרשמי המשלב את העיט, עלי הזית והחצים. ההנדסה שמאחורי החותם.`,
                 icon: 'stamp',
                 link: 'symbols/great-seal.html',
                 isNew: false
@@ -106,7 +106,7 @@
                 category: 'identity',
                 title: 'הדוד סם',
                 year: '1812',
-                description: "מסוחר בשר אלמוני מניו יורק לאייקון הגיוס המפורסם בעולם שעוצב על ידי ג'יימס פלאג.",
+                description: `מסוחר בשר אלמוני מניו יורק לאייקון הגיוס המפורסם בעולם שעוצב על ידי ג'יימס פלאג.`,
                 icon: 'user-circle',
                 link: 'symbols/uncle-sam.html',
                 isNew: false
@@ -116,7 +116,7 @@
                 category: 'nature',
                 title: 'העיט הקירח',
                 year: '1782',
-                description: "הציפור הלאומית המסמלת חירות ועוצמה. כולל המחלוקת ההיסטורית עם בנג'מין פרנקלין.",
+                description: `הציפור הלאומית המסמלת חירות ועוצמה. כולל המחלוקת ההיסטורית עם בנג'מין פרנקלין.`,
                 icon: 'bird',
                 link: 'symbols/bald-eagle.html',
                 isNew: false
@@ -126,7 +126,7 @@
                 category: 'nature',
                 title: 'הביזון האמריקאי',
                 year: '2016',
-                description: "היונק הלאומי. סמל לעוצמת הערבות, לטרגדיית ההכחדה ולמאמץ השימור הענק.",
+                description: `היונק הלאומי. סמל לעוצמת הערבות, לטרגדיית ההכחדה ולמאמץ השימור הענק.`,
                 icon: 'paw-print',
                 link: 'symbols/bison.html',
                 isNew: false
@@ -136,7 +136,7 @@
                 category: 'nature',
                 title: 'הוורד',
                 year: '1986',
-                description: "הפרח הלאומי של ארצות הברית המסמל חיים, אהבה ומסירות. הוכרז רשמית בגן הוורדים.",
+                description: `הפרח הלאומי של ארצות הברית המסמל חיים, אהבה ומסירות. הוכרז רשמית בגן הוורדים.`,
                 icon: 'flower-2',
                 link: 'symbols/rose.html',
                 isNew: false
@@ -146,7 +146,7 @@
                 category: 'nature',
                 title: 'פאי תפוחים',
                 year: '1800s',
-                description: "הסמל הקולינרי הבלתי רשמי של ארצות הברית - 'As American as apple pie'.",
+                description: `הסמל הקולינרי הבלתי רשמי של ארצות הברית - 'As American as apple pie'.`,
                 icon: 'chef-hat',
                 link: 'symbols/apple-pie.html',
                 isNew: false
@@ -219,7 +219,6 @@
 
             return (
                 <div>
-                    {/* Header - Changed from fixed to absolute */}
                     <header className="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                             <div className="flex items-center gap-4">
