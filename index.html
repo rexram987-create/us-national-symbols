@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="dark">
 <head>
@@ -6,6 +7,7 @@
     <title>ארכיון הסמלים הלאומיים של ארצות הברית</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- React & Babel -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -37,7 +39,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array - Image paths perfectly matched to your GitHub assets
+        // Symbol Data Array - Links & Images strictly matched to GitHub Screenshots
         const symbolsData = [
             {
                 id: 'declaration',
@@ -156,7 +158,7 @@
                 year: '1986',
                 description: `הפרח הלאומי של ארצות הברית המסמל חיים, אהבה ומסירות. הוכרז רשמית בגן הוורדים.`,
                 icon: 'flower-2',
-                image: 'assets/images/symbols/american-national-rose.webp',
+                image: 'assets/images/symbols/american-national-rose-red.webp',
                 link: 'symbols/rose.html',
                 isNew: false
             },
@@ -173,7 +175,6 @@
             }
         ];
 
-        // Component: Individual Card
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -190,7 +191,7 @@
                             className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             onError={(e) => { 
                                 e.target.onerror = null; 
-                                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="16" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">תמונה תעודכן בקרוב</text></svg>'; 
+                                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="14" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">נתיב תמונה לא תקין בגיטהאב</text></svg>'; 
                             }}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-800 via-navy-800/20 to-transparent"></div>
@@ -300,3 +301,5 @@
     </script>
 </body>
 </html>
+
+```
