@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>סמלי האומה האמריקאית | ארכיון מחקרי</title>
-    <!-- שילוב Tailwind CSS ישירות -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -18,6 +18,7 @@
                         darkBorder: '#262626',
                         brandAccent: '#dc2626',
                         brandBlue: '#1e3a8a',
+                        goldAccent: '#d4af37',
                     },
                     fontFamily: {
                         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
@@ -26,185 +27,124 @@
             }
         }
     </script>
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <style>
-        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
-        .glass-effect {
-            background: rgba(23, 23, 23, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
+        body { background-color: #0a0a0a; color: #e5e7eb; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-family: system-ui, -apple-system, sans-serif; }
+        .glass-effect { background: rgba(23, 23, 23, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     </style>
 </head>
-<body class="bg-darkBase text-gray-200 min-h-screen flex flex-col font-sans selection:bg-brandAccent selection:text-white transition-colors duration-300">
+<body class="selection:bg-brandAccent selection:text-white transition-colors duration-300">
+    
+    <div id="root"></div>
 
-    <!-- סרגל ניווט עליון (שקוף/זכוכית) - ללא גלילה דביקה -->
-    <header class="border-b border-darkBorder glass-effect">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border-2 border-brandAccent shadow-lg overflow-hidden">
-                    <span class="text-white font-bold text-xl">US</span>
-                </div>
-                <h1 class="text-xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
-            </div>
-            <nav class="hidden sm:flex items-center gap-6 font-medium">
-                <a href="index.html" class="text-brandAccent hover:text-red-400 transition-colors">ראשי</a>
-                <a href="about.html" class="text-gray-400 hover:text-white transition-colors">אודות החוקר</a>
-                <!-- כפתור החלפת שפה (לאנגלית) - עליון -->
-                <a href="index-en.html" class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all shadow-sm">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span class="text-xs font-bold uppercase tracking-wider">EN</span>
-                </a>
-            </nav>
-        </div>
-    </header>
+    <script type="text/babel">
+        const { useState } = React;
 
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12">
-        
-        <!-- כותרת ראשית וטקסט פתיחה -->
-        <section class="border-b-2 border-brandAccent pb-6 mb-4">
-            <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">ארכיון מחקר היסטורי</h2>
-            <p class="text-xl text-gray-400 mt-4 max-w-3xl leading-relaxed">
-                ברוכים הבאים למאגר המקיף לחקר הסמלים הלאומיים של ארצות הברית. 
-                כאן תמצאו ניתוח אטימולוגי מפורט, היסטוריה של הוגים ויוצרים, ואת המשמעויות העמוקות שמאחורי כל סמל וסמל, ללא פשרות.
-            </p>
-        </section>
+        // מערך הנתונים הדינמי - כאן מוסיפים סמלים חדשים בקלות!
+        const symbols = [
+            { id: 'flag', name: 'דגל ארצות הברית', year: '1777', path: 'symbols/american-flag.html', img: 'assets/images/symbols/us-flag-official.svg', desc: 'מחקר על פרנסיס הופקינסון, אגדת בטסי רוס, והתפתחות הדגל.', isNew: false, objectFit: 'cover' },
+            { id: 'anthem', name: 'ההמנון הלאומי', year: '1814', path: 'symbols/national-anthem.html', img: 'assets/images/symbols/francis-scott-key-portrait.webp', desc: 'ניתוח הפואמה של פרנסיס סקוט קי, הלחן הבריטי, והבתים המצונזרים.', isNew: false, objectFit: 'cover object-top' },
+            { id: 'seal', name: 'החותם הגדול', year: '1782', path: 'symbols/great-seal.html', img: 'assets/images/symbols/great-seal-us.svg', desc: 'המסע לאימוץ החותם, המוטו הלטיני, וצ\'ארלס תומסון.', isNew: false, objectFit: 'contain drop-shadow-2xl' },
+            { id: 'eagle', name: 'העיט הקירח', year: '1782', path: 'symbols/bald-eagle.html', img: 'assets/images/symbols/bald-eagle-portrait-majestic.webp', desc: 'סמל החירות, הפולמוס מול פרנקלין, והאטימולוגיה המטעה.', isNew: false, objectFit: 'cover' },
+            { id: 'bison', name: 'הביזון האמריקאי', year: '2016', path: 'symbols/american-bison.html', img: 'assets/images/symbols/american-bison-rugged-realism.webp', desc: 'היונק הלאומי. טרגדיית ההכחדה ומבצע השימור של רוזוולט.', isNew: false, objectFit: 'cover' },
+            { id: 'oak', name: 'עץ האלון', year: '2004', path: 'symbols/oak-tree.html', img: 'assets/images/symbols/american-oak-bark-acorn.webp', desc: 'העץ הלאומי. סמל של עוצמה ושורשיות: מהצי האמריקאי ועד ג\'יימסטאון.', isNew: false, objectFit: 'cover' },
+            { id: 'rose', name: 'הוורד', year: '1986', path: 'symbols/rose.html', img: 'assets/images/symbols/american-national-rose-deep-red.webp', desc: 'הפרח הלאומי. מג\'ורג\' וושינגטון ועד להכרזה בגן הוורדים.', isNew: false, objectFit: 'cover' },
+            { id: 'unclesam', name: 'הדוד סם', year: '1961', path: 'symbols/uncle-sam.html', img: 'assets/images/symbols/uncle-sam-icon.jpg', desc: 'האנשת האומה. מסוחר בשר אלמוני ועד לכרזת הגיוס המשפיעה בהיסטוריה.', isNew: true, objectFit: 'cover object-top' }
+        ];
 
-        <!-- רשת כרטיסיות הסמלים -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-20">
-            
-            <!-- כרטיסיה 1: הדגל -->
-            <a href="symbols/american-flag.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent">
-                <div class="aspect-video w-full bg-gray-900 overflow-hidden relative">
-                    <img src="assets/images/symbols/us-flag-official.svg" alt="הדגל האמריקאי" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">1777</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">דגל ארצות הברית</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">מחקר על פרנסיס הופקינסון, אגדת בטסי רוס, והתפתחות הדגל (The Star-Spangled Banner).</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
+        function App() {
+            return (
+                <div className="flex flex-col min-h-screen">
+                    
+                    {/* סרגל ניווט עליון */}
+                    <header className="border-b border-darkBorder glass-effect sticky top-0 z-40">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border-2 border-brandAccent shadow-lg overflow-hidden">
+                                    <span className="text-white font-bold text-xl">US</span>
+                                </div>
+                                <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
+                            </div>
+                            <nav className="hidden sm:flex items-center gap-6 font-medium">
+                                <a href="index.html" className="text-brandAccent hover:text-red-400 transition-colors">ראשי</a>
+                                <a href="about.html" className="text-gray-400 hover:text-white transition-colors">אודות החוקר</a>
+                                <a href="index-en.html" className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all shadow-sm">
+                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span className="text-xs font-bold uppercase tracking-wider">EN</span>
+                                </a>
+                            </nav>
+                        </div>
+                    </header>
+
+                    {/* תוכן ראשי */}
+                    <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12 pb-24">
+                        
+                        <section className="border-b-2 border-brandAccent pb-6 mb-4">
+                            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">ארכיון מחקר היסטורי</h2>
+                            <p className="text-xl text-gray-400 mt-4 max-w-3xl leading-relaxed">
+                                ברוכים הבאים למאגר המקיף לחקר הסמלים הלאומיים של ארצות הברית. 
+                                כאן תמצאו ניתוח אטימולוגי מפורט, היסטוריה של הוגים ויוצרים, ואת המשמעויות העמוקות שמאחורי כל סמל וסמל, ללא פשרות.
+                            </p>
+                        </section>
+
+                        {/* רשת כרטיסיות דינמית המיוצרת מהמערך */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            {symbols.map((symbol) => (
+                                <a 
+                                    key={symbol.id} 
+                                    href={symbol.path} 
+                                    className="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent relative"
+                                >
+                                    {symbol.isNew && (
+                                        <div className="absolute top-0 right-0 bg-brandAccent text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10 shadow-md">חדש</div>
+                                    )}
+                                    <div className={`aspect-video w-full ${symbol.id === 'seal' ? 'bg-gray-800 p-4 flex items-center justify-center' : 'bg-gray-900'} overflow-hidden relative`}>
+                                        <img 
+                                            src={symbol.img} 
+                                            alt={symbol.name} 
+                                            className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${symbol.objectFit}`} 
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
+                                        <div className="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">{symbol.year}</div>
+                                    </div>
+                                    <div className="p-6 flex-grow flex flex-col">
+                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">{symbol.name}</h3>
+                                        <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">{symbol.desc}</p>
+                                        <div className="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
+                                            למחקר <span className="group-hover:-translate-x-1 transition-transform">←</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            ))}
+                        </div>
+                    </main>
+
+                    {/* סרגל ניווט תחתון למובייל */}
+                    <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-4 flex justify-around z-50 shadow-2xl">
+                        <a href="index.html" className="text-brandAccent font-medium flex flex-col items-center">
+                            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                            ראשי
+                        </a>
+                        <a href="about.html" className="text-gray-400 hover:text-white font-medium flex flex-col items-center transition-colors">
+                            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            אודות
+                        </a>
+                        <a href="index-en.html" className="text-gray-400 hover:text-white font-medium flex flex-col items-center transition-colors">
+                            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span className="tracking-widest">EN</span>
+                        </a>
                     </div>
                 </div>
-            </a>
+            );
+        }
 
-            <!-- כרטיסיה 2: ההמנון -->
-            <a href="symbols/national-anthem.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent">
-                <div class="aspect-video w-full bg-gray-900 overflow-hidden relative">
-                    <img src="assets/images/symbols/francis-scott-key-portrait.webp" alt="פרנסיס סקוט קי, כותב ההמנון" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">1814 / 1931</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">ההמנון הלאומי</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">ניתוח הפואמה של פרנסיס סקוט קי, הלחן הבריטי, ומדוע צונזרו הבתים האחרונים.</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- כרטיסיה 3: החותם הגדול -->
-            <a href="symbols/great-seal.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent">
-                <div class="aspect-video w-full bg-gray-800 overflow-hidden relative flex items-center justify-center p-4">
-                    <img src="assets/images/symbols/great-seal-us.svg" alt="החותם הגדול של ארצות הברית" class="w-auto h-full object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-60"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">1782</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">החותם הגדול</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">המסע המפרך לאימוץ החותם, המוטו הלטיני, ותרומתם של צ'ארלס תומסון וויליאם ברטון.</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- כרטיסיה 4: העיט הקירח -->
-            <a href="symbols/bald-eagle.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent">
-                <div class="aspect-video w-full bg-gray-900 overflow-hidden relative">
-                    <img src="assets/images/symbols/bald-eagle-portrait-majestic.webp" alt="העיט הקירח" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">1782</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">העיט הקירח</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">סמל החירות, הפולמוס מול תרנגול ההודו של פרנקלין, והאטימולוגיה המטעה של שמו.</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- כרטיסיה 5: הביזון האמריקאי -->
-            <a href="symbols/american-bison.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent relative">
-                <div class="aspect-video w-full bg-gray-900 overflow-hidden relative">
-                    <img src="assets/images/symbols/american-bison-rugged-realism.webp" alt="הביזון האמריקאי" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">2016</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">הביזון האמריקאי</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">היונק הלאומי. טרגדיית ההכחדה הכמעט-מוחלטת, ומבצע השימור של רוזוולט והורנאדיי.</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- כרטיסיה 6: עץ האלון -->
-            <a href="symbols/oak-tree.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent relative">
-                <div class="aspect-video w-full bg-gray-900 overflow-hidden relative">
-                    <img src="assets/images/symbols/american-oak-bark-acorn.webp" alt="עץ האלון" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">2004</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">עץ האלון</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">העץ הלאומי. סמל של עוצמה ושורשיות: מספינות המלחמה הבלתי חדירות ועד להצבעה הדמוקרטית הגדולה.</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- כרטיסיה 7: הוורד -->
-            <a href="symbols/rose.html" class="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent relative">
-                <div class="absolute top-0 right-0 bg-brandAccent text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">חדש</div>
-                <div class="aspect-video w-full bg-gray-900 overflow-hidden relative">
-                    <img src="assets/images/symbols/american-national-rose-deep-red.webp" alt="הוורד הלאומי" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                    <div class="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">1986</div>
-                </div>
-                <div class="p-6 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">הוורד</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">הפרח הלאומי. סמל של חיים, יופי ומסירות: מהכלאותיו של ג'ורג' וושינגטון ועד להכרזה הנשיאותית ההיסטורית.</p>
-                    <div class="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                        קרא את המחקר המלא <span class="group-hover:-translate-x-1 transition-transform">←</span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </main>
-
-    <!-- סרגל ניווט תחתון למובייל -->
-    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-4 flex justify-around z-50 shadow-2xl">
-        <a href="index.html" class="text-brandAccent font-medium flex flex-col items-center">
-            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-            ראשי
-        </a>
-        <a href="about.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center transition-colors">
-            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-            אודות
-        </a>
-        <!-- כפתור החלפת שפה (לאנגלית) - נייד -->
-        <a href="index-en.html" class="text-gray-400 hover:text-white font-medium flex flex-col items-center transition-colors">
-            <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span class="tracking-widest">EN</span>
-        </a>
-    </div>
-
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
 </body>
 </html>
 
