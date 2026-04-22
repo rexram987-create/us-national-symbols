@@ -52,13 +52,15 @@
             { id: 'oak', name: 'The American Oak', year: '2004', path: 'symbols/oak-tree-en.html', img: 'assets/images/symbols/american-oak-bark-acorn.webp', desc: 'The National Tree. A symbol of strength and roots: from the US Navy to Jamestown.', isNew: false, objectFit: 'cover' },
             { id: 'rose', name: 'The National Rose', year: '1986', path: 'symbols/rose-en.html', img: 'assets/images/symbols/american-national-rose-deep-red.webp', desc: 'The National Floral Emblem. From George Washington to the Rose Garden declaration.', isNew: false, objectFit: 'cover' },
             { id: 'unclesam', name: 'Uncle Sam', year: '1961', path: 'symbols/uncle-sam-en.html', img: 'assets/images/symbols/uncle-sam-icon.jpg', desc: 'Personification of the Nation. From a meatpacker to the most influential recruitment poster in history.', isNew: false, objectFit: 'cover object-top' },
-            { id: 'applepie', name: 'The Apple Pie', year: '1796', path: 'symbols/apple-pie-en.html', img: 'assets/images/symbols/apple-pie-icon.jpg', desc: 'An unofficial symbol of freedom and nostalgia: from Johnny Appleseed to culinary independence.', isNew: true, objectFit: 'cover' }
+            { id: 'applepie', name: 'The Apple Pie', year: '1796', path: 'symbols/apple-pie-en.html', img: 'assets/images/symbols/apple-pie-icon.jpg', desc: 'An unofficial symbol of freedom and nostalgia: from Johnny Appleseed to culinary independence.', isNew: false, objectFit: 'cover' },
+            { id: 'constitution', name: 'The U.S. Constitution', year: '1787', path: 'symbols/constitution-en.html', img: 'assets/images/symbols/constitution-document.webp', desc: 'The founding document. From the architecture of government and separation of powers to the legend of James Madison.', isNew: true, objectFit: 'cover' }
         ];
 
         function App() {
             return (
                 <div className="flex flex-col min-h-screen">
                     
+                    {/* Header */}
                     <header className="border-b border-darkBorder glass-effect">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                             <div className="flex items-center gap-4">
@@ -78,8 +80,10 @@
                         </div>
                     </header>
 
+                    {/* Main Content */}
                     <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12 pb-24">
                         
+                        { }
                         <section className="border-b-2 border-brandAccent pb-6 mb-4">
                             <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">Historical Research Archive</h2>
                             <p className="text-xl text-gray-400 mt-4 max-w-3xl leading-relaxed">
@@ -88,6 +92,8 @@
                             </p>
                         </section>
 
+                        {}
+                        {/* Symbols Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             {symbols.map((symbol) => (
                                 <a 
@@ -96,7 +102,7 @@
                                     className="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent relative"
                                 >
                                     {symbol.isNew && (
-                                        <div className="absolute top-0 left-0 bg-brandAccent text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10 shadow-md">NEW</div>
+                                        <div className="absolute top-0 right-0 bg-brandAccent text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10 shadow-md">NEW</div>
                                     )}
                                     <div className={`aspect-video w-full ${symbol.id === 'seal' ? 'bg-gray-800 p-4 flex items-center justify-center' : 'bg-gray-900'} overflow-hidden relative`}>
                                         <img 
@@ -119,6 +125,8 @@
                         </div>
                     </main>
 
+                    {}
+                    {/* Mobile Bottom Navigation */}
                     <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-4 flex justify-around z-50 shadow-2xl">
                         <a href="index-en.html" className="text-brandAccent font-medium flex flex-col items-center">
                             <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
