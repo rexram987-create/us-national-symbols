@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="dark">
 <head>
@@ -39,7 +38,7 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array with Categories (Using Backticks for strict string parsing)
+        // Symbol Data Array - Links updated perfectly to match GitHub screenshot, Images added
         const symbolsData = [
             {
                 id: 'declaration',
@@ -48,6 +47,7 @@
                 year: '1776',
                 description: `The founding document that created the American Creed, spearheaded by Thomas Jefferson.`,
                 icon: 'scroll',
+                image: 'assets/images/symbols/declaration-signatures.webp',
                 link: 'symbols/declaration-en.html',
                 isNew: true
             },
@@ -58,17 +58,8 @@
                 year: '1787',
                 description: `The supreme civic symbol and sacred contract of the Republic, engineered by James Madison.`,
                 icon: 'scale',
+                image: 'assets/images/symbols/constitution.webp',
                 link: 'symbols/constitution-en.html',
-                isNew: false
-            },
-            {
-                id: 'motto',
-                category: 'vision',
-                title: 'The National Motto',
-                year: '1956',
-                description: `In God We Trust - its historical roots, theological meaning, and the religious battles surrounding it.`,
-                icon: 'quote',
-                link: 'symbols/motto-en.html',
                 isNew: false
             },
             {
@@ -78,7 +69,8 @@
                 year: '1777',
                 description: `The history, the Betsy Ross myth, and the evolution of the 'Stars and Stripes'.`,
                 icon: 'flag',
-                link: 'symbols/flag-en.html',
+                image: 'assets/images/symbols/american-flag.webp',
+                link: 'symbols/american-flag-en.html',
                 isNew: false
             },
             {
@@ -88,7 +80,8 @@
                 year: '1814',
                 description: `The Star-Spangled Banner - a poem born in the heart of a bloody naval battle during the War of 1812.`,
                 icon: 'music',
-                link: 'symbols/anthem-en.html',
+                image: 'assets/images/symbols/national-anthem.webp',
+                link: 'symbols/national-anthem-en.html',
                 isNew: false
             },
             {
@@ -98,6 +91,7 @@
                 year: '1782',
                 description: `The official emblem combining the eagle, olive branches, and arrows. The engineering behind the seal.`,
                 icon: 'stamp',
+                image: 'assets/images/symbols/great-seal.webp',
                 link: 'symbols/great-seal-en.html',
                 isNew: false
             },
@@ -108,6 +102,7 @@
                 year: '1812',
                 description: `From an unknown New York meatpacker to the world's most famous recruitment icon designed by James Flagg.`,
                 icon: 'user-circle',
+                image: 'assets/images/symbols/uncle-sam.webp',
                 link: 'symbols/uncle-sam-en.html',
                 isNew: false
             },
@@ -118,6 +113,7 @@
                 year: '1782',
                 description: `The national bird symbolizing freedom and strength. Includes the historical dispute with Benjamin Franklin.`,
                 icon: 'bird',
+                image: 'assets/images/symbols/bald-eagle.webp',
                 link: 'symbols/bald-eagle-en.html',
                 isNew: false
             },
@@ -128,7 +124,19 @@
                 year: '2016',
                 description: `The national mammal. A symbol of prairie majesty, the tragedy of near-extinction, and massive conservation efforts.`,
                 icon: 'paw-print',
-                link: 'symbols/bison-en.html',
+                image: 'assets/images/symbols/american-bison.webp',
+                link: 'symbols/american-bison-en.html',
+                isNew: false
+            },
+            {
+                id: 'oak-tree',
+                category: 'nature',
+                title: 'The Oak Tree',
+                year: '2004',
+                description: `The national tree symbolizing strength, endurance, and deep roots in American soil.`,
+                icon: 'tree-pine',
+                image: 'assets/images/symbols/oak-tree.webp',
+                link: 'symbols/oak-tree-en.html',
                 isNew: false
             },
             {
@@ -138,6 +146,7 @@
                 year: '1986',
                 description: `The national floral emblem of the US, symbolizing life, love, and devotion. Officially declared in the Rose Garden.`,
                 icon: 'flower-2',
+                image: 'assets/images/symbols/rose.webp',
                 link: 'symbols/rose-en.html',
                 isNew: false
             },
@@ -148,12 +157,13 @@
                 year: '1800s',
                 description: `The unofficial culinary symbol of the United States - 'As American as apple pie'.`,
                 icon: 'chef-hat',
+                image: 'assets/images/symbols/apple-pie.webp',
                 link: 'symbols/apple-pie-en.html',
                 isNew: false
             }
         ];
 
-        // Component: Individual Card
+        // Component: Individual Card with Image
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -162,29 +172,51 @@
             }, [symbol]);
 
             return (
-                <a href={symbol.link} className="group relative bg-navy-800/80 backdrop-blur-md border border-navy-600 rounded-2xl p-6 transition-all duration-300 hover:border-gold-500 hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:-translate-y-1 block">
-                    {symbol.isNew && (
-                        <div className="absolute -top-3 -right-3 bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-navy-900 z-10 animate-pulse">
-                            New!
+                <a href={symbol.link} className="group relative bg-navy-800/80 backdrop-blur-md border border-navy-600 rounded-2xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:border-gold-500 hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:-translate-y-1 block">
+                    
+                    {/* Image Header Section */}
+                    <div className="relative h-48 w-full overflow-hidden bg-navy-900">
+                        <img 
+                            src={symbol.image} 
+                            alt={symbol.title} 
+                            className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                            onError={(e) => { 
+                                e.target.onerror = null; 
+                                e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200"><rect width="400" height="200" fill="%23112240"/><text x="50%" y="50%" font-family="sans-serif" font-size="16" fill="%23fbbf24" text-anchor="middle" dominant-baseline="middle">Image updating soon</text></svg>'; 
+                            }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy-800 via-navy-800/20 to-transparent"></div>
+                        
+                        {/* New Badge */}
+                        {symbol.isNew && (
+                            <div className="absolute top-3 right-3 bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-navy-900 z-10 animate-pulse">
+                                New!
+                            </div>
+                        )}
+                        
+                        {/* Icon Overlay */}
+                        <div className="absolute top-3 left-3 p-2 bg-navy-900/80 backdrop-blur-sm rounded-xl border border-navy-700 text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors shadow-lg z-10">
+                            <i data-lucide={symbol.icon} className="w-5 h-5"></i>
                         </div>
-                    )}
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-3 bg-navy-900/80 rounded-xl border border-navy-700 text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
-                            <i data-lucide={symbol.icon} className="w-6 h-6"></i>
-                        </div>
-                        <span className="text-sm font-bold text-navy-400 bg-navy-900/50 px-3 py-1 rounded-full border border-navy-700/50 group-hover:border-gold-500/30 transition-colors">
-                            {symbol.year}
-                        </span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
-                        {symbol.title}
-                    </h3>
-                    <p className="text-slate-400 text-sm leading-relaxed mb-4">
-                        {symbol.description}
-                    </p>
-                    <div className="flex items-center text-gold-500 font-medium text-sm group-hover:translate-x-4 transition-transform w-fit">
-                        Read full research
-                        <i data-lucide="arrow-right" className="w-4 h-4 ml-1"></i>
+
+                    {/* Content Section */}
+                    <div className="p-6 flex flex-col flex-grow bg-navy-800/80">
+                        <div className="flex items-center justify-between mb-3">
+                            <h3 className="text-xl font-bold text-white group-hover:text-gold-400 transition-colors">
+                                {symbol.title}
+                            </h3>
+                            <span className="text-xs font-bold text-navy-400 bg-navy-900/50 px-3 py-1 rounded-full border border-navy-700/50">
+                                {symbol.year}
+                            </span>
+                        </div>
+                        <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+                            {symbol.description}
+                        </p>
+                        <div className="flex items-center text-gold-500 font-medium text-sm group-hover:translate-x-4 transition-transform w-fit mt-auto pt-4 border-t border-navy-700/50 w-full">
+                            Read full research
+                            <i data-lucide="arrow-right" className="w-4 h-4 ml-1"></i>
+                        </div>
                     </div>
                 </a>
             );
@@ -268,6 +300,3 @@
     </script>
 </body>
 </html>
-
-
-```
