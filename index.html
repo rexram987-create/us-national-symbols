@@ -1,149 +1,274 @@
+```html
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>סמלי האומה האמריקאית | ארכיון מחקרי</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ארכיון הסמלים הלאומיים של ארצות הברית</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- React & Babel -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        darkBase: '#0a0a0a',
-                        darkSurface: '#171717',
-                        darkBorder: '#262626',
-                        brandAccent: '#dc2626',
-                        brandBlue: '#1e3a8a',
-                        goldAccent: '#d4af37',
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
                     },
                     fontFamily: {
-                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
     <style>
-        body { background-color: #0a0a0a; color: #e5e7eb; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; font-family: system-ui, -apple-system, sans-serif; }
-        .glass-effect { background: rgba(23, 23, 23, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        body { font-family: 'Heebo', sans-serif; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
     </style>
 </head>
-<body class="selection:bg-brandAccent selection:text-white transition-colors duration-300">
-    
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState } = React;
-
-        const symbols = [
-            { id: 'flag', name: 'דגל ארצות הברית', year: '1777', path: 'symbols/american-flag.html', img: 'assets/images/symbols/us-flag-official.svg', desc: 'מחקר על פרנסיס הופקינסון, אגדת בטסי רוס, והתפתחות הדגל.', isNew: false, objectFit: 'cover' },
-            { id: 'anthem', name: 'ההמנון הלאומי', year: '1814', path: 'symbols/national-anthem.html', img: 'assets/images/symbols/star-spangled-banner-parchment.webp', desc: 'ניתוח הפואמה של פרנסיס סקוט קי, הלחן הבריטי, והבתים המצונזרים.', isNew: false, objectFit: 'cover object-top' },
-            { id: 'seal', name: 'החותם הגדול', year: '1782', path: 'symbols/great-seal.html', img: 'assets/images/symbols/great-seal-us.svg', desc: 'המסע לאימוץ החותם, המוטו הלטיני, וצ\'ארלס תומסון.', isNew: false, objectFit: 'contain drop-shadow-2xl' },
-            { id: 'eagle', name: 'העיט הקירח', year: '1782', path: 'symbols/bald-eagle.html', img: 'assets/images/symbols/bald-eagle-portrait-majestic.webp', desc: 'סמל החירות, הפולמוס מול פרנקלין, והאטימולוגיה המטעה.', isNew: false, objectFit: 'cover' },
-            { id: 'bison', name: 'הביזון האמריקאי', year: '2016', path: 'symbols/american-bison.html', img: 'assets/images/symbols/american-bison-rugged-realism.webp', desc: 'היונק הלאומי. טרגדיית ההכחדה ומבצע השימור של רוזוולט.', isNew: false, objectFit: 'cover' },
-            { id: 'oak', name: 'עץ האלון', year: '2004', path: 'symbols/oak-tree.html', img: 'assets/images/symbols/american-oak-bark-acorn.webp', desc: 'העץ הלאומי. סמל של עוצמה ושורשיות: מהצי האמריקאי ועד ג\'יימסטאון.', isNew: false, objectFit: 'cover' },
-            { id: 'rose', name: 'הוורד', year: '1986', path: 'symbols/rose.html', img: 'assets/images/symbols/american-national-rose-deep-red.webp', desc: 'הפרח הלאומי. מג\'ורג\' וושינגטון ועד להכרזה בגן הוורדים.', isNew: false, objectFit: 'cover' },
-            { id: 'unclesam', name: 'הדוד סם', year: '1961', path: 'symbols/uncle-sam.html', img: 'assets/images/symbols/uncle-sam-icon.jpg', desc: 'האנשת האומה. מסוחר בשר אלמוני ועד לכרזת הגיוס המשפיעה בהיסטוריה.', isNew: false, objectFit: 'cover object-top' },
-            { id: 'applepie', name: 'פאי התפוחים', year: '1796', path: 'symbols/apple-pie.html', img: 'assets/images/symbols/apple-pie-icon.jpg', desc: 'סמל של חירות ונוסטלגיה: מג\'וני אפלסיד ועד לעצמאות הקולינרית.', isNew: false, objectFit: 'cover' },
-            { id: 'constitution', name: 'חוקת ארצות הברית', year: '1787', path: 'symbols/constitution.html', img: 'assets/images/symbols/constitution-document.webp', desc: 'המסמך המכונן. מארכיטקטורת השלטון והפרדת הרשויות, ועד לאגדת ג\'יימס מדיסון.', isNew: true, objectFit: 'cover' }
+        // Symbol Data Array with Categories
+        const symbolsData = [
+            {
+                id: 'declaration',
+                category: 'vision',
+                title: 'הכרזת העצמאות',
+                year: '1776',
+                description: "המסמך שכונן את האומה ויצר את ה'אני מאמין' האמריקאי, בהובלתו של תומאס ג'פרסון.",
+                icon: 'scroll',
+                link: 'symbols/declaration.html',
+                isNew: true
+            },
+            {
+                id: 'constitution',
+                category: 'vision',
+                title: 'חוקת ארצות הברית',
+                year: '1787',
+                description: "הסמל האזרחי העליון והחוזה המקודש של הרפובליקה, מבית מדרשו של ג'יימס מדיסון.",
+                icon: 'scale',
+                link: 'symbols/constitution.html',
+                isNew: false
+            },
+            {
+                id: 'motto',
+                category: 'vision',
+                title: 'המוטו הלאומי',
+                year: '1956',
+                description: "In God We Trust - שורשיו ההיסטוריים, משמעותו התאולוגית ומלחמות הדת שסביבו.",
+                icon: 'quote',
+                link: 'symbols/motto.html',
+                isNew: false
+            },
+            {
+                id: 'flag',
+                category: 'identity',
+                title: 'דגל ארצות הברית',
+                year: '1777',
+                description: "ההיסטוריה, המיתוס של בטסי רוס, והאבולוציה של 'הפסים והכוכבים'.",
+                icon: 'flag',
+                link: 'symbols/flag.html',
+                isNew: false
+            },
+            {
+                id: 'anthem',
+                category: 'identity',
+                title: 'ההמנון הלאומי',
+                year: '1814',
+                description: "'הדגל זרוע הכוכבים' - שיר שנולד בלב קרב ימי עקוב מדם במלחמת 1812.",
+                icon: 'music',
+                link: 'symbols/anthem.html',
+                isNew: false
+            },
+            {
+                id: 'seal',
+                category: 'identity',
+                title: 'החותם הגדול',
+                year: '1782',
+                description: "הסמל הרשמי המשלב את העיט, עלי הזית והחצים. ההנדסה שמאחורי החותם.",
+                icon: 'stamp',
+                link: 'symbols/great-seal.html',
+                isNew: false
+            },
+            {
+                id: 'uncle-sam',
+                category: 'identity',
+                title: 'הדוד סם',
+                year: '1812',
+                description: "מסוחר בשר אלמוני מניו יורק לאייקון הגיוס המפורסם בעולם שעוצב על ידי ג'יימס פלאג.",
+                icon: 'user-circle',
+                link: 'symbols/uncle-sam.html',
+                isNew: false
+            },
+            {
+                id: 'eagle',
+                category: 'nature',
+                title: 'העיט הקירח',
+                year: '1782',
+                description: "הציפור הלאומית המסמלת חירות ועוצמה. כולל המחלוקת ההיסטורית עם בנג'מין פרנקלין.",
+                icon: 'bird',
+                link: 'symbols/bald-eagle.html',
+                isNew: false
+            },
+            {
+                id: 'bison',
+                category: 'nature',
+                title: 'הביזון האמריקאי',
+                year: '2016',
+                description: "היונק הלאומי. סמל לעוצמת הערבות, לטרגדיית ההכחדה ולמאמץ השימור הענק.",
+                icon: 'paw-print',
+                link: 'symbols/bison.html',
+                isNew: false
+            },
+            {
+                id: 'rose',
+                category: 'nature',
+                title: 'הוורד',
+                year: '1986',
+                description: "הפרח הלאומי של ארצות הברית המסמל חיים, אהבה ומסירות. הוכרז רשמית בגן הוורדים.",
+                icon: 'flower-2',
+                link: 'symbols/rose.html',
+                isNew: false
+            },
+            {
+                id: 'apple-pie',
+                category: 'nature',
+                title: 'פאי תפוחים',
+                year: '1800s',
+                description: "הסמל הקולינרי הבלתי רשמי של ארצות הברית - 'As American as apple pie'.",
+                icon: 'chef-hat',
+                link: 'symbols/apple-pie.html',
+                isNew: false
+            }
         ];
 
-        function App() {
+        // Component: Individual Card
+        const SymbolCard = ({ symbol }) => {
+            React.useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, [symbol]);
+
             return (
-                <div className="flex flex-col min-h-screen">
-                    
-                    {/* Header */}
-                    <header className="border-b border-darkBorder glass-effect">
+                <a href={symbol.link} className="group relative bg-navy-800/80 backdrop-blur-md border border-navy-600 rounded-2xl p-6 transition-all duration-300 hover:border-gold-500 hover:shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:-translate-y-1 block">
+                    {symbol.isNew && (
+                        <div className="absolute -top-3 -right-3 bg-gold-500 text-navy-900 text-xs font-bold px-3 py-1 rounded-full shadow-lg border-2 border-navy-900 z-10 animate-pulse">
+                            חדש!
+                        </div>
+                    )}
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="p-3 bg-navy-900/80 rounded-xl border border-navy-700 text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-900 transition-colors">
+                            <i data-lucide={symbol.icon} className="w-6 h-6"></i>
+                        </div>
+                        <span className="text-sm font-bold text-navy-400 bg-navy-900/50 px-3 py-1 rounded-full border border-navy-700/50 group-hover:border-gold-500/30 transition-colors">
+                            {symbol.year}
+                        </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
+                        {symbol.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm leading-relaxed mb-4">
+                        {symbol.description}
+                    </p>
+                    <div className="flex items-center text-gold-500 font-medium text-sm group-hover:translate-x-[-4px] transition-transform w-fit">
+                        <i data-lucide="arrow-left" className="w-4 h-4 ml-1"></i>
+                        קרא את המחקר המלא
+                    </div>
+                </a>
+            );
+        };
+
+        // Component: Category Section
+        const CategorySection = ({ title, icon, symbols }) => (
+            <section className="mb-16">
+                <div className="flex items-center gap-3 mb-8 border-b border-navy-700/50 pb-4">
+                    <div className="p-2 bg-navy-800 rounded-lg text-gold-500 shadow-sm border border-navy-600">
+                        <i data-lucide={icon} className="w-6 h-6"></i>
+                    </div>
+                    <h2 className="text-3xl font-bold text-white">{title}</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {symbols.map(sym => <SymbolCard key={sym.id} symbol={sym} />)}
+                </div>
+            </section>
+        );
+
+        // Main App Component
+        const App = () => {
+            React.useEffect(() => {
+                if (window.lucide) {
+                    window.lucide.createIcons();
+                }
+            }, []);
+
+            const visionSymbols = symbolsData.filter(s => s.category === 'vision');
+            const identitySymbols = symbolsData.filter(s => s.category === 'identity');
+            const natureSymbols = symbolsData.filter(s => s.category === 'nature');
+
+            return (
+                <div>
+                    {/* Header - Changed from fixed to absolute */}
+                    <header className="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-full bg-brandBlue flex items-center justify-center border-2 border-brandAccent shadow-lg overflow-hidden">
-                                    <span className="text-white font-bold text-xl">US</span>
+                                <div className="p-2 bg-gold-500 text-navy-900 rounded-full shadow-[0_0_15px_rgba(251,191,36,0.5)]">
+                                    <i data-lucide="library" className="w-6 h-6"></i>
                                 </div>
-                                <h1 className="text-xl sm:text-3xl font-extrabold tracking-tight text-white">סמלי האומה האמריקאית</h1>
+                                <div>
+                                    <h1 className="text-xl md:text-2xl font-bold text-white tracking-wide">ארכיון הסמלים הלאומיים</h1>
+                                    <p className="text-xs md:text-sm text-gold-400 font-medium">ארצות הברית של אמריקה</p>
+                                </div>
                             </div>
-                            <nav className="hidden sm:flex items-center gap-6 font-medium">
-                                <a href="index.html" className="text-brandAccent hover:text-red-400 transition-colors">ראשי</a>
-                                <a href="about.html" className="text-gray-400 hover:text-white transition-colors">אודות החוקר</a>
-                                <a href="index-en.html" className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-darkBase border border-darkBorder hover:border-brandAccent text-gray-300 hover:text-white transition-all shadow-sm">
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    <span className="text-xs font-bold uppercase tracking-wider">EN</span>
+                            <div className="flex items-center gap-4">
+                                <a href="index-en.html" className="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                                    EN
                                 </a>
-                            </nav>
+                            </div>
                         </div>
                     </header>
 
-                    {/* Main Content */}
-                    <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col gap-12 pb-24">
-                        
-                        <section className="border-b-2 border-brandAccent pb-6 mb-4">
-                            <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tighter">ארכיון מחקר היסטורי</h2>
-                            <p className="text-xl text-gray-400 mt-4 max-w-3xl leading-relaxed">
-                                ברוכים הבאים למאגר המקיף לחקר הסמלים הלאומיים של ארצות הברית. 
-                                כאן תמצאו ניתוח אטימולוגי מפורט, היסטוריה של הוגים ויוצרים, ואת המשמעויות העמוקות שמאחורי כל סמל וסמל, ללא פשרות.
+                    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+                        <div className="text-center mb-16 relative">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+                            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 mt-6 leading-tight">חקור את המורשת האמריקאית</h2>
+                            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto font-light">
+                                אוסף מקיף של מחקרים היסטוריים ואטימולוגיים על הסמלים המכוננים את זהותה של ארצות הברית.
                             </p>
-                        </section>
-
-                        {/* Symbols Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                            {symbols.map((symbol) => (
-                                <a 
-                                    key={symbol.id} 
-                                    href={symbol.path} 
-                                    className="group block bg-darkSurface border border-darkBorder rounded-2xl overflow-hidden hover:border-brandAccent transition-all duration-300 shadow-lg hover:shadow-brandAccent/20 flex flex-col h-full focus:outline-none focus:ring-4 focus:ring-brandAccent relative"
-                                >
-                                    {symbol.isNew && (
-                                        <div className="absolute top-0 right-0 bg-brandAccent text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10 shadow-md">חדש</div>
-                                    )}
-                                    <div className={`aspect-video w-full ${symbol.id === 'seal' ? 'bg-gray-800 p-4 flex items-center justify-center' : 'bg-gray-900'} overflow-hidden relative`}>
-                                        <img 
-                                            src={symbol.img} 
-                                            alt={symbol.name} 
-                                            className={`w-full h-full group-hover:scale-105 transition-transform duration-500 ${symbol.objectFit}`} 
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-darkSurface to-transparent opacity-80"></div>
-                                        <div className="absolute bottom-3 right-3 bg-brandBlue text-white text-xs font-bold px-2 py-1 rounded">{symbol.year}</div>
-                                    </div>
-                                    <div className="p-6 flex-grow flex flex-col">
-                                        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brandAccent transition-colors">{symbol.name}</h3>
-                                        <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-grow">{symbol.desc}</p>
-                                        <div className="text-brandAccent font-semibold text-sm flex items-center gap-1 mt-auto">
-                                            למחקר <span className="group-hover:-translate-x-1 transition-transform">←</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            ))}
                         </div>
+
+                        <CategorySection title="החזון והחוק" icon="scale" symbols={visionSymbols} />
+                        <CategorySection title="זהות לאומית וסמלים היסטוריים" icon="flag" symbols={identitySymbols} />
+                        <CategorySection title="טבע, פולקלור ותרבות" icon="leaf" symbols={natureSymbols} />
+
                     </main>
 
-                    {/* Mobile Bottom Navigation */}
-                    <div className="sm:hidden fixed bottom-0 left-0 right-0 bg-darkSurface border-t border-darkBorder p-4 flex justify-around z-50 shadow-2xl">
-                        <a href="index.html" className="text-brandAccent font-medium flex flex-col items-center">
-                            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                            ראשי
-                        </a>
-                        <a href="about.html" className="text-gray-400 hover:text-white font-medium flex flex-col items-center transition-colors">
-                            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                            אודות
-                        </a>
-                        <a href="index-en.html" className="text-gray-400 hover:text-white font-medium flex flex-col items-center transition-colors">
-                            <svg className="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span className="tracking-widest">EN</span>
-                        </a>
-                    </div>
+                    <footer className="bg-navy-900/90 border-t border-navy-700 py-8">
+                        <div className="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+                            <p>© 2026 ארכיון הסמלים הלאומיים. נבנה על ידי רם.</p>
+                            <p className="mt-2 text-xs">עיצוב מותאם ל-Samsung S25 Ultra</p>
+                        </div>
+                    </footer>
                 </div>
             );
-        }
+        };
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
     </script>
 </body>
 </html>
+
+
+```
