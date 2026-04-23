@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr" class="dark">
 <head>
@@ -38,7 +39,6 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Symbol Data Array - English version with 14 symbols
         const symbolsData = [
             {
                 id: 'declaration',
@@ -61,6 +61,17 @@
                 image: `assets/images/symbols/constitution-document.webp`,
                 link: `symbols/constitution-en.html`,
                 isNew: false
+            },
+            {
+                id: 'bill-of-rights',
+                category: 'vision',
+                title: `The Bill of Rights`,
+                year: `1791`,
+                description: `The ultimate shield of freedom: the ten amendments that limited the power of the government and granted the American citizen their most fundamental rights.`,
+                icon: `shield-check`,
+                image: `assets/images/symbols/bill-of-rights-document.webp`,
+                link: `symbols/bill-of-rights-en.html`,
+                isNew: true
             },
             {
                 id: 'motto',
@@ -192,11 +203,10 @@
                 icon: `sun`,
                 image: `assets/images/symbols/mustang-wild.webp`,
                 link: `symbols/mustang-en.html`,
-                isNew: true
+                isNew: false
             }
         ];
 
-        // Component: Individual Card with Header Image
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
@@ -324,3 +334,6 @@
     </script>
 </body>
 </html>
+
+
+```
