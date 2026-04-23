@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תרנגול ההודו הפראי | ארכיון הסמלים הלאומיים</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-right" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">תרנגול ההודו הפראי</h1>
+                    <p class="text-xs md:text-sm text-gold-400 font-medium">סמל תרבותי | Meleagris gallopavo</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="wild-turkey-en.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                    EN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="bird" class="w-16 h-16 mx-auto text-gold-400 mb-6 drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The Wild Turkey</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                העוף האמריקאי המקורי: ממשתה החלוצים, למיתוס של בנג'מין פרנקלין, ועד לבלבול הלשוני הגדול ביותר בהיסטוריה.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-bird')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/wild-turkey-nature.webp" alt="Wild Turkey in Nature" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">תרנגול הודו פראי</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-feast')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-gold-500/50 hover:border-gold-400 transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/thanksgiving-feast-vintage.webp" alt="Thanksgiving Feast" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-gold-400 font-bold text-sm md:text-lg drop-shadow-md">סמל חג ההודיה</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-franklin')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/franklin-turkey-sketch.webp" alt="Franklin and Turkey Sketch" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">המיתוס של פרנקלין</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+        </section>
+
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="leaf" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">תעודת זהות זואולוגית</h3>
+                </div>
+                <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700">
+                    <ul class="space-y-3 text-lg text-slate-300">
+                        <li><strong class="text-white">שם מדעי:</strong> Meleagris gallopavo</li>
+                        <li><strong class="text-white">משפחה:</strong> פסיוניים (Phasianidae)</li>
+                        <li><strong class="text-white">אזור מחיה מקורי:</strong> צפון אמריקה (מארה"ב ועד צפון מקסיקו). תרנגול ההודו הוא עוף אמריקאי מקורי ואנדמי (יליד היבשת), בניגוד לתרנגולות רגילות שמוצאן באסיה.</li>
+                        <li><strong class="text-white">מידות ומשקל:</strong> קיימת דו-צורתיות זוויגית מובהקת (הבדל ניכר בין זכרים לנקבות). זכרים בוגרים (Toms) שוקלים בין 5 ל-11 ק"ג ואורכם 100-125 ס"מ, עם מוטת כנפיים מרשימה של 1.25 עד 1.44 מטרים. הנקבות (Hens) קטנות וקלות משמעותית, שוקלות בין 2.5 ל-5.4 ק"ג ואורכן 76-95 ס"מ.</li>
+                        <li><strong class="text-white">תזונה:</strong> תרנגול ההודו הפראי הוא אוכל-כל (אומניבור) אופורטוניסטי המלקט את מזונו בעיקר מקרקעית היער. התזונה משתנה לפי עונות השנה וכוללת בלוטים ואגוזים (מקור שומן קריטי לחורף), זרעים, פירות יער, שורשים, וכן חרקים, עכבישים, ואפילו זוחלים ודו-חיים קטנים כגון לטאות וצפרדעים.</li>
+                        <li><strong class="text-white">מצב שימור בטבע:</strong> מוגדר כיום כ"ללא חשש" (Least Concern - LC) ברשימה האדומה של ה-IUCN. זהו אחד מסיפורי ההצלחה האקולוגיים הגדולים בצפון אמריקה: בתחילת המאה ה-20, בשל ציד חסר רסן ואובדן שטחי מחיה, האוכלוסייה צנחה לכ-30,000 פרטים בלבד על סף הכחדה. בזכות חוקי שימור, הקמת שמורות טבע, וארגונים כמו ה-NWTF, האוכלוסייה השתקמה דרמטית וכיום מונה מעל ל-6 מיליון פרטים בטבע.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">הבלבול האטימולוגי הגדול</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                    שמו של העוף הזה הוא אחת הטעויות הגיאוגרפיות המצחיקות ביותר בהיסטוריה של השפות:
+                </p>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">למה באנגלית הוא "Turkey" (טורקיה)?</h4>
+                        <p class="text-slate-300 text-lg">במאה ה-16, סוחרים טורקים (מהאימפריה העות'מאנית) ייבאו לאנגליה עופות מאפריקה שנקראו "פניניות" (Guinea fowl). האנגלים קראו לעופות הללו "Turkey coqs" (עופות טורקיים). מאוחר יותר, כשהאנגלים הגיעו לאמריקה וראו את תרנגול ההודו האמריקאי, הוא היה נראה להם דומה לעוף ה"טורקי" שהכירו בבית, ולכן קראו גם לו בשגגה <strong>"Turkey"</strong>. כך קיבלה ציפור אמריקאית לחלוטין שם של מדינה במזרח התיכון.</p>
+                    </div>
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">למה בעברית הוא "הודו"?</h4>
+                        <p class="text-slate-300 text-lg">בישראל (ובשפות נוספות כמו צרפתית: Dinde, ורוסית: Hindi), הטעות נובעת מחזרה על הטעות המפורסמת של קולומבוס. כיוון שהעוף הגיע מיבשת אמריקה, אותה חשבו בטעות ל"הודו" (איי הודו המערבית), נדבק אליו השם "תרנגול מהודו" – או בקיצור, <strong>תרנגול הודו</strong>. כך קיבלה אותה הציפור שם של מדינה באסיה.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="utensils" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">פולקלור: סמל חג ההודיה</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">סעודת הפליגרימים (1621):</strong> המיתוס המפורסם טוען שתרנגול הודו היה המנה המרכזית בסעודת חג ההודיה הראשונה של המתיישבים (הפילגרימים) והילידים האמריקאים (הוואמפנואג) בפלימות'. היסטורית, אין הוכחה חותכת לכך; התיעוד מדבר על "עופות מים" (Fowl) ובשר צבי.</li>
+                    <li><strong class="text-white">עיצוב סמל החג (המאה ה-19):</strong> תרנגול ההודו הפך למנה המרכזית הרשמית של החג רק במאה ה-19. הסיבות היו פרקטיות: הוא היה עוף אמריקאי מקומי, עצום בגודלו (מספיק להאכיל משפחה שלמה), ולא הייתה לו שום תועלת אחרת כיוון שאינו מטיל ביצים ברמה מסחרית ואינו מייצר חלב (בשונה מפרות ותרנגולות רגילות).</li>
+                    <li><strong class="text-white">"החנינה" הנשיאותית:</strong> מאז אמצע המאה ה-20, התפתחה מסורת תרבותית משעשעת שבה נשיא ארצות הברית מעניק "חנינה פומבית" (Presidential Pardon) לתרנגול הודו אחד (או שניים) בבית הלבן יום לפני חג ההודיה, ומציל אותם מהצלחת הלאומית. ג'ורג' ה.וו. בוש היה הראשון להפוך זאת לטקס קבוע.</li>
+                </ul>
+            </section>
+
+             <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="feather" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">המיתוס של בנג'מין פרנקלין</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                    אחד המיתוסים ההיסטוריים המפורסמים ביותר הוא שבנג'מין פרנקלין נאבק כדי שתרנגול ההודו יהיה הציפור הלאומית של אמריקה במקום העיט הקירח. <strong>האמת מעט שונה, אך מרתקת לא פחות:</strong>
+                </p>
+                <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                    פרנקלין מעולם לא הציע את תרנגול ההודו כסמל לאומי בפני הקונגרס. עם זאת, במכתב פרטי שכתב לבתו (שרה באצ'ה) ב-1784, הוא ביקר בחריפות את העיצוב הראשוני של החותם הגדול (שבו נראה עיט קירח שנראה קצת כמו תרנגול הודו). במכתבו, הוא טען שהעיט הקירח הוא "ציפור בעלת אופי מוסרי ירוד" כיוון שהוא גונב אוכל מעופות אחרים והוא פחדן.
+                </p>
+                <p class="text-lg text-slate-300 leading-relaxed">
+                    לעומת זאת, כתב פרנקלין בהומור האופייני לו, תרנגול ההודו הוא <span class="italic text-gold-400">"הרבה יותר מכובד... הוא ציפור אמריקאית מקורית וגאה. אמנם הוא קצת גאוותן וטיפש, אבל הוא ציפור אמיצה שלא תהסס לתקוף חייל בריטי מהמשמר המלכותי שיעז לפלוש לחצר שלו כשהוא לבוש במדים אדומים"</span>. למרות שזו הייתה רק הלצה במכתב אישי, הרעיון התקבע בפולקלור האמריקאי כ"הצעתו האבודה" של פרנקלין.
+                </p>
+            </section>
+
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">5. מקורות היסטוריים וזואולוגיים</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>The National Wild Turkey Federation (NWTF) - נתונים ביולוגיים והיסטוריית שימור.</li>
+                    <li>מכתבו של בנג'מין פרנקלין לבתו, שרה באצ'ה (26 בינואר 1784) - ארכיון מכון פרנקלין.</li>
+                    <li>Smithsonian Institution - "The Origins of the Thanksgiving Turkey".</li>
+                    <li>מחקרי אטימולוגיה מהמילון האנגלי של אוקספורד (OED) ומילון אבן-שושן.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="modal-bird" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-bird')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/wild-turkey-nature.webp" alt="Wild Turkey in Nature" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">תרנגול ההודו הפראי</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">זכר פראי במלוא הדרו. בניגוד לעופות המבויתים והמגושמים, הזן הפראי הוא אתלטי, בעל נוצות בצבעי נחושת בוהקים, ויכולת תעופה מרשימה למרחקים קצרים.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-feast" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-feast')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/thanksgiving-feast-vintage.webp" alt="Thanksgiving Feast" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">משתה חג ההודיה</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    איור קלאסי של סעודת חג ההודיה. למרות שספק אם נאכל בסעודה הראשונה של הפילגרימים, תרנגול ההודו הפך במאה ה-19 למנה המרכזית והאייקונית של הפולקלור האמריקאי.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-franklin" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-franklin')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/franklin-turkey-sketch.webp" alt="Franklin and Turkey Sketch" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">בנג'מין פרנקלין והציפור ה"אמיצה"</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    במכתב לבתו, טען פרנקלין בהומור שעדיף היה לבחור בתרנגול ההודו על פני העיט הקירח, שכן הוא "ציפור אמריקאית מקורית וגאה שלא תהסס לתקוף חייל בריטי".
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
