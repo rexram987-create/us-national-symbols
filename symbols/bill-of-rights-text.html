@@ -1,0 +1,200 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>מגילת הזכויות | הטקסט המקורי</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        
+        /* עיצוב ייחודי למסמך */
+        .document-paper {
+            background: linear-gradient(145deg, rgba(17,34,64,0.95) 0%, rgba(10,25,47,0.95) 100%);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(251,191,36,0.2);
+        }
+        .amendment-number {
+            font-family: 'Playfair Display', serif;
+            color: #fbbf24;
+            opacity: 0.15;
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header (Changed from fixed to absolute) -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="bill-of-rights.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group">
+                    <i data-lucide="arrow-right" class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <span class="text-white font-bold tracking-wide">חזרה למחקר</span>
+            </div>
+            <div class="flex items-center gap-2 text-gold-400">
+                <i data-lucide="scroll" class="w-5 h-5"></i>
+                <span class="font-serif italic text-sm">The Bill of Rights</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content (Adjusted padding-top from pt-28 to pt-32 for better spacing with absolute header) -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <div class="document-paper rounded-xl p-8 md:p-12 relative overflow-hidden">
+            
+            <!-- עיטור עליון -->
+            <div class="flex justify-center mb-8 opacity-60">
+                <svg width="200" height="20" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H80M120 10H200M100 0L110 10L100 20L90 10L100 0Z" fill="#fbbf24"/>
+                </svg>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-4 serif-font">מגילת הזכויות</h1>
+            <p class="text-center text-gold-400 text-lg mb-10 font-serif italic">אושרו ב-15 בדצמבר 1791</p>
+
+            <div class="mb-12 pb-8 border-b border-navy-700/50">
+                <p class="text-lg text-slate-300 leading-relaxed text-center font-light">
+                    התיקונים לחוקת ארצות הברית, שהוצעו על ידי הקונגרס ואושררו על ידי בתי המחוקקים של המדינות השונות, בהתאם לסעיף החמישי של החוקה המקורית. עשרת התיקונים הראשונים מהווים יחדיו את "מגילת הזכויות".
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                
+                <!-- Amendment 1 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">I</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון הראשון</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        הקונגרס לא יחוקק שום חוק הממסד דת, או אוסר על קיומה החופשי; או המגביל את חופש הביטוי, או את חופש העיתונות; או את זכותו של העם להתאסף בדרכי שלום, ולעתור לממשלה על תיקון עוולות.
+                    </p>
+                </div>
+
+                <!-- Amendment 2 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">II</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון השני</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        מכיוון שמיליציה מאורגנת היטב נחוצה לביטחונה של מדינה חופשית, זכותו של העם להחזיק ולשאת נשק לא תופר.
+                    </p>
+                </div>
+
+                <!-- Amendment 3 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">III</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון השלישי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        שום חייל לא ישוכן בעתות שלום בבית כלשהו, ללא הסכמת הבעלים, וגם לא בעת מלחמה, אלא באופן שייקבע בחוק.
+                    </p>
+                </div>
+
+                <!-- Amendment 4 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">IV</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון הרביעי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        זכותם של בני העם להיות מוגנים בגופם, בבתיהם, בניירותיהם וברכושם, מפני חיפושים ותפיסות בלתי סבירים, לא תופר; ושום צו חיפוש או מעצר לא יוצא אלא על בסיס עילה סבירה (Probable cause), הנתמכת בשבועה או בהצהרה, ואשר מתארת במדויק את המקום שיש לערוך בו חיפוש, ואת האנשים או הדברים שיש לתפוס.
+                    </p>
+                </div>
+
+                <!-- Amendment 5 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">V</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון החמישי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        אדם לא יידרש לעמוד לדין על עבירה שדינה מיתה, או על פשע חמור אחר, אלא על פי כתב אישום של חבר מושבעים גדול, למעט במקרים המתעוררים בכוחות היבשה או הים, או במיליציה, כאשר הם בשירות פעיל בזמן מלחמה או סכנה ציבורית; שום אדם לא יעמוד בסיכון כפול (לשלם בחייו או בגופו) בגין אותה עבירה; שום אדם לא יאולץ במשפט פלילי להיות עד נגד עצמו; ושום אדם לא ישלל ממנו חופש, חיים או רכוש, ללא הליך משפטי הוגן; ורכוש פרטי לא יופקע לשימוש הציבור ללא פיצוי הולם.
+                    </p>
+                </div>
+
+                <!-- Amendment 6 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">VI</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון השישי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        בכל התביעות הפליליות, ייהנה הנאשם מהזכות למשפט מהיר ופומבי, על ידי חבר מושבעים חסר פניות של המדינה והמחוז שבהם בוצע הפשע... ומהזכות להיות מיודע על מהות ועילת האישום נגדו; להתעמת עם העדים המעידים נגדו; ליהנות מהליך כפוי להבאת עדים לטובתו; וליהנות מעזרת עורך דין להגנתו.
+                    </p>
+                </div>
+
+                <!-- Amendment 7 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">VII</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון השביעי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        בתביעות במשפט המקובל, כאשר ערך המחלוקת יעלה על עשרים דולר, תישמר הזכות למשפט על ידי מושבעים; ושום עובדה שנידונה על ידי חבר מושבעים לא תיבחן מחדש בשום בית משפט של ארצות הברית, אלא על פי כללי המשפט המקובל.
+                    </p>
+                </div>
+
+                <!-- Amendment 8 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">VIII</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון השמיני</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        לא יידרשו דמי ערבות מופרזים, לא יוטלו קנסות מופרזים, ולא יושתו עונשים אכזריים ובלתי רגילים.
+                    </p>
+                </div>
+
+                <!-- Amendment 9 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">IX</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון התשיעי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        פירוט זכויות מסוימות בחוקה זו, לא יתפרש כשלילה או צמצום של זכויות אחרות השמורות בידי העם.
+                    </p>
+                </div>
+
+                <!-- Amendment 10 -->
+                <div class="relative pl-4 z-10">
+                    <span class="amendment-number">X</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10 border-r-2 border-gold-500 pr-3">התיקון העשירי</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        הסמכויות שלא הואצלו לארצות הברית על ידי החוקה, ושלא נאסרו על ידה למדינות, שמורות למדינות עצמן, או לעם.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. Sources (Added Section) -->
+            <div class="mt-16 pt-6 border-t border-navy-700/50 text-sm text-gray-500 italic relative z-10">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">מקורות ארכיוניים (טקסט ופרשנות)</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>The National Archives and Records Administration (NARA) - Transcript of the Bill of Rights.</li>
+                    <li>Cornell Law School (LII) - U.S. Constitution and literal translations of the Amendments.</li>
+                </ul>
+            </div>
+
+            <!-- עיטור תחתון -->
+            <div class="flex justify-center mt-12 opacity-60 relative z-10">
+    </script>
+</body>
+</html>
+
+
+
+```
