@@ -1,0 +1,291 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>פעמון החירות | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626'
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-right" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">פעמון החירות</h1>
+                    <p class="text-xs md:text-sm text-gold-400 font-medium">סמל החופש | 1752</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="liberty-bell-en.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                    EN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="bell" class="w-16 h-16 mx-auto text-gold-400 mb-6 drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The Liberty Bell</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                הקול שקרא לדרור: סיפורו של הפעמון שנסדק בצלצולו הראשון, נשמר בסתר מפני הבריטים, והפך לאייקון עולמי של חירות וביטול העבדות.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/liberty-bell-main.webp" alt="פעמון החירות" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">פעמון החירות</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-crack')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-gold-500/50 hover:border-gold-400 transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/liberty-bell-crack.webp" alt="הסדק המפורסם" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-gold-400 font-bold text-sm md:text-lg drop-shadow-md">אנטומיה של סדק</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-pavilion')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/independence-hall-bell.webp" alt="הפעמון בפילדלפיה" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">היכל העצמאות</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+        </section>
+
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">תעודת זהות היסטורית: הפעמון של פנסילבניה</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">שנת יצירה:</strong> 1752 (הפעמון המקורי).</li>
+                    <li><strong class="text-white">היוצרים/יצרנים:</strong> נוצק במקור בבית היציקה "Whitechapel Bell Foundry" בלונדון, אנגליה. לאחר שנסדק בפילדלפיה, הוא נוצק מחדש פעמיים על ידי הנפחים המקומיים <strong>ג'ון פאס (John Pass)</strong> ו<strong>ג'ון סטו (John Stow)</strong> ב-1753.</li>
+                    <li><strong class="text-white">סיבת הבנייה:</strong> הוזמן על ידי האסיפה המחוזית של פנסילבניה כדי לציין 50 שנה לכתב הזכויות של וויליאם פן. הוא נועד לתלות במגדל הפעמונים של בית המדינה של פנסילבניה (כיום "היכל העצמאות").</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">מחקר אטימולוגי מפורק: Liberty Bell</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2 underline decoration-gold-500/30">Liberty (חירות)</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            המילה נגזרת מהצרפתית העתיקה <strong class="text-white">Liberté</strong>, שבאה מהמילה הלטינית <strong class="text-white">Libertatem</strong> (חופש של אדם חופשי). היא מתייחסת למצב שבו אדם אינו משועבד או כלוא. "Liberty" נושאת מטען משפטי ופוליטי חזק של שחרור מכבילות של שלטון עריץ.
+                        </p>
+                    </div>
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2 underline decoration-gold-500/30">Bell (פעמון)</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            מקור המילה באנגלית עתיקה <strong class="text-white">Belle</strong>, מגרמאנית עתיקה. היא קשורה לפועל "Bellan" שפירושו "לשאוג" או "להשמיע קול עמוק". זהו תיאור אונומטופאי של הצליל המהדהד שהכלי משמיע.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="map" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">סיפורו של אייקון: מהבריחה ועד לסדק</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">הבריחה הגדולה (1777):</strong> הפעמון הוסר בסתר והוברח על גבי עגלת איכרים לעיר אלנטאון, שם הוחבא תחת רצפת כנסייה כדי למנוע מהבריטים להתיך אותו לתחמושת.</li>
+                    <li><strong class="text-white">הכיתוב המקראי:</strong> על הפעמון חקוק פסוק מספר ויקרא (כ"ה, י'): <span class="italic text-gold-400">"וּקְרָאתֶם דְּרוֹר בָּאָרֶץ לְכָל יֹשְׁבֶיהָ"</span>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="settings" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">אנטומיה והנדסה: סוד הסדק</h3>
+                </div>
+                <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700">
+                    <ul class="space-y-3 text-lg text-slate-300">
+                        <li><strong class="text-white">משקל:</strong> כ-943 ק"ג (כמעט טון!).</li>
+                        <li><strong class="text-white">הרכב המתכות:</strong> 70% נחושת, 25% בדיל, ושאריות של עופרת, אבץ וזהב.</li>
+                        <li><strong class="text-white">הנדסת הסדק:</strong> הפעמון נסדק בצלצול הבדיקה הראשון שלו ב-1752. הסדק המפורסם שאנו רואים כיום נוצר כנראה בתחילת המאה ה-19 והתרחב סופית ב-1846.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="bg-gold-500/5 p-6 rounded-xl border border-gold-500/20">
+                <div class="flex items-center gap-3 mb-6 border-b border-gold-500/30 pb-3">
+                    <i data-lucide="volume-x" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">מצב נוכחי: האם הפעמון מצלצל כיום?</h3>
+                </div>
+                <div class="space-y-6 text-lg text-slate-300 leading-relaxed">
+                    <p>
+                        התשובה הקצרה היא: <strong class="text-white underline decoration-gold-500">לא</strong>. הפעמון כבר לא מצלצל במובן של יצירת צליל בעזרת הענבל הפנימי שלו, וזאת מסיבות בטיחותיות והנדסיות.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-navy-900/40 p-4 rounded-lg">
+                            <h4 class="text-gold-400 font-bold mb-2 flex items-center gap-2">
+                                <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                                למה הוא לא מצלצל?
+                            </h4>
+                            <p class="text-sm italic">מאז שנת 1846 (ביום הולדתו של ג'ורג' וושינגטון), כאשר הסדק הענק התרחב באופן כזה שאיים לפרק את הפעמון לחלוטין, הפעמון הושתק. הצליל שלו השתבש בגלל הסדק, וכל ניסיון לצלצל בו עם הענבל המקורי יגרום לו פשוט להישבר לשני חצאים.</p>
+                        </div>
+                        <div class="bg-navy-900/40 p-4 rounded-lg">
+                            <h4 class="text-gold-400 font-bold mb-2 flex items-center gap-2">
+                                <i data-lucide="mic-2" class="w-4 h-4"></i>
+                                טקס ההקשה (Tapping)
+                            </h4>
+                            <p class="text-sm italic">בכל 4 ביולי, בשעה 14:00 בדיוק, ילדים שמוצאם מהמדינות המקוריות ניגשים לפעמון ומקישים עליו בעדינות עם היד או פטיש גומי רך בדיוק 13 פעמים. ההקשה מפיקה קול עמום וחלש, ומשמשת כטקס סמלי להמשכיות לאומית.</p>
+                        </div>
+                    </div>
+                    <div class="mt-4 border-r-2 border-navy-600 pr-4">
+                        <p class="text-sm">
+                            <strong class="text-white">"אחיו הקטן":</strong> כדי שבכל זאת יישמע צלצול פעמון היסטורי בפילדלפיה, נוצק ב-1876 <strong class="text-white">"פעמון המאה" (Centennial Bell)</strong>. הוא תלוי במגדל של היכל העצמאות ומצלצל בכל יום, בעוד פעמון החירות המקורי שוכן דומם בביתן הזכוכית למטה.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">השפעה ומשמעות תרבותית</h3>
+                </div>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white text-gold-400 underline decoration-navy-600 underline-offset-4">סמל ביטול העבדות:</strong> פעילי התנועה נגד עבדות אימצו את הפעמון בגלל הפסוק החקוק עליו ("וקראתם דרור"). הם הפכו אותו מסמל מקומי לסמל של חירות אנושית אוניברסלית.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="pt-8 pb-4 flex justify-center border-t border-navy-700/50 mt-8">
+                <a href="liberty-bell-text.html" class="inline-flex items-center gap-3 px-8 py-4 bg-navy-800/80 backdrop-blur-sm border-2 border-gold-500 text-gold-400 font-bold rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:-translate-y-1">
+                    <i data-lucide="scroll" class="w-6 h-6"></i>
+                    <span class="text-lg">קרא את הכיתובים על הפעמון</span>
+                    <i data-lucide="arrow-left" class="w-5 h-5 ml-2"></i>
+                </a>
+            </section>
+
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">7. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>פארק העצמאות הלאומי (Independence National Historical Park).</li>
+                    <li>ספריית העיר פילדלפיה - מסמכי ההזמנה (1751).</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/liberty-bell-main.webp" alt="פעמון החירות" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">פעמון החירות (The Liberty Bell)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">הפעמון המפורסם בעולם, סמל לחופש ולמאבק נגד העבדות. שוקל כמעט טון ונושא כיתוב מקראי עתיק.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-crack" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-crack')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/liberty-bell-crack.webp" alt="הסדק מקרוב" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">אנטומיה של פגם</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">הסדק הענק הוא למעשה ניסיון להציל את הפעמון על ידי קדיחה לאורכו. הסדק הפך לחלק בלתי נפרד מזהות הפעמון, כמסמל את חוסר המושלמות של החירות האנושית.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-pavilion" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-pavilion')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/independence-hall-bell.webp" alt="פעמון החירות והיכל העצמאות" class="w-full h-auto object-cover rounded-t-2xl">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">מרכז העצמאות, פילדלפיה</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">הפעמון מוצג כיום בביתן זכוכית מיוחד, כאשר ברקע ניתן לראות את היכל העצמאות שבו הוא היה תלוי במקור.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+```
