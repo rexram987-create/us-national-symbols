@@ -38,7 +38,6 @@
     <div id="root"></div>
 
     <script type="text/babel">
-        // Data synced with your GitHub assets 100%
         const symbolsData = [
             {
                 id: 'declaration',
@@ -49,7 +48,7 @@
                 icon: `scroll`,
                 image: `assets/images/symbols/declaration-signatures.webp`,
                 link: `symbols/declaration.html`,
-                isNew: true
+                isNew: false
             },
             {
                 id: 'constitution',
@@ -181,11 +180,21 @@
                 icon: `bird`,
                 image: `assets/images/symbols/wild-turkey-nature.webp`,
                 link: `symbols/wild-turkey.html`,
+                isNew: false
+            },
+            {
+                id: 'mustang',
+                category: 'nature',
+                title: `סוס המוסטנג`,
+                year: `1971`,
+                description: `רוח הרפאים של המישורים: הסוס הספרדי שהתפרא, כבש את המערב, והפך לסמל החופש האמריקאי הבלתי מעורער.`,
+                icon: `sun`,
+                image: `assets/images/symbols/mustang-wild.webp`,
+                link: `symbols/mustang.html`,
                 isNew: true
             }
         ];
 
-        // Component: Individual Card
         const SymbolCard = ({ symbol }) => {
             React.useEffect(() => {
                 if (window.lucide) {
