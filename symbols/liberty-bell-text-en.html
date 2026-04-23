@@ -1,0 +1,174 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Liberty Bell | Original Inscriptions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        
+        /* Unique Document Styling for Parchment/Bronze */
+        .document-paper {
+            background: linear-gradient(145deg, rgba(17,34,64,0.95) 0%, rgba(10,25,47,0.95) 100%);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(251,191,36,0.2);
+        }
+        .bell-text {
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header (Absolute so it doesn't scroll) -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="liberty-bell-en.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group">
+                    <i data-lucide="arrow-left" class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <span class="text-white font-bold tracking-wide">Back to Research</span>
+            </div>
+            <div class="flex items-center gap-2 text-gold-400">
+                <i data-lucide="bell" class="w-5 h-5"></i>
+                <span class="font-serif italic text-sm">The Liberty Bell Inscriptions</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <div class="document-paper rounded-xl p-8 md:p-12 relative overflow-hidden">
+            
+            <!-- Top Ornament -->
+            <div class="flex justify-center mb-8 opacity-60">
+                <svg width="200" height="20" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H80M120 10H200M100 0L110 10L100 20L90 10L100 0Z" fill="#fbbf24"/>
+                </svg>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-4 serif-font">The Liberty Bell Inscriptions</h1>
+            <p class="text-center text-gold-400 text-lg mb-10 font-serif italic">Cast in 1753</p>
+
+            <div class="mb-12 pb-8 border-b border-navy-700/50">
+                <p class="text-lg text-slate-300 leading-relaxed text-center font-light">
+                    Despite its name, the word "Liberty Bell" does not appear on the bell at all. The text cast into the exterior of the bronze bell consists of three main parts, placed there by the founders in Philadelphia.
+                </p>
+            </div>
+
+            <div class="space-y-16">
+                
+                <!-- Part 1: The Verse -->
+                <div class="relative z-10 text-center">
+                    <h3 class="text-xl font-bold text-gold-500 mb-6 flex items-center justify-center gap-2">
+                        <i data-lucide="book-open" class="w-5 h-5"></i>
+                        Top Ring: The Biblical Verse
+                    </h3>
+                    
+                    <div class="bg-navy-900/60 p-6 rounded-lg border border-navy-600 mb-4 shadow-inner">
+                        <p class="bell-text text-2xl md:text-3xl text-gold-400 leading-relaxed">
+                            "PROCLAIM LIBERTY THROUGHOUT ALL THE LAND UNTO ALL THE INHABITANTS THEREOF LEV. XXV. X."
+                        </p>
+                    </div>
+                    
+                    <p class="text-xl text-white leading-relaxed font-serif">
+                        <strong class="text-gold-500">Source:</strong> The Book of Leviticus, Chapter 25, Verse 10.
+                        <br><br>
+                        <span class="text-lg text-slate-300 font-sans">Chosen by the Pennsylvania Provincial Assembly in 1751, this verse refers to the biblical "Jubilee Year," a time when slaves and prisoners are to be freed. It was this specific inscription that led Abolitionists in the 1830s to adopt the bell as their symbol and rename it the "Liberty Bell."</span>
+                    </p>
+                </div>
+
+                <!-- Part 2: The Order -->
+                <div class="relative z-10 text-center">
+                    <h3 class="text-xl font-bold text-gold-500 mb-6 flex items-center justify-center gap-2">
+                        <i data-lucide="scroll" class="w-5 h-5"></i>
+                        Middle Ring: The Assembly's Order
+                    </h3>
+                    
+                    <div class="bg-navy-900/60 p-6 rounded-lg border border-navy-600 mb-4 shadow-inner">
+                        <p class="bell-text text-xl md:text-2xl text-slate-300 leading-relaxed">
+                            BY ORDER OF THE ASSEMBLY OF THE PROVINCE OF PENSYLVANIA FOR THE STATE HOUSE IN PHILAD<span class="align-top text-sm">A</span>
+                        </p>
+                    </div>
+                    
+                    <p class="text-xl text-white leading-relaxed font-serif">
+                        <span class="text-lg text-slate-300 font-sans">
+                            <strong class="text-white">Historical Spelling Note:</strong> Notice that "Pennsylvania" is spelled with only one "N" (Pensylvania). While this looks like a typo today, spelling was not fully standardized in the 18th century, and this spelling was acceptable at the time (it also appears in the original US Constitution). Additionally, "Philada" was a standard contemporary abbreviation for Philadelphia.
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Part 3: The Signatures -->
+                <div class="relative z-10 text-center">
+                    <h3 class="text-xl font-bold text-gold-500 mb-6 flex items-center justify-center gap-2">
+                        <i data-lucide="hammer" class="w-5 h-5"></i>
+                        Bottom Ring: The Founders & Year
+                    </h3>
+                    
+                    <div class="bg-navy-900/60 p-6 rounded-lg border border-navy-600 mb-4 shadow-inner">
+                        <p class="bell-text text-2xl md:text-3xl text-gold-400 leading-relaxed tracking-[0.2em]">
+                            PASS AND STOW<br>
+                            PHILAD<span class="align-top text-lg">A</span><br>
+                            MDCCLIII
+                        </p>
+                    </div>
+                    
+                    <p class="text-xl text-white leading-relaxed font-serif">
+                        <strong class="text-gold-500">Meaning:</strong> 
+                        <br>John Pass and John Stow, the two local Philadelphia foundry workers who recast the bell after it cracked on its first test ring.
+                        <br>Philadelphia.
+                        <br>1753 (in Roman numerals).
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- 6. Sources -->
+            <div class="mt-16 pt-6 border-t border-navy-700/50 text-sm text-gray-500 italic relative z-10">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">Archival Sources for Bell Text</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>The National Park Service (NPS) - Liberty Bell Center, Philadelphia.</li>
+                    <li>Independence National Historical Park Archives.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Ornament -->
+            <div class="flex justify-center mt-12 opacity-60 relative z-10">
+                <svg width="200" height="20" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H80M120 10H200M100 0L110 10L100 20L90 10L100 0Z" fill="#fbbf24"/>
+                </svg>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+```
