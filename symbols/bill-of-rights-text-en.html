@@ -1,0 +1,206 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Bill of Rights | Original Text</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' }
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        
+        /* Unique Document Styling */
+        .document-paper {
+            background: linear-gradient(145deg, rgba(17,34,64,0.95) 0%, rgba(10,25,47,0.95) 100%);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(251,191,36,0.2);
+        }
+        .amendment-number {
+            font-family: 'Playfair Display', serif;
+            color: #fbbf24;
+            opacity: 0.15;
+            font-size: 5rem;
+            position: absolute;
+            top: -20px;
+            left: -10px; /* Positioned on the left for LTR */
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Absolute Header (Stays at the top, does not scroll with page) -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="bill-of-rights-en.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group">
+                    <i data-lucide="arrow-left" class="w-5 h-5 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <span class="text-white font-bold tracking-wide">Back to Research</span>
+            </div>
+            <div class="flex items-center gap-2 text-gold-400">
+                <i data-lucide="scroll" class="w-5 h-5"></i>
+                <span class="font-serif italic text-sm">The Bill of Rights</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <div class="document-paper rounded-xl p-8 md:p-12 relative overflow-hidden">
+            
+            <!-- Top Ornament -->
+            <div class="flex justify-center mb-8 opacity-60">
+                <svg width="200" height="20" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H80M120 10H200M100 0L110 10L100 20L90 10L100 0Z" fill="#fbbf24"/>
+                </svg>
+            </div>
+
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-white mb-4 serif-font">The Bill of Rights</h1>
+            <p class="text-center text-gold-400 text-lg mb-10 font-serif italic">Ratified December 15, 1791</p>
+
+            <div class="mb-12 pb-8 border-b border-navy-700/50">
+                <p class="text-lg text-slate-300 leading-relaxed text-center font-light">
+                    The Conventions of a number of the States, having at the time of their adopting the Constitution, expressed a desire, in order to prevent misconstruction or abuse of its powers, that further declaratory and restrictive clauses should be added. The first ten amendments constitute the Bill of Rights.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                
+                <!-- Amendment 1 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">I</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment I</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.
+                    </p>
+                </div>
+
+                <!-- Amendment 2 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">II</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment II</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.
+                    </p>
+                </div>
+
+                <!-- Amendment 3 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">III</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment III</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner, nor in time of war, but in a manner to be prescribed by law.
+                    </p>
+                </div>
+
+                <!-- Amendment 4 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">IV</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment IV</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.
+                    </p>
+                </div>
+
+                <!-- Amendment 5 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">V</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment V</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, except in cases arising in the land or naval forces, or in the Militia, when in actual service in time of War or public danger; nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.
+                    </p>
+                </div>
+
+                <!-- Amendment 6 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">VI</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment VI</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed... and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.
+                    </p>
+                </div>
+
+                <!-- Amendment 7 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">VII</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment VII</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        In Suits at common law, where the value in controversy shall exceed twenty dollars, the right of trial by jury shall be preserved, and no fact tried by a jury, shall be otherwise re-examined in any Court of the United States, than according to the rules of the common law.
+                    </p>
+                </div>
+
+                <!-- Amendment 8 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">VIII</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment VIII</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        Excessive bail shall not be required, nor excessive fines imposed, nor cruel and unusual punishments inflicted.
+                    </p>
+                </div>
+
+                <!-- Amendment 9 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">IX</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment IX</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        The enumeration in the Constitution, of certain rights, shall not be construed to deny or disparage others retained by the people.
+                    </p>
+                </div>
+
+                <!-- Amendment 10 -->
+                <div class="relative pl-8 md:pl-12 z-10 border-l-2 border-gold-500">
+                    <span class="amendment-number">X</span>
+                    <h3 class="text-xl font-bold text-gold-500 mb-3 relative z-10">Amendment X</h3>
+                    <p class="text-xl text-white leading-relaxed font-serif relative z-10">
+                        The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. Sources -->
+            <div class="mt-16 pt-6 border-t border-navy-700/50 text-sm text-gray-500 italic relative z-10">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">Archival Sources (Text & Translation)</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>The National Archives and Records Administration (NARA) - Transcript of the Bill of Rights.</li>
+                    <li>Cornell Law School (LII) - U.S. Constitution and literal translations of the Amendments.</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Ornament -->
+            <div class="flex justify-center mt-12 opacity-60 relative z-10">
+                <svg width="200" height="20" viewBox="0 0 200 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 10H80M120 10H200M100 0L110 10L100 20L90 10L100 0Z" fill="#fbbf24"/>
+                </svg>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+```
