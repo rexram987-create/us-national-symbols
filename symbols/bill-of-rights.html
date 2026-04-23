@@ -1,0 +1,325 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>מגילת הזכויות | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626'
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-right" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">מגילת הזכויות</h1>
+                    <p class="text-xs md:text-sm text-gold-400 font-medium">1791 | 10 התיקונים הראשונים</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="bill-of-rights-en.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                    EN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section (ללא כפתור) -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="shield-check" class="w-16 h-16 mx-auto text-gold-400 mb-6 drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The Bill of Rights</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                המגן האולטימטיבי של החופש: עשרת התיקונים שהגבילו את כוחה של הממשלה והעניקו לאזרח האמריקאי את זכויותיו הבסיסיות ביותר.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-document')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/bill-of-rights-document.webp" alt="המסמך המקורי" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">המסמך המקורי</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-first-amendment')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-gold-500/50 hover:border-gold-400 transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/first-amendment-concept.webp" alt="חופש הביטוי" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-gold-400 font-bold text-sm md:text-lg drop-shadow-md">התיקון הראשון</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-madison')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/james-madison-portrait.webp" alt="ג'יימס מדיסון" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">ג'יימס מדיסון</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <!-- 1. Historical Identity -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">תעודת זהות היסטורית: הפשרה הגדולה</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">שנת אישור ואימוץ רשמי:</strong> 15 בדצמבר 1791.</li>
+                    <li><strong class="text-white">הקונפליקט המכונן:</strong> כאשר חוקת ארה"ב המקורית נוסחה ב-1787, היא לא כללה מגילת זכויות. קבוצת ה"פדרליסטים" (ובהם אלכסנדר המילטון וג'יימס מדיסון) טענו שאין בכך צורך, שכן הממשלה הפדרלית מוגבלת רק לסמכויות שהוגדרו לה במפורש, ולכן אין לה סמכות לפגוע בזכויות ממילא. בנוסף, הם חששו שרשימת זכויות ספציפית תתפרש כאילו כל זכות *שאינה* ברשימה - אינה מוגנת.</li>
+                    <li><strong class="text-white">סיבת היצירה:</strong> ה"אנטי-פדרליסטים" (המתנגדים לממשל מרכזי חזק מדי) סירבו לאשרר את החוקה ללא הבטחה מפורשת בכתב שתגן על זכויות האזרח והמדינות מפני עריצות ממשלתית. כדי להציל את החוקה ולהבטיח את אישורה על ידי מדינות מפתח כמו וירג'יניה וניו יורק, מדיסון נכנע והבטיח לנסח מגילת זכויות מיד עם הקמת הקונגרס הראשון. מתוך 19 תיקונים שהציע במקור, 10 אושרו סופית והפכו למגילת הזכויות.</li>
+                </ul>
+            </section>
+
+            <!-- 2. Etymological Research -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">מחקר אטימולוגי מפורק: Bill of Rights</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">Bill (מגילה / הצעה)</h4>
+                        <p class="text-slate-300 text-lg">המילה מגיעה מהמילה הלטינית <strong class="text-white">Bulla</strong> (חותם עופרת שהוטבע על מסמכים רשמיים של האפיפיור או השלטון). באנגלית עתיקה וימי הביניים (Bille), המילה התפתחה לתיאור כל מסמך כתוב רשמי, הצהרה משפטית, או הצעת חוק המוגשת לפרלמנט.</p>
+                    </div>
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2">Right (זכות)</h4>
+                        <p class="text-slate-300 text-lg">נגזרת מאנגלית עתיקה (<strong class="text-white">Riht</strong>) ומפרוטו-גרמאנית (<strong class="text-white">Rehtaz</strong>). המשמעות המקורית של השורש היא "ישר" (Straight), "לא עקום", וכפועל יוצא – משהו שהוא צודק, הוגן, ונכון מוסרית ומשפטית. מכאן, זכות היא "הדבר הישר שמגיע לאדם".</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The People -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">האנשים מאחורי הסמל</h3>
+                </div>
+                <div class="space-y-8">
+                    
+                    <!-- James Madison -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="pen-tool" class="w-5 h-5"></i>
+                            ג'יימס מדיסון (James Madison) - האדריכל
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">James (ג'יימס):</strong> הנגזרת האנגלית-צרפתית (Iacomus) של השם העברי התנ"כי "יעקב" (Ya'aqov).</li>
+                                <li><strong class="text-white">Madison (מדיסון):</strong> שם משפחה פטרונימי שפירושו "הבן של מוד" (Son of Maud) או "הבן של מתיו" (Matthew).</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1751 – 1836.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ביוגרפיה:</strong> נולד בווירג'יניה וגדל באחוזת מטעים (מונפלייה). למרות שהיה אדם נמוך קומה (כ-1.63 מ') ובעל בריאות רופפת, הוא היה כוח אינטלקטואלי עצום ומומחה בהיסטוריה של דמוקרטיות ורפובליקות קדומות. מאוחר יותר הפך לנשיא הרביעי של ארה"ב.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">חלקו ביצירה:</strong> למרות שהתנגד תחילה למגילת הזכויות, הוא הבין שזה המחיר לאחדות האומה. הוא ניגש למשימה בקפדנות אופיינית, סקר עשרות הצעות לתיקונים שהגיעו מהמדינות השונות, וזיקק אותן לטקסט משפטי מדויק. הוא נחשב גם ל"אבי החוקה" וגם ל"אבי מגילת הזכויות".
+                        </p>
+                    </div>
+
+                    <!-- George Mason -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                            ג'ורג' מייסון (George Mason) - מקור ההשראה
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">George (ג'ורג'):</strong> מיוונית (Georgos), שפירושו "עובד אדמה" או איכר (Ge = אדמה, Ergon = עבודה).</li>
+                                <li><strong class="text-white">Mason (מייסון):</strong> שם מקצוע בצרפתית ואנגלית עתיקה (Maçon), שפירושו סתת או בנאי אבן.</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1725 – 1792.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">חלקו ביצירה:</strong> מייסון היה שכן ומנטור אינטלקטואלי של רבים מווירג'יניה. ב-1776 הוא ניסח את "הצהרת הזכויות של וירג'יניה" (Virginia Declaration of Rights) – מסמך פורץ דרך שהגדיר חופש דת, עיתונות וזכויות נאשמים. כאשר מדיסון התיישב לכתוב את מגילת הזכויות הפדרלית, הוא העתיק ושאב השראה רבה מטקסט זה של מייסון. מייסון, כאנטי-פדרליסט חריף, היה אחד משלושת הצירים הבודדים שסירבו לחתום על החוקה המקורית דווקא בגלל שלא הכילה מגילת זכויות מלכתחילה.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Anatomy -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="layers" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">האנטומיה של המסמך: עשרת התיקונים</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    מגילת הזכויות היא לא הענקת זכויות מהממשלה לאזרח, אלא רשימת איסורים מוחלטים על מה שמותר לממשלה לעשות לאזרחיה. הנה העיקריים שבהם:
+                </p>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white text-gold-400">התיקון הראשון (1st Amendment):</strong> העמוד התווך של הדמוקרטיה. אוסר על הקונגרס לחוקק כל חוק שיפגע ב<strong>חופש הדת</strong> (וכן אוסר על הקמת דת מדינה רשמית), <strong>חופש הביטוי והדיבור</strong>, <strong>חופש העיתונות</strong>, זכות ההתארגנות השקטה והזכות לעתור לממשלה.</li>
+                    <li><strong class="text-white text-gold-400">התיקון השני (2nd Amendment):</strong> אולי השנוי ביותר במחלוקת כיום. קובע כי "מאחר שמיליציה מאורגנת היטב נחוצה לביטחונה של מדינה חופשית, זכותו של העם להחזיק ולשאת נשק לא תופר".</li>
+                    <li><strong class="text-white text-gold-400">התיקון הרביעי (4th Amendment):</strong> הזכות לפרטיות. מגן על האזרחים מפני חיפושים ותפיסות רכוש בלתי סבירים (ללא צו שופט ועילה סבירה).</li>
+                    <li><strong class="text-white text-gold-400">התיקונים ה-5 עד ה-8 (הליך הוגן - Due Process):</strong> מבטיחים את זכויותיהם של חשודים ונאשמים. התיקון ה-5 מעניק את הזכות לשתוק (לא להפליל את עצמך) ואוסר שפיטה כפולה על אותה עבירה. התיקון ה-6 מבטיח משפט מהיר ופומבי על ידי חבר מושבעים. התיקון ה-8 אוסר על עונשים "אכזריים ובלתי רגילים".</li>
+                    <li><strong class="text-white text-gold-400">התיקונים ה-9 וה-10:</strong> אלו הם תיקוני ה"רשת ביטחון". התיקון ה-9 קובע כי עצם זה שזכויות מסוימות מפורטות במגילה, לא אומר שלאזרחים אין זכויות נוספות אחרות. התיקון ה-10 קובע שכל סמכות שלא הוענקה במפורש לממשל הפדרלי בחוקה - שמורה למדינות עצמן או לעם.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Cultural Impact -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">ההשפעה והמשמעות התרבותית</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    מגילת הזכויות הפכה לבסיס הפילוסופי והמשפטי של המשפט החוקתי האמריקאי המודרני, ולהשראה עולמית לזכויות אדם:
+                </p>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white">מהגבלת הממשל להגבלת המדינות:</strong> במקור, מגילת הזכויות הגבילה אך ורק את הממשל הפדרלי בוושינגטון (למשל, למדינה כמו מסצ'וסטס מותר היה להקים דת מדינה). רק לאחר מלחמת האזרחים וקבלת התיקון ה-14 (1868), החלו בתי המשפט, בתהליך ארוך, "להחיל" את מגילת הזכויות גם על חוקי המדינות עצמן.
+                    </li>
+                    <li>
+                        <strong class="text-white">בית המשפט העליון כבורר החופש:</strong> הטקסט של התיקונים הוא קצר וכללי, מה שהפך את בית המשפט העליון (SCOTUS) לזירת הקרב המרכזית על פרשנותם. לדוגמה, האם "חופש הביטוי" כולל זכות לשרוף את דגל אמריקה? (בית המשפט קבע שכן). האם ה"זכות לשאת נשק" היא זכות קולקטיבית למילציה או זכות אישית להגנה עצמית? (נקבע כזכות אישית ב-2008).
+                    </li>
+                    <li>
+                        <strong class="text-white">"אני לוקח את החמישי" (Pleading the Fifth):</strong> מעבר לחוק, התיקונים חדרו עמוק לפופ-תרבות ולשפה היומיומית בארה"ב. הביטוי "אני לוקח את החמישי" הפך לסלנג אוניברסלי לאדם שמסרב לענות על שאלה שעלולה לסבך אותו, וההגנה על "First Amendment rights" נחשבת לטיעון מנצח בכל ויכוח על צנזורה ותרבות הביטול (Cancel Culture).
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Action Button (Bottom Placement) -->
+            <section class="pt-8 pb-4 flex justify-center border-t border-navy-700/50 mt-8">
+                <a href="bill-of-rights-text.html" class="inline-flex items-center gap-3 px-8 py-4 bg-navy-800/80 backdrop-blur-sm border-2 border-gold-500 text-gold-400 font-bold rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 shadow-[0_0_20px_rgba(251,191,36,0.15)] hover:shadow-[0_0_30px_rgba(251,191,36,0.4)] hover:-translate-y-1">
+                    <i data-lucide="scroll" class="w-6 h-6"></i>
+                    <span class="text-lg">קרא את הטקסט ההיסטורי (1791)</span>
+                    <i data-lucide="arrow-left" class="w-5 h-5 ml-2"></i>
+                </a>
+            </section>
+
+            <!-- 6. Sources -->
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>הארכיון הלאומי של ארצות הברית (National Archives) - עותק הקלף המקורי של מגילת הזכויות.</li>
+                    <li>ספריית הקונגרס - רשומות הקונגרס הראשון וטיוטותיו של ג'יימס מדיסון (1789).</li>
+                    <li>הצהרת הזכויות של וירג'יניה (1776) מאת ג'ורג' מייסון.</li>
+                    <li>מסמכי "הפדרליסט" (The Federalist Papers) ומכתבי האנטי-פדרליסטים בנוגע לנחיצותה של המגילה.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="modal-document" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-document')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/bill-of-rights-document.webp" alt="מסמך מגילת הזכויות המקורי" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">עותק הקלף המקורי</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">אחד מהעותקים המקוריים של המגילה (שמורים בארכיון הלאומי בוושינגטון די.סי.). במקור נשלחו 12 תיקונים לאשרור המדינות, אך רק 10 מהם אושרו ב-1791 והפכו למגילת הזכויות שאנו מכירים כיום.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-first-amendment" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-first-amendment')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/first-amendment-concept.webp" alt="חופש הביטוי - התיקון הראשון" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">התיקון הראשון - מגן החופש</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">התיקון הראשון מקדש את החירויות המוחלטות של האדם: דת, דיבור, עיתונות והתאגדות חופשית. הוא נחשב לסלע הקיום של הדמוקרטיה המערבית המודרנית.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-madison" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-madison')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/james-madison-portrait.webp" alt="ג'יימס מדיסון" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">ג'יימס מדיסון (1751-1836)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    "אבי החוקה" ומי שניסח בפועל את מגילת הזכויות, למרות שהתנגד לה בתחילה. יכולתו האינטלקטואלית והנכונות שלו להתפשר (ולכתוב את המגילה) הצילו את הרפובליקה הצעירה מפירוק.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+```
