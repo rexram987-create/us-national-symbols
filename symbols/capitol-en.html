@@ -1,0 +1,455 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The U.S. Capitol | Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        stoneAccent: '#e2e8f0', /* Light marble color matching the Capitol */
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index-en.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-left" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">The U.S. Capitol</h1>
+                    <p class="text-xs md:text-sm text-stoneAccent font-medium">1793–Present | The Shrine of American Democracy</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="capitol.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="Hebrew">
+                    HE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="building-2" class="w-16 h-16 mx-auto text-stoneAccent mb-6 drop-shadow-[0_0_15px_rgba(226,232,240,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The United States Capitol</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                The seat of the Legislative Branch. A massive structure of stone and marble symbolizing the power of the people, historic political compromises, and the stability (and fragility) of the Republic.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/capitol-main.webp" alt="The U.S. Capitol - Wide Shot" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">The Capitol Building</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-construction')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-stoneAccent/50 hover:border-stoneAccent transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/capitol-dome-construction.webp" alt="Capitol Dome Construction" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-stoneAccent font-bold text-sm md:text-lg drop-shadow-md">Dome Construction</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-1814')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-red-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/capitol-1814.webp" alt="The Burning of the Capitol 1814" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">The 1814 Fire</p>
+                    <p class="text-red-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <!-- 1. Historical Identity -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">1. Historical Identity: The Seat of the Legislature</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">Years of Construction:</strong> The cornerstone was laid on September 18, 1793, by George Washington (in a Masonic ceremony). The building evolved in waves: it was burned in 1814, restored and expanded until 1826, and later underwent a monumental expansion (adding the massive dome and new wings) beginning in 1851 and concluding after the Civil War in 1868.</li>
+                    <li><strong class="text-white">Visionaries / Initiators:</strong> The Founding Fathers, led by President George Washington and Secretary of State Thomas Jefferson, as part of establishing the new federal city.</li>
+                    <li><strong class="text-white">Main Builders / Architects:</strong> The project saw many architects due to its immense scale. <strong class="text-white">William Thornton</strong> designed the original plan, but the man who led the construction of the "New Capitol" and its famous dome was <strong class="text-white">Thomas U. Walter</strong>.</li>
+                    <li><strong class="text-white">Reason for Creation:</strong> The U.S. Constitution (Article I) established a bicameral Congress (House of Representatives and Senate) to represent the people. A colossal federal structure was required to house hundreds of representatives from across the continent, serving as the "Temple of Law" – the place where American democracy is forged.</li>
+                </ul>
+            </section>
+
+            <!-- 2. Etymological Research -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">2. Etymological Breakdown: The Origin of "Capitol"</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-l-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-3 underline decoration-gold-500/30">Capitol vs. Capital</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                            Thomas Jefferson (who was an avid amateur classicist of ancient Rome) suggested the name for the building. There is a fundamental difference in spelling and meaning:
+                        </p>
+                        <ul class="list-disc list-inside mt-2 space-y-4 text-slate-300 marker:text-gold-500">
+                            <li><strong class="text-white">Capit<span class="text-red-400">a</span>l (City / Wealth):</strong> From the Latin word <em>caput</em> (head). Refers to the primary city of a state (Washington D.C. is the Capital).</li>
+                            <li><strong class="text-white">Capit<span class="text-gold-500">o</span>l (The Building itself):</strong> The name comes directly from the **Capitoline Hill** in ancient Rome. In Rome, this hill was the religious and political center of the Roman Republic, home to the Temple of Jupiter.</li>
+                        </ul>
+                        <div class="bg-navy-800 p-4 mt-4 rounded border border-navy-600">
+                            <p class="text-slate-300 text-lg leading-relaxed">
+                                <strong class="text-white">The Etymological Meaning:</strong> The Latin word <em>Capitolium</em> is composed of <em>caput</em> (head) and <em>olium</em>. A Roman legend says that while digging the temple's foundations, an intact human skull (caput) was found, belonging to an ancient warrior named Aulus. Therefore, the Capitol is "The Hill with the Head". Metaphorically, Jefferson and Washington named the building to symbolize that it is the **"Political Head"** and the sacred center of the new American Republic, just as the hill was in Rome.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The People (Separated Ideology & Achievements) -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">3. The People Behind the Symbol</h3>
+                </div>
+                <div class="space-y-8">
+
+                    <!-- William Thornton -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="compass" class="w-5 h-5"></i>
+                            William Thornton - The Original Architect
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">Etymological Breakdown of the Name:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">William:</strong> Derived from the Germanic name "Wilhelm". Composed of the words <em>wil</em> (will or desire) and <em>helm</em> (helmet or protection). Meaning: "resolute protector".</li>
+                                <li><strong class="text-white">Thornton:</strong> An Old English toponymic (place-based) name. Composed of <em>thorn</em> and <em>ton</em> (settlement or farm). Meaning: "thorn-tree settlement".</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Lifespan:</strong> 1759 – 1828.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Childhood & Background:</strong> Born on Jost Van Dyke (in the British Virgin Islands) to a Quaker merchant family. He was never formally trained as an architect; he was educated as a physician (studying in Scotland), an inventor, and a polymath who taught himself architecture from sketchbooks. He immigrated to the United States in 1786.
+                        </p>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-l-2 border-gold-500 mb-3">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">Architectural Ideology:</strong> Thornton believed in simplicity, elegance, and a return to the roots of democracy found in Greece and the Roman Republic. His designs reflected the Georgian and Neoclassical styles. He believed the building should be massive enough to project power, but clearly divided (two separate wings - for the Senate and the House) to reflect constitutional balance and the fact that power is not concentrated in the hands of one individual.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-l-2 border-stoneAccent">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">Achievements & Role in Creation:</strong> When Secretary of State Jefferson and President Washington announced a design competition for the Capitol, they were disappointed by the submissions. Thornton heard of this and submitted a late, self-taught plan featuring a Roman temple-like center and two rectangular wings. Washington was thrilled, declaring it exhibited "grandeur, simplicity, and beauty". Thornton won the $500 prize and a city lot. Although his original design underwent many changes, his basic plan for its location and proportions determined the familiar facade of the Capitol we know today.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Thomas U. Walter -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="ruler" class="w-5 h-5"></i>
+                            Thomas U. Walter - Designer of the Great Dome
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">Etymological Breakdown of the Name:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Thomas:</strong> Originates from the Aramaic name "Te'oma", meaning "Twin".</li>
+                                <li><strong class="text-white">Ustick (Middle Name):</strong> A Cornish name (from Cornwall, England), likely derived from an ancient portmanteau related to a specific place.</li>
+                                <li><strong class="text-white">Walter:</strong> An ancient Germanic name (Walthari). Composed of <em>wald</em> (rule or power) and <em>hari</em> (army or warrior). Meaning: "commander of the army".</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Lifespan:</strong> 1804 – 1887.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Childhood & Background:</strong> Born in Philadelphia to a family of builders, learning the construction trade from his father. He studied architectural drawing and fine arts, apprenticing under renowned architects. Walter became one of the founders of the American Institute of Architects (AIA).
+                        </p>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-l-2 border-gold-500 mb-3">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">Architectural Ideology:</strong> Walter represented the American "Greek Revival" and Neo-Renaissance generation. As the US grew from 13 states to 31 states (by the mid-19th century), the original wings were no longer sufficient. Walter believed the building had to grow not only in width but to demonstrate immense vertical dominance. He embraced engineering innovation during the Industrial Revolution: using **Cast Iron** as a raw material to create monumental structures the likes of which had never been seen on the American continent.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-l-2 border-stoneAccent">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">Achievements & Role in Creation:</strong> Walter was appointed "Architect of the Capitol" in 1851. He added the two massive contemporary wings (Senate and House), which dwarfed the building's old, original wood and copper dome. Consequently, Walter designed the Capitol's **colossal cast-iron dome** – an incredible engineering feat weighing nearly 9,000,000 pounds (approx. 4,000 metric tons). Construction of the dome continued even during the Civil War, by order of President Abraham Lincoln, to show the people that "the Union continues".
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. Anatomy, Engineering & Hidden History -->
+            <section>
+                <div class="flex items-center gap-3 mb-8 border-b-2 border-gold-500 pb-4">
+                    <i data-lucide="layers" class="w-8 h-8 text-gold-500"></i>
+                    <h3 class="text-3xl font-bold text-white">4. Anatomy, Engineering, & The Laborers</h3>
+                </div>
+                
+                <div class="space-y-12">
+                    
+                    <!-- Sub-section 1: The Building Structure -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <i data-lucide="map" class="w-6 h-6 text-stoneAccent"></i>
+                            <h4 class="text-2xl font-bold text-stoneAccent">Sub-section 1: Parts of the Constitutional Complex</h4>
+                        </div>
+                        <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                            The building is meticulously divided to reflect the constitutional structure of the United States – two legislative houses, united beneath a single Rotunda in the center:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 gap-6">
+                            
+                            <!-- The Rotunda & Dome -->
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-l-4 border-gold-500 shadow-lg">
+                                <h5 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="sun" class="w-5 h-5"></i>
+                                    A. The Rotunda & Dome
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    The central heart connecting the two houses. This is not a platform for legislation, but a ceremonial area designated for national events, such as lying in state for presidents and distinguished citizens.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-gold-500">
+                                    <li><strong class="text-white">The Dome:</strong> Designed by Thomas Walter, made of 8,909,200 pounds of cast iron. Although it looks like stone from the outside, it is a double-shelled iron structure.</li>
+                                    <li><strong class="text-white">The Statue of Freedom:</strong> Placed atop the dome. A massive bronze statue (19.5 feet tall, weighing 15,000 pounds) of a female figure wearing a military helmet adorned with eagle feathers. (Important not to confuse with the Statue of Liberty in New York).</li>
+                                    <li><strong class="text-white">The Ceiling Fresco ("The Apotheosis of Washington"):</strong> A massive mural inside the dome, painted by artist Constantino Brumidi, depicting George Washington ascending to the heavens surrounded by Roman gods.</li>
+                                </ul>
+                            </div>
+
+                            <!-- South Wing -->
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-l-4 border-blue-400 shadow-lg">
+                                <h5 class="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                    B. The South Wing (House of Representatives)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    The wing added in the mid-19th century, serving as the lower house representing the people.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-blue-400">
+                                    <li><strong class="text-white">The Chamber:</strong> The largest room in the Capitol. Here sit the 435 members of Congress, represented according to their state's population size. This is also the chamber where the President delivers the annual "State of the Union" address.</li>
+                                </ul>
+                            </div>
+
+                            <!-- North Wing -->
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-l-4 border-emerald-500 shadow-lg">
+                                <h5 class="text-xl font-bold text-emerald-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="landmark" class="w-5 h-5"></i>
+                                    C. The North Wing (The Senate)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    The upper house. A more prestigious, quiet, and smaller chamber.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-emerald-500">
+                                    <li><strong class="text-white">The Chamber:</strong> Contains individual wooden desks for 100 Senators (two from each state, regardless of size, to maintain republican equality). Each Senator has an inherited desk, usually with the names of previous Senators who used it carved into the drawer.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 2: Technical Specifications -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="bar-chart" class="w-6 h-6 text-stoneAccent"></i>
+                            <h4 class="text-2xl font-bold text-stoneAccent">Sub-section 2: Technical Specifications (Behind the Scenes)</h4>
+                        </div>
+                        <div class="bg-navy-800 p-6 rounded-xl border border-navy-600 shadow-inner">
+                            <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                                The building covers an enormous footprint (approximately 1.5 million square feet, or 139,000 square meters) and is one of the most complex structures in America:
+                            </p>
+                            <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg text-slate-300 marker:text-stoneAccent list-none">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">Rooms:</strong> ~600</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">Windows:</strong> 658</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">Elevators:</strong> ~80</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">Dome Height:</strong> 288 feet (88m)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">Stairs:</strong> 365 (to the dome top)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">Statues:</strong> 100+ (National Statuary Hall)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 3: The Workers (Labor & Enslavement) -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="link" class="w-6 h-6 text-red-400"></i>
+                            <h4 class="text-2xl font-bold text-red-400">Sub-section 3: The Laborers & The Foundations (Identity & Wages)</h4>
+                        </div>
+                        <div class="bg-red-900/10 p-6 rounded-xl border border-red-900/50 space-y-4">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                The construction of the Capitol serves as an accurate yet cruel mirror to American society and its economy in the first decades of its founding.
+                            </p>
+                            <ul class="list-disc list-inside space-y-4 text-lg text-slate-300 marker:text-red-500">
+                                <li><strong class="text-white">Identity & Quantity:</strong> Like the White House, building the original Capitol required between **400 to 600 laborers**. The primary and cheapest workforce consisted of **enslaved Black people** leased from Virginia plantation owners. They worked alongside free citizens (many of them European immigrants) who worked as expert builders, and Italian master carvers brought in to work the marble and give it classical grandeur. **The identity of the enslaved:** In the records, they were noted only by their first names under their owners. The most famous example is **Philip Reid**, a highly skilled enslaved Black man who was a key figure in casting and assembling the bronze panels of the "Statue of Freedom" that stands atop the dome.</li>
+                                <li><strong class="text-white">Wages & Compensation:</strong> The disparity is highly evident in the federal Wage Rolls:
+                                    <ul class="list-none pl-6 mt-2 space-y-2">
+                                        <li>- **Master Artisans (Italians & British):** Earned massive salaries of **$1.50 to $2.50 per day**.</li>
+                                        <li>- **Free Laborers:** Earned about **50 to 75 cents per day**.</li>
+                                        <li>- **Enslaved Black People:** The US government paid a monthly rate of about **$5** – however, the entire sum was paid to the **lessor** (the plantation owner). The enslaved person who toiled in quarrying and logging received nothing for their labor.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="bg-navy-900/40 p-4 rounded-lg border-l-2 border-red-500">
+                                <p class="text-slate-300 text-lg leading-relaxed">
+                                    <strong class="text-white">Historical Irony:</strong> The "Statue of Freedom" placed atop the temple of democracy was assembled in 1863 by slaves while the Civil War raged in the background (fought over their right to freedom). Furthermore, when President Jefferson ordered the purchase of the land for the building, it was bought from a plantation owner and businessman who had named his plot "Rome", a historical curiosity that made Capitol Hill the modern Roman successor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5. Fire & Cultural Impact -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">5. Destruction by Fire & Cultural Impact</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700 space-y-4 text-lg text-slate-300">
+                        <p>
+                            <strong class="text-white">The Great Fire of 1814:</strong> On August 24, 1814, British forces captured Washington D.C. After eating a victory meal at the White House, they marched to the Capitol building. They used the books of the "Library of Congress" (then located in the North Wing) as kindling and set the entire building ablaze. The stone walls survived thanks to a sudden torrential rainstorm that stopped the fire. Rebuilding took many years and led to its redesign.
+                        </p>
+                        <div class="w-full h-px bg-navy-600 my-2"></div>
+                        <p>
+                            <strong class="text-white">Cultural Impact & "The Temple of Law":</strong> The Capitol represents the core of US political power (and influences the rest of the democratic world).
+                        </p>
+                        <ul class="list-disc list-inside space-y-4 marker:text-gold-500">
+                            <li><strong class="text-white">Presidential Inaugurations:</strong> Since the era of President Jackson, every American president takes the oath of office on the steps of the Capitol's West or East Front, facing hundreds of thousands of citizens gathered on The National Mall, as a symbol of the peaceful transfer of power.</li>
+                            <li><strong class="text-white">Focal Point of Protests (January 6):</strong> On January 6, 2021, the building experienced its greatest internal threat when a mob of outgoing President Donald Trump's supporters stormed the building and breached its halls to disrupt the certification of the electoral vote. The traumatic event demonstrated, on one hand, the fragility of democracy and the building's vulnerability, and on the other, the resilience of the institutions as Congress returned to the chamber that same night to complete the certification process.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Sources -->
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. Historical Archival Sources</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Architect of the Capitol (AOC) - Official archives and history of the cast-iron dome construction and Thornton's/Walter's designs.</li>
+                    <li>The National Archives (NARA) - Documentation of wage rolls and payments regarding federal slaves during the capital's construction (1793-1800).</li>
+                    <li>U.S. Capitol Historical Society - Documentation on the life of Philip Reid, the slave who cast the Statue of Freedom, and the logs of the 1814 fire.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/capitol-main.webp" alt="The US Capitol Building" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">The Seat of the Legislature</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">A view of the Capitol's facade and its massive dome. This building has served as the home of the House of Representatives and the Senate since 1800. Its design was heavily influenced by classical Greek and Roman architecture.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-construction" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-stoneAccent shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-construction')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-stoneAccent transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/capitol-dome-construction.webp" alt="Capitol Dome Construction" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-stoneAccent mb-2">A Monument of Cast Iron (1861)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    The new dome, designed by Thomas U. Walter, is built on a framework of nearly 9,000,000 pounds of iron. Despite the outbreak of the Civil War, President Lincoln ordered its construction to continue as a symbol that "the Union goes on."
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-1814" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-red-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-1814')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-red-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/capitol-1814.webp" alt="The Burning of the Capitol 1814" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-red-400 mb-2">Fire in the Capital (War of 1812)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    On August 24, 1814, after their victory at the Battle of Bladensburg, the British marched into Washington D.C. and set the Capitol ablaze, using the books of Congress as kindling. Only a sudden torrential downpour prevented total collapse.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-navy-700 py-8 relative z-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© 2026 National Symbols Archive. Built by Ram.</p>
+            <p class="mt-2 text-xs">Optimized for Samsung S25 Ultra</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
