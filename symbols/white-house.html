@@ -1,0 +1,352 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>הבית הלבן | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        stoneAccent: '#f8fafc', /* צבע בהיר התואם לאבן המסוידת של הבית הלבן */
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-right" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">הבית הלבן</h1>
+                    <p class="text-xs md:text-sm text-stoneAccent font-medium">1792–1800 | בית העם האמריקאי</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="white-house-en.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                    EN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="landmark" class="w-16 h-16 mx-auto text-stoneAccent mb-6 drop-shadow-[0_0_15px_rgba(248,250,252,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The White House</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                המשכן הנשיאותי שצמח מתוך בוץ הביצות: סמל לעוצמה דמוקרטית, מורשת של עבודת כפייה, והבית המפורסם ביותר בעולם.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/white-house-main.webp" alt="הבית הלבן - חזית צפונית" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">האחוזה הנשיאותית</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-1814')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-stoneAccent/50 hover:border-stoneAccent transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/white-house-1814.webp" alt="השריפה הגדולה של 1814" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-gold-500 font-bold text-sm md:text-lg drop-shadow-md">שריפת 1814</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-truman')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/white-house-truman.webp" alt="שיפוץ טרומן 1950" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">שיפוץ טרומן</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <!-- 1. Historical Identity -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">1. תעודת זהות היסטורית: משכן הנשיאות</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">שנות בנייה ויצירה:</strong> אבן הפינה הונחה ב-13 באוקטובר 1792. הבנייה הסתיימה רשמית ב-1 בנובמבר 1800 (אז נכנס הנשיא השני, ג'ון אדמס, להתגורר במבנה שהיה עדיין בחלקו אתר בנייה).</li>
+                    <li><strong class="text-white">ההוגה / יוזם הבנייה:</strong> הנשיא הראשון <strong class="text-white">ג'ורג' וושינגטון (George Washington)</strong>. (הערה היסטורית: וושינגטון הוא הנשיא היחיד בהיסטוריה האמריקאית שמעולם לא התגורר בבית הלבן, כיוון שהוא סיים את כהונתו ומת לפני השלמת הבנייה).</li>
+                    <li><strong class="text-white">הבונה / האדריכל:</strong> <strong class="text-white">ג'יימס הובן (James Hoban)</strong>, אדריכל אירי-אמריקאי שזכה בתחרות העיצוב הלאומית.</li>
+                    <li><strong class="text-white">סיבת ההמצאה והבנייה:</strong> האומה האמריקאית החדשה נזקקה למרכז שלטוני שייצג את עוצמתה ואת ערכיה הרפובליקניים, אך מבלי להיראות מנקר עיניים כמו ארמונות המלוכה באירופה. כחלק מההחלטה להקים בירה פדרלית חדשה לחלוטין (וושינגטון די.סי) הרחק מההשפעה של מדינה ספציפית, היה הכרח לבנות משכן שישמש גם כמגורים, גם כמשרד וגם כסמל של הרשות המבצעת.</li>
+                </ul>
+            </section>
+
+            <!-- 2. Etymological Research -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">2. מחקר אטימולוגי מפורק: כיצד נולד "הבית הלבן"</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2 underline decoration-gold-500/30">מקור השם "הבית הלבן" (The White House)</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                            בימיו הראשונים, המבנה לא נקרא "הבית הלבן". התייחסו אליו כאל <strong>"בית הנשיא" (President's House)</strong>, <strong>"ארמון הנשיא" (President's Palace)</strong>, או <strong>"האחוזה המבצעת" (Executive Mansion)</strong>. המיתוס הנפוץ טוען שהמבנה נצבע בלבן רק כדי להסתיר את סימני החריכה לאחר שהבריטים שרפו אותו ב-1814. אך זוהי טעות היסטורית.
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mt-2">
+                            <strong class="text-white">פירוק השם וסיבתו:</strong> עוד ב-1798, זמן קצר לאחר שהושלמו קירות החוץ העשויים אבן חול נקבובית (Aquia Creek Sandstone), האבן צופתה בתערובת מסוידת של סיד ודבק נוזלי (Limewash) כדי לאטום אותה ולמנוע מהמים לקפוא ולסדוק את האבן בחורף. ציפוי הסיד העניק למבנה צבע לבן בוהק שבלט למרחקים על רקע היערות והבוץ של האזור. הציבור החל לכנותו "הבית הלבן" באופן סלנגי. 
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mt-2 text-gold-400">
+                            <strong>החותמת הרשמית:</strong> השם העממי הפך לרשמי לחלוטין רק בשנת 1901, כאשר הנשיא תיאודור רוזוולט הורה להדפיס "The White House" על הנייר הרשמי של מחלקת המדינה, כדי להבדיל את משכן נשיא ארה"ב מכל "אחוזה מבצעת" (Executive Mansion) של מושלי המדינות השונות.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The People -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">3. האנשים מאחורי הסמל: ביוגרפיה, אידאולוגיה והישגים</h3>
+                </div>
+                <div class="space-y-8">
+
+                    <!-- George Washington -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="scroll" class="w-5 h-5"></i>
+                            ג'ורג' וושינגטון (George Washington) - ההוגה ויוזם הבנייה
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה מפורקת של השם:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">George (ג'ורג'):</strong> מקורו ביוונית עתיקה "Georgos" (Γεώργιος), המורכב מ-ge (אדמה) ו-ergon (עבודה). משמעותו: "עובד אדמה" או חקלאי. (אירוני, בהתחשב בכך שוושינגטון החל את דרכו כמודד קרקעות וחוואי).</li>
+                                <li><strong class="text-white">Washington (וושינגטון):</strong> שם טופונימי (מבוסס מקום) ממקור אנגלו-סקסי. מורכב מהשם "Wassa" (כנראה כינוי לציד או אדם קשוח), הסיומת "ing" (אנשיו של / משפחתו של), והמילה "ton" (אחוזה, חווה או יישוב - Town). כלומר: "האחוזה של אנשי משפחת וואסה".</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1732 – 1799.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד בווירג'יניה למשפחת בעלי מטעים מבוססת. איבד את אביו בגיל 11. למרות שלא זכה להשכלה פורמלית כמו ג'פרסון או מדיסון, הוא רכש ידע עצום במדידת קרקעות, גאומטריה וגינוני חברה. הפך למפקד צבאי מהולל במלחמת הצרפתים והאינדיאנים, ולאחר מכן במלחמת העצמאות.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">אידאולוגיה (בהקשר לבירה ולסמל):</strong> וושינגטון האמין עמוקות בצורך באחדות לאומית פדרלית. הוא סבר כי השארת הבירה בערים כמו פילדלפיה או ניו יורק תיצור הטיה מסוכנת, ולכן קידם את חוקת העיר הפדרלית (Washington D.C.) בשטח ניטרלי בין הצפון לדרום. הוא דרש שמבנה הנשיאות ישדר סמכות ויציבות של אומה שיכולה לעמוד כשווה מול מעצמות אירופה.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">הישגים וחלקו ביצירה:</strong> יחד עם מתכנן העיר פייר שארל ל'אנפן (Pierre Charles L'Enfant), וושינגטון קבע את המיקום המדויק של "בית הנשיא". הוא בחן את ההצעות בתחרות העיצוב, דחה הצעות מנקרות עיניים (כולל אחת שהוגשה בעילום שם על ידי תומאס ג'פרסון), ובחר בעיצוב השמרני והמכובד של ג'יימס הובן. וושינגטון פיקח אישית על הבנייה, אך כאמור, מת ב-1799 לפני שהמבנה היה ראוי למגורים.
+                        </p>
+                    </div>
+
+                    <!-- James Hoban -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="ruler" class="w-5 h-5"></i>
+                            ג'יימס הובן (James Hoban) - האדריכל והבונה
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה מפורקת של השם:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">James (ג'יימס):</strong> הגרסה האנגלית לשם העברי יַעֲקֹב (דרך הלטינית Jacomus). משמעות השם היא "זה שעוקב" או "זה שתופס בעקב".</li>
+                                <li><strong class="text-white">Hoban (הובן):</strong> שם משפחה ממקור אירי גאלי "Ó hÚbáin", שמשמעותו נגזרת ממילה קדומה המתארת אדם צעיר או לוחם צעיר.</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1758 – 1831.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד למשפחה קתולית במחוז קילקני שבאירלנד, שגדלה תחת חוקים בריטיים נוקשים. הוא למד נגרות, אדריכלות ושרטוט בדבלין, והושפע עמוקות מהסגנון הפלדיאני (Palladian) והנאו-קלאסי של העיר. לאחר מלחמת העצמאות האמריקאית, היגר לארצות הברית והקים עסק מצליח בצ'רלסטון, דרום קרוליינה.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">אידאולוגיה ויצירה:</strong> כאירי שחווה את עריצות השלטון מחד ואת הפאר הקלאסי מאידך, הובן דגל באדריכלות "נאו-קלאסית" המסמלת איזון, סימטריה ורציונליות - הערכים של עידן הנאורות והדמוקרטיה הרפובליקנית החדשה. הוא עיצב את הבית הלבן בצלמו של "בית ליינסטר" (Leinster House) בדבלין (שכיום משמש כפרלמנט האירי).
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">הישגים:</strong> הובן זכה בתחרות העיצוב הלאומית ב-1792 (וגרף פרס של 500 דולר ומגרש בבירה). הוא ניהל את הבנייה בפועל. מעבר לכך, כאשר הבריטים שרפו את הבית הלבן עד היסוד ב-1814 במלחמת 1812, ג'יימס הובן נקרא שוב לדגל והוביל את מאמצי השיקום המפרכים שהסתיימו ב-1817. הוא למעשה אחראי על הבית הלבן פעמיים.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. Anatomy & Technical Specs -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="layers" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">4. אנטומיה, הנדסה והיסטוריה חבויה</h3>
+                </div>
+                
+                <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700 space-y-8 text-lg text-slate-300">
+                    
+                    <div>
+                        <h4 class="text-xl font-bold text-gold-400 mb-4 border-b border-navy-600 inline-block pb-1">המבנה הפיזי של "בית העם":</h4>
+                        <ul class="space-y-3 list-disc list-inside marker:text-gold-500">
+                            <li><strong class="text-white">מתחם של 3 חלקים:</strong> כיום הבית הלבן אינו בניין אחד אלא קומפלקס. במרכז נמצאת <strong>מגורי הרשות המבצעת</strong> (האחוזה המקורית), במערב נמצא ה-<strong>אגף המערבי (West Wing)</strong> (נבנה ב-1902 על ידי תיאודור רוזוולט ובו נמצא החדר הסגלגל), ובמזרח ה-<strong>אגף המזרחי (East Wing)</strong> (נבנה ב-1942, שם יושב צוותה של הגברת הראשונה).</li>
+                            <li><strong class="text-white">ממדים:</strong> הבית כולל 132 חדרים, 35 חדרי אמבטיה, 412 דלתות, 147 חלונות ו-28 קמינים.</li>
+                            <li><strong class="text-white">האמת המרה על הבנייה (היסטוריה בלתי מצונזרת):</strong> הבית הלבן נבנה במקור ברובו הגדול על ידי <strong>כוח אדם של עבדים שחורים</strong>, שהושכרו לרושמי הרשומות הפדרליים על ידי בעליהם ממטעי וירג'יניה ומרילנד הסמוכות. עבדים אלו, יחד עם פועלים אירים וסקוטים חופשיים, חצבו את אבן החול, כרתו את העצים ביערות ושרפו את הלבנים בכבשנים לבניית הסמל הגדול ביותר של "העולם החופשי".</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-navy-900/40 p-4 rounded-lg border-r-2 border-stoneAccent mt-6">
+                        <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                            <i data-lucide="flame" class="w-5 h-5 text-red-500"></i>
+                            חורבן ותקומה: שריפת 1814 ושיפוץ טרומן (1949-1952)
+                        </h4>
+                        <p class="mb-3">
+                            <strong class="text-white">1814 - הבריטים מעלים באש:</strong> במהלך מלחמת 1812, כוחות בריטיים פלשו לוושינגטון די.סי (הפעם היחידה בהיסטוריה שבירת ארה"ב נכבשה). ב-24 באוגוסט הם בזזו והעלו באש את הבית הלבן. הגברת הראשונה, דולי מדיסון, נמלטה ברגע האחרון תוך שהיא מצילה בתושייה את הדיוקן המפורסם של ג'ורג' וושינגטון. רק גשם זלעפות (שאולי היה סופת טורנדו) כיבה את הלהבות והציל את המבנה מהרס מוחלט.
+                        </p>
+                        <p>
+                            <strong class="text-white">שיפוץ טרומן (Truman Reconstruction):</strong> ב-1948, הבית הלבן היה על סף קריסה מבנית מוחלטת (הפסנתר של בתו של הנשיא טרומן כמעט נפל דרך הרצפה אל החדר שמתחתיו). הנשיא הארי טרומן הורה על פרויקט עצום: כל פנים המבנה פורק ונחרב לחלוטין (Gutted), ונותרה רק הקליפה החיצונית המקורית של האבן הלבנה. בתוך קליפה זו נבנתה שלדת פלדה ובטון מודרנית, והחדרים ההיסטוריים הורכבו מחדש לתוכה. מרבית הבית הלבן של היום הוא למעשה שחזור בן כ-70 שנה בתוך חומות בנות למעלה מ-200 שנה.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5. Cultural Impact -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">5. השפעה ומשמעות תרבותית: בית העם</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    הבית הלבן הוא הרבה יותר ממקום עבודה ומגורים. הוא הסמל הפיזי של כוחה של ארצות הברית, והשפעתו על התודעה הציבורית אדירה:
+                </p>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white">"בית העם" (The People's House):</strong> בתחילת ההיסטוריה האמריקאית, המבנה היה פתוח לציבור בצורה חסרת תקדים. ביום השבעתו של אנדרו ג'קסון ב-1829, אלפי אזרחים פשוטים נכנסו לאחוזה, שברו רהיטים וסעדו במסדרונות עד שהנשיא נאלץ להימלט. למרות שכיום סידורי האבטחה (מאז התנקשויות בנשיאים ולאחר אירועי ה-11 בספטמבר) הפכו אותו למעין מבצר סגור, הוא עדיין מארח סיורים ציבוריים ונחשב לבית השייך לאזרחי ארה"ב, ולא לנשיא הזמני המתגורר בו.
+                    </li>
+                    <li>
+                        <strong class="text-white">במה גלובלית לתקשורת וכוח:</strong> פלטפורמות כמו "חדר התדריכים העיתונאיים של הבית הלבן" (שנבנה על גבי בריכת השחייה לשעבר של FDR) או החדר הסגלגל (The Oval Office), מהווים את הבמה עליה נאומות החלטות היסטוריות המעצבות את גורל העולם. המבנה עצמו משמש כמטונימיה לרשות המבצעת (למשל בכותרת החדשות: "הבית הלבן סירב להגיב").
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 6. Sources -->
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>The White House Historical Association - מחקרים על ג'יימס הובן ותהליך הבנייה.</li>
+                    <li>הארכיון הלאומי של ארה"ב (National Archives) - מסמכי ההקמה והתכתבויותיו של ג'ורג' וושינגטון.</li>
+                    <li>מכון הסמית'סוניאן (Smithsonian Institution) - מחקר על השתתפות עבדים בבניית בירת ארה"ב ("Enslaved Labor and the Building of the White House").</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/white-house-main.webp" alt="הבית הלבן משכן הנשיאות" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">האחוזה הנשיאותית (חזית צפונית)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">החזית המפורסמת ביותר של הבית הלבן, כפי שתוכננה על ידי האדריכל ג'יימס הובן בסגנון נאו-קלאסי. האבן נצבעה בלבן כדי להגן עליה מסדקים.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-1814" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-red-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-1814')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-red-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/white-house-1814.webp" alt="הבית הלבן נשרף 1814" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-500 mb-2">חורבן באש: מלחמת 1812</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">הכוחות הבריטים פולשים לבירה ב-1814 ומעלים את "בית הנשיא" באש כנקמה על שריפת מבני ממשל בקנדה. המבנה שוקם מחדש עד שנת 1817.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-truman" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-truman')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/white-house-truman.webp" alt="פנים הבית הלבן מפורק שיפוץ טרומן" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">שיפוץ טרומן (1949-1952)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    כאשר המבנה היה בסכנת קריסה עקב עייפות החומר, הורה הנשיא טרומן על ריקון מוחלט של פנים המבנה (עד לרמת הקליפה החיצונית) ובנייתו מחדש עם שלדת פלדה חזקה ומודרנית, בתוכה שוחזרו החדרים ההיסטוריים.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-navy-700 py-8 relative z-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© 2026 ארכיון הסמלים הלאומיים. נבנה על ידי רם.</p>
+            <p class="mt-2 text-xs">עיצוב מותאם ל-Samsung S25 Ultra</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+```
