@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>הר ראשמור | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        stoneAccent: '#94a3b8', /* צבע אבן גרניט התואם להר */
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-right" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">הר ראשמור</h1>
+                    <p class="text-xs md:text-sm text-stoneAccent font-medium">1927–1941 | מקדש הדמוקרטיה</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="mount-rushmore-en.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                    EN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="mountain" class="w-16 h-16 mx-auto text-stoneAccent mb-6 drop-shadow-[0_0_15px_rgba(148,163,184,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">Mount Rushmore</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                מקדש הדמוקרטיה החצוב בגרניט: חזון מגלומני, פלא הנדסי, ופצע פתוח בלב האדמה הקדושה של ילידי אמריקה.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/mount-rushmore-main.webp" alt="הר ראשמור" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">הר ראשמור</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-construction')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-stoneAccent/50 hover:border-stoneAccent transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/mount-rushmore-construction.webp" alt="תהליך החציבה" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-stoneAccent font-bold text-sm md:text-lg drop-shadow-md">תהליך החציבה</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-presidents')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/mount-rushmore-presidents.webp" alt="פני הנשיאים מקרוב" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">פני הנשיאים מקרוב</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <!-- 1. Historical Identity -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">1. תעודת זהות היסטורית: ממלכודת תיירים לאנדרטה לאומית</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">שנות בנייה ויצירה:</strong> הפרויקט החל ב-4 באוקטובר 1927 והסתיים ב-31 באוקטובר 1941 (14 שנות עבודה).</li>
+                    <li><strong class="text-white">היוצרים:</strong> ההיסטוריון מדקוטה הדרומית, <strong class="text-white">דואן רובינסון (Doane Robinson)</strong> שהגה את הרעיון, והפסל האמריקאי <strong class="text-white">גוצון בורגלום (Gutzon Borglum)</strong> שעיצב וניהל את החציבה.</li>
+                    <li><strong class="text-white">סיבת ההמצאה והבנייה (הסיבה המקורית):</strong> הרעיון המקורי של רובינסון בשנת 1923 היה כלכלי ופרובינציאלי לחלוטין: הוא חיפש דרך למשוך תיירים למדינת דקוטה הדרומית המבודדת. רובינסון הציע לחצוב גיבורים מהמערב הפרוע (כמו לואיס וקלארק, באפלו ביל קודי, והצ'יף הילידי ענן אדום - Red Cloud) בתוך סלעי הגרניט.</li>
+                    <li><strong class="text-white">השינוי של בורגלום:</strong> כאשר רובינסון שכר את הפסל בורגלום, בורגלום סירב לפסל דמויות אזוריות. הוא טען שפרויקט בסדר גודל כזה (של הר שלם) חייב להיות בעל משמעות לאומית עצומה. הוא החליט שהר ראשמור יוקדש ל"מקדש הדמוקרטיה" (Shrine of Democracy), ויתמקד בארבעת הנשיאים שעיצבו את ארצות הברית מלידתה ועד הפיכתה למעצמה.</li>
+                </ul>
+            </section>
+
+            <!-- 2. Etymological Research -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">2. מחקר אטימולוגי מפורק: מקור השמות</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2 underline decoration-gold-500/30">הר ראשמור (Mount Rushmore)</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            ההר לא נקרא על שם נשיא, גיבור מלחמה, או אל ילידי, אלא על שם עורך דין עסקי מניו יורק. בשנת 1885, עורך הדין <strong class="text-white">צ'ארלס א. ראשמור (Charles E. Rushmore)</strong> נשלח לדקוטה הדרומית כדי לבדוק תביעות כרייה. כשהבחין בהר המרשים, הוא שאל את המדריך המקומי לשמו. המדריך השיב שלמעשה אין להר שם, והוסיף בצחוק: "מעכשיו נקרא לו הר ראשמור". השם הבלתי רשמי דבק, והפך לרשמי על ידי מועצת השמות הגאוגרפיים של ארה"ב ב-1930.
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mt-2">
+                            <strong class="text-white">פירוק השם Rushmore:</strong> ממקור אנגלי ישן. <strong class="text-white">Rush</strong> (מצמח הביצה <em>Risc</em>) ו-<strong class="text-white">More</strong> (או Moor - שטח אדמה פתוח ופראי). כלומר, "האדמה הפתוחה של צמחי הסוף".
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The People -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">3. האנשים מאחורי הסמל (ביוגרפיה, אידאולוגיה והישגים)</h3>
+                </div>
+                <div class="space-y-8">
+
+                    <!-- Doane Robinson -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                            דואן רובינסון (Doane Robinson) - הוגה הרעיון ("אבי הר ראשמור")
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Doane (דואן):</strong> ממקור קלטי (Dubhán), שמשמעותו "כהה" או "שחור". לעיתים משמש כשם משפחה שהפך לשם פרטי.</li>
+                                <li><strong class="text-white">Robinson (רובינסון):</strong> שם פטרונימי שפירושו "בנו של רובין". רובין הוא צורת חיבה של רוברט (Robert), שפירושו "תהילה זוהרת" בגרמאנית עתיקה.</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1856 – 1946.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד בוויסקונסין למשפחת חקלאים. למרות שאיבד את אביו ואחותו בגיל צעיר, הוא הצליח לרכוש השכלה משפטית, אך תשוקתו האמיתית הייתה היסטוריה. הוא מונה להיסטוריון הרשמי של מדינת דקוטה הדרומית.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">אידאולוגיה:</strong> רובינסון האמין בכוחה של ההיסטוריה המקומית לייצר גאווה אזורית ושגשוג כלכלי. הוא חיפש דרכים יצירתיות להפוך את מדינתו המבודדת והענייה למוקד משיכה לאומי, תוך האדרה של דמויות ה"מערב הפרוע".
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">הישגים וחלקו ביצירה:</strong> רובינסון הוא האיש שהגה את הרעיון לחצוב פסלי ענק בהרי הגרניט של הגבעות השחורות ב-1923, כדי למשוך תיירים (מכוניות) לאזור. תוכניתו המקורית הייתה לחצוב דמויות אזוריות כמו באפלו ביל ולואיס וקלארק במה שכונה "מחטי הגרניט" (The Needles). הוא זה ששכר את הפסל גוצון בורגלום וגייס תמיכה פוליטית פדרלית שהפכה את הפרויקט למציאות.
+                        </p>
+                    </div>
+
+                    <!-- Gutzon Borglum -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="hammer" class="w-5 h-5"></i>
+                            גוצון בורגלום (Gutzon Borglum) - הפסל הראשי
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Gutzon (גוצון):</strong> שם פרטי ממקור סקנדינבי, גרסה של השם "Gudbrand" שפירושו "חרב אלוהים" או מתנת האל.</li>
+                                <li><strong class="text-white">Borglum (בורגלום):</strong> שם משפחה טופונימי (על שם מקום) מדנמרק, על שם מנזר "Børglum Abbey" בצפון יוטלנד, דנמרק.</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד ב-1867 בטריטוריית איידהו לאב שהיה מהגר מדנמרק ומורמוני פוליגמי (נשוי לשתי אחיות). גוצון, שהתנתק מהדת מאוחר יותר, גדל במערב הפראי ונסע ללמוד פיסול ואמנות בפריז (שם הושפע עמוקות מהפסל אוגוסט רודן).
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">אידאולוגיה וקונפליקט:</strong> בורגלום היה לאומן אמריקאי חריף, מאמין נלהב ב"גורל הגלוי" (Manifest Destiny) ובצורך של אמריקה ליצור אמנות קולוסאלית (ענקית) שתתעלה על הפירמידות במצרים. עם זאת, דמותו שנויה במחלוקת עמוקה: לפני הר ראשמור, הוא עבד על פרויקט הר החציבה ב"סטון מאונטיין" שבג'ורג'יה (Stone Mountain) שנועד להנציח את גיבורי הקונפדרציה של הדרום. במהלך תקופה זו, הוא הפך לחבר ומקורב מאוד לארגון ה-<strong>Ku Klux Klan (KKK)</strong>, שמימן חלק מהפרויקט. (מאוחר יותר הוא פוטר מהפרויקט בסטון מאונטיין ועבר להר ראשמור).
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">הישגים:</strong> בורגלום הוא זה שהגה את החזון הלאומי להר ראשמור ואת השימוש בדינמיט כ"כלי פיסול" ראשי. הוא נפטר במרץ 1941, חודשים ספורים לפני סיום העבודה, ובנו, <strong>לינקולן בורגלום (Lincoln Borglum)</strong>, לקח את הפיקוד והשלים את הפרויקט סופית באוקטובר אותה שנה.
+                        </p>
+                    </div>
+
+                    <!-- Charles E. Rushmore -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            צ'ארלס א. ראשמור (Charles E. Rushmore) - האיש שעל שמו נקרא ההר
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Charles (צ'ארלס):</strong> מהשם הגרמאני הקדום Karl, שפירושו "אדם חופשי" או "גבר".</li>
+                                <li><strong class="text-white">Rushmore (ראשמור):</strong> מקור טופוגרפי אנגלי שמשמעותו "האדמה הפראית של צמחי הסוף (Rush)".</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1857 – 1931.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד בניו יורק למשפחה מבוססת וזכה לחינוך מעולה. הוא הפך לעורך דין תאגידי מצליח ועשיר מאוד במנהטן, ניו יורק, שייצג חברות מסחריות גדולות, כולל חברות כרייה.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">אידאולוגיה:</strong> בניגוד לרובינסון ובורגלום שהיו אנשי חזון ואידיאולוגיה לאומית, ראשמור היה איש עסקים פרגמטי שייצג אינטרסים כלכליים של תעשיית הכרייה שהתרחבה מערבה.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">הישגים וחלקו בסמל:</strong> ב-1885 נשלח ראשמור לדקוטה הדרומית לבדוק תביעות משפטיות של מכרות פח בדיל. בעת סיור באזור, שאל את המדריך המקומי לשמו של ההר המרשים שניצב מולם. המדריך השיב בבדיחות דעת שאין להר שם, ולכן "מעתה והלאה נקרא לו הר ראשמור". השם הלא-רשמי דבק באוכלוסייה המקומית והוכר רשמית ב-1930. ראשמור לא התנגד לכבוד, ואף תרם מכיסו 5,000 דולר (סכום עצום באותם ימים) לטובת הקמת הפסלים, והפך לאחד התורמים הפרטיים הגדולים והראשונים של הפרויקט.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. Anatomy & Technical Specs -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="layers" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">4. אנטומיה והנדסה: לחצוב באבן באמצעות דינמיט</h3>
+                </div>
+                
+                <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700 space-y-8 text-lg text-slate-300">
+                    
+                    <div>
+                        <h4 class="text-xl font-bold text-gold-400 mb-4 border-b border-navy-600 inline-block pb-1">המפרט הטכני של ההר ופני הנשיאים:</h4>
+                        <ul class="space-y-3 list-disc list-inside marker:text-gold-500">
+                            <li><strong class="text-white">מידות הפנים:</strong> כל אחד מפרצופי הנשיאים מתנשא לגובה של 18 מטרים (60 רגל) – שווה ערך לבניין בן 6 קומות. עיניהם ברוחב של כ-3.3 מטרים, והאף באורך של כ-6 מטרים.</li>
+                            <li><strong class="text-white">כלי הפיסול - דינמיט:</strong> בניגוד לפסלים קלאסיים שהשתמשו בפטיש ואזמל בלבד, בורגלום פיתח שיטה חסרת תקדים. <strong>כ-90% מהסלע שהוסר מההר (כ-450,000 טון של גרניט) הוסר באמצעות פיצוצי דינמיט מדויקים ביותר.</strong> הפיצוצים הגיעו עד למרחק של סנטימטרים ספורים מהעור הסופי של הפסל. רק את הגימור הסופי עשו הפועלים בעזרת פטישי אוויר וכלי סיתות (תהליך שנקרא Honeycombing).</li>
+                            <li><strong class="text-white">החיים על ההר:</strong> הפרויקט העסיק קרוב ל-400 פועלים, רובם כורים מקומיים חסרי ניסיון באמנות. למרות התנאים המסוכנים להחריד (תלייה על רתמות וכבלי פלדה בגובה מאות מטרים עם דינמיט רופף), <strong>אף עובד לא נהרג</strong> במהלך 14 שנות העבודה על הפרויקט.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-navy-900/40 p-4 rounded-lg border-r-2 border-stoneAccent mt-6">
+                        <h4 class="text-xl font-bold text-white mb-2">ארבעת הנשיאים והסמליות</h4>
+                        <p class="mb-3">בורגלום בחר אישית את ארבעת הנשיאים כדי לייצג 150 שנים של ההיסטוריה האמריקאית (מלידה ועד שמירה):</p>
+                        <ol class="list-decimal list-inside space-y-2 marker:text-stoneAccent text-base">
+                            <li><strong class="text-white">ג'ורג' וושינגטון:</strong> מייצג את ה<strong>לידה</strong> של ארצות הברית כרפובליקה עצמאית.</li>
+                            <li><strong class="text-white">תומאס ג'פרסון:</strong> מייצג את ה<strong>התרחבות והגדילה</strong> (כמי שחיבר את הכרזת העצמאות ורכש את טריטוריית לואיזיאנה שהכפילה את שטח המדינה).</li>
+                            <li><strong class="text-white">תיאודור רוזוולט:</strong> מייצג את ה<strong>פיתוח</strong> הכלכלי, הקמת תעלת פנמה, ותנועת שימור הטבע במאה ה-20 (נבחר במיוחד כי היה חבר אישי של בורגלום).</li>
+                            <li><strong class="text-white">אברהם לינקולן:</strong> מייצג את ה<strong>שמירה (הישרדות)</strong> של האיחוד לאחר משבר מלחמת האזרחים והביטול המוסרי של העבדות.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-navy-900/40 p-4 rounded-lg border-r-2 border-gold-500 mt-6">
+                        <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                            <i data-lucide="key" class="w-5 h-5 text-gold-500"></i>
+                            החדר הסודי: היכל הרשומות (Hall of Records)
+                        </h4>
+                        <p class="text-base">
+                            חזונו המקורי של בורגלום היה שמאחורי פני הנשיאים תחצב מנהרה שתוביל לאולם ענק, מעין "קפסולת זמן" או כספת קדושה, שבה יישמרו העותקים המקוריים של חוקת ארה"ב והכרזת העצמאות עבור דורות בעוד אלפי שנים. העבודה על המנהרה (מאחורי ראשו של לינקולן) החלה ב-1938, אך הקונגרס הורה לבורגלום להפסיק מיד ולתעל את כל התקציב להשלמת הפנים. הפרויקט נזנח, ורק בשנת 1998 הושלם החזון חלקית כאשר כספת טיטניום ובתוכה לוחות אימייל המכילים את המסמכים החשובים הוטמנה בתוך המנהרה הבלתי-גמורה. החדר אינו נגיש לתיירים.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5. Cultural Impact -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">5. השפעה ומשמעות תרבותית: מקדש או חילול קודש?</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    הר ראשמור הוא האנדרטה הלאומית שמגלמת בצורה הבוטה ביותר את השניות התרבותית של ארצות הברית:
+                </p>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white">הפצע של שבט הלקוטה סו (Lakota Sioux):</strong> ההר ממוקם בלב רכס "הגבעות השחורות" (Black Hills, או בשפתם: Paha Sapa). עבור הילידים, זהו מרכז העולם ואדמה קדושה לחלוטין. בשנת 1868, ממשלת ארה"ב חתמה על הסכם שמבטיח שהאזור שייך לילידים לנצח. אולם, כאשר התגלה זהב באזור מספר שנים מאוחר יותר, הממשל הפר את ההסכם, כבש את השטח וגירש את השבטים. עבור ילידי אמריקה, חציבת פרצופיהם של נשיאים (חלקם בעלי היסטוריה של אפליית אינדיאנים) לתוך ההר הקדוש שלהם, נתפסת כחילול קודש והתגרות אולטימטיבית.
+                    </li>
+                    <li>
+                        <strong class="text-white">התשובה: אנדרטת "קרייזי הורס" (Crazy Horse Memorial):</strong> כתגובת נגד היסטורית להר ראשמור, החלה להיבנות בשנת 1948 (כ-27 ק"מ משם) אנדרטה עצומה עוד יותר החצובה בסלע. היא מציגה את גיבור שבט הלקוטה, הצ'יף "סוס משוגע". כאשר תושלם, היא תהיה הפסל הגדול ביותר בעולם, ומטרתה להזכיר לעולם כי "לאדם האדום יש גיבורים גדולים משלו".
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 6. Sources -->
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>National Park Service (NPS) - ארכיוני היסטוריית הר ראשמור.</li>
+                    <li>מסמכי גוצון בורגלום ויומני הבנייה - ספריית הקונגרס.</li>
+                    <li>היסטוריה מנקודת המבט הילידית: אתר ההנצחה של Crazy Horse ופסיקת בית המשפט העליון בעניין "הגבעות השחורות" מ-1980 (United States v. Sioux Nation of Indians).</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/mount-rushmore-main.webp" alt="הר ראשמור" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">הר ראשמור (מקדש הדמוקרטיה)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">ארבעת הנשיאים החצובים בסלע הגרניט במדינת דקוטה הדרומית. משמאל לימין: וושינגטון (לידה), ג'פרסון (התרחבות), רוזוולט (פיתוח), ולינקולן (שמירת האיחוד).</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-construction" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-stoneAccent shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-construction')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-stoneAccent transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/mount-rushmore-construction.webp" alt="תהליך החציבה בהר" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-stoneAccent mb-2">פלא הנדסי מעורר השראה</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">הפועלים תלויים על רתמות עור בסירת מנוף מאולתרת ("כיסא בוסטון"), מסירים כמויות עצומות של גרניט באמצעות פיצוצי דינמיט מבוקרים.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-presidents" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-presidents')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/mount-rushmore-presidents.webp" alt="תקריב על הפנים החצובות" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">פרטים בגובה 6 קומות</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    תקריב המדגים את רמת הדיוק יוצאת הדופן של הסיתות (תהליך ה-Honeycombing), כולל "ניצוץ" מדומה בעיניים שנוצר על ידי השארת עמוד גרניט קטן בתוך אישון מסותת.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
