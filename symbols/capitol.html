@@ -1,0 +1,455 @@
+```html
+<!DOCTYPE html>
+<html lang="he" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>בניין הקפיטול | המחקר המלא</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        stoneAccent: '#e2e8f0', /* צבע שיש בהיר התואם לקפיטול */
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-right" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">בניין הקפיטול</h1>
+                    <p class="text-xs md:text-sm text-stoneAccent font-medium">1793–היום | מקדש הדמוקרטיה האמריקאית</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="capitol-en.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="English">
+                    EN
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="building-2" class="w-16 h-16 mx-auto text-stoneAccent mb-6 drop-shadow-[0_0_15px_rgba(226,232,240,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">The U.S. Capitol</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                מקום מושבה של הרשות המחוקקת. מבנה עצום של אבן ושיש המסמל את כוחו של העם, פשרות פוליטיות היסטוריות, ואת יציבותה (ושבריריותה) של הרפובליקה.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/capitol-main.webp" alt="בניין הקפיטול - מבט כללי" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">בניין הקפיטול</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-construction')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-stoneAccent/50 hover:border-stoneAccent transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/capitol-dome-construction.webp" alt="בניית כיפת הקפיטול" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-stoneAccent font-bold text-sm md:text-lg drop-shadow-md">בניית הכיפה</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-1814')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-red-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/capitol-1814.webp" alt="שריפת הקפיטול 1814" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">שריפת 1814</p>
+                    <p class="text-red-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">הגדל תמונה</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <!-- 1. Historical Identity -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">1. תעודת זהות היסטורית: משכן המחוקקים</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">שנות בנייה ויצירה:</strong> אבן הפינה הונחה ב-18 בספטמבר 1793 על ידי ג'ורג' וושינגטון (בטקס בנייה חופשית). הבניין התפתח בגלים: נשרף ב-1814, שוקם והורחב עד 1826, ולאחר מכן עבר הרחבה מונומנטלית (הוספת הכיפה הענקית והאגפים החדשים) שהחלה ב-1851 והסתיימה לאחר מלחמת האזרחים ב-1868.</li>
+                    <li><strong class="text-white">ההוגה / יוזם הבנייה:</strong> האבות המייסדים, בהובלת הנשיא ג'ורג' וושינגטון ומזכיר המדינה תומאס ג'פרסון, כחלק מהקמת העיר הפדרלית החדשה.</li>
+                    <li><strong class="text-white">הבונים / האדריכלים המרכזיים:</strong> הפרויקט ידע אדריכלים רבים עקב גודלו. <strong class="text-white">ויליאם ת'ורנטון (William Thornton)</strong> הוא שתכנן את העיצוב המקורי, אך מי שהוביל את בניית "הקפיטול החדש" והכיפה המפורסמת היה <strong class="text-white">תומאס יו. וולטר (Thomas U. Walter)</strong>.</li>
+                    <li><strong class="text-white">סיבת ההמצאה והבנייה:</strong> חוקת ארה"ב (סעיף 1) ייסדה קונגרס בן שני בתים (בית הנבחרים והסנאט) המייצג את העם. נדרש מבנה פדרלי כביר שיאכלס את מאות הנציגים מכל רחבי היבשת, ויהווה את "מקדש החוק" – המקום שבו מיוצרת הדמוקרטיה האמריקאית.</li>
+                </ul>
+            </section>
+
+            <!-- 2. Etymological Research -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">2. מחקר אטימולוגי מפורק: מקור השם "קפיטול"</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-r-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-3 underline decoration-gold-500/30">Capitol מול Capital</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                            תומאס ג'פרסון (שהיה קלאסיקן חובב מושבע של רומא העתיקה) הוא זה שהציע את השם למבנה. יש להבדיל הבדל מהותי באיות ובמשמעות:
+                        </p>
+                        <ul class="list-disc list-inside mt-2 space-y-4 text-slate-300 marker:text-gold-500">
+                            <li><strong class="text-white">Capit<span class="text-red-400">a</span>l (עיר בירה / הון):</strong> מהמילה הלטינית <em>caput</em> (ראש). מתייחסת לעיר הראשית של המדינה (וושינגטון די.סי היא ה-Capital).</li>
+                            <li><strong class="text-white">Capit<span class="text-gold-500">o</span>l (הבניין עצמו):</strong> השם מגיע ישירות מ**גבעת הקפיטולין (Capitoline Hill)** ברומא העתיקה. ברומא, גבעה זו הייתה המרכז הדתי והפוליטי של הרפובליקה הרומית, ועליה שכן מקדש יופיטר. </li>
+                        </ul>
+                        <div class="bg-navy-800 p-4 mt-4 rounded border border-navy-600">
+                            <p class="text-slate-300 text-lg leading-relaxed">
+                                <strong class="text-white">המשמעות האטימולוגית:</strong> המילה <em>Capitolium</em> בלטינית מורכבת מ-<em>caput</em> (ראש) ו-<em>olium</em>. אגדה רומית מספרת שבעת חפירת היסודות למקדש, נמצאה גולגולת אדם (caput) שלמה שהייתה שייכת ללוחם עתיק בשם אולוס. לכן, הקפיטול הוא "הגבעה עם הראש". בהשאלה, ג'פרסון ווושינגטון קראו לבניין הקפיטול בשם זה כדי לסמל שזהו **"הראש הפוליטי"** והמרכז המקודש של הרפובליקה האמריקאית החדשה, ממש כפי שהייתה הגבעה ברומא.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The People (Separated Ideology & Achievements) -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">3. האנשים מאחורי הסמל</h3>
+                </div>
+                <div class="space-y-8">
+
+                    <!-- William Thornton -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="compass" class="w-5 h-5"></i>
+                            ויליאם ת'ורנטון (William Thornton) - האדריכל המקורי
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה מפורקת של השם:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">William (ויליאם):</strong> נגזר מהשם הגרמאני "Wilhelm". מורכב מהמילים <em>wil</em> (רצון או תשוקה) ו-<em>helm</em> (קסדה או הגנה). כלומר: "מגן בעל רצון נחוש".</li>
+                                <li><strong class="text-white">Thornton (ת'ורנטון):</strong> שם טופונימי (מבוסס מקום) אנגלי עתיק. מורכב מ-<em>thorn</em> (קוץ) ו-<em>ton</em> (יישוב או חווה). כלומר: "החווה שמוקפת בקוצים".</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1759 – 1828.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד באי ג'וסט ואן דייק (באיי הבתולה הבריטיים) למשפחת סוחרים קווייקרית. הוא מעולם לא הוכשר פורמלית כאדריכל; הוא היה רופא בהשכלתו (למד בסקוטלנד), ממציא ואיש אשכולות, שלימד את עצמו אדריכלות מתוך ספרי שרטוט. ב-1786 היגר לארצות הברית.
+                        </p>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-gold-500 mb-3">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">אידאולוגיה ארכיטקטונית:</strong> ת'ורנטון האמין בפשטות, אלגנטיות, ובחזרה לשורשים של הדמוקרטיה ביוון וברפובליקה של רומא העתיקה. עיצוביו שיקפו את הסגנון ה"ג'ורג'יאני" (Georgian) והנאו-קלאסי. הוא האמין שהמבנה צריך להיות מאסיבי מספיק כדי לשדר כוח, אך מחולק באופן ברור (שני אגפים נפרדים - לסנאט ולבית הנבחרים) כדי לשקף את האיזון החוקתי ואת העובדה שהכוח אינו מרוכז בידי אדם אחד.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-stoneAccent">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">הישגים וחלקו ביצירה:</strong> כשמזכיר המדינה ג'פרסון והנשיא וושינגטון הכריזו על תחרות עיצוב לקפיטול, הם התאכזבו מההצעות שהוגשו. ת'ורנטון שמע על כך והגיש תוכנית מאוחרת (נלמדת עצמאית) שכללה מרכז דמוי מקדש רומי ושני אגפים מלבניים. וושינגטון התלהב מהתוכנית והכריז שהיא מציגה "פשטות, גדולה, ויופי". ת'ורנטון זכה בפרס של 500 דולר ומגרש. למרות שהעיצוב המקורי שלו עבר שינויים רבים, התוכנית הבסיסית שלו למיקום ולפרופורציות קבעה את חזותו של בניין הקפיטול המוכר לנו כיום.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Thomas U. Walter -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="ruler" class="w-5 h-5"></i>
+                            תומאס יו. וולטר (Thomas U. Walter) - מעצב הכיפה הגדולה
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">אטימולוגיה מפורקת של השם:</strong>
+                            <ul class="list-disc list-inside mt-2 space-y-2 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Thomas (תומאס):</strong> מקורו בשם הארמי "תאומא" (Te'oma), שפירושו "תאום" (Twin).</li>
+                                <li><strong class="text-white">Ustick (יוסטיק - השם האמצעי):</strong> שם קורני (ממחוז קורנוול באנגליה), כנראה נגזר מהלחם מילים עתיק הקשור למקום.</li>
+                                <li><strong class="text-white">Walter (וולטר):</strong> שם גרמאני עתיק (Walthari). מורכב מ-<em>wald</em> (שליטה או שלטון) ו-<em>hari</em> (צבא או לוחם). כלומר: "מפקד הצבא".</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">שנות חיים:</strong> 1804 – 1887.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">ילדות ורקע:</strong> נולד בפילדלפיה למשפחת בנאים ולמד את מקצוע הבנייה מאביו. הוא למד רישום אדריכלי ואמנויות יפות, והתמחה אצל אדריכלים נודעים. וולטר הפך לאחד ממייסדי המכון האמריקאי לאדריכלים (AIA).
+                        </p>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-gold-500 mb-3">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">אידאולוגיה ארכיטקטונית:</strong> וולטר ייצג את דור ה"נאו-רנסאנס" האמריקאי (Greek Revival). ככל שארה"ב גדלה מ-13 מדינות ל-31 מדינות (עד אמצע המאה ה-19), האגפים המקוריים כבר לא הספיקו. וולטר האמין שהבניין חייב לגדול לא רק ברוחב, אלא להפגין שליטה עצומה כלפי מעלה. הוא אימץ חדשנות הנדסית בתקופת המהפכה התעשייתית: שימוש ב**ברזל יצוק (Cast Iron)** כחומר גלם ליצירת מבנים מונומנטליים שכמותם לא נראו ביבשת אמריקה.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-stoneAccent">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">הישגים וחלקו ביצירה:</strong> וולטר מונה ב-1851 ל"אדריכל הקפיטול". הוא הוסיף את שני האגפים הענקיים העכשוויים (סנאט ובית הנבחרים), שגימדו את הכיפה הישנה של הבניין (שהייתה עשויה עץ ונחושת). עקב כך, וולטר תכנן את **כיפת ברזל היצוק העצומה** של הקפיטול – הישג הנדסי מדהים השוקל כ-4,000 טון. בניית הכיפה נמשכה גם במהלך מלחמת האזרחים, בהוראת הנשיא אברהם לינקולן, כדי להראות לעם ש"האיחוד ממשיך להתקיים".
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. Anatomy, Engineering & Hidden History (Separated by sections) -->
+            <section>
+                <div class="flex items-center gap-3 mb-8 border-b-2 border-gold-500 pb-4">
+                    <i data-lucide="layers" class="w-8 h-8 text-gold-500"></i>
+                    <h3 class="text-3xl font-bold text-white">4. אנטומיה, הנדסה, וזהות הפועלים</h3>
+                </div>
+                
+                <div class="space-y-12">
+                    
+                    <!-- Sub-section 1: The Building Structure -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-6">
+                            <i data-lucide="map" class="w-6 h-6 text-stoneAccent"></i>
+                            <h4 class="text-2xl font-bold text-stoneAccent">תת-סעיף 1: חלקי הקומפלקס החוקתי</h4>
+                        </div>
+                        <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                            הבניין מחולק בקפדנות המשקפת את המבנה החוקתי של ארצות הברית – שני בתים מחוקקים, המאוחדים תחת רוטונדה (Rotunda) אחת במרכז:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 gap-6">
+                            
+                            <!-- The Rotunda & Dome -->
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-r-4 border-gold-500 shadow-lg">
+                                <h5 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="sun" class="w-5 h-5"></i>
+                                    א. הרוטונדה והכיפה (The Rotunda & Dome)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    הלב המרכזי המחבר בין שני הבתים. זוהי אינה פלטפורמה לחקיקה, אלא אזור טקסי המיועד לאירועים לאומיים, כמו אשכבה ממלכתית של נשיאים ואזרחים דגולים.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-gold-500">
+                                    <li><strong class="text-white">הכיפה:</strong> תוכננה על ידי תומאס וולטר, עשויה מ-4,041,145 פאונד של ברזל יצוק. למרות שהיא נראית כמו אבן מבחוץ, מדובר במבנה כפול מברזל.</li>
+                                    <li><strong class="text-white">פסל החירות (Statue of Freedom):</strong> מוצב בראש הכיפה. פסל ברונזה ענק (גובה 5.9 מטרים, משקל 6.8 טון) של דמות נשית החובשת קסדת לוחמים עם נוצות נשר. (חשוב לא לבלבל עם פסל החירות בניו יורק).</li>
+                                    <li><strong class="text-white">פרסקו התקרה ("האפותיאוזה של וושינגטון"):</strong> ציור קיר עצום בתוך הכיפה, שצויר על ידי האמן קונסטנטינו ברומידי, המציג את ג'ורג' וושינגטון עולה לשמיים מוקף באלים רומיים.</li>
+                                </ul>
+                            </div>
+
+                            <!-- South Wing -->
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-r-4 border-blue-400 shadow-lg">
+                                <h5 class="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                    ב. האגף הדרומי (בית הנבחרים - House of Representatives)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    האגף שנוסף במחצית המאה ה-19, מהווה את הבית התחתון המייצג את העם.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-blue-400">
+                                    <li><strong class="text-white">אולם המליאה:</strong> האולם הגדול ביותר בקפיטול. כאן יושבים 435 חברי הקונגרס, מיוצגים בהתאם לגודל האוכלוסייה של מדינתם. זהו גם האולם בו נושא הנשיא את "נאום מצב האומה" השנתי.</li>
+                                </ul>
+                            </div>
+
+                            <!-- North Wing -->
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-r-4 border-emerald-500 shadow-lg">
+                                <h5 class="text-xl font-bold text-emerald-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="landmark" class="w-5 h-5"></i>
+                                    ג. האגף הצפוני (הסנאט - The Senate)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    הבית העליון. אולם יוקרתי, שקט וקטן יותר.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-emerald-500">
+                                    <li><strong class="text-white">אולם המליאה:</strong> מכיל שולחנות עץ אישיים עבור 100 סנאטורים (שניים מכל מדינה, ללא קשר לגודלה, כדי לשמור על שוויון רפובליקני). לכל סנאטור יש תא כתיבה (Desk) העובר בירושה, ולרוב חרוטים בו שמות הסנאטורים הקודמים שהשתמשו בו.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 2: Technical Specifications -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="bar-chart" class="w-6 h-6 text-stoneAccent"></i>
+                            <h4 class="text-2xl font-bold text-stoneAccent">תת-סעיף 2: המפרט הטכני של הבניין (המספרים מאחורי הקלעים)</h4>
+                        </div>
+                        <div class="bg-navy-800 p-6 rounded-xl border border-navy-600 shadow-inner">
+                            <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                                המבנה משתרע על שטח אדיר (כ-1.5 מיליון רגל רבוע, כ-139,000 מ"ר) והוא אחד המבנים המורכבים ביותר באמריקה:
+                            </p>
+                            <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg text-slate-300 marker:text-stoneAccent list-none">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">חדרים:</strong> כ-600</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">חלונות:</strong> 658</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">מעליות:</strong> מ-80</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">גובה הכיפה:</strong> 88 מטרים</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">מדרגות:</strong> 850 (לפסגה)</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">פסלים:</strong> 100+ (היכל הפסלים הלאומי)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 3: The Workers (Labor & Enslavement) -->
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="link" class="w-6 h-6 text-red-400"></i>
+                            <h4 class="text-2xl font-bold text-red-400">תת-סעיף 3: הפועלים ובניין היסודות (זהות, כמות ושכר)</h4>
+                        </div>
+                        <div class="bg-red-900/10 p-6 rounded-xl border border-red-900/50 space-y-4">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                בנייתו של הקפיטול מהווה ראי מדויק אך אכזרי לחברה האמריקאית ולכלכלתה בעשורים הראשונים להקמתה.
+                            </p>
+                            <ul class="list-disc list-inside space-y-4 text-lg text-slate-300 marker:text-red-500">
+                                <li><strong class="text-white">זהות וכמות:</strong> כמו הבית הלבן, בניית הקפיטול המקורי דרשה בין **400 ל-600 פועלים**. כוח העבודה המרכזי והזול הורכב מ**עבדים שחורים** שהושכרו מבעלי אחוזות בוירג'יניה. עמדו לצדם אזרחים חופשיים (רבים מהם מהגרים אירופאים) שעבדו כבנאים מומחים, ואמני גילוף איטלקים שהובאו כדי לעבד את השיש ולהעניק לו את הפאר הקלאסי. **זהות העבדים:** ברשומות צוינו רק בשמות פרטיים תחת בעליהם. הדוגמה המפורסמת ביותר היא **פיליפ ריד (Philip Reid)**, עבד שחור מיומן במיוחד שהיה דמות מפתח ביציקת והרכבת פאנלי הברונזה של "פסל החירות" (Statue of Freedom) שניצב על ראש הכיפה.</li>
+                                <li><strong class="text-white">שכר ותגמול:</strong> הפער ניכר בצורה משמעותית בגיליונות השכר הפדרליים (Wage Rolls):
+                                    <ul class="list-none pr-6 mt-2 space-y-2">
+                                        <li>- **אמנים מומחים (איטלקים ובריטים):** הרוויחו משכורות עתק של **1.50$ עד 2.50$ ביום**.</li>
+                                        <li>- **פועלי כפיים חופשיים:** הרוויחו כ-**50 עד 75 סנט ליום**.</li>
+                                        <li>- **עבדים שחורים:** ממשלת ארה"ב שילמה עבורם תעריף חודשי של כ-**5 דולר** – אולם הסכום שולם כולו ל**משכיר** (בעל האחוזה). העבד שעבד בסיתות וכריתת יערות לא קיבל דבר על עבודתו.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="bg-navy-900/40 p-4 rounded-lg border-r-2 border-red-500">
+                                <p class="text-slate-300 text-lg leading-relaxed">
+                                    <strong class="text-white">האירוניה ההיסטורית:</strong> "פסל החירות" המונח בראש מקדש הדמוקרטיה הורכב ב-1863 על ידי עבדים בעת שמלחמת האזרחים השתוללה ברקע (עבור זכותם לחירות). יתרה מכך, כאשר הנשיא ג'פרסון הורה לקנות את הקרקע עבור הבניין, היא נרכשה מבעל אחוזה ואיש עסקים שקרא לחלקה שלו "Rome" (רומא), כקוריוז היסטורי שהפך את גבעת הקפיטול ליורשת הרומית המודרנית.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5. Fire & Cultural Impact -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">5. חורבן באש והשפעה תרבותית</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700 space-y-4 text-lg text-slate-300">
+                        <p>
+                            <strong class="text-white">השריפה הגדולה של 1814:</strong> ב-24 באוגוסט 1814, כוחות בריטים כבשו את וושינגטון די.סי. לאחר שאכלו סעודת ניצחון בבית הלבן, הם צעדו אל בניין הקפיטול. הם השתמשו בספרי "ספריית הקונגרס" שהייתה ממוקמת באגף הצפוני כדלק, והעלו את כל הבניין בלהבות. קירות האבן שרדו הודות לגשם הפתאומי (והסערה) שעצר את השריפה. שיקום הבניין לקח שנים ארוכות והוביל לעיצובו המחודש.
+                        </p>
+                        <div class="w-full h-px bg-navy-600 my-2"></div>
+                        <p>
+                            <strong class="text-white">השפעה תרבותית ו"מקדש החוק":</strong> הקפיטול מהווה את ליבת הכוח הפוליטי של ארה"ב (ואף משפיע על שאר העולם הדמוקרטי).
+                        </p>
+                        <ul class="list-disc list-inside space-y-4 marker:text-gold-500">
+                            <li><strong class="text-white">השבעות הנשיא:</strong> מאז תקופת הנשיא ג'קסון, כל נשיא אמריקאי נשבע אמונים על מדרגות החזית המערבית או המזרחית של הקפיטול, אל מול מאות אלפי אזרחים נאספים במול (The National Mall), כסמל להעברת כוח בדרכי שלום.</li>
+                            <li><strong class="text-white">נקודת מיקוד במחאות (ה-6 בינואר):</strong> ב-6 בינואר 2021, המבנה חווה את האיום הפנימי הגדול ביותר בתולדותיו, כאשר המון תומכיו של הנשיא היוצא דונלד טראמפ הסתערו על הבניין ופרצו פנימה כדי לשבש את אישור תוצאות הבחירות האלקטורליות. האירוע הטראומטי המחיש, מחד גיסא, את שבריריות הדמוקרטיה ואת הפיכתו של הבניין לסמל פגיעות, ומאידך גיסא, את עמידות המוסדות לאחר שהקונגרס חזר לאולם עוד באותו לילה כדי לסיים את הליך האישור.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Sources -->
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. מקורות היסטוריים ארכיוניים</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>Architect of the Capitol (AOC) - ארכיונים רשמיים והיסטוריית הבנייה של כיפת ברזל היצוק ועיצובי ת'ורנטון וולטר.</li>
+                    <li>The National Archives (NARA) - תיעוד של גיליונות שכר ותשלומים לעבדים פדרליים במהלך בניית עיר הבירה (1793-1800).</li>
+                    <li>האגודה ההיסטורית של הקפיטול (U.S. Capitol Historical Society) - תיעוד על קורותיו של פיליפ ריד, העבד שיצק את פסל החירות, ויומני השריפה ב-1814.</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/capitol-main.webp" alt="בניין הקפיטול מול" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">משכן הרשות המחוקקת</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">מבט על חזית הקפיטול והכיפה העצומה. מבנה זה משמש כביתם של בית הנבחרים והסנאט מאז שנת 1800. עיצובו הושפע מהאדריכלות היוונית והרומית הקלאסית.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-construction" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-stoneAccent shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-construction')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-stoneAccent transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/capitol-dome-construction.webp" alt="בניית כיפת הקפיטול" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-stoneAccent mb-2">מונומנט מברזל יצוק (1861)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    הכיפה החדשה, בתכנונו של תומאס יו. וולטר, נבנית על בסיס קונסטרוקציה של כ-4,000 טון ברזל. למרות פרוץ מלחמת האזרחים, הורה הנשיא לינקולן להמשיך בבנייתה כדי לסמל ש"האיחוד ימשיך".
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-1814" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-red-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-1814')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-red-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/capitol-1814.webp" alt="שריפת הקפיטול 1814" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-red-400 mb-2">אש בבירה (מלחמת 1812)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    ב-24 באוגוסט 1814, לאחר שניצחו בקרב פליידנסבורג, צעדו הבריטים אל וושינגטון די.סי והעלו את הקפיטול באש תוך שימוש בספרי הקונגרס כחומר בעירה. רק גשם זלעפות סייע למנוע קריסה מוחלטת.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-navy-700 py-8 relative z-10 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p>© 2026 ארכיון הסמלים הלאומיים. נבנה על ידי רם.</p>
+            <p class="mt-2 text-xs">עיצוב מותאם ל-Samsung S25 Ultra</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
+
+```
