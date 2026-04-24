@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Mount Rushmore | The Full Research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        navy: { 900: '#0a192f', 800: '#112240', 700: '#233554', 600: '#1e2a47' },
+                        gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        darkBase: '#0a0a0a',
+                        darkSurface: '#171717',
+                        darkBorder: '#262626',
+                        stoneAccent: '#94a3b8', /* Granite stone color matching the mountain */
+                    },
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Heebo', sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .serif-font { font-family: 'Playfair Display', serif; }
+        .bg-pattern { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .modal-content::-webkit-scrollbar { width: 8px; }
+        .modal-content::-webkit-scrollbar-track { background: #112240; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb { background: #233554; border-radius: 4px; }
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #fbbf24; }
+    </style>
+</head>
+<body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="../index-en.html" class="p-2 bg-navy-800 text-gold-400 rounded-full hover:bg-gold-500 hover:text-navy-900 transition-all shadow-md group relative z-50">
+                    <i data-lucide="arrow-left" class="w-6 h-6 transform group-hover:-translate-x-1 transition-transform"></i>
+                </a>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">Mount Rushmore</h1>
+                    <p class="text-xs md:text-sm text-stoneAccent font-medium">1927–1941 | Shrine of Democracy</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-4 relative z-50">
+                <a href="mount-rushmore.html" class="flex items-center justify-center w-10 h-10 bg-navy-800 text-white rounded-full font-bold hover:bg-gold-500 hover:text-navy-900 transition-colors border border-navy-700 shadow-sm" title="Hebrew">
+                    HE
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+            <i data-lucide="mountain" class="w-16 h-16 mx-auto text-stoneAccent mb-6 drop-shadow-[0_0_15px_rgba(148,163,184,0.3)]"></i>
+            <h2 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">Mount Rushmore</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                The granite-carved Shrine of Democracy: a megalomaniacal vision, an engineering marvel, and an open wound in the sacred land of Native Americans.
+            </p>
+        </section>
+
+        <!-- Feature Images Grid -->
+        <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
+            <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/mount-rushmore-main.webp" alt="Mount Rushmore" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">Mount Rushmore</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge Image</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-construction')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-stoneAccent/50 hover:border-stoneAccent transition-all shadow-2xl -translate-y-4 md:-translate-y-8 z-20 cursor-pointer">
+                <img src="../assets/images/symbols/mount-rushmore-construction.webp" alt="The Carving Process" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/20 to-transparent opacity-60"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-stoneAccent font-bold text-sm md:text-lg drop-shadow-md">Carving the Mountain</p>
+                    <p class="text-white text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge Image</p>
+                </div>
+            </button>
+            <button onclick="openModal('modal-presidents')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
+                <img src="../assets/images/symbols/mount-rushmore-presidents.webp" alt="Close-up of the Presidents" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+                <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-center">
+                    <p class="text-white font-bold text-sm md:text-base">The Presidents Close-up</p>
+                    <p class="text-gold-400 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity">Enlarge Image</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- Full Research Text -->
+        <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
+            
+            <!-- 1. Historical Identity -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">1. Historical Identity: From Tourist Trap to National Monument</h3>
+                </div>
+                <ul class="space-y-4 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li><strong class="text-white">Years of Construction:</strong> The project began on October 4, 1927, and concluded on October 31, 1941 (14 years of work).</li>
+                    <li><strong class="text-white">The Creators:</strong> South Dakota historian <strong class="text-white">Doane Robinson</strong>, who conceived the idea, and the American sculptor <strong class="text-white">Gutzon Borglum</strong>, who designed and directed the carving.</li>
+                    <li><strong class="text-white">Original Reason for Construction:</strong> Robinson's original idea in 1923 was purely economic and provincial: he sought a way to attract tourists to the isolated state of South Dakota. Robinson proposed carving Wild West heroes (like Lewis and Clark, Buffalo Bill Cody, and the Native Chief Red Cloud) into the granite rocks.</li>
+                    <li><strong class="text-white">Borglum's Vision:</strong> When Robinson hired sculptor Gutzon Borglum, Borglum refused to sculpt regional figures. He argued that a project of such magnitude (an entire mountain) must have immense national significance. He decided that Mount Rushmore would be dedicated as the "Shrine of Democracy," focusing on the four presidents who shaped the United States from its birth to its rise as a global power.</li>
+                </ul>
+            </section>
+
+            <!-- 2. Etymological Research -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">2. Deconstructed Etymological Research</h3>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-navy-900/50 p-5 rounded-lg border-l-4 border-gold-500">
+                        <h4 class="text-xl font-bold text-white mb-2 underline decoration-gold-500/30">Mount Rushmore</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed">
+                            The mountain is not named after a president, a war hero, or a Native American deity, but after a corporate lawyer from New York. In 1885, attorney <strong class="text-white">Charles E. Rushmore</strong> was sent to South Dakota to check mining claims. Upon noticing the impressive mountain, he asked his local guide for its name. The guide replied that it essentially had no name, jokingly adding: "We will name it Rushmore." The unofficial name stuck and was officially recognized by the US Board on Geographic Names in 1930.
+                        </p>
+                        <p class="text-slate-300 text-lg leading-relaxed mt-2">
+                            <strong class="text-white">Deconstructing the name Rushmore:</strong> From Old English roots. <strong class="text-white">Rush</strong> (a marsh plant, <em>Risc</em>) and <strong class="text-white">More</strong> (or Moor - an open, uncultivated tract of land). Meaning: "The open land of rushes/reeds."
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. The People -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">3. The People Behind the Symbol (Biography, Ideology, and Achievements)</h3>
+                </div>
+                <div class="space-y-8">
+
+                    <!-- Doane Robinson -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                            Doane Robinson - The Visionary ("Father of Mount Rushmore")
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">Etymology:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Doane:</strong> From Celtic origin (Dubhán), meaning "dark" or "black." Often used as a surname that became a given name.</li>
+                                <li><strong class="text-white">Robinson:</strong> A patronymic name meaning "son of Robin." Robin is a diminutive of Robert, meaning "bright fame" in ancient Germanic.</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Lifespan:</strong> 1856 – 1946.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Childhood & Background:</strong> Born in Wisconsin to a farming family. Despite losing his father and sister at a young age, he acquired a legal education, but his true passion was history. He was appointed the official state historian of South Dakota.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Ideology:</strong> Robinson believed in the power of local history to generate regional pride and economic prosperity. He sought creative ways to turn his isolated, poor state into a national attraction by glorifying figures of the "Wild West."
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">Achievements & Role:</strong> Robinson is the man who conceived the idea of carving giant statues into the granite mountains of the Black Hills in 1923, to draw tourists (and their cars) to the region. His original plan was to carve regional figures like Buffalo Bill in what was called "The Needles." He was the one who hired sculptor Gutzon Borglum and rallied federal political support that made the project a reality.
+                        </p>
+                    </div>
+
+                    <!-- Gutzon Borglum -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="hammer" class="w-5 h-5"></i>
+                            Gutzon Borglum - The Master Sculptor
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">Etymology:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Gutzon:</strong> A given name of Scandinavian origin, a variation of "Gudbrand" meaning "God's sword" or divine gift.</li>
+                                <li><strong class="text-white">Borglum:</strong> A toponymic surname from Denmark, named after "Børglum Abbey" in northern Jutland, Denmark.</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Childhood & Background:</strong> Born in 1867 in the Idaho Territory to a father who was a Danish immigrant and a polygamist Mormon (married to two sisters). Gutzon, who later distanced himself from religion, grew up in the Wild West and traveled to Paris to study sculpture and art (where he was deeply influenced by Auguste Rodin).
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Ideology and Conflict:</strong> Borglum was a fierce American nationalist, a passionate believer in "Manifest Destiny," and convinced of America's need to create colossal art that would surpass the pyramids in Egypt. However, his character is deeply controversial: prior to Mount Rushmore, he worked on the carving project at Stone Mountain in Georgia, intended to commemorate Confederate heroes of the South. During this period, he became a friend and closely associated with the <strong>Ku Klux Klan (KKK)</strong>, which funded part of the project. (He was later fired from Stone Mountain and moved on to Mount Rushmore).
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">Achievements:</strong> Borglum conceived the national vision for Mount Rushmore and the use of dynamite as the primary "sculpting tool." He died in March 1941, just months before the work was completed, and his son, <strong>Lincoln Borglum</strong>, took command and officially finished the project in October of that year.
+                        </p>
+                    </div>
+
+                    <!-- Charles E. Rushmore -->
+                    <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
+                        <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                            <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            Charles E. Rushmore - The Namesake
+                        </h4>
+                        <div class="mb-4">
+                            <strong class="text-white text-lg">Etymology:</strong>
+                            <ul class="list-disc list-inside mt-1 space-y-1 text-slate-300 marker:text-gold-500">
+                                <li><strong class="text-white">Charles:</strong> From the Old Germanic name Karl, meaning "free man" or "man."</li>
+                                <li><strong class="text-white">Rushmore:</strong> An English topographic origin meaning "the wild land of rushes."</li>
+                            </ul>
+                        </div>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Lifespan:</strong> 1857 – 1931.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Childhood & Background:</strong> Born in New York to a well-off family and received an excellent education. He became a highly successful and wealthy corporate attorney in Manhattan, New York, representing large commercial enterprises, including mining companies.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
+                            <strong class="text-white">Ideology:</strong> Unlike Robinson and Borglum, who were men of vision and national ideology, Rushmore was a pragmatic businessman who represented the economic interests of the mining industry expanding westward.
+                        </p>
+                        <p class="text-lg text-slate-300 leading-relaxed">
+                            <strong class="text-white">Achievements & Role:</strong> In 1885, Rushmore was sent to South Dakota to verify legal claims on tin mines. While touring the area, he asked his local guide the name of the impressive mountain before them. The guide jokingly replied that it had no name, and therefore "from now on we will call it Mount Rushmore." The unofficial name stuck with the local population and was officially recognized in 1930. Rushmore did not object to the honor and even donated $5,000 out of his own pocket (a massive sum in those days) toward the construction of the sculptures, becoming one of the project's largest and earliest private donors.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 4. Anatomy & Technical Specs -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="layers" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">4. Anatomy & Engineering: Carving Stone with Dynamite</h3>
+                </div>
+                
+                <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700 space-y-8 text-lg text-slate-300">
+                    
+                    <div>
+                        <h4 class="text-xl font-bold text-gold-400 mb-4 border-b border-navy-600 inline-block pb-1">Technical Specs of the Mountain and Faces:</h4>
+                        <ul class="space-y-3 list-disc list-inside marker:text-gold-500">
+                            <li><strong class="text-white">Face Dimensions:</strong> Each of the presidents' faces stands 60 feet (18 meters) tall—equivalent to a 6-story building. Their eyes are about 11 feet (3.3 meters) wide, and their noses are 20 feet (6 meters) long.</li>
+                            <li><strong class="text-white">The Sculpting Tool - Dynamite:</strong> Unlike classical sculptors who used only hammers and chisels, Borglum developed an unprecedented method. <strong>About 90% of the rock removed from the mountain (approximately 450,000 tons of granite) was removed using highly precise dynamite explosions.</strong> The blasts came within inches of the final skin of the statue. Only the final finishing was done by workers using pneumatic hammers and a process called "honeycombing."</li>
+                            <li><strong class="text-white">Life on the Mountain:</strong> The project employed nearly 400 workers, mostly local miners with no artistic experience. Despite the terrifyingly dangerous conditions (hanging from harnesses and steel cables hundreds of feet in the air with loose dynamite), <strong>not a single worker died</strong> during the 14 years of work on the project.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-navy-900/40 p-4 rounded-lg border-l-2 border-stoneAccent mt-6">
+                        <h4 class="text-xl font-bold text-white mb-2">The Four Presidents and Symbolism</h4>
+                        <p class="mb-3">Borglum personally selected the four presidents to represent 150 years of American history (from birth to preservation):</p>
+                        <ol class="list-decimal list-inside space-y-2 marker:text-stoneAccent text-base">
+                            <li><strong class="text-white">George Washington:</strong> Represents the <strong>birth</strong> of the United States as an independent republic.</li>
+                            <li><strong class="text-white">Thomas Jefferson:</strong> Represents <strong>expansion and growth</strong> (as the author of the Declaration of Independence and purchaser of the Louisiana Territory, which doubled the nation's size).</li>
+                            <li><strong class="text-white">Theodore Roosevelt:</strong> Represents economic <strong>development</strong>, the construction of the Panama Canal, and the nature conservation movement in the 20th century (chosen specifically because he was a personal friend of Borglum).</li>
+                            <li><strong class="text-white">Abraham Lincoln:</strong> Represents the <strong>preservation (survival)</strong> of the Union following the crisis of the Civil War and the moral abolition of slavery.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-navy-900/40 p-4 rounded-lg border-l-2 border-gold-500 mt-6">
+                        <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                            <i data-lucide="key" class="w-5 h-5 text-gold-500"></i>
+                            The Secret Room: Hall of Records
+                        </h4>
+                        <p class="text-base">
+                            Borglum's original vision was that a tunnel would be carved behind the presidents' faces leading to a massive hall, a sort of "time capsule" or sacred vault, where the original copies of the U.S. Constitution and the Declaration of Independence would be preserved for generations thousands of years from now. Work on the tunnel (behind Lincoln's head) began in 1938, but Congress ordered Borglum to stop immediately and channel all funding to completing the faces. The project was abandoned, and only in 1998 was the vision partially fulfilled when a titanium vault containing enamel panels with important documents was buried inside the unfinished tunnel. The room is not accessible to tourists.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 5. Cultural Impact -->
+            <section>
+                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
+                    <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
+                    <h3 class="text-2xl font-bold text-white">5. Cultural Impact: Shrine or Sacrilege?</h3>
+                </div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    Mount Rushmore is the national monument that most bluntly embodies the cultural duality of the United States:
+                </p>
+                <ul class="space-y-6 text-lg text-slate-300 leading-relaxed list-disc list-inside marker:text-gold-500">
+                    <li>
+                        <strong class="text-white">The Wound of the Lakota Sioux:</strong> The mountain is located in the heart of the "Black Hills" (or in their language: Paha Sapa). For the Native Americans, this is the center of the world and absolutely sacred land. In 1868, the US government signed a treaty guaranteeing the area belonged to the Native Americans forever. However, when gold was discovered in the area a few years later, the government broke the treaty, conquered the territory, and expelled the tribes. For Native Americans, carving the faces of presidents (some with a history of anti-Indian policies) into their sacred mountain is perceived as the ultimate desecration and provocation.
+                    </li>
+                    <li>
+                        <strong class="text-white">The Answer: Crazy Horse Memorial:</strong> As a historical counter-response to Mount Rushmore, construction began in 1948 (about 17 miles away) on an even more massive monument carved into rock. It depicts the Lakota hero, Chief "Crazy Horse." When completed, it will be the largest sculpture in the world, aiming to remind the world that "the red man has great heroes of his own."
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 6. Sources -->
+            <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
+                <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. Archival Historical Sources</h3>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>National Park Service (NPS) - Mount Rushmore History Archives.</li>
+                    <li>Gutzon Borglum Papers and Construction Diaries - Library of Congress.</li>
+                    <li>History from the Native Perspective: Crazy Horse Memorial Foundation and the 1980 Supreme Court ruling regarding the Black Hills (United States v. Sioux Nation of Indians).</li>
+                </ul>
+            </div>
+
+        </article>
+    </main>
+
+    <!-- Floating Modals -->
+    <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/mount-rushmore-main.webp" alt="Mount Rushmore" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">Mount Rushmore (The Shrine of Democracy)</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">The four presidents carved into the granite rock in South Dakota. From left to right: Washington (Birth), Jefferson (Expansion), Roosevelt (Development), and Lincoln (Preservation of the Union).</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-construction" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-stoneAccent shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-construction')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-stoneAccent transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/mount-rushmore-construction.webp" alt="Carving the Mountain" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-stoneAccent mb-2">An Inspiring Engineering Marvel</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">Workers hanging by leather harnesses in an improvised crane seat ("bosun's chair"), removing massive amounts of granite using controlled dynamite explosions.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-presidents" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-navy-600 shadow-2xl flex flex-col modal-content overflow-y-auto">
+            <button onclick="closeModal('modal-presidents')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <img src="../assets/images/symbols/mount-rushmore-presidents.webp" alt="Close-up of the carved faces" class="w-full h-auto object-cover rounded-t-2xl" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'400\' height=\'400\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>Image Missing</text></svg>'">
+            <div class="p-6">
+                <h3 class="text-2xl font-bold text-gold-400 mb-2">Details at Six Stories High</h3>
+                <p class="text-slate-300 text-lg leading-relaxed">
+                    A close-up demonstrating the extraordinary precision of the carving (the honeycombing process), including a simulated "spark" in the eyes created by leaving a small column of granite inside a sculpted pupil.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                closeModal(event.target.id);
+            }
+        }
+    </script>
+</body>
+</html>
