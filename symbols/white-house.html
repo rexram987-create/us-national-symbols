@@ -19,7 +19,7 @@
                         darkBase: '#0a0a0a',
                         darkSurface: '#171717',
                         darkBorder: '#262626',
-                        stoneAccent: '#f8fafc', /* צבע בהיר התואם לאבן המסוידת של הבית הלבן */
+                        stoneAccent: '#f8fafc',
                     },
                     fontFamily: {
                         sans: ['Heebo', 'sans-serif'],
@@ -41,7 +41,6 @@
 </head>
 <body class="bg-navy-900 text-slate-300 min-h-screen bg-pattern selection:bg-gold-500 selection:text-navy-900">
 
-    <!-- Header -->
     <header class="absolute top-0 left-0 right-0 z-50 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-4">
@@ -64,7 +63,6 @@
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 pt-32 pb-24">
         
-        <!-- Hero Section -->
         <section class="text-center mb-16 relative">
             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
             <i data-lucide="landmark" class="w-16 h-16 mx-auto text-stoneAccent mb-6 drop-shadow-[0_0_15px_rgba(248,250,252,0.3)]"></i>
@@ -74,7 +72,6 @@
             </p>
         </section>
 
-        <!-- Feature Images Grid -->
         <section class="grid grid-cols-3 gap-3 md:gap-6 mb-16 relative z-10">
             <button onclick="openModal('modal-main')" class="group relative rounded-xl overflow-hidden aspect-[9/16] border-2 border-navy-700 hover:border-gold-500 transition-all shadow-xl cursor-pointer">
                 <img src="../assets/images/symbols/white-house-main.webp" alt="הבית הלבן - חזית צפונית" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'600\'><rect width=\'400\' height=\'600\' fill=\'%23112240\'/><text x=\'50%\' y=\'50%\' fill=\'%23fbbf24\' text-anchor=\'middle\'>תמונה חסרה</text></svg>'">
@@ -102,10 +99,8 @@
             </button>
         </section>
 
-        <!-- Full Research Text -->
         <article class="bg-navy-800/80 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl border border-navy-700 space-y-12">
             
-            <!-- 1. Historical Identity -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="history" class="w-6 h-6 text-gold-500"></i>
@@ -115,11 +110,10 @@
                     <li><strong class="text-white">שנות בנייה ויצירה:</strong> אבן הפינה הונחה ב-13 באוקטובר 1792. הבנייה הסתיימה רשמית ב-1 בנובמבר 1800 (אז נכנס הנשיא השני, ג'ון אדמס, להתגורר במבנה שהיה עדיין בחלקו אתר בנייה).</li>
                     <li><strong class="text-white">ההוגה / יוזם הבנייה:</strong> הנשיא הראשון <strong class="text-white">ג'ורג' וושינגטון (George Washington)</strong>. (הערה היסטורית: וושינגטון הוא הנשיא היחיד בהיסטוריה האמריקאית שמעולם לא התגורר בבית הלבן, כיוון שהוא סיים את כהונתו ומת לפני השלמת הבנייה).</li>
                     <li><strong class="text-white">הבונה / האדריכל:</strong> <strong class="text-white">ג'יימס הובן (James Hoban)</strong>, אדריכל אירי-אמריקאי שזכה בתחרות העיצוב הלאומית.</li>
-                    <li><strong class="text-white">סיבת ההמצאה והבנייה:</strong> האומה האמריקאית החדשה נזקקה למרכז שלטוני שייצג את עוצמתה ואת ערכיה הרפובליקניים, אך מבלי להיראות מנקר עיניים כמו ארמונות המלוכה באירופה. כחלק מההחלטה להקים בירה פדרלית חדשה לחלוטין (וושינגטון די.סי) הרחק מההשפעה של מדינה ספציפית, היה הכרח לבנות משכן שישמש גם כמגורים, גם כמשרד וגם כסמל של הרשות המבצעת.</li>
+                    <li><strong class="text-white">סיבת ההמצאה והבנייה:</strong> האומה האמריקאית החדשה נזקקה למרכז שלטוני שייצג את עוצמתה ואת ערכיה הרפובליקניים, אך מבלי להיראות מנקר עיניים כמו ארמונות המלוכה באירופה. כחלק מההחלטה להקים בירה פדרלית חדשה לחלוטין הרחק מההשפעה של מדינה ספציפית, היה הכרח לבנות משכן שישמש גם כמגורים, גם כמשרד וגם כסמל של הרשות המבצעת.</li>
                 </ul>
             </section>
 
-            <!-- 2. Etymological Research -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="book-a" class="w-6 h-6 text-gold-500"></i>
@@ -132,24 +126,22 @@
                             בימיו הראשונים, המבנה לא נקרא "הבית הלבן". התייחסו אליו כאל <strong>"בית הנשיא" (President's House)</strong>, <strong>"ארמון הנשיא" (President's Palace)</strong>, או <strong>"האחוזה המבצעת" (Executive Mansion)</strong>. המיתוס הנפוץ טוען שהמבנה נצבע בלבן רק כדי להסתיר את סימני החריכה לאחר שהבריטים שרפו אותו ב-1814. אך זוהי טעות היסטורית.
                         </p>
                         <p class="text-slate-300 text-lg leading-relaxed mt-2">
-                            <strong class="text-white">פירוק השם וסיבתו:</strong> עוד ב-1798, זמן קצר לאחר שהושלמו קירות החוץ העשויים אבן חול נקבובית (Aquia Creek Sandstone), האבן צופתה בתערובת מסוידת של סיד ודבק נוזלי (Limewash) כדי לאטום אותה ולמנוע מהמים לקפוא ולסדוק את האבן בחורף. ציפוי הסיד העניק למבנה צבע לבן בוהק שבלט למרחקים על רקע היערות והבוץ של האזור. הציבור החל לכנותו "הבית הלבן" באופן סלנגי. 
+                            <strong class="text-white">פירוק השם וסיבתו:</strong> עוד ב-1798, זמן קצר לאחר שהושלמו קירות החוץ העשויים אבן חול נקבובית (Aquia Creek Sandstone), האבן צופתה בתערובת מסוידת של סיד ודבק נוזלי (Limewash) כדי לאטום אותה ולמנוע מהמים לקפוא ולסדוק את האבן בחורף. ציפוי הסיד העניק למבנה צבע לבן בוהק שבלט למרחקים על רקע היערות והבוץ של האזור. הציבור החל לכנותו "הבית הלבן" באופן סלנגי עממי. 
                         </p>
                         <p class="text-slate-300 text-lg leading-relaxed mt-2 text-gold-400">
-                            <strong>החותמת הרשמית:</strong> השם העממי הפך לרשמי לחלוטין רק בשנת 1901, כאשר הנשיא תיאודור רוזוולט הורה להדפיס "The White House" על הנייר הרשמי של מחלקת המדינה, כדי להבדיל את משכן נשיא ארה"ב מכל "אחוזה מבצעת" (Executive Mansion) של מושלי המדינות השונות.
+                            <strong>החותמת הרשמית:</strong> השם העממי הפך לרשמי לחלוטין רק בשנת 1901, כאשר הנשיא תיאודור רוזוולט הורה להדפיס "The White House" על הנייר הרשמי של מחלקת המדינה, כדי להבדיל את משכן נשיא ארה"ב מכל "אחוזה מבצעת" של מושלי המדינות השונות.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. The People -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="users" class="w-6 h-6 text-gold-500"></i>
-                    <h3 class="text-2xl font-bold text-white">3. האנשים מאחורי הסמל: ביוגרפיה, אידאולוגיה והישגים</h3>
+                    <h3 class="text-2xl font-bold text-white">3. האנשים מאחורי הסמל</h3>
                 </div>
                 <div class="space-y-8">
 
-                    <!-- George Washington -->
                     <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
                         <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
                             <i data-lucide="scroll" class="w-5 h-5"></i>
@@ -166,17 +158,20 @@
                             <strong class="text-white">שנות חיים:</strong> 1732 – 1799.
                         </p>
                         <p class="text-lg text-slate-300 leading-relaxed mb-3">
-                            <strong class="text-white">ילדות ורקע:</strong> נולד בווירג'יניה למשפחת בעלי מטעים מבוססת. איבד את אביו בגיל 11. למרות שלא זכה להשכלה פורמלית כמו ג'פרסון או מדיסון, הוא רכש ידע עצום במדידת קרקעות, גאומטריה וגינוני חברה. הפך למפקד צבאי מהולל במלחמת הצרפתים והאינדיאנים, ולאחר מכן במלחמת העצמאות.
+                            <strong class="text-white">ילדות ורקע:</strong> נולד בווירג'יניה למשפחת בעלי מטעים מבוססת. איבד את אביו בגיל 11. למרות שלא זכה להשכלה פורמלית גבוהה, הוא רכש ידע עצום במדידת קרקעות, גאומטריה וגינוני חברה. הפך למפקד צבאי מהולל ולגיבור מלחמת העצמאות.
                         </p>
-                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
-                            <strong class="text-white">אידאולוגיה (בהקשר לבירה ולסמל):</strong> וושינגטון האמין עמוקות בצורך באחדות לאומית פדרלית. הוא סבר כי השארת הבירה בערים כמו פילדלפיה או ניו יורק תיצור הטיה מסוכנת, ולכן קידם את חוקת העיר הפדרלית (Washington D.C.) בשטח ניטרלי בין הצפון לדרום. הוא דרש שמבנה הנשיאות ישדר סמכות ויציבות של אומה שיכולה לעמוד כשווה מול מעצמות אירופה.
-                        </p>
-                        <p class="text-lg text-slate-300 leading-relaxed">
-                            <strong class="text-white">הישגים וחלקו ביצירה:</strong> יחד עם מתכנן העיר פייר שארל ל'אנפן (Pierre Charles L'Enfant), וושינגטון קבע את המיקום המדויק של "בית הנשיא". הוא בחן את ההצעות בתחרות העיצוב, דחה הצעות מנקרות עיניים (כולל אחת שהוגשה בעילום שם על ידי תומאס ג'פרסון), ובחר בעיצוב השמרני והמכובד של ג'יימס הובן. וושינגטון פיקח אישית על הבנייה, אך כאמור, מת ב-1799 לפני שהמבנה היה ראוי למגורים.
-                        </p>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-gold-500 mb-3">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">אידאולוגיה (בהקשר לבירה ולסמל):</strong> וושינגטון האמין עמוקות בצורך באחדות לאומית פדרלית ופיוס בין מדינות הצפון והדרום. הוא סבר כי השארת הבירה בערים קיימות כמו פילדלפיה או ניו יורק תיצור הטיה מסוכנת, ולכן קידם את חוקת העיר הפדרלית בשטח ניטרלי. הוא דרש שמבנה הנשיאות ישדר סמכות, יציבות ורפובליקניות של אומה צעירה שיכולה לעמוד כשווה מול מעצמות אירופה, אך ללא הפזרנות של בתי מלוכה.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-stoneAccent">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">הישגים וחלקו ביצירה:</strong> יחד עם מתכנן העיר פייר שארל ל'אנפן (Pierre Charles L'Enfant), וושינגטון קבע את המיקום המדויק של "בית הנשיא". הוא דחה הצעות אדריכליות מנקרות עיניים (כולל אחת שהוגשה בעילום שם על ידי תומאס ג'פרסון) ובחר אישית בעיצוב השמרני והמכובד של ג'יימס הובן. וושינגטון פיקח אישית על הבנייה, אך כאמור, מת ב-1799 לפני שהמבנה היה ראוי למגורים.
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- James Hoban -->
                     <div class="bg-navy-900/30 p-6 rounded-xl border border-navy-700">
                         <h4 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
                             <i data-lucide="ruler" class="w-5 h-5"></i>
@@ -195,52 +190,144 @@
                         <p class="text-lg text-slate-300 leading-relaxed mb-3">
                             <strong class="text-white">ילדות ורקע:</strong> נולד למשפחה קתולית במחוז קילקני שבאירלנד, שגדלה תחת חוקים בריטיים נוקשים. הוא למד נגרות, אדריכלות ושרטוט בדבלין, והושפע עמוקות מהסגנון הפלדיאני (Palladian) והנאו-קלאסי של העיר. לאחר מלחמת העצמאות האמריקאית, היגר לארצות הברית והקים עסק מצליח בצ'רלסטון, דרום קרוליינה.
                         </p>
-                        <p class="text-lg text-slate-300 leading-relaxed mb-3">
-                            <strong class="text-white">אידאולוגיה ויצירה:</strong> כאירי שחווה את עריצות השלטון מחד ואת הפאר הקלאסי מאידך, הובן דגל באדריכלות "נאו-קלאסית" המסמלת איזון, סימטריה ורציונליות - הערכים של עידן הנאורות והדמוקרטיה הרפובליקנית החדשה. הוא עיצב את הבית הלבן בצלמו של "בית ליינסטר" (Leinster House) בדבלין (שכיום משמש כפרלמנט האירי).
-                        </p>
-                        <p class="text-lg text-slate-300 leading-relaxed">
-                            <strong class="text-white">הישגים:</strong> הובן זכה בתחרות העיצוב הלאומית ב-1792 (וגרף פרס של 500 דולר ומגרש בבירה). הוא ניהל את הבנייה בפועל. מעבר לכך, כאשר הבריטים שרפו את הבית הלבן עד היסוד ב-1814 במלחמת 1812, ג'יימס הובן נקרא שוב לדגל והוביל את מאמצי השיקום המפרכים שהסתיימו ב-1817. הוא למעשה אחראי על הבית הלבן פעמיים.
-                        </p>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-gold-500 mb-3">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">אידאולוגיה ארכיטקטונית:</strong> כאירי שחווה את עריצות השלטון מחד ואת הפאר הקלאסי מאידך, הובן דגל באדריכלות ה"נאו-קלאסית". הוא האמין שסגנון זה – המתאפיין בסימטריה קפדנית, עמודים איתנים ועיצוב נקי – מסמל בצורה הטובה ביותר את האיזון, הרציונליות והצדק של עידן הנאורות והדמוקרטיה הרפובליקנית החדשה.
+                            </p>
+                        </div>
+                        <div class="bg-navy-900/50 p-4 rounded-lg border-r-2 border-stoneAccent">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">הישגים וחלקו ביצירה:</strong> הובן עיצב את הבית הלבן בצלמו של "בית ליינסטר" (Leinster House) שבדבלין (כיום הפרלמנט האירי). הוא זכה בתחרות העיצוב הלאומית בשנת 1792 (וזכה ב-500 דולר ומגרש בבירה), וניהל את פרויקט הבנייה המורכב בשטח. יתרה מכך, כאשר הבריטים שרפו את הבית הלבן עד היסוד ב-1814, ג'יימס הובן נקרא שוב לדגל והוביל את מאמצי השיקום המפרכים שהסתיימו ב-1817. הוא למעשה אחראי על יצירת הבית הלבן פעמיים במהלך חייו.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
             </section>
 
-            <!-- 4. Anatomy & Technical Specs -->
             <section>
-                <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
-                    <i data-lucide="layers" class="w-6 h-6 text-gold-500"></i>
-                    <h3 class="text-2xl font-bold text-white">4. אנטומיה, הנדסה והיסטוריה חבויה</h3>
+                <div class="flex items-center gap-3 mb-8 border-b-2 border-gold-500 pb-4">
+                    <i data-lucide="layers" class="w-8 h-8 text-gold-500"></i>
+                    <h3 class="text-3xl font-bold text-white">4. אנטומיה, הנדסה והיסטוריה חבויה</h3>
                 </div>
                 
-                <div class="bg-navy-900/50 p-6 rounded-xl border border-navy-700 space-y-8 text-lg text-slate-300">
+                <div class="space-y-12">
                     
                     <div>
-                        <h4 class="text-xl font-bold text-gold-400 mb-4 border-b border-navy-600 inline-block pb-1">המבנה הפיזי של "בית העם":</h4>
-                        <ul class="space-y-3 list-disc list-inside marker:text-gold-500">
-                            <li><strong class="text-white">מתחם של 3 חלקים:</strong> כיום הבית הלבן אינו בניין אחד אלא קומפלקס. במרכז נמצאת <strong>מגורי הרשות המבצעת</strong> (האחוזה המקורית), במערב נמצא ה-<strong>אגף המערבי (West Wing)</strong> (נבנה ב-1902 על ידי תיאודור רוזוולט ובו נמצא החדר הסגלגל), ובמזרח ה-<strong>אגף המזרחי (East Wing)</strong> (נבנה ב-1942, שם יושב צוותה של הגברת הראשונה).</li>
-                            <li><strong class="text-white">ממדים:</strong> הבית כולל 132 חדרים, 35 חדרי אמבטיה, 412 דלתות, 147 חלונות ו-28 קמינים.</li>
-                            <li><strong class="text-white">האמת המרה על הבנייה (היסטוריה בלתי מצונזרת):</strong> הבית הלבן נבנה במקור ברובו הגדול על ידי <strong>כוח אדם של עבדים שחורים</strong>, שהושכרו לרושמי הרשומות הפדרליים על ידי בעליהם ממטעי וירג'יניה ומרילנד הסמוכות. עבדים אלו, יחד עם פועלים אירים וסקוטים חופשיים, חצבו את אבן החול, כרתו את העצים ביערות ושרפו את הלבנים בכבשנים לבניית הסמל הגדול ביותר של "העולם החופשי".</li>
-                        </ul>
+                        <div class="flex items-center gap-2 mb-6">
+                            <i data-lucide="map" class="w-6 h-6 text-stoneAccent"></i>
+                            <h4 class="text-2xl font-bold text-stoneAccent">תת-סעיף 1: חלקי הקומפלקס הנשיאותי</h4>
+                        </div>
+                        <p class="text-lg text-slate-300 mb-6 leading-relaxed">
+                            כיום, הבית הלבן איננו רק בניין בודד, אלא קומפלקס עצום ומאובטח המורכב משלושה אגפים עיקריים שחוברו יחד במהלך ההיסטוריה, כל אחד עם ייעוד שונה לחלוטין:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+                            
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-r-4 border-gold-500 shadow-lg transition-transform hover:-translate-y-1">
+                                <h5 class="text-xl font-bold text-gold-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="home" class="w-5 h-5"></i>
+                                    א. מגורי הרשות המבצעת (Executive Residence)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    זהו המבנה המרכזי המקורי (שתוכנן על ידי הובן ב-1792). הוא ממוקם במרכז הקומפלקס ומשמש גם כמגוריו הפרטיים של הנשיא ומשפחתו, וגם כמרכז הטקסים הממלכתיים של ארצות הברית.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-gold-500">
+                                    <li><strong class="text-white">קומת הקרקע והמרתפים:</strong> מכילים את המטבחים, המכבסה, מרפאת הבית הלבן וחדרי התחזוקה.</li>
+                                    <li><strong class="text-white">קומת המדינה (State Floor):</strong> קומת הטקסים המפוארת. כוללת את החדר המזרחי הענק (לאירועים), החדר הירוק, החדר הכחול, החדר האדום, וחדר האוכל הממלכתי.</li>
+                                    <li><strong class="text-white">הקומה השנייה והשלישית:</strong> המגורים הפרטיים של משפחת הנשיא, בנוסף ל"חדר החוזה" ההיסטורי ולחדר השינה של לינקולן.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-r-4 border-blue-400 shadow-lg transition-transform hover:-translate-y-1">
+                                <h5 class="text-xl font-bold text-blue-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                                    ב. האגף המערבי (The West Wing)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    מערכת העצבים של הממשל האמריקאי. האגף נבנה לראשונה בשנת 1902 על ידי תיאודור רוזוולט כדי להפריד את העבודה המשרדית ממגורי המשפחה, והורחב משמעותית בשנות ה-30.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-blue-400">
+                                    <li><strong class="text-white">החדר הסגלגל (The Oval Office):</strong> משרדו הרשמי של נשיא ארצות הברית.</li>
+                                    <li><strong class="text-white">חדר הקבינט:</strong> בו מתכנסים שרי הממשלה לפגישות סגורות.</li>
+                                    <li><strong class="text-white">חדר המצב (Situation Room):</strong> מתחם תת-קרקעי באגף זה המשמש לניהול משברים גלובליים ומודיעין בזמן אמת.</li>
+                                    <li><strong class="text-white">חדר התדריכים ג'יימס ס. בריידי:</strong> ממוקם היכן שהייתה פעם בריכת השחייה של FDR, ומשמש למסיבות העיתונאים.</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-navy-900/60 p-6 rounded-2xl border-r-4 border-emerald-500 shadow-lg transition-transform hover:-translate-y-1">
+                                <h5 class="text-xl font-bold text-emerald-400 mb-3 flex items-center gap-2">
+                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                    ג. האגף המזרחי (The East Wing)
+                                </h5>
+                                <p class="text-slate-300 text-lg leading-relaxed mb-3">
+                                    נבנה בצורתו הנוכחית ב-1942 (במהלך מלחמת העולם השנייה). משמש כיום כמרכז הפעילות של הגברת הראשונה, אך תפקידו המקורי היה ביטחוני לחלוטין.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-400 space-y-2 marker:text-emerald-500">
+                                    <li><strong class="text-white">משרדי הגברת הראשונה:</strong> כאן פועל הצוות שלה וכן המזכיר החברתי הממונה על אירועי הבית.</li>
+                                    <li><strong class="text-white">כניסת המבקרים:</strong> זהו הנתיב דרכו נכנסים המבקרים לסיורים הציבוריים בבית הלבן.</li>
+                                    <li><strong class="text-white">הבונקר הנשיאותי (PEOC):</strong> עמוק מתחת לאגף זה נבנה מקלט החירום התת-קרקעי של הרשות המבצעת, שנועד להגן על הנשיא במקרה של מתקפה גרעינית או טרור (כפי שנעשה בו שימוש ב-11 בספטמבר).</li>
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div class="bg-navy-900/40 p-4 rounded-lg border-r-2 border-stoneAccent mt-6">
-                        <h4 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                            <i data-lucide="flame" class="w-5 h-5 text-red-500"></i>
-                            חורבן ותקומה: שריפת 1814 ושיפוץ טרומן (1949-1952)
-                        </h4>
-                        <p class="mb-3">
-                            <strong class="text-white">1814 - הבריטים מעלים באש:</strong> במהלך מלחמת 1812, כוחות בריטיים פלשו לוושינגטון די.סי (הפעם היחידה בהיסטוריה שבירת ארה"ב נכבשה). ב-24 באוגוסט הם בזזו והעלו באש את הבית הלבן. הגברת הראשונה, דולי מדיסון, נמלטה ברגע האחרון תוך שהיא מצילה בתושייה את הדיוקן המפורסם של ג'ורג' וושינגטון. רק גשם זלעפות (שאולי היה סופת טורנדו) כיבה את הלהבות והציל את המבנה מהרס מוחלט.
-                        </p>
-                        <p>
-                            <strong class="text-white">שיפוץ טרומן (Truman Reconstruction):</strong> ב-1948, הבית הלבן היה על סף קריסה מבנית מוחלטת (הפסנתר של בתו של הנשיא טרומן כמעט נפל דרך הרצפה אל החדר שמתחתיו). הנשיא הארי טרומן הורה על פרויקט עצום: כל פנים המבנה פורק ונחרב לחלוטין (Gutted), ונותרה רק הקליפה החיצונית המקורית של האבן הלבנה. בתוך קליפה זו נבנתה שלדת פלדה ובטון מודרנית, והחדרים ההיסטוריים הורכבו מחדש לתוכה. מרבית הבית הלבן של היום הוא למעשה שחזור בן כ-70 שנה בתוך חומות בנות למעלה מ-200 שנה.
-                        </p>
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="bar-chart" class="w-6 h-6 text-stoneAccent"></i>
+                            <h4 class="text-2xl font-bold text-stoneAccent">תת-סעיף 2: המפרט הטכני של הבניין (המספרים מאחורי הקלעים)</h4>
+                        </div>
+                        <div class="bg-navy-800 p-6 rounded-xl border border-navy-600 shadow-inner">
+                            <p class="text-lg text-slate-300 leading-relaxed mb-4">
+                                מתחם הבית הלבן חולש על שטח של כ-18 אקר (כ-72 דונם). המבנה עצמו מתוחזק בקפידה וכולל את המפרט הטכני הבא:
+                            </p>
+                            <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg text-slate-300 marker:text-stoneAccent list-none">
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">חדרים:</strong> 132</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">חדרי רחצה:</strong> 35</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">קומות מרכזיות:</strong> 6</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">דלתות:</strong> 412</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">חלונות:</strong> 147</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">קמינים (אח):</strong> 28</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">גרמי מדרגות:</strong> 8</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">מעליות:</strong> 3</li>
+                                <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gold-500"></i> <strong class="text-white">צבע (לסיוד החוץ):</strong> 570 גלונים</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="link" class="w-6 h-6 text-red-400"></i>
+                            <h4 class="text-2xl font-bold text-red-400">תת-סעיף 3: האמת המרה - עבודת כפייה ביסודות המבנה</h4>
+                        </div>
+                        <div class="bg-red-900/10 p-6 rounded-xl border border-red-900/50">
+                            <p class="text-lg text-slate-300 leading-relaxed">
+                                <strong class="text-white">ההיסטוריה הבלתי מצונזרת:</strong> בעוד שהאגפים החדשים נבנו במאה ה-20 על ידי פועלים מאוגדים, המבנה המרכזי המקורי (1792-1800) נבנה ברובו הגדול על ידי **כוח אדם של עבדים שחורים**. עבדים אלו הושכרו לרושמי הרשומות הפדרליים על ידי בעליהם ממטעי וירג'יניה ומרילנד תמורת כ-5 דולר בחודש (סכום שהועבר במלואו לבעלים, בעוד הפועל לא קיבל שכר למחייתו). 
+                                יחד עם פועלים אירים וסקוטים, העבדים הללו ביצעו את עבודות הפרך: הם חצבו את אבן החול במחצבות ג'ורג'יה, כרתו את העצים ביערות, ושרפו את הלבנים בכבשנים הלוהטים, כדי לבנות את הסמל הגדול ביותר של "העולם החופשי".
+                            </p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i data-lucide="flame" class="w-6 h-6 text-orange-500"></i>
+                            <h4 class="text-2xl font-bold text-orange-500">תת-סעיף 4: חורבן, שריפה ושיקום פנימי</h4>
+                        </div>
+                        <div class="bg-navy-900/40 p-6 rounded-xl border border-orange-500/30 space-y-4 text-lg text-slate-300">
+                            <p>
+                                <strong class="text-white">1814 - הבריטים מעלים באש:</strong> במהלך מלחמת 1812, כוחות בריטיים פלשו לוושינגטון די.סי (הפעם היחידה בהיסטוריה שבירת ארה"ב נכבשה ע"י כוח זר). ב-24 באוגוסט הם בזזו והעלו באש את הבית הלבן. הגברת הראשונה, דולי מדיסון, נמלטה ברגע האחרון תוך שהיא מצילה בתושייה את הדיוקן המפורסם של ג'ורג' וושינגטון. רק גשם זלעפות (שאולי היה סופת טורנדו) בלם את הלהבות והציל את המבנה מהרס מוחלט. לאחר מכן שוקם המבנה על ידי ג'יימס הובן.
+                            </p>
+                            <div class="w-full h-px bg-navy-600 my-2"></div>
+                            <p>
+                                <strong class="text-white">שיפוץ טרומן (Truman Reconstruction 1948-1952):</strong> כמאה וחמישים שנים מאוחר יותר, הבית הלבן היה על סף קריסה מבנית מוחלטת (לדוגמה, רגלי הפסנתר של בתו של הנשיא טרומן כמעט וחדרו את הרצפה עקב עייפות העץ). הנשיא הארי טרומן הורה על פרויקט עצום: כל פנים המבנה פורק ונחרב לחלוטין (Gutted), ונותרה רק הקליפה החיצונית של האבן הלבנה. בתוך הקליפה נבנתה שלדת פלדה ובטון מודרנית ועמידה, והחדרים ההיסטוריים הורכבו מחדש לתוכה. מרבית הבית כיום הוא שחזור בן 70 שנה בתוך חומות בנות 200 שנה.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
             </section>
 
-            <!-- 5. Cultural Impact -->
             <section>
                 <div class="flex items-center gap-3 mb-6 border-b border-navy-600 pb-3">
                     <i data-lucide="globe" class="w-6 h-6 text-gold-500"></i>
@@ -259,11 +346,10 @@
                 </ul>
             </section>
 
-            <!-- 6. Sources -->
             <div class="pt-6 border-t border-darkBorder text-sm text-gray-500 italic">
                 <h3 class="text-lg font-bold text-gray-400 mb-2 not-italic">6. מקורות היסטוריים ארכיוניים</h3>
                 <ul class="list-disc list-inside space-y-1">
-                    <li>The White House Historical Association - מחקרים על ג'יימס הובן ותהליך הבנייה.</li>
+                    <li>The White House Historical Association - מחקרים על ג'יימס הובן, תהליך הבנייה והאגפים החדשים.</li>
                     <li>הארכיון הלאומי של ארה"ב (National Archives) - מסמכי ההקמה והתכתבויותיו של ג'ורג' וושינגטון.</li>
                     <li>מכון הסמית'סוניאן (Smithsonian Institution) - מחקר על השתתפות עבדים בבניית בירת ארה"ב ("Enslaved Labor and the Building of the White House").</li>
                 </ul>
@@ -272,7 +358,6 @@
         </article>
     </main>
 
-    <!-- Floating Modals -->
     <div id="modal-main" class="fixed inset-0 z-[100] hidden bg-navy-900/95 backdrop-blur-xl flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
         <div class="relative max-w-4xl w-full max-h-[90vh] bg-navy-800 rounded-2xl border border-gold-500 shadow-2xl flex flex-col modal-content overflow-y-auto">
             <button onclick="closeModal('modal-main')" class="absolute top-4 right-4 p-2 bg-navy-900/80 text-white rounded-full hover:text-gold-400 transition-colors z-10 backdrop-blur-sm cursor-pointer">
@@ -314,7 +399,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="bg-navy-900 border-t border-navy-700 py-8 relative z-10 mt-12">
         <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
             <p>© 2026 ארכיון הסמלים הלאומיים. נבנה על ידי רם.</p>
